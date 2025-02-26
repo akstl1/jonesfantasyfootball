@@ -15,6 +15,7 @@ league = League(league_id=801987389, year=2024, espn_s2='AEBcqdxIV%2Flb%2FIgTmPJ
 # print(league.load_roster_week(7))
 
 draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
+#
 
 for i in range(204):
     # print(player([league.draft[i].playerName]))
