@@ -7,7 +7,9 @@ league = League(league_id=801987389, year=2024, espn_s2='AEBcqdxIV%2Flb%2FIgTmPJ
 # print(league.standings_weekly(1))
 # print(league.scoreboard(5))
 # print(league.teams)
-# team = league.teams[6]
+team = league.teams[6]
+standing = team.stats
+print(league.power_rankings(week=13)[0][1].team_name)
 # print(team)
 # print(team.roster)
 # print(league.power_rankings(week=13))
@@ -24,6 +26,43 @@ for i in range(204):
 
 
 #draft_df.to_excel('draft.xlsx', sheet_name='Sheet1', index=False)
+
+
+
+##### power rankings data
+
+power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
+for wk in range(1,19):
+    rankings = league.power_rankings(week=wk)
+    week=wk
+    for rank in range(12):
+        team = rankings[rank][1].team_name
+        ranking = rank+1
+        new_row = pd.DataFrame({'Team':[team],'Week':[week],'Rank':[ranking]})
+        power_ranking_df = pd.concat([power_ranking_df,new_row],ignore_index=True)
+        
+# print(power_ranking_df)
+power_ranking_df.to_excel('power_ranking.xlsx', sheet_name='Sheet1', index=False)
+
+# (league.power_rankings(week=13)[0][1].team_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
