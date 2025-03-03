@@ -8,16 +8,16 @@ league = League(league_id=801987389, year=2024, espn_s2='AEBcqdxIV%2Flb%2FIgTmPJ
 # print(league.standings_weekly(1))
 # print(league.scoreboard(5))
 # print(league.teams)
-# team = league.teams[6]
+team = league.teams[6]
 # standing = team.stats
 # print(league.standings_weekly(1))
 # print(team)
-# print(team.roster)
+print(team.roster)
 # print(league.power_rankings(week=13))
 # print(team.roster[0].stats)
 # print(league.load_roster_week(7))
 # print(team.outcomes)
-# print(league.box_scores(1))
+# print(league.box_scores(15))
 
 draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 #
@@ -77,54 +77,78 @@ for wk in range(1,17):
 ##### matchup data
 
 matchups_df = pd.DataFrame({'Team':[],
+                            'Opponent':[],
                             'Week':[],
                             'Home_Or_Away':[],
                             'Projected_score':[],
                             'Actual_score':[],
                             'matchup_type':[],
                             'projected_variance':[],
-                            'actual_variance':[]
+                            'actual_variance':[],
+                            'matchup_header':[],
+                            'result':[]
                             })
 for wk in range(1,19):
     box_score = league.box_scores(wk)
     week=wk
-    for matchup in range(5):
+    for matchup in range(6):
         home_team = box_score[matchup].home_team
         home_projected = box_score[matchup].home_projected
         home_actual = box_score[matchup].home_score
 
         away_team = box_score[matchup].away_team
-        # away_tm = away_team.team_name
-        # print(away_tm)
+        if away_team==0:
+            away_tm = 'Bye'
+        else:
+            away_tm = away_team.team_name
         away_projected = box_score[matchup].away_projected
         away_actual = box_score[matchup].away_score  
-      
+        header = home_team.team_name + " vs. " + away_tm
         matchup_type = box_score[matchup].matchup_type
 
-        new_row_home = pd.DataFrame({'Team':[home_team.team_name],
+        if home_actual - away_actual>0:
+            result_home, result_away='Win','Loss'
+        elif  home_actual - away_actual <0:
+            result_home, result_away='Loss','Win'
+        else:
+            result_home, result_away = 'Tie', 'Tie'
+        new_row_home = pd.DataFrame({
+                            'Team':[home_team.team_name],
+                            'Opponent':[away_tm],
                             'Week':[week],
                             'Home_Or_Away':['Home'],
                             'Projected_score':[home_projected],
                             'Actual_score':[home_actual],
                             'matchup_type':[matchup_type],
                             'projected_variance':[home_projected-away_projected],
-                            'actual_variance':[home_actual-away_actual]
+                            'actual_variance':[home_actual-away_actual],
+                            'matchup_header':[header],
+                            'result':[result_home]
                             })
         
-        new_row_away = pd.DataFrame({'Team':[away_team],
+        new_row_away = pd.DataFrame({
+                            'Team':[away_tm],
+                            'Opponent':[home_team.team_name],
                             'Week':[week],
                             'Home_Or_Away':['Away'],
                             'Projected_score':[away_projected],
                             'Actual_score':[away_actual],
                             'matchup_type':[matchup_type],
                             'projected_variance':[away_projected-home_projected],
-                            'actual_variance':[away_actual-home_actual]
+                            'actual_variance':[away_actual-home_actual],
+                            'matchup_header':[header],
+                            'result':[result_away]
                             })
-        
+        new_row_home['projected_variance'] = new_row_home['projected_variance'].round(2)
+        new_row_home['actual_variance'] = new_row_home['actual_variance'].round(2)
+
+        new_row_away['projected_variance'] = new_row_away['projected_variance'].round(2)
+        new_row_away['actual_variance'] = new_row_away['actual_variance'].round(2)
+
         matchups_df = pd.concat([matchups_df,new_row_home],ignore_index=True)
         matchups_df = pd.concat([matchups_df,new_row_away],ignore_index=True)
 
-matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
+# matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
 
 # print(matchups_df)
 
