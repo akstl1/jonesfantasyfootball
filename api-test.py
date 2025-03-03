@@ -8,16 +8,16 @@ league = League(league_id=801987389, year=2024, espn_s2='AEBcqdxIV%2Flb%2FIgTmPJ
 # print(league.standings_weekly(1))
 # print(league.scoreboard(5))
 # print(league.teams)
-team = league.teams[6]
+# team = league.teams[6]
 # standing = team.stats
 # print(league.standings_weekly(1))
 # print(team)
-print(team.roster)
+# print(team.roster)
 # print(league.power_rankings(week=13))
 # print(team.roster[0].stats)
 # print(league.load_roster_week(7))
 # print(team.outcomes)
-# print(league.box_scores(15))
+print(league.box_scores(13)[1].home_lineup[7].slot_position)
 
 draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 #
