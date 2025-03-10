@@ -20,7 +20,8 @@ league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), e
 # print(team.roster[0].stats)
 # print(league.load_roster_week(7))
 # print(team.outcomes)
-print(league.box_scores(13)[1].home_lineup[7].slot_position)
+
+
 
 draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 #
@@ -155,8 +156,88 @@ for wk in range(1,19):
 
 # print(matchups_df)
 
+##### player stats data
 
+print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
+print(league.box_scores(13)[1].home_lineup[7].position)
+print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
+print(league.box_scores(13)[1].home_lineup[7].active_status)
+print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
+print(league.box_scores(13)[1].home_lineup[7].slot_position)
+print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
+print(league.box_scores(13)[1].home_lineup[7].projected_points)
+print(league.box_scores(13)[1].home_lineup[7].proTeam)
+print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
+print(league.box_scores(13)[1].home_lineup[7].injured)
+print(league.box_scores(13)[1].home_lineup[7].game_played)
+print(league.box_scores(13)[1].home_lineup[7].name)
+print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
+player_df = pd.DataFrame({  'Week':[],
+                            'FantasyTeam':[],
+                            'Name':[],
+                            'Status':[],
+                            'Team':[],
+                            'Opponent':[],
+                            'Position':[],
+                            'PositionRank':[],
+                            'Bye':[],
+                            'Projected':[],
+                            'Each PAT Made':[],
+                            'PAT Attempt':[],
+                            'FG Made (0-39 yards)':[],
+                            'FG Made (40-49 yards)':[],
+                            'FG Made (50-50 yards)':[],
+                            'FG Made (60+ yards)':[],
+                            'Field Goal Attempted':[],
+                            'Passes Caught':[],
+                            'Pass Attempts':[],
+                            'Passing Yards':[],
+                            'TD Pass':[],
+                            'Interceptions Thrown':[],
+                            'Passer Fumble':[],
+                            '2pt Passing Conversion':[],
+                            'Rushing Attempts':[],
+                            'Rushing Yards':[],
+                            'TD Rush':[],
+                            'Rushing Fumble':[],
+                            '2pt Rushing Conversion':[],
+                            'Each Reception':[],
+                            'Receiving Targets':[],
+                            'Receiving Yards':[],
+                            'TD Reception':[],
+                            'Receiving Fumble':[],
+                            '2pt Receiving Conversion':[],
+                            'Each Sack':[],
+                            'Interception Return TD':[],
+                            'Fumble Return TD':[],
+                            'Kickoff Return TD':[],
+                            'Punt Return TD':[],
+                            'Blocked Punt or FG return for TD':[],
+                            'Blocked Punt, PAT or FG':[],
+                            'Each Interception':[],
+                            'Each Fumble Recovered':[],
+                            'Each Safety':[],
+                            '0 points allowed':[],
+                            '1-6 points allowed':[],
+                            '7-13 points allowed':[],
+                            '14-17 points allowed':[],
+                            '28-34 points allowed':[],
+                            '35-45 points allowed':[],
+                            '46+ points allowed':[],
+                            'Less than 100 total yards allowed':[],
+                            '100-199 total yards allowed':[],
+                            '200-299 yards allowed':[],
+                            '300-399 yards allowed':[],
+                            '400-449 yards allowed':[],
+                            '450-499 yards allowed':[],
+                            '500-549 yards allowed':[],
+                            '550+ yards allowed':[],
+                            '2pt Return':[],
+                            '1pt Safety':[],
+                            'Defense Fumbles Lost':[],
+                            'Actual':[]
+                            })
 
 
 
