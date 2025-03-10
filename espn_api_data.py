@@ -158,20 +158,7 @@ for wk in range(1,19):
 
 ##### player stats data
 
-print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
-print(league.box_scores(13)[1].home_lineup[7].position)
-print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
-print(league.box_scores(13)[1].home_lineup[7].active_status)
-print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
-print(league.box_scores(13)[1].home_lineup[7].slot_position)
-print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
-print(league.box_scores(13)[1].home_lineup[7].projected_points)
-print(league.box_scores(13)[1].home_lineup[7].proTeam)
-print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
-print(league.box_scores(13)[1].home_lineup[7].injured)
-print(league.box_scores(13)[1].home_lineup[7].game_played)
-print(league.box_scores(13)[1].home_lineup[7].name)
-print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
+
 
 player_df = pd.DataFrame({  'Week':[],
                             'FantasyTeam':[],
@@ -239,9 +226,51 @@ player_df = pd.DataFrame({  'Week':[],
                             'Actual':[]
                             })
 
+print(league.box_scores(17))
+print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
+print(league.box_scores(13)[1].home_lineup[7].position)
+print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
+print(league.box_scores(13)[1].home_lineup[7].active_status)
+print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
+print(league.box_scores(13)[1].home_lineup[7].slot_position)
+print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
+print(league.box_scores(13)[1].home_lineup[7].projected_points)
+print(league.box_scores(13)[1].home_lineup[7].proTeam)
+print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
+print(league.box_scores(13)[1].home_lineup[7].injured)
+print(league.box_scores(13)[1].home_lineup[7].game_played)
+print(league.box_scores(13)[1].home_lineup[7].name)
+print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
+for wk in range(1,3):
+    box_score = league.box_scores(wk)
+    player_wk=wk
+    for matchup in range(6):
+        for player in range(16):
+            player_name_home = box_score[matchup].home_lineup[player].name
 
+            player_row_home = pd.DataFrame({
+                            'Week':[player_wk],
+                            'FantasyTeam':[box_score[matchup].home_team.team_name],
+                            'Name':[player_name_home]
+                            })
 
+            player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+
+        for player in range(16):
+            player_name_away = box_score[matchup].away_lineup[player].name
+            player_row_away = pd.DataFrame({
+                            'Week':[player_wk],
+                            'FantasyTeam':[box_score[matchup].away_team.team_name],
+                            'Name':[player_name_away]
+                            })
+            player_df = pd.concat([player_df,player_row_away],ignore_index=True)
+
+            # home_team = box_score[matchup].home_team
+            # home_projected = box_score[matchup].home_projected
+            # home_actual = box_score[matchup].home_score
+
+print(player_df)
 
 
 # league = espn.FantasyLeague(league_id=801987389, 
