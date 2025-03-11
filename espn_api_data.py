@@ -252,7 +252,8 @@ for wk in range(1,3):
             player_row_home = pd.DataFrame({
                             'Week':[player_wk],
                             'FantasyTeam':[box_score[matchup].home_team.team_name],
-                            'Name':[player_name_home]
+                            'Name':[player_name_home],
+                            'Team':[box_score[matchup].home_lineup[player].proTeam]
                             })
 
             player_df = pd.concat([player_df,player_row_home],ignore_index=True)
@@ -262,7 +263,8 @@ for wk in range(1,3):
             player_row_away = pd.DataFrame({
                             'Week':[player_wk],
                             'FantasyTeam':[box_score[matchup].away_team.team_name],
-                            'Name':[player_name_away]
+                            'Name':[player_name_away],
+                            'Team':[box_score[matchup].away_lineup[player].proTeam]
                             })
             player_df = pd.concat([player_df,player_row_away],ignore_index=True)
 
