@@ -282,5 +282,14 @@ print(player_df)
 
 # league.get_matchup_data
 # league.get_league_data
-
-
+x=[]
+teams = power_ranking_df['Team'].unique()
+for team in teams:
+    start = power_ranking_df[(power_ranking_df['Team']==team) & (power_ranking_df['Week']==1)].Rank.iloc[0]
+    end = power_ranking_df[(power_ranking_df['Team']==team) & (power_ranking_df['Week']==18)].Rank.iloc[0]
+    print(team,start,end)
+    tuple = (start,end)
+    x.append(tuple)
+print(x)
+print(league.power_rankings(week=0))
+print(league.power_rankings(week=1))
