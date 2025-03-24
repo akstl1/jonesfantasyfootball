@@ -39,7 +39,7 @@ for i in range(204):
 ##### power rankings data
 
 power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
-for wk in range(1,19):
+for wk in range(1,23):
     rankings = league.power_rankings(week=wk)
     week=wk
     for rank in range(12):
@@ -293,3 +293,4 @@ for team in teams:
 print(x)
 print(league.power_rankings(week=0))
 print(league.power_rankings(week=1))
+print(league.power_rankings(week=22))
