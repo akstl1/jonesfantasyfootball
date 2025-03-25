@@ -3,7 +3,6 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 load_dotenv()
-#import espnfantasyfootball as espn
 
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 
@@ -27,7 +26,6 @@ draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 #
 
 for i in range(204):
-    # print(player([league.draft[i].playerName]))
     new_row = pd.DataFrame({'Team':[league.draft[i].team.team_name],'Player':[league.draft[i].playerName],'Round':[league.draft[i].round_num],'Pick':[league.draft[i].round_pick]})
     draft_df = pd.concat([draft_df,new_row],ignore_index=True)
 
@@ -226,21 +224,21 @@ player_df = pd.DataFrame({  'Week':[],
                             'Actual':[]
                             })
 
-print(league.box_scores(17))
-print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
-print(league.box_scores(13)[1].home_lineup[7].position)
-print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
-print(league.box_scores(13)[1].home_lineup[7].active_status)
-print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
-print(league.box_scores(13)[1].home_lineup[7].slot_position)
-print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
-print(league.box_scores(13)[1].home_lineup[7].projected_points)
-print(league.box_scores(13)[1].home_lineup[7].proTeam)
-print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
-print(league.box_scores(13)[1].home_lineup[7].injured)
-print(league.box_scores(13)[1].home_lineup[7].game_played)
-print(league.box_scores(13)[1].home_lineup[7].name)
-print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
+# print(league.box_scores(17))
+# print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
+# print(league.box_scores(13)[1].home_lineup[7].position)
+# print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
+# print(league.box_scores(13)[1].home_lineup[7].active_status)
+# print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
+# print(league.box_scores(13)[1].home_lineup[7].slot_position)
+# print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
+# print(league.box_scores(13)[1].home_lineup[7].projected_points)
+# print(league.box_scores(13)[1].home_lineup[7].proTeam)
+# print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
+# print(league.box_scores(13)[1].home_lineup[7].injured)
+# print(league.box_scores(13)[1].home_lineup[7].game_played)
+# print(league.box_scores(13)[1].home_lineup[7].name)
+# print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
 for wk in range(1,3):
     box_score = league.box_scores(wk)
@@ -268,17 +266,4 @@ for wk in range(1,3):
                             })
             player_df = pd.concat([player_df,player_row_away],ignore_index=True)
 
-            # home_team = box_score[matchup].home_team
-            # home_projected = box_score[matchup].home_projected
-            # home_actual = box_score[matchup].home_score
-
 print(player_df)
-
-
-# league = espn.FantasyLeague(league_id=801987389, 
-#                             year=2024, 
-#                             espn_s2='AEBcqdxIV%2Flb%2FIgTmPJYzV0cH8ez7YE6t8hWYzunjHzgOhlDJwWGH9amwY4Uny7Nf8dq47ZDWhns7WsN1FsDa7zQODG%2Bd%2FOGEPv2ojYfp9sTRzvZA0tk3xunHPP65PpzT2NtpgKRVVRpv%2F21ippabE3Tfs3ojNs83YnVvOWGUefVFQ4ZFn5yoSIguR3ySPAWxkmWy72kv0hvaFdpdXxdx%2BIE9AQ%2BnzOunbQxE1bfiiqi2d4McVcEfZjDVOxtXUDu54n2tperpJAU2t0DT2x4gUrJ', 
-#                             swid='{7A925BC0-142F-4FE0-925B-C0142FFFE09F}')
-
-# league.get_matchup_data
-# league.get_league_data
