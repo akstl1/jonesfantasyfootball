@@ -225,7 +225,25 @@ player_df = pd.DataFrame({  'Week':[],
                             })
 
 # print(league.box_scores(17))
-print(league.box_scores(14)[1].home_lineup[7].points_breakdown)
+print(league.box_scores(11)[1].home_lineup)
+print(league.box_scores(11)[1].home_lineup[0].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[1].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[2].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[3].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[4].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[5].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[6].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[7].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[8].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[9].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[10].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[11].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[12].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[13].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[14].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[15].points_breakdown)
+print(league.box_scores(11)[1].home_lineup[16].points_breakdown)
+
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
 # print(league.box_scores(13)[1].home_lineup[7].active_status)
@@ -250,12 +268,24 @@ for wk in range(1,3):
         for player in range(16):
             player_name_home = box_score[matchup].home_lineup[player].name
             plyr = box_score[matchup].home_lineup[player]
-            
-            try:
-                rushingAttempts=plyr.points_breakdown['rushingAttempts']
+            temp = []
+            stats = [
+                    'madeExtraPoints',
+                    'attemptedExtraPoints',
+                    'madeFieldGoalsFromUnder40',
+                    'madeFieldGoalsFrom50Plus',
+                    'madeFieldGoalsFrom60Plus',
+                    'madeFieldGoals',
+                    'attemptedFieldGoals',
+                    ]
+            for item in stats:
+                try:
+                    value=plyr.points_breakdown[item]
 
-            except KeyError:
-                rushingAttempts=[0]
+                except KeyError:
+                    value=[0]
+                temp.append(value)
+            
             player_row_home = pd.DataFrame({
                             'Week':[player_wk],
                             'FantasyTeam':[box_score[matchup].home_team.team_name],
@@ -267,13 +297,13 @@ for wk in range(1,3):
                             'PositionRank':[plyr.posRank],
                             'Bye':[plyr.on_bye_week],
                             'Projected':[plyr.projected_points],
-                            # 'Each PAT Made':[],
-                            # 'PAT Attempt':[],
-                            # 'FG Made (0-39 yards)':[],
-                            # 'FG Made (40-49 yards)':[],
-                            # 'FG Made (50-50 yards)':[],
-                            # 'FG Made (60+ yards)':[],
-                            # 'Field Goal Attempted':[],
+                            'Each PAT Made':[temp[0]],
+                            'PAT Attempt':[temp[1]],
+                            'FG Made (0-39 yards)':[temp[2]],
+                            'FG Made (40-49 yards)':[temp[3]],
+                            'FG Made (50-50 yards)':[temp[4]],
+                            'FG Made (60+ yards)':[temp[5]],
+                            'Field Goal Attempted':[temp[6]],
                             # 'Passes Caught':[],
                             # 'Pass Attempts':[],
                             # 'Passing Yards':[],
@@ -281,7 +311,7 @@ for wk in range(1,3):
                             # 'Interceptions Thrown':[],
                             # 'Passer Fumble':[],
                             # '2pt Passing Conversion':[],
-                            'Rushing Attempts':[rushingAttempts],
+                            # 'Rushing Attempts':[rushingAttempts],
                             # 'Rushing Yards':[plyr.points_breakdown['rushingYards']],
                             # 'TD Rush':[],
                             # 'Rushing Fumble':[plyr.points_breakdown['lostFumbles']],
