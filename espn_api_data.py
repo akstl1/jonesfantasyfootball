@@ -225,7 +225,7 @@ player_df = pd.DataFrame({  'Week':[],
                             })
 
 # print(league.box_scores(17))
-print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
+print(league.box_scores(14)[1].home_lineup[7].points_breakdown)
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
 # print(league.box_scores(13)[1].home_lineup[7].active_status)
@@ -237,9 +237,9 @@ print(league.box_scores(13)[1].home_lineup[7].points_breakdown)
 # print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
 # print(league.box_scores(13)[1].home_lineup[7].injured)
 # print(league.box_scores(13)[1].home_lineup[7].game_played)
-print(league.box_scores(13)[1].home_lineup[7].name)
-print(league.box_scores(13)[1].home_lineup[7].points)
-print(league.box_scores(13)[1].home_lineup[7].total_points)
+print(league.box_scores(14)[1].home_lineup[7].name)
+print(league.box_scores(14)[1].home_lineup[7].points)
+print(league.box_scores(14)[1].home_lineup[7].total_points)
 
 # print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
@@ -249,18 +249,24 @@ for wk in range(1,3):
     for matchup in range(6):
         for player in range(16):
             player_name_home = box_score[matchup].home_lineup[player].name
+            plyr = box_score[matchup].home_lineup[player]
+            
+            try:
+                rushingAttempts=plyr.points_breakdown['rushingAttempts']
 
+            except KeyError:
+                rushingAttempts=[0]
             player_row_home = pd.DataFrame({
                             'Week':[player_wk],
                             'FantasyTeam':[box_score[matchup].home_team.team_name],
                             'Name':[player_name_home],
-                            'Team':[box_score[matchup].home_lineup[player].proTeam],
-                            'Status':[box_score[matchup].home_lineup[player].active_status],
-                            'Opponent':[box_score[matchup].home_lineup[player].pro_opponent],
-                            'Position':[box_score[matchup].home_lineup[player].position],
-                            'PositionRank':[box_score[matchup].home_lineup[player].posRank],
-                            'Bye':[box_score[matchup].home_lineup[player].on_bye_week],
-                            'Projected':[box_score[matchup].home_lineup[player].projected_points],
+                            'Team':[plyr.proTeam],
+                            'Status':[plyr.active_status],
+                            'Opponent':[plyr.pro_opponent],
+                            'Position':[plyr.position],
+                            'PositionRank':[plyr.posRank],
+                            'Bye':[plyr.on_bye_week],
+                            'Projected':[plyr.projected_points],
                             # 'Each PAT Made':[],
                             # 'PAT Attempt':[],
                             # 'FG Made (0-39 yards)':[],
@@ -275,10 +281,10 @@ for wk in range(1,3):
                             # 'Interceptions Thrown':[],
                             # 'Passer Fumble':[],
                             # '2pt Passing Conversion':[],
-                            # 'Rushing Attempts':[],
-                            # 'Rushing Yards':[],
+                            'Rushing Attempts':[rushingAttempts],
+                            # 'Rushing Yards':[plyr.points_breakdown['rushingYards']],
                             # 'TD Rush':[],
-                            # 'Rushing Fumble':[],
+                            # 'Rushing Fumble':[plyr.points_breakdown['lostFumbles']],
                             # '2pt Rushing Conversion':[],
                             # 'Each Reception':[],
                             # 'Receiving Targets':[],
@@ -314,7 +320,7 @@ for wk in range(1,3):
                             # '2pt Return':[],
                             # '1pt Safety':[],
                             # 'Defense Fumbles Lost':[],
-                            'Actual':[box_score[matchup].home_lineup[player].points]
+                            'Actual':[plyr.points]
                             })
 
             player_df = pd.concat([player_df,player_row_home],ignore_index=True)
