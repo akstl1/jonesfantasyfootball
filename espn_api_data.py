@@ -225,24 +225,25 @@ player_df = pd.DataFrame({  'Week':[],
                             })
 
 # print(league.box_scores(17))
-print(league.box_scores(11)[1].home_lineup)
-print(league.box_scores(11)[1].home_lineup[0].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[1].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[2].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[3].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[4].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[5].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[6].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[7].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[8].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[9].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[10].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[11].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[12].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[13].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[14].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[15].points_breakdown)
-print(league.box_scores(11)[1].home_lineup[16].points_breakdown)
+temp_player = league.box_scores(11)[2]
+print(temp_player.home_lineup)
+print(temp_player.home_lineup[0].points_breakdown)
+print(temp_player.home_lineup[1].points_breakdown)
+print(temp_player.home_lineup[2].points_breakdown)
+print(temp_player.home_lineup[3].points_breakdown)
+print(temp_player.home_lineup[4].points_breakdown)
+print(temp_player.home_lineup[5].points_breakdown)
+print(temp_player.home_lineup[6].points_breakdown)
+print(temp_player.home_lineup[7].points_breakdown)
+print(temp_player.home_lineup[8].points_breakdown)
+print(temp_player.home_lineup[9].points_breakdown)
+print(temp_player.home_lineup[10].points_breakdown)
+print(temp_player.home_lineup[11].points_breakdown)
+print(temp_player.home_lineup[12].points_breakdown)
+print(temp_player.home_lineup[13].points_breakdown)
+print(temp_player.home_lineup[14].points_breakdown)
+print(temp_player.home_lineup[15].points_breakdown)
+print(temp_player.home_lineup[16].points_breakdown)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -277,6 +278,15 @@ for wk in range(1,3):
                     'madeFieldGoalsFrom60Plus',
                     'madeFieldGoals',
                     'attemptedFieldGoals',
+                    'passingCompletions',
+                    'passingAttempts',
+                    'passingYards',
+                    'passingTouchdowns',
+                    'passingInterceptions',
+                    #passer funmble
+                    'passing2PtConversions',
+
+
                     ]
             for item in stats:
                 try:
@@ -304,13 +314,13 @@ for wk in range(1,3):
                             'FG Made (50-50 yards)':[temp[4]],
                             'FG Made (60+ yards)':[temp[5]],
                             'Field Goal Attempted':[temp[6]],
-                            # 'Passes Caught':[],
-                            # 'Pass Attempts':[],
-                            # 'Passing Yards':[],
-                            # 'TD Pass':[],
-                            # 'Interceptions Thrown':[],
+                            'Passes Caught':[temp[7]],
+                            'Pass Attempts':[temp[8]],
+                            'Passing Yards':[temp[9]],
+                            'TD Pass':[temp[10]],
+                            'Interceptions Thrown':[temp[11]],
                             # 'Passer Fumble':[],
-                            # '2pt Passing Conversion':[],
+                            '2pt Passing Conversion':[temp[13]],
                             # 'Rushing Attempts':[rushingAttempts],
                             # 'Rushing Yards':[plyr.points_breakdown['rushingYards']],
                             # 'TD Rush':[],
