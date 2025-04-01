@@ -284,7 +284,15 @@ for wk in range(1,3):
                     'passingTouchdowns',
                     'passingInterceptions',
                     #passer funmble
+                    '',
                     'passing2PtConversions',
+                    'rushingAttempts',
+                    'rushingYards',
+                    'rushingTouchdowns',
+                    #rusher fumble
+                    '',
+                    'rushing2PtConversions'
+
 
 
                     ]
@@ -321,11 +329,11 @@ for wk in range(1,3):
                             'Interceptions Thrown':[temp[11]],
                             # 'Passer Fumble':[],
                             '2pt Passing Conversion':[temp[13]],
-                            # 'Rushing Attempts':[rushingAttempts],
-                            # 'Rushing Yards':[plyr.points_breakdown['rushingYards']],
-                            # 'TD Rush':[],
+                            'Rushing Attempts':[temp[14]],
+                            'Rushing Yards':[temp[15]],
+                            'TD Rush':[temp[15]],
                             # 'Rushing Fumble':[plyr.points_breakdown['lostFumbles']],
-                            # '2pt Rushing Conversion':[],
+                            '2pt Rushing Conversion':[temp[17]],
                             # 'Each Reception':[],
                             # 'Receiving Targets':[],
                             # 'Receiving Yards':[],
