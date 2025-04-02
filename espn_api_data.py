@@ -291,7 +291,15 @@ for wk in range(1,3):
                     'rushingTouchdowns',
                     #rusher fumble
                     '',
-                    'rushing2PtConversions'
+                    'rushing2PtConversions',
+                    'receivingReceptions',
+                    'receivingTargets',
+                    'receivingYards',
+                    'receivingTouchdowns',
+                    # receiving fumble
+                    'receiving2PtConversions',
+
+
 
 
 
@@ -334,12 +342,12 @@ for wk in range(1,3):
                             'TD Rush':[temp[15]],
                             # 'Rushing Fumble':[plyr.points_breakdown['lostFumbles']],
                             '2pt Rushing Conversion':[temp[17]],
-                            # 'Each Reception':[],
-                            # 'Receiving Targets':[],
-                            # 'Receiving Yards':[],
-                            # 'TD Reception':[],
+                            'Each Reception':[temp[18]],
+                            'Receiving Targets':[temp[19]],
+                            'Receiving Yards':[temp[20]],
+                            'TD Reception':[temp[21]],
                             # 'Receiving Fumble':[],
-                            # '2pt Receiving Conversion':[],
+                            '2pt Receiving Conversion':[temp[23]],
                             # 'Each Sack':[],
                             # 'Interception Return TD':[],
                             # 'Fumble Return TD':[],
