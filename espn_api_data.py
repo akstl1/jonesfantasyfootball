@@ -225,25 +225,26 @@ player_df = pd.DataFrame({  'Week':[],
                             })
 
 # print(league.box_scores(17))
-temp_player = league.box_scores(9)[2]
+temp_player = league.box_scores(15)[2]
 print(temp_player.home_lineup)
-print(temp_player.home_lineup[0].points_breakdown)
-print(temp_player.home_lineup[1].points_breakdown)
-print(temp_player.home_lineup[2].points_breakdown)
-print(temp_player.home_lineup[3].points_breakdown)
-print(temp_player.home_lineup[4].points_breakdown)
-print(temp_player.home_lineup[5].points_breakdown)
-print(temp_player.home_lineup[6].points_breakdown)
-print(temp_player.home_lineup[7].points_breakdown)
-print(temp_player.home_lineup[8].points_breakdown)
-print(temp_player.home_lineup[9].points_breakdown)
-print(temp_player.home_lineup[10].points_breakdown)
-print(temp_player.home_lineup[11].points_breakdown)
-print(temp_player.home_lineup[12].points_breakdown)
-print(temp_player.home_lineup[13].points_breakdown)
-print(temp_player.home_lineup[14].points_breakdown)
-print(temp_player.home_lineup[15].points_breakdown)
-print(temp_player.home_lineup[16].points_breakdown)
+print(temp_player.home_lineup[0].name,temp_player.home_lineup[0].points_breakdown)
+print(temp_player.home_lineup[1].name,temp_player.home_lineup[1].points_breakdown)
+print(temp_player.home_lineup[2].name,temp_player.home_lineup[2].points_breakdown)
+print(temp_player.home_lineup[3].name,temp_player.home_lineup[3].points_breakdown)
+print(temp_player.home_lineup[4].name,temp_player.home_lineup[4].points_breakdown)
+print(temp_player.home_lineup[5].name,temp_player.home_lineup[5].points_breakdown)
+print(temp_player.home_lineup[6].name,temp_player.home_lineup[6].points_breakdown)
+print(temp_player.home_lineup[7].name,temp_player.home_lineup[7].points_breakdown)
+print(temp_player.home_lineup[8].name,temp_player.home_lineup[8].points_breakdown)
+print(temp_player.home_lineup[9].name,temp_player.home_lineup[9].points_breakdown)
+print(temp_player.home_lineup[10].name,temp_player.home_lineup[10].points_breakdown)
+print(temp_player.home_lineup[11].name,temp_player.home_lineup[11].points_breakdown)
+print(temp_player.home_lineup[12].name,temp_player.home_lineup[12].points_breakdown)
+print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakdown)
+print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
+print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
+print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
+print(league.box_scores(15)[6].home_lineup[14].points_breakdown)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -310,12 +311,13 @@ for wk in range(1,3):
                     # 'Blocked Punt or FG return for TD':[],
                     '',
                     # 'Blocked Punt, PAT or FG':[],
-                    '',
+                    'defensiveBlockedKicks',
                     'defensiveInterceptions',
                     # 'Each Fumble Recovered':[],
+                    'defensiveFumbles',
                     '',
                     # 'Each Safety':[],
-                    '',
+                    'defensiveSafeties',
                     'defensive0PointsAllowed',
                     'defensive1To6PointsAllowed',
                     'defensive7To13PointsAllowed',
@@ -335,6 +337,7 @@ for wk in range(1,3):
                     'defensive550PlusYardsAllowed'
                     # '2pt Return':[],
                     # '1pt Safety':[],
+                    'defensiveSafeties'
                     # 'Defense Fumbles Lost':[],
 
 
@@ -394,10 +397,10 @@ for wk in range(1,3):
                             # 'Kickoff Return TD':[],
                             # 'Punt Return TD':[],
                             # 'Blocked Punt or FG return for TD':[],
-                            # 'Blocked Punt, PAT or FG':[],
+                            'Blocked Punt, PAT or FG':temp[31],
                             'Each Interception':temp[32],
-                            # 'Each Fumble Recovered':[],
-                            # 'Each Safety':[],
+                            'Each Fumble Recovered':temp[33],
+                            'Each Safety':temp[34],
                             '0 points allowed':temp[35],
                             '1-6 points allowed':temp[36],
                             '7-13 points allowed':temp[37],
@@ -414,7 +417,7 @@ for wk in range(1,3):
                             '500-549 yards allowed':temp[48],
                             '550+ yards allowed':temp[49],
                             # '2pt Return':[],
-                            # '1pt Safety':[],
+                            '1pt Safety':temp[51],
                             # 'Defense Fumbles Lost':[],
                             'Actual':[plyr.points]
                             })
