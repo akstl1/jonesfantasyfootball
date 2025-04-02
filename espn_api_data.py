@@ -244,7 +244,7 @@ print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakd
 print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
 print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
 print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(15)[6].home_lineup[14].points_breakdown)
+print(league.box_scores(7)[5].away_lineup[15].points_breakdown)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -301,9 +301,9 @@ for wk in range(1,3):
                     'receiving2PtConversions',
                     'defensiveSacks',
                     # 'Interception Return TD':[],
-                    '',
+                    'interceptionReturnTouchdowns',
                     # 'Fumble Return TD':[],
-                    '',
+                    'fumbleReturnTouchdowns',
                     # 'Kickoff Return TD':[],
                     '',
                     # 'Punt Return TD':[],
@@ -334,7 +334,7 @@ for wk in range(1,3):
                     'defensive400To449YardsAllowed',
                     'defensive450To499YardsAllowed',
                     'defensive500To549YardsAllowed',
-                    'defensive550PlusYardsAllowed'
+                    'defensive550PlusYardsAllowed',
                     # '2pt Return':[],
                     # '1pt Safety':[],
                     'defensiveSafeties'
@@ -392,8 +392,8 @@ for wk in range(1,3):
                             # 'Receiving Fumble':[],
                             '2pt Receiving Conversion':temp[24],
                             'Each Sack':temp[25],
-                            # 'Interception Return TD':[],
-                            # 'Fumble Return TD':[],
+                            'Interception Return TD':temp[26],
+                            'Fumble Return TD':temp[27],
                             # 'Kickoff Return TD':[],
                             # 'Punt Return TD':[],
                             # 'Blocked Punt or FG return for TD':[],
