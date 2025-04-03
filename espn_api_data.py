@@ -226,25 +226,25 @@ player_df = pd.DataFrame({  'Week':[],
 
 # print(league.box_scores(17))
 temp_player = league.box_scores(15)[2]
-print(temp_player.home_lineup)
-print(temp_player.home_lineup[0].name,temp_player.home_lineup[0].points_breakdown)
-print(temp_player.home_lineup[1].name,temp_player.home_lineup[1].points_breakdown)
-print(temp_player.home_lineup[2].name,temp_player.home_lineup[2].points_breakdown)
-print(temp_player.home_lineup[3].name,temp_player.home_lineup[3].points_breakdown)
-print(temp_player.home_lineup[4].name,temp_player.home_lineup[4].points_breakdown)
-print(temp_player.home_lineup[5].name,temp_player.home_lineup[5].points_breakdown)
-print(temp_player.home_lineup[6].name,temp_player.home_lineup[6].points_breakdown)
-print(temp_player.home_lineup[7].name,temp_player.home_lineup[7].points_breakdown)
-print(temp_player.home_lineup[8].name,temp_player.home_lineup[8].points_breakdown)
-print(temp_player.home_lineup[9].name,temp_player.home_lineup[9].points_breakdown)
-print(temp_player.home_lineup[10].name,temp_player.home_lineup[10].points_breakdown)
-print(temp_player.home_lineup[11].name,temp_player.home_lineup[11].points_breakdown)
-print(temp_player.home_lineup[12].name,temp_player.home_lineup[12].points_breakdown)
-print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakdown)
-print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
-print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
-print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(12)[0].away_lineup[15].points_breakdown)
+# print(temp_player.home_lineup)
+# print(temp_player.home_lineup[0].name,temp_player.home_lineup[0].points_breakdown)
+# print(temp_player.home_lineup[1].name,temp_player.home_lineup[1].points_breakdown)
+# print(temp_player.home_lineup[2].name,temp_player.home_lineup[2].points_breakdown)
+# print(temp_player.home_lineup[3].name,temp_player.home_lineup[3].points_breakdown)
+# print(temp_player.home_lineup[4].name,temp_player.home_lineup[4].points_breakdown)
+# print(temp_player.home_lineup[5].name,temp_player.home_lineup[5].points_breakdown)
+# print(temp_player.home_lineup[6].name,temp_player.home_lineup[6].points_breakdown)
+# print(temp_player.home_lineup[7].name,temp_player.home_lineup[7].points_breakdown)
+# print(temp_player.home_lineup[8].name,temp_player.home_lineup[8].points_breakdown)
+# print(temp_player.home_lineup[9].name,temp_player.home_lineup[9].points_breakdown)
+# print(temp_player.home_lineup[10].name,temp_player.home_lineup[10].points_breakdown)
+# print(temp_player.home_lineup[11].name,temp_player.home_lineup[11].points_breakdown)
+# print(temp_player.home_lineup[12].name,temp_player.home_lineup[12].points_breakdown)
+# print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakdown)
+# print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
+# print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
+# print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
+print(league.box_scores(11)[2].home_lineup[12].stats)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -257,10 +257,11 @@ print(league.box_scores(12)[0].away_lineup[15].points_breakdown)
 # print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
 # print(league.box_scores(13)[1].home_lineup[7].injured)
 # print(league.box_scores(13)[1].home_lineup[7].game_played)
-print(league.box_scores(14)[1].home_lineup[7].name)
-print(league.box_scores(14)[1].home_lineup[7].points)
-print(league.box_scores(14)[1].home_lineup[7].total_points)
-
+# print(league.box_scores(14)[1].home_lineup[7].name)
+# print(league.box_scores(14)[1].home_lineup[7].points)
+# print(league.box_scores(14)[1].home_lineup[7].total_points)
+# print(league.free_agents(week=1,position='D/ST',size=50))
+# print(league.draft)
 # print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
 for wk in range(1,3):
@@ -270,6 +271,14 @@ for wk in range(1,3):
         for player in range(16):
             player_name_home = box_score[matchup].home_lineup[player].name
             plyr = box_score[matchup].home_lineup[player]
+            pos = plyr.position
+            qb,rb,other = '','',''
+            if pos=='QB':
+                qb,rb,other='lostFumbles','junk','junk'
+            elif pos=='RB':
+                qb,rb,other='junk','lostFumbles','junk'
+            else:
+                qb,rb,other='junk','junk','lostFumbles'
             temp = []
             stats = [
                     'madeExtraPoints',
@@ -284,39 +293,28 @@ for wk in range(1,3):
                     'passingYards',
                     'passingTouchdowns',
                     'passingInterceptions',
-                    #passer funmble
-                    '',
+                    qb,
                     'passing2PtConversions',
                     'rushingAttempts',
                     'rushingYards',
                     'rushingTouchdowns',
-                    #rusher fumble
-                    '',
+                    rb,
                     'rushing2PtConversions',
                     'receivingReceptions',
                     'receivingTargets',
                     'receivingYards',
                     'receivingTouchdowns',
-                    # receiving fumble
+                    other,
                     'receiving2PtConversions',
                     'defensiveSacks',
-                    # 'Interception Return TD':[],
                     'interceptionReturnTouchdowns',
-                    # 'Fumble Return TD':[],
                     'fumbleReturnTouchdowns',
-                    # 'Kickoff Return TD':[],
-                    '',
-                    # 'Punt Return TD':[],
-                    '',
-                    # 'Blocked Punt or FG return for TD':[],
-                    '',
-                    # 'Blocked Punt, PAT or FG':[],
+                    'kickoffReturnTouchdowns',
+                    'puntReturnTouchdowns',
+                    'defensiveBlockedKickForTouchdowns',
                     'defensiveBlockedKicks',
                     'defensiveInterceptions',
-                    # 'Each Fumble Recovered':[],
-                    'defensiveFumbles',
-                    '',
-                    # 'Each Safety':[],
+                    'defensiveForcedFumbles',
                     'defensiveSafeties',
                     'defensive0PointsAllowed',
                     'defensive1To6PointsAllowed',
@@ -335,9 +333,9 @@ for wk in range(1,3):
                     'defensive500To549YardsAllowed',
                     'defensive550PlusYardsAllowed',
                     # '2pt Return':[],
-                    # '1pt Safety':[],
-                    'defensiveSafeties'
-                    # 'Defense Fumbles Lost':[],
+                    'junk',
+                    'defensiveSafeties',
+                    'defensiveFumbles'
 
 
 
@@ -377,25 +375,25 @@ for wk in range(1,3):
                             'Passing Yards':temp[9],
                             'TD Pass':temp[10],
                             'Interceptions Thrown':temp[11],
-                            # 'Passer Fumble':[],
+                            'Passer Fumble':temp[12],
                             '2pt Passing Conversion':temp[13],
                             'Rushing Attempts':temp[14],
                             'Rushing Yards':temp[15],
                             'TD Rush':temp[16],
-                            # 'Rushing Fumble':[plyr.points_breakdown['lostFumbles'],
+                            'Rushing Fumble':temp[17],
                             '2pt Rushing Conversion':temp[18],
                             'Each Reception':temp[19],
                             'Receiving Targets':temp[20],
                             'Receiving Yards':temp[21],
                             'TD Reception':temp[22],
-                            # 'Receiving Fumble':[],
+                            'Receiving Fumble':temp[23],
                             '2pt Receiving Conversion':temp[24],
                             'Each Sack':temp[25],
                             'Interception Return TD':temp[26],
                             'Fumble Return TD':temp[27],
-                            # 'Kickoff Return TD':[],
-                            # 'Punt Return TD':[],
-                            # 'Blocked Punt or FG return for TD':[],
+                            'Kickoff Return TD':temp[28],
+                            'Punt Return TD':temp[29],
+                            'Blocked Punt or FG return for TD':temp[30],
                             'Blocked Punt, PAT or FG':temp[31],
                             'Each Interception':temp[32],
                             'Each Fumble Recovered':temp[33],
@@ -415,9 +413,9 @@ for wk in range(1,3):
                             '450-499 yards allowed':temp[47],
                             '500-549 yards allowed':temp[48],
                             '550+ yards allowed':temp[49],
-                            # '2pt Return':[],
+                            '2pt Return':0,
                             '1pt Safety':temp[51],
-                            # 'Defense Fumbles Lost':[],
+                            'Defense Fumbles Lost':temp[52],
                             'Actual':[plyr.points]
                             })
 
@@ -437,3 +435,4 @@ for wk in range(1,3):
 
 # print(player_df)
 # player_df.to_excel('playerpointsnew.xlsx', sheet_name='Sheet1', index=False)
+print(pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val'))
