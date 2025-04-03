@@ -244,7 +244,7 @@ print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakd
 print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
 print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
 print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(7)[5].away_lineup[15].points_breakdown)
+print(league.box_scores(12)[0].away_lineup[15].points_breakdown)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -324,8 +324,7 @@ for wk in range(1,3):
                     'defensive14To17PointsAllowed',
                     'defensive28To34PointsAllowed',
                     'defensive35To45PointsAllowed',
-                    # 46 plus points allowed
-                    '',
+                    'defensive45PlusPointsAllowed',
                     'defensiveLessThan100YardsAllowed',
                     'defensive100To199YardsAllowed',
                     'defensive200To299YardsAllowed',
@@ -407,7 +406,7 @@ for wk in range(1,3):
                             '14-17 points allowed':temp[38],
                             '28-34 points allowed':temp[39],
                             '35-45 points allowed':temp[40],
-                            # '46+ points allowed':[],
+                            '46+ points allowed':temp[41],
                             'Less than 100 total yards allowed':temp[42],
                             '100-199 total yards allowed':temp[43],
                             '200-299 yards allowed':temp[44],
