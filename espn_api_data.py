@@ -244,7 +244,7 @@ temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
 # print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
 # print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(11)[2].home_lineup[12].stats)
+print(league.box_scores(5))
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -264,175 +264,179 @@ print(league.box_scores(11)[2].home_lineup[12].stats)
 # print(league.draft)
 # print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
-for wk in range(1,3):
+for wk in range(1,10):
     box_score = league.box_scores(wk)
     player_wk=wk
     for matchup in range(6):
-        for player in range(16):
-            player_name_home = box_score[matchup].home_lineup[player].name
-            plyr = box_score[matchup].home_lineup[player]
-            pos = plyr.position
-            qb,rb,other = '','',''
-            if pos=='QB':
-                qb,rb,other='lostFumbles','junk','junk'
-            elif pos=='RB':
-                qb,rb,other='junk','lostFumbles','junk'
-            else:
-                qb,rb,other='junk','junk','lostFumbles'
-            temp = []
-            stats = [
-                    'madeExtraPoints',
-                    'attemptedExtraPoints',
-                    'madeFieldGoalsFromUnder40',
-                    'madeFieldGoalsFrom50Plus',
-                    'madeFieldGoalsFrom60Plus',
-                    'madeFieldGoals',
-                    'attemptedFieldGoals',
-                    'passingCompletions',
-                    'passingAttempts',
-                    'passingYards',
-                    'passingTouchdowns',
-                    'passingInterceptions',
-                    qb,
-                    'passing2PtConversions',
-                    'rushingAttempts',
-                    'rushingYards',
-                    'rushingTouchdowns',
-                    rb,
-                    'rushing2PtConversions',
-                    'receivingReceptions',
-                    'receivingTargets',
-                    'receivingYards',
-                    'receivingTouchdowns',
-                    other,
-                    'receiving2PtConversions',
-                    'defensiveSacks',
-                    'interceptionReturnTouchdowns',
-                    'fumbleReturnTouchdowns',
-                    'kickoffReturnTouchdowns',
-                    'puntReturnTouchdowns',
-                    'defensiveBlockedKickForTouchdowns',
-                    'defensiveBlockedKicks',
-                    'defensiveInterceptions',
-                    'defensiveForcedFumbles',
-                    'defensiveSafeties',
-                    'defensive0PointsAllowed',
-                    'defensive1To6PointsAllowed',
-                    'defensive7To13PointsAllowed',
-                    'defensive14To17PointsAllowed',
-                    'defensive28To34PointsAllowed',
-                    'defensive35To45PointsAllowed',
-                    'defensive45PlusPointsAllowed',
-                    'defensiveLessThan100YardsAllowed',
-                    'defensive100To199YardsAllowed',
-                    'defensive200To299YardsAllowed',
-                    'defensive300To349YardsAllowed',
-                    'defensive350To399YardsAllowed',
-                    'defensive400To449YardsAllowed',
-                    'defensive450To499YardsAllowed',
-                    'defensive500To549YardsAllowed',
-                    'defensive550PlusYardsAllowed',
-                    # '2pt Return':[],
-                    'junk',
-                    'defensiveSafeties',
-                    'defensiveFumbles'
-
-
-
-
-
-
-
-                    ]
-            for item in stats:
-                try:
-                    value=plyr.points_breakdown[item]
-
-                except KeyError:
-                    value=[0]
-                temp.append(value)
-            
-            player_row_home = pd.DataFrame({
-                            'Week':[player_wk],
-                            'FantasyTeam':[box_score[matchup].home_team.team_name],
-                            'Name':[player_name_home],
-                            'Team':[plyr.proTeam],
-                            'Status':[plyr.active_status],
-                            'Opponent':[plyr.pro_opponent],
-                            'Position':[plyr.position],
-                            'PositionRank':[plyr.posRank],
-                            'Bye':[plyr.on_bye_week],
-                            'Projected':[plyr.projected_points],
-                            'Each PAT Made':temp[0],
-                            'PAT Attempt':temp[1],
-                            'FG Made (0-39 yards)':temp[2],
-                            'FG Made (40-49 yards)':temp[3],
-                            'FG Made (50-50 yards)':temp[4],
-                            'FG Made (60+ yards)':temp[5],
-                            'Field Goal Attempted':temp[6],
-                            'Passes Caught':temp[7],
-                            'Pass Attempts':temp[8],
-                            'Passing Yards':temp[9],
-                            'TD Pass':temp[10],
-                            'Interceptions Thrown':temp[11],
-                            'Passer Fumble':temp[12],
-                            '2pt Passing Conversion':temp[13],
-                            'Rushing Attempts':temp[14],
-                            'Rushing Yards':temp[15],
-                            'TD Rush':temp[16],
-                            'Rushing Fumble':temp[17],
-                            '2pt Rushing Conversion':temp[18],
-                            'Each Reception':temp[19],
-                            'Receiving Targets':temp[20],
-                            'Receiving Yards':temp[21],
-                            'TD Reception':temp[22],
-                            'Receiving Fumble':temp[23],
-                            '2pt Receiving Conversion':temp[24],
-                            'Each Sack':temp[25],
-                            'Interception Return TD':temp[26],
-                            'Fumble Return TD':temp[27],
-                            'Kickoff Return TD':temp[28],
-                            'Punt Return TD':temp[29],
-                            'Blocked Punt or FG return for TD':temp[30],
-                            'Blocked Punt, PAT or FG':temp[31],
-                            'Each Interception':temp[32],
-                            'Each Fumble Recovered':temp[33],
-                            'Each Safety':temp[34],
-                            '0 points allowed':temp[35],
-                            '1-6 points allowed':temp[36],
-                            '7-13 points allowed':temp[37],
-                            '14-17 points allowed':temp[38],
-                            '28-34 points allowed':temp[39],
-                            '35-45 points allowed':temp[40],
-                            '46+ points allowed':temp[41],
-                            'Less than 100 total yards allowed':temp[42],
-                            '100-199 total yards allowed':temp[43],
-                            '200-299 yards allowed':temp[44],
-                            '300-399 yards allowed':temp[45],
-                            '400-449 yards allowed':temp[46],
-                            '450-499 yards allowed':temp[47],
-                            '500-549 yards allowed':temp[48],
-                            '550+ yards allowed':temp[49],
-                            '2pt Return':0,
-                            '1pt Safety':temp[51],
-                            'Defense Fumbles Lost':temp[52],
-                            'Actual':[plyr.points]
-                            })
-
-            player_df = pd.concat([player_df,player_row_home],ignore_index=True)
-        if box_score[matchup].away_team==0:
-            pass
-        else:
+        for i in ['home','away']:
             for player in range(16):
-                player_name_away = box_score[matchup].away_lineup[player].name
-                player_row_away = pd.DataFrame({
-                                'Week':[player_wk],
-                                'FantasyTeam':[box_score[matchup].away_team.team_name],
-                                'Name':[player_name_away],
-                                'Team':[box_score[matchup].away_lineup[player].proTeam]
-                             })
-                player_df = pd.concat([player_df,player_row_away],ignore_index=True)
+                if box_score[matchup].away_team==0:
+                    pass
+                else:
+                    if i =='home':
+                        player_name_home = box_score[matchup].home_lineup[player].name
+                        plyr = box_score[matchup].home_lineup[player]
+                        team = box_score[matchup].home_team.team_name
+                    else:
+                        player_name_home = box_score[matchup].away_lineup[player].name
+                        plyr = box_score[matchup].away_lineup[player]
+                        team = box_score[matchup].away_team.team_name
+                    pos = plyr.position
+                    qb,rb,other = '','',''
+                    if pos=='QB':
+                        qb,rb,other='lostFumbles','junk','junk'
+                    elif pos=='RB':
+                        qb,rb,other='junk','lostFumbles','junk'
+                    else:
+                        qb,rb,other='junk','junk','lostFumbles'
+                    temp = []
+                    stats = [
+                        'madeExtraPoints',
+                        'attemptedExtraPoints',
+                        'madeFieldGoalsFromUnder40',
+                        'madeFieldGoalsFrom50Plus',
+                        'madeFieldGoalsFrom60Plus',
+                        'madeFieldGoals',
+                        'attemptedFieldGoals',
+                        'passingCompletions',
+                        'passingAttempts',
+                        'passingYards',
+                        'passingTouchdowns',
+                        'passingInterceptions',
+                        qb,
+                        'passing2PtConversions',
+                        'rushingAttempts',
+                        'rushingYards',
+                        'rushingTouchdowns',
+                        rb,
+                        'rushing2PtConversions',
+                        'receivingReceptions',
+                        'receivingTargets',
+                        'receivingYards',
+                        'receivingTouchdowns',
+                        other,
+                        'receiving2PtConversions',
+                        'defensiveSacks',
+                        'interceptionReturnTouchdowns',
+                        'fumbleReturnTouchdowns',
+                        'kickoffReturnTouchdowns',
+                        'puntReturnTouchdowns',
+                        'defensiveBlockedKickForTouchdowns',
+                        'defensiveBlockedKicks',
+                        'defensiveInterceptions',
+                        'defensiveForcedFumbles',
+                        'defensiveSafeties',
+                        'defensive0PointsAllowed',
+                        'defensive1To6PointsAllowed',
+                        'defensive7To13PointsAllowed',
+                        'defensive14To17PointsAllowed',
+                        'defensive28To34PointsAllowed',
+                        'defensive35To45PointsAllowed',
+                        'defensive45PlusPointsAllowed',
+                        'defensiveLessThan100YardsAllowed',
+                        'defensive100To199YardsAllowed',
+                        'defensive200To299YardsAllowed',
+                        'defensive300To349YardsAllowed',
+                        'defensive350To399YardsAllowed',
+                        'defensive400To449YardsAllowed',
+                        'defensive450To499YardsAllowed',
+                        'defensive500To549YardsAllowed',
+                        'defensive550PlusYardsAllowed',
+                        # '2pt Return':[],
+                        'junk',
+                        'defensiveSafeties',
+                        'defensiveFumbles'
+                        ]
+                    for item in stats:
+                        try:
+                            # print(plyr.name, item, player_wk)
+                            value=plyr.points_breakdown[item]
 
-# print(player_df)
+                        except KeyError:
+                            value=[0]
+                        temp.append(value)
+                
+                    player_row_home = pd.DataFrame({
+                                'Week':[player_wk],
+                                'FantasyTeam':[team],
+                                'Name':[player_name_home],
+                                'Team':[plyr.proTeam],
+                                'Status':[plyr.active_status],
+                                'Opponent':[plyr.pro_opponent],
+                                'Position':[plyr.position],
+                                'PositionRank':[plyr.posRank],
+                                'Bye':[plyr.on_bye_week],
+                                'Projected':[plyr.projected_points],
+                                'Each PAT Made':temp[0],
+                                'PAT Attempt':temp[1],
+                                'FG Made (0-39 yards)':temp[2],
+                                'FG Made (40-49 yards)':temp[3],
+                                'FG Made (50-50 yards)':temp[4],
+                                'FG Made (60+ yards)':temp[5],
+                                'Field Goal Attempted':temp[6],
+                                'Passes Caught':temp[7],
+                                'Pass Attempts':temp[8],
+                                'Passing Yards':temp[9],
+                                'TD Pass':temp[10],
+                                'Interceptions Thrown':temp[11],
+                                'Passer Fumble':temp[12],
+                                '2pt Passing Conversion':temp[13],
+                                'Rushing Attempts':temp[14],
+                                'Rushing Yards':temp[15],
+                                'TD Rush':temp[16],
+                                'Rushing Fumble':temp[17],
+                                '2pt Rushing Conversion':temp[18],
+                                'Each Reception':temp[19],
+                                'Receiving Targets':temp[20],
+                                'Receiving Yards':temp[21],
+                                'TD Reception':temp[22],
+                                'Receiving Fumble':temp[23],
+                                '2pt Receiving Conversion':temp[24],
+                                'Each Sack':temp[25],
+                                'Interception Return TD':temp[26],
+                                'Fumble Return TD':temp[27],
+                                'Kickoff Return TD':temp[28],
+                                'Punt Return TD':temp[29],
+                                'Blocked Punt or FG return for TD':temp[30],
+                                'Blocked Punt, PAT or FG':temp[31],
+                                'Each Interception':temp[32],
+                                'Each Fumble Recovered':temp[33],
+                                'Each Safety':temp[34],
+                                '0 points allowed':temp[35],
+                                '1-6 points allowed':temp[36],
+                                '7-13 points allowed':temp[37],
+                                '14-17 points allowed':temp[38],
+                                '28-34 points allowed':temp[39],
+                                '35-45 points allowed':temp[40],
+                                '46+ points allowed':temp[41],
+                                'Less than 100 total yards allowed':temp[42],
+                                '100-199 total yards allowed':temp[43],
+                                '200-299 yards allowed':temp[44],
+                                '300-399 yards allowed':temp[45],
+                                '400-449 yards allowed':temp[46],
+                                '450-499 yards allowed':temp[47],
+                                '500-549 yards allowed':temp[48],
+                                '550+ yards allowed':temp[49],
+                                '2pt Return':0,
+                                '1pt Safety':temp[51],
+                                'Defense Fumbles Lost':temp[52],
+                                'Actual':[plyr.points]
+                                })
+
+                    player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+        # if box_score[matchup].away_team==0:
+        #     pass
+        # else:
+        #     for player in range(16):
+        #         player_name_away = box_score[matchup].away_lineup[player].name
+        #         player_row_away = pd.DataFrame({
+        #                         'Week':[player_wk],
+        #                         'FantasyTeam':[box_score[matchup].away_team.team_name],
+        #                         'Name':[player_name_away],
+        #                         'Team':[box_score[matchup].away_lineup[player].proTeam]
+        #                      })
+        #         player_df = pd.concat([player_df,player_row_away],ignore_index=True)
+
+print(player_df)
 # player_df.to_excel('playerpointsnew.xlsx', sheet_name='Sheet1', index=False)
 print(pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val'))
