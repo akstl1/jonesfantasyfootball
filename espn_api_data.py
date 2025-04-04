@@ -273,19 +273,27 @@ for wk in range(1,18):
                 if box_score[matchup].away_team==0:
                     pass
                 else:
+                    empty=0
                     if i =='home':
-                        player_name_home = box_score[matchup].home_lineup[player].name
-                        plyr = box_score[matchup].home_lineup[player]
-                        team = box_score[matchup].home_team.team_name
-                        bye = box_score[matchup].home_lineup[player].on_bye_week
-                        status = box_score[matchup].home_lineup[player].active_status
+                        try:
+                            player_name_home = box_score[matchup].home_lineup[player].name
+                            plyr = box_score[matchup].home_lineup[player]
+                            team = box_score[matchup].home_team.team_name
+                            bye = box_score[matchup].home_lineup[player].on_bye_week
+                            status = box_score[matchup].home_lineup[player].active_status
+                            pos = plyr.position
+                        except IndexError:
+                            empty=1
                     else:
-                        player_name_home = box_score[matchup].away_lineup[player].name
-                        plyr = box_score[matchup].away_lineup[player]
-                        team = box_score[matchup].away_team.team_name
-                        bye = box_score[matchup].away_lineup[player].on_bye_week
-                        status = box_score[matchup].away_lineup[player].active_status
-                    pos = plyr.position
+                        try:
+                            player_name_home = box_score[matchup].away_lineup[player].name
+                            plyr = box_score[matchup].away_lineup[player]
+                            team = box_score[matchup].away_team.team_name
+                            bye = box_score[matchup].away_lineup[player].on_bye_week
+                            status = box_score[matchup].away_lineup[player].active_status
+                            pos = plyr.position
+                        except IndexError:
+                            empty=1
                     qb,rb,other = '','',''
                     if pos=='QB':
                         qb,rb,other='lostFumbles','junk','junk'
@@ -351,7 +359,7 @@ for wk in range(1,18):
                         'defensiveSafeties',
                         'defensiveFumbles'
                         ]
-                    if not(bye) and status!='bye':
+                    if not(bye) and status!='bye' and empty==0:
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
@@ -429,6 +437,8 @@ for wk in range(1,18):
                                 })
 
                         player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+                    elif empty==1:
+                        pass
                     else:
                         temp2 = [0]*54
                         player_row_bye = pd.DataFrame({
@@ -499,20 +509,9 @@ for wk in range(1,18):
                                 })
 
                         player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
+                    empty=0
 
-        # if box_score[matchup].away_team==0:
-        #     pass
-        # else:
-        #     for player in range(16):
-        #         player_name_away = box_score[matchup].away_lineup[player].name
-        #         player_row_away = pd.DataFrame({
-        #                         'Week':[player_wk],
-        #                         'FantasyTeam':[box_score[matchup].away_team.team_name],
-        #                         'Name':[player_name_away],
-        #                         'Team':[box_score[matchup].away_lineup[player].proTeam]
-        #                      })
-        #         player_df = pd.concat([player_df,player_row_away],ignore_index=True)
-
-print(player_df)
-player_df.to_excel('playerpointsnew.xlsx', sheet_name='Sheet1', index=False)
-print(pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val'))
+# print(player_df)
+player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val')
+player_df_final = pd.DataFrame(player_df_new)
+player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
