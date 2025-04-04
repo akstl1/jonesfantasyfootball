@@ -244,7 +244,7 @@ temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
 # print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
 # print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(5))
+print(league.box_scores(5)[2].home_lineup[8].active_status)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -264,12 +264,12 @@ print(league.box_scores(5))
 # print(league.draft)
 # print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
-for wk in range(1,10):
+for wk in range(1,18):
     box_score = league.box_scores(wk)
     player_wk=wk
     for matchup in range(6):
         for i in ['home','away']:
-            for player in range(16):
+            for player in range(17):
                 if box_score[matchup].away_team==0:
                     pass
                 else:
@@ -277,10 +277,14 @@ for wk in range(1,10):
                         player_name_home = box_score[matchup].home_lineup[player].name
                         plyr = box_score[matchup].home_lineup[player]
                         team = box_score[matchup].home_team.team_name
+                        bye = box_score[matchup].home_lineup[player].on_bye_week
+                        status = box_score[matchup].home_lineup[player].active_status
                     else:
                         player_name_home = box_score[matchup].away_lineup[player].name
                         plyr = box_score[matchup].away_lineup[player]
                         team = box_score[matchup].away_team.team_name
+                        bye = box_score[matchup].away_lineup[player].on_bye_week
+                        status = box_score[matchup].away_lineup[player].active_status
                     pos = plyr.position
                     qb,rb,other = '','',''
                     if pos=='QB':
@@ -347,16 +351,17 @@ for wk in range(1,10):
                         'defensiveSafeties',
                         'defensiveFumbles'
                         ]
-                    for item in stats:
-                        try:
-                            # print(plyr.name, item, player_wk)
-                            value=plyr.points_breakdown[item]
+                    if not(bye) and status!='bye':
+                        for item in stats:
+                            try:
+                                # print(plyr.name, item, player_wk)
+                                value=plyr.points_breakdown[item]
 
-                        except KeyError:
-                            value=[0]
-                        temp.append(value)
+                            except KeyError:
+                                value=[0]
+                            temp.append(value)
                 
-                    player_row_home = pd.DataFrame({
+                        player_row_home = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
                                 'Name':[player_name_home],
@@ -423,7 +428,78 @@ for wk in range(1,10):
                                 'Actual':[plyr.points]
                                 })
 
-                    player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+                        player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+                    else:
+                        temp2 = [0]*54
+                        player_row_bye = pd.DataFrame({
+                                'Week':[player_wk],
+                                'FantasyTeam':[team],
+                                'Name':[player_name_home],
+                                'Team':[plyr.proTeam],
+                                'Status':[plyr.active_status],
+                                'Opponent':[plyr.pro_opponent],
+                                'Position':[plyr.position],
+                                'PositionRank':[plyr.posRank],
+                                'Bye':1,
+                                'Projected':0,
+                                'Each PAT Made':temp2[0],
+                                'PAT Attempt':temp2[1],
+                                'FG Made (0-39 yards)':temp2[2],
+                                'FG Made (40-49 yards)':temp2[3],
+                                'FG Made (50-50 yards)':temp2[4],
+                                'FG Made (60+ yards)':temp2[5],
+                                'Field Goal Attempted':temp2[6],
+                                'Passes Caught':temp2[7],
+                                'Pass Attempts':temp2[8],
+                                'Passing Yards':temp2[9],
+                                'TD Pass':temp2[10],
+                                'Interceptions Thrown':temp2[11],
+                                'Passer Fumble':temp2[12],
+                                '2pt Passing Conversion':temp2[13],
+                                'Rushing Attempts':temp2[14],
+                                'Rushing Yards':temp2[15],
+                                'TD Rush':temp2[16],
+                                'Rushing Fumble':temp2[17],
+                                '2pt Rushing Conversion':temp2[18],
+                                'Each Reception':temp2[19],
+                                'Receiving Targets':temp2[20],
+                                'Receiving Yards':temp2[21],
+                                'TD Reception':temp2[22],
+                                'Receiving Fumble':temp2[23],
+                                '2pt Receiving Conversion':temp2[24],
+                                'Each Sack':temp2[25],
+                                'Interception Return TD':temp2[26],
+                                'Fumble Return TD':temp2[27],
+                                'Kickoff Return TD':temp2[28],
+                                'Punt Return TD':temp2[29],
+                                'Blocked Punt or FG return for TD':temp2[30],
+                                'Blocked Punt, PAT or FG':temp2[31],
+                                'Each Interception':temp2[32],
+                                'Each Fumble Recovered':temp2[33],
+                                'Each Safety':temp2[34],
+                                '0 points allowed':temp2[35],
+                                '1-6 points allowed':temp2[36],
+                                '7-13 points allowed':temp2[37],
+                                '14-17 points allowed':temp2[38],
+                                '28-34 points allowed':temp2[39],
+                                '35-45 points allowed':temp2[40],
+                                '46+ points allowed':temp2[41],
+                                'Less than 100 total yards allowed':temp2[42],
+                                '100-199 total yards allowed':temp2[43],
+                                '200-299 yards allowed':temp2[44],
+                                '300-399 yards allowed':temp2[45],
+                                '400-449 yards allowed':temp2[46],
+                                '450-499 yards allowed':temp2[47],
+                                '500-549 yards allowed':temp2[48],
+                                '550+ yards allowed':temp2[49],
+                                '2pt Return':0,
+                                '1pt Safety':temp2[51],
+                                'Defense Fumbles Lost':temp2[52],
+                                'Actual':0
+                                })
+
+                        player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
+
         # if box_score[matchup].away_team==0:
         #     pass
         # else:
@@ -438,5 +514,5 @@ for wk in range(1,10):
         #         player_df = pd.concat([player_df,player_row_away],ignore_index=True)
 
 print(player_df)
-# player_df.to_excel('playerpointsnew.xlsx', sheet_name='Sheet1', index=False)
+player_df.to_excel('playerpointsnew.xlsx', sheet_name='Sheet1', index=False)
 print(pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val'))
