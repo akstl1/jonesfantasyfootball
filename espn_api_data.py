@@ -8,14 +8,8 @@ league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), e
 
 
 # print(league.standings_weekly(1))
-# print(league.scoreboard(5))
-# print(league.teams)
-# team = league.teams[6]
 # standing = team.stats
 # print(league.standings_weekly(1))
-# print(team)
-# print(team.roster)
-# print(league.power_rankings(week=13))
 # print(team.roster[0].stats)
 # print(league.load_roster_week(7))
 # print(team.outcomes)
