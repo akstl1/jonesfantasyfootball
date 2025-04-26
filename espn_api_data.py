@@ -154,12 +154,15 @@ for wk in range(1,19):
 
 player_df = pd.DataFrame({  'Week':[],
                             'FantasyTeam':[],
-                            'Name':[],
+                            'Player Name':[],
+                            'PlayerID':[],
+                            'Headshot_url':[],
                             'Status':[],
-                            'Team':[],
+                            'NFL_Team':[],
                             'Opponent':[],
                             'Position':[],
                             'PositionRank':[],
+                            'PlayerKey':[],
                             'Bye':[],
                             'Projected':[],
                             'Each PAT Made':[],
@@ -271,21 +274,33 @@ for wk in range(1,18):
                     if i =='home':
                         try:
                             player_name_home = box_score[matchup].home_lineup[player].name
+                            player_id = box_score[matchup].home_lineup[player].playerId
                             plyr = box_score[matchup].home_lineup[player]
                             team = box_score[matchup].home_team.team_name
                             bye = box_score[matchup].home_lineup[player].on_bye_week
                             status = box_score[matchup].home_lineup[player].active_status
                             pos = plyr.position
+                            player_key = str(player_wk)+player_name_home
+                            if pos != 'D/ST':
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                            else:
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
                         except IndexError:
                             empty=1
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
+                            player_id = box_score[matchup].away_lineup[player].playerId
                             plyr = box_score[matchup].away_lineup[player]
                             team = box_score[matchup].away_team.team_name
                             bye = box_score[matchup].away_lineup[player].on_bye_week
                             status = box_score[matchup].away_lineup[player].active_status
                             pos = plyr.position
+                            player_key = str(player_wk)+player_name_home
+                            if pos != 'D/ST':
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                            else:
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
                         except IndexError:
                             empty=1
                     qb,rb,other = '','',''
@@ -366,12 +381,15 @@ for wk in range(1,18):
                         player_row_home = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
-                                'Name':[player_name_home],
-                                'Team':[plyr.proTeam],
+                                'Player Name':[player_name_home],
+                                'PlayerID':[player_id],
+                                'Headshot_url':[headshot],
+                                'NFL_Team':[plyr.proTeam],
                                 'Status':[plyr.active_status],
                                 'Opponent':[plyr.pro_opponent],
                                 'Position':[plyr.position],
                                 'PositionRank':[plyr.posRank],
+                                'PlayerKey':[player_key],
                                 'Bye':[plyr.on_bye_week],
                                 'Projected':[plyr.projected_points],
                                 'Each PAT Made':temp[0],
@@ -438,12 +456,15 @@ for wk in range(1,18):
                         player_row_bye = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
-                                'Name':[player_name_home],
-                                'Team':[plyr.proTeam],
+                                'Player Name':[player_name_home],
+                                'PlayerID':[player_id],
+                                'Headshot_url':[headshot],
+                                'NFL_Team':[plyr.proTeam],
                                 'Status':[plyr.active_status],
                                 'Opponent':[plyr.pro_opponent],
                                 'Position':[plyr.position],
                                 'PositionRank':[plyr.posRank],
+                                'PlayerKey':[player_key],
                                 'Bye':1,
                                 'Projected':0,
                                 'Each PAT Made':temp2[0],
@@ -506,6 +527,6 @@ for wk in range(1,18):
                     empty=0
 
 # print(player_df)
-player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Name','Status','Team','Opponent','Position','PositionRank','Bye','Projected','Actual'],var_name='Stat',value_name='Val')
+player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual'],var_name='Attribute',value_name='Value')
 player_df_final = pd.DataFrame(player_df_new)
 player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
