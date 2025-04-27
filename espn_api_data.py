@@ -210,7 +210,7 @@ player_df = pd.DataFrame({  'Week':[],
                             'Less than 100 total yards allowed':[],
                             '100-199 total yards allowed':[],
                             '200-299 yards allowed':[],
-                            '300-399 yards allowed':[],
+                            '350-399 yards allowed':[],
                             '400-449 yards allowed':[],
                             '450-499 yards allowed':[],
                             '500-549 yards allowed':[],
@@ -241,7 +241,7 @@ temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
 # print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
 # print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-print(league.box_scores(5)[2].home_lineup[8].active_status)
+# print(league.box_scores(5)[2].home_lineup[8].active_status)
 
 # print(league.box_scores(13)[1].home_lineup[7].position)
 # print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
@@ -259,9 +259,13 @@ print(league.box_scores(5)[2].home_lineup[8].active_status)
 # print(league.box_scores(14)[1].home_lineup[7].total_points)
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
-# print(league.box_scores(13)[1].home_lineup[0].points_breakdown['passingAttempts'])
 
-for wk in range(1,18):
+player = league.box_scores(1)[0].away_lineup[7]
+print(player)
+
+print(player.points_breakdown,player.name,player.proTeam)
+
+for wk in range(1,2):
     box_score = league.box_scores(wk)
     player_wk=wk
     for matchup in range(6):
@@ -285,8 +289,11 @@ for wk in range(1,18):
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                            if player_id==8439:
+                                print("loop1", player_name_home, plyr, team, bye, status)
                         except IndexError:
                             empty=1
+                            print('empty1')
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
@@ -301,8 +308,11 @@ for wk in range(1,18):
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                            if player_id==8439:
+                                print("loop2", player_name_home, plyr, team, bye, status)
                         except IndexError:
                             empty=1
+                            print('empty2')
                     qb,rb,other = '','',''
                     if pos=='QB':
                         qb,rb,other='lostFumbles','junk','junk'
@@ -315,9 +325,10 @@ for wk in range(1,18):
                         'madeExtraPoints',
                         'attemptedExtraPoints',
                         'madeFieldGoalsFromUnder40',
+                        'madeFieldGoalsFrom40To49',
                         'madeFieldGoalsFrom50Plus',
                         'madeFieldGoalsFrom60Plus',
-                        'madeFieldGoals',
+                        # 'madeFieldGoals',
                         'attemptedFieldGoals',
                         'passingCompletions',
                         'passingAttempts',
@@ -345,7 +356,7 @@ for wk in range(1,18):
                         'defensiveBlockedKickForTouchdowns',
                         'defensiveBlockedKicks',
                         'defensiveInterceptions',
-                        'defensiveForcedFumbles',
+                        'defensiveFumbles',
                         'defensiveSafeties',
                         'defensive0PointsAllowed',
                         'defensive1To6PointsAllowed',
@@ -357,7 +368,7 @@ for wk in range(1,18):
                         'defensiveLessThan100YardsAllowed',
                         'defensive100To199YardsAllowed',
                         'defensive200To299YardsAllowed',
-                        'defensive300To349YardsAllowed',
+                        # 'defensive300To349YardsAllowed',
                         'defensive350To399YardsAllowed',
                         'defensive400To449YardsAllowed',
                         'defensive450To499YardsAllowed',
@@ -366,18 +377,23 @@ for wk in range(1,18):
                         # '2pt Return':[],
                         'junk',
                         'defensiveSafeties',
-                        'defensiveFumbles'
+                        'junk' #'defensiveFumbles'
                         ]
                     if not(bye) and status!='bye' and empty==0:
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
                                 value=plyr.points_breakdown[item]
+                                if player_id==8439:
+                                    print("try2", player_name_home, item, value)
 
                             except KeyError:
-                                value=[0]
+                                value=0
+                                if player_id==8439:
+                                    print("keyerror2", player_name_home, item, value)
                             temp.append(value)
-                
+                            if player_id==8439:
+                                print("loop3", player_name_home, plyr, team, bye, status)
                         player_row_home = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
@@ -396,7 +412,7 @@ for wk in range(1,18):
                                 'PAT Attempt':temp[1],
                                 'FG Made (0-39 yards)':temp[2],
                                 'FG Made (40-49 yards)':temp[3],
-                                'FG Made (50-50 yards)':temp[4],
+                                'FG Made (50-59 yards)':temp[4],
                                 'FG Made (60+ yards)':temp[5],
                                 'Field Goal Attempted':temp[6],
                                 'Passes Caught':temp[7],
@@ -437,7 +453,7 @@ for wk in range(1,18):
                                 'Less than 100 total yards allowed':temp[42],
                                 '100-199 total yards allowed':temp[43],
                                 '200-299 yards allowed':temp[44],
-                                '300-399 yards allowed':temp[45],
+                                '350-399 yards allowed':temp[45],
                                 '400-449 yards allowed':temp[46],
                                 '450-499 yards allowed':temp[47],
                                 '500-549 yards allowed':temp[48],
@@ -450,8 +466,10 @@ for wk in range(1,18):
 
                         player_df = pd.concat([player_df,player_row_home],ignore_index=True)
                     elif empty==1:
+                        print('emptyloop')
                         pass
                     else:
+                        print('zerosloop', player_id,bye, status, empty,not(bye), status!='bye', empty==0,  not(bye) and status!='bye' and empty==0)
                         temp2 = [0]*54
                         player_row_bye = pd.DataFrame({
                                 'Week':[player_wk],
@@ -512,7 +530,7 @@ for wk in range(1,18):
                                 'Less than 100 total yards allowed':temp2[42],
                                 '100-199 total yards allowed':temp2[43],
                                 '200-299 yards allowed':temp2[44],
-                                '300-399 yards allowed':temp2[45],
+                                '350-399 yards allowed':temp2[45],
                                 '400-449 yards allowed':temp2[46],
                                 '450-499 yards allowed':temp2[47],
                                 '500-549 yards allowed':temp2[48],
@@ -526,7 +544,14 @@ for wk in range(1,18):
                         player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
                     empty=0
 
-# print(player_df)
+print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
+def hundredyardgame(value):
+    if value<100:
+        return 0
+    else:
+        return 1
+player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
+player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
 player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual'],var_name='Attribute',value_name='Value')
-player_df_final = pd.DataFrame(player_df_new)
-player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+# player_df_final = pd.DataFrame(player_df_new)
+# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
