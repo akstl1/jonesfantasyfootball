@@ -265,7 +265,7 @@ print(player)
 
 print(player.points_breakdown,player.name,player.proTeam)
 
-for wk in range(1,2):
+for wk in range(1,18):
     box_score = league.box_scores(wk)
     player_wk=wk
     for matchup in range(6):
@@ -293,7 +293,7 @@ for wk in range(1,2):
                                 print("loop1", player_name_home, plyr, team, bye, status)
                         except IndexError:
                             empty=1
-                            print('empty1')
+                            # print('empty1')
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
@@ -379,21 +379,21 @@ for wk in range(1,2):
                         'defensiveSafeties',
                         'junk' #'defensiveFumbles'
                         ]
-                    if not(bye) and status!='bye' and empty==0:
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10):
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
                                 value=plyr.points_breakdown[item]
-                                if player_id==8439:
-                                    print("try2", player_name_home, item, value)
+                                # if player_id==8439:
+                                    # print("try2", player_name_home, item, value)
 
                             except KeyError:
                                 value=0
-                                if player_id==8439:
-                                    print("keyerror2", player_name_home, item, value)
+                                # if player_id==8439:
+                                    # print("keyerror2", player_name_home, item, value)
                             temp.append(value)
-                            if player_id==8439:
-                                print("loop3", player_name_home, plyr, team, bye, status)
+                            # if player_id==8439:
+                                # print("loop3", player_name_home, plyr, team, bye, status)
                         player_row_home = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
@@ -466,10 +466,10 @@ for wk in range(1,2):
 
                         player_df = pd.concat([player_df,player_row_home],ignore_index=True)
                     elif empty==1:
-                        print('emptyloop')
+                        # print('emptyloop')
                         pass
                     else:
-                        print('zerosloop', player_id,bye, status, empty,not(bye), status!='bye', empty==0,  not(bye) and status!='bye' and empty==0)
+                        # print('zerosloop', player_id,bye, status, empty,not(bye), status!='bye', empty==0, not(bye) and status!='bye' and empty==0)
                         temp2 = [0]*54
                         player_row_bye = pd.DataFrame({
                                 'Week':[player_wk],
@@ -544,7 +544,7 @@ for wk in range(1,2):
                         player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
                     empty=0
 
-print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
+# print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
 def hundredyardgame(value):
     if value<100:
         return 0
@@ -553,5 +553,5 @@ def hundredyardgame(value):
 player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
 player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
 player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual'],var_name='Attribute',value_name='Value')
-# player_df_final = pd.DataFrame(player_df_new)
-# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+player_df_final = pd.DataFrame(player_df_new)
+player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
