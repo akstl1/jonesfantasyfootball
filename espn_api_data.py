@@ -261,7 +261,7 @@ temp_player = league.box_scores(15)[2]
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
-player = league.box_scores(2)[0].home_lineup[4]
+player = league.box_scores(2)[1].home_lineup[6]
 print(player)
 
 print(player.points_breakdown,player.name,player.proTeam)
@@ -555,8 +555,14 @@ def hundredyardgame(value):
         return 0
     else:
         return 1
+def threehundredyardpassinggame(value):
+    if value<300:
+        return 0
+    else:
+        return 1
 player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
 player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
+player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehundredyardpassinggame)
 player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual'],var_name='Attribute',value_name='Value')
 player_df_final = pd.DataFrame(player_df_new)
 player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
