@@ -261,7 +261,7 @@ temp_player = league.box_scores(15)[2]
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
-player = league.box_scores(2)[1].home_lineup[6]
+player = league.box_scores(3)[1].away_lineup[10]
 print(player)
 
 print(player.points_breakdown,player.name,player.proTeam)
@@ -382,7 +382,7 @@ for wk in range(1,18):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10):
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11)  :
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
@@ -415,7 +415,7 @@ for wk in range(1,18):
                                 'PAT Attempt':temp[1],
                                 'FG Made (0-39 yards)':temp[2],
                                 'FG Made (40-49 yards)':temp[3],
-                                'FG Made (50-59 yards)':temp[4],
+                                'FG Made (50-59 yards)':temp[4] - temp[5],
                                 'FG Made (60+ yards)':temp[5],
                                 'Field Goal Attempted':temp[6],
                                 'Passes Caught':temp[7],
