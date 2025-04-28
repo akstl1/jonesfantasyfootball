@@ -218,7 +218,8 @@ player_df = pd.DataFrame({  'Week':[],
                             '2pt Return':[],
                             '1pt Safety':[],
                             'Defense Fumbles Lost':[],
-                            'Actual':[]
+                            'Actual':[],
+                            'Fumble Recovered for TD':[]
                             })
 
 # print(league.box_scores(17))
@@ -260,7 +261,7 @@ temp_player = league.box_scores(15)[2]
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
-player = league.box_scores(1)[0].away_lineup[7]
+player = league.box_scores(2)[0].home_lineup[4]
 print(player)
 
 print(player.points_breakdown,player.name,player.proTeam)
@@ -268,6 +269,7 @@ print(player.points_breakdown,player.name,player.proTeam)
 for wk in range(1,18):
     box_score = league.box_scores(wk)
     player_wk=wk
+    print(wk)
     for matchup in range(6):
         for i in ['home','away']:
             for player in range(17):
@@ -289,8 +291,8 @@ for wk in range(1,18):
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
-                            if player_id==8439:
-                                print("loop1", player_name_home, plyr, team, bye, status)
+                            # if player_id==8439:
+                                # print("loop1", player_name_home, plyr, team, bye, status)
                         except IndexError:
                             empty=1
                             # print('empty1')
@@ -308,11 +310,11 @@ for wk in range(1,18):
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
-                            if player_id==8439:
-                                print("loop2", player_name_home, plyr, team, bye, status)
+                            # if player_id==8439:
+                                # print("loop2", player_name_home, plyr, team, bye, status)
                         except IndexError:
                             empty=1
-                            print('empty2')
+                            # print('empty2')
                     qb,rb,other = '','',''
                     if pos=='QB':
                         qb,rb,other='lostFumbles','junk','junk'
@@ -377,7 +379,8 @@ for wk in range(1,18):
                         # '2pt Return':[],
                         'junk',
                         'defensiveSafeties',
-                        'junk' #'defensiveFumbles'
+                        'junk' #'defensiveFumbles'/,
+                        ,'fumbleRecoveredForTD'
                         ]
                     if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10):
                         for item in stats:
@@ -461,7 +464,8 @@ for wk in range(1,18):
                                 '2pt Return':0,
                                 '1pt Safety':temp[51],
                                 'Defense Fumbles Lost':temp[52],
-                                'Actual':[plyr.points]
+                                'Actual':[plyr.points],
+                                'Fumble Recovered for TD':temp[53]
                                 })
 
                         player_df = pd.concat([player_df,player_row_home],ignore_index=True)
@@ -470,7 +474,7 @@ for wk in range(1,18):
                         pass
                     else:
                         # print('zerosloop', player_id,bye, status, empty,not(bye), status!='bye', empty==0, not(bye) and status!='bye' and empty==0)
-                        temp2 = [0]*54
+                        temp2 = [0]*55
                         player_row_bye = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
@@ -538,7 +542,8 @@ for wk in range(1,18):
                                 '2pt Return':0,
                                 '1pt Safety':temp2[51],
                                 'Defense Fumbles Lost':temp2[52],
-                                'Actual':0
+                                'Actual':0,
+                                'Fumble Recovered for TD':temp2[53]
                                 })
 
                         player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
