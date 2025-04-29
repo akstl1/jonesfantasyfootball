@@ -261,7 +261,7 @@ temp_player = league.box_scores(15)[2]
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
-player = league.box_scores(3)[1].away_lineup[10]
+player = league.box_scores(8)[1].away_lineup[10]
 print(player)
 
 print(player.points_breakdown,player.name,player.proTeam)
@@ -280,6 +280,7 @@ for wk in range(1,18):
                     if i =='home':
                         try:
                             player_name_home = box_score[matchup].home_lineup[player].name
+                            print(player_name_home, player_wk)
                             player_id = box_score[matchup].home_lineup[player].playerId
                             plyr = box_score[matchup].home_lineup[player]
                             team = box_score[matchup].home_team.team_name
@@ -299,6 +300,7 @@ for wk in range(1,18):
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
+                            print(player_name_home, player_wk)
                             player_id = box_score[matchup].away_lineup[player].playerId
                             plyr = box_score[matchup].away_lineup[player]
                             team = box_score[matchup].away_team.team_name
@@ -382,7 +384,7 @@ for wk in range(1,18):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9) or (player_id==4038815 and player_wk!=12)  :
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  :
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
