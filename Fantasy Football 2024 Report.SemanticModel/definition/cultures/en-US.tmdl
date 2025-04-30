@@ -4085,7 +4085,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "PlayersTable",
-			          "ConceptualProperty": "Ranked Position"
+			          "ConceptualProperty": "Lineup Slot"
 			        }
 			      },
 			      "State": "Generated",

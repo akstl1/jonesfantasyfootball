@@ -162,7 +162,7 @@ for wk in range(1,19):
         matchups_df = pd.concat([matchups_df,new_row_home],ignore_index=True)
         matchups_df = pd.concat([matchups_df,new_row_away],ignore_index=True)
 
-matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
+# matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
 
 # print(matchups_df)
 
@@ -180,8 +180,10 @@ player_df = pd.DataFrame({  'Week':[],
                             'Opponent':[],
                             'Position':[],
                             'PositionRank':[],
+                            'Lineup Slot':[],
                             'PlayerKey':[],
                             'Bye':[],
+                            'Home':[],
                             'Projected':[],
                             'Each PAT Made':[],
                             'PAT Attempt':[],
@@ -262,27 +264,32 @@ temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
 # print(league.box_scores(5)[2].home_lineup[8].active_status)
 
-# print(league.box_scores(13)[1].home_lineup[7].position)
-# print(league.box_scores(13)[1].home_lineup[7].lineupSlot)
-# print(league.box_scores(13)[1].home_lineup[7].active_status)
-# print(league.box_scores(13)[1].home_lineup[7].on_bye_week)
-# print(league.box_scores(13)[1].home_lineup[7].slot_position)
-# print(league.box_scores(13)[1].home_lineup[7].pro_opponent)
-# print(league.box_scores(13)[1].home_lineup[7].projected_points)
-# print(league.box_scores(13)[1].home_lineup[7].proTeam)
-# print(league.box_scores(13)[1].home_lineup[7].injuryStatus)
-# print(league.box_scores(13)[1].home_lineup[7].injured)
-# print(league.box_scores(13)[1].home_lineup[7].game_played)
-# print(league.box_scores(14)[1].home_lineup[7].name)
-# print(league.box_scores(14)[1].home_lineup[7].points)
-# print(league.box_scores(14)[1].home_lineup[7].total_points)
+print(league.box_scores(13)[1].home_lineup)
+print(league.box_scores(13)[1].home_lineup[3])
+print(league.box_scores(13)[1].home_lineup[3].position)
+print(league.box_scores(13)[1].home_lineup[3].lineupSlot)
+print(league.box_scores(13)[1].home_lineup[3].active_status)
+print(league.box_scores(13)[1].home_lineup[3].on_bye_week)
+print(league.box_scores(13)[1].home_lineup[3].slot_position)
+print(league.box_scores(13)[1].home_lineup[3].pro_opponent)
+print(league.box_scores(13)[1].home_lineup[3].projected_points)
+print(league.box_scores(13)[1].home_lineup[3].proTeam)
+print(league.box_scores(13)[1].home_lineup[3].injuryStatus)
+print(league.box_scores(13)[1].home_lineup[3].injured)
+print(league.box_scores(13)[1].home_lineup[3].game_played)
+print(league.box_scores(13)[1].home_lineup[3].name)
+print(league.box_scores(13)[1].home_lineup[3].points)
+print(league.box_scores(13)[1].home_lineup[3].posRank)
+print(league.box_scores(13)[1].home_lineup[3].pro_pos_rank)
+print(league.box_scores(13)[1].home_lineup[3])
+print(league.box_scores(13)[1].home_lineup[3].total_points)
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
-player = league.box_scores(8)[1].away_lineup[10]
-print(player)
+# player = league.box_scores(8)[1].away_lineup[10]
+# print(player)
 
-print(player.points_breakdown,player.name,player.proTeam)
+# print(player.points_breakdown,player.name,player.proTeam)
 
 for wk in range(1,18):
     box_score = league.box_scores(wk)
@@ -290,6 +297,9 @@ for wk in range(1,18):
     print(wk)
     for matchup in range(6):
         for i in ['home','away']:
+            wrNum = 1
+            rbNum = 1
+            beNum = 1
             for player in range(17):
                 if box_score[matchup].away_team==0:
                     pass
@@ -298,7 +308,7 @@ for wk in range(1,18):
                     if i =='home':
                         try:
                             player_name_home = box_score[matchup].home_lineup[player].name
-                            print(player_name_home, player_wk)
+                            # print(player_name_home, player_wk)
                             player_id = box_score[matchup].home_lineup[player].playerId
                             plyr = box_score[matchup].home_lineup[player]
                             team = box_score[matchup].home_team.team_name
@@ -306,6 +316,21 @@ for wk in range(1,18):
                             status = box_score[matchup].home_lineup[player].active_status
                             pos = plyr.position
                             player_key = str(player_wk)+player_name_home
+                            home='1'
+                            slotTemp = box_score[matchup].home_lineup[player].lineupSlot
+                            if slotTemp == 'RB/WR/TE':
+                                slot = 'Flex'
+                            elif slotTemp == 'RB':
+                                slot = slotTemp+str(rbNum)
+                                rbNum+=1
+                            elif slotTemp == 'WR':
+                                slot = slotTemp+str(wrNum)
+                                wrNum+=1
+                            elif slotTemp == 'BE':
+                                slot = slotTemp+str(beNum)
+                                beNum+=1
+                            else:
+                                slot = slotTemp
                             if pos != 'D/ST':
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
@@ -318,7 +343,7 @@ for wk in range(1,18):
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
-                            print(player_name_home, player_wk)
+                            # print(player_name_home, player_wk)
                             player_id = box_score[matchup].away_lineup[player].playerId
                             plyr = box_score[matchup].away_lineup[player]
                             team = box_score[matchup].away_team.team_name
@@ -326,6 +351,21 @@ for wk in range(1,18):
                             status = box_score[matchup].away_lineup[player].active_status
                             pos = plyr.position
                             player_key = str(player_wk)+player_name_home
+                            home='0'
+                            slotTemp = box_score[matchup].away_lineup[player].lineupSlot
+                            if slotTemp == 'RB/WR/TE':
+                                slot = 'Flex'
+                            elif slotTemp == 'RB':
+                                slot = slotTemp+str(rbNum)
+                                rbNum+=1
+                            elif slotTemp == 'WR':
+                                slot = slotTemp+str(wrNum)
+                                wrNum+=1
+                            elif slotTemp == 'BE':
+                                slot = slotTemp+str(beNum)
+                                beNum+=1
+                            else:
+                                slot = slotTemp
                             if pos != 'D/ST':
                                 headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
                             else:
@@ -428,7 +468,9 @@ for wk in range(1,18):
                                 'Opponent':[plyr.pro_opponent],
                                 'Position':[plyr.position],
                                 'PositionRank':[plyr.posRank],
+                                'Lineup Slot': [slot],
                                 'PlayerKey':[player_key],
+                                'Home':[home],
                                 'Bye':[plyr.on_bye_week],
                                 'Projected':[plyr.projected_points],
                                 'Each PAT Made':temp[0],
@@ -507,6 +549,8 @@ for wk in range(1,18):
                                 'Position':[plyr.position],
                                 'PositionRank':[plyr.posRank],
                                 'PlayerKey':[player_key],
+                                'Lineup Slot': [slot],
+                                'Home':'Bye',
                                 'Bye':1,
                                 'Projected':0,
                                 'Each PAT Made':temp2[0],
@@ -583,7 +627,7 @@ def threehundredyardpassinggame(value):
 player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
 player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
 player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehundredyardpassinggame)
-player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual'],var_name='Attribute',value_name='Value')
+player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
 player_df_final = pd.DataFrame(player_df_new)
 
-# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)

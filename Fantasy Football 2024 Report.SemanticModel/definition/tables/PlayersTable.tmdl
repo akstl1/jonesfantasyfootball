@@ -50,11 +50,11 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Ranked Position'
+	column 'Lineup Slot'
 		dataType: string
 		lineageTag: b5bc23b5-16bd-4e3d-9ea6-0d58de982f20
 		summarizeBy: none
-		sourceColumn: Ranked Position
+		sourceColumn: Lineup Slot
 
 		annotation SummarizationSetBy = Automatic
 
@@ -83,9 +83,10 @@ table PlayersTable
 				    #"Added Custom" = Table.AddColumn(PlayersTable_Table, "PlayerKey", each Text.From([Week])&[Player Name]),
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Projected Points", "Bust", "Boom", "Each Sack", "Interception Return TD", "Fumble Return TD", "Kickoff Return TD", "Punt Return TD", "Blocked Punt or FG return for TD", "Blocked Punt, PAT or FG", "Each Interception", "Each Fumble Recovered", "Each Safety", "0 points allowed", "1-6 points allowed", "7-13 points allowed", "14-17 points allowed", "28-34 points allowed", "35-45 points allowed", "46+ points allowed", "Less than 100 total yards allowed", "100-199 total yards allowed", "200-299 yards allowed", "350-399 yards allowed", "400-449 yards allowed", "450-499 yards allowed", "500-549 yards allowed", "550+ yards allowed", "2pt Return", "1pt Safety", "Defense Fumbles Lost"}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week", Int64.Type}, {"Fantasy Name", type text}, {"Player Name", type text}, {"Status", type text}, {"Team City", type text}, {"Home", type text}, {"Ranked Position", type text}, {"PlayerKey", type text}}),
-				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "MatchupKey", each Text.Combine({Text.From([Week], "en-US"), [Fantasy Name]}))
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "MatchupKey", each Text.Combine({Text.From([Week], "en-US"), [Fantasy Name]})),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"Ranked Position", "Lineup Slot"}})
 				in
-				    #"Added Custom1"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
