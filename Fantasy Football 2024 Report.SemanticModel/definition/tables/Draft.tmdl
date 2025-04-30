@@ -1,0 +1,76 @@
+table Draft
+	lineageTag: f4cb47a3-0219-4889-a448-d4b66395e8e9
+
+	column Team
+		dataType: string
+		lineageTag: a2c2762e-d093-4f8d-92ef-cccbd53a49f5
+		summarizeBy: none
+		sourceColumn: Team
+		sortByColumn: 'Draft Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Player
+		dataType: string
+		lineageTag: 119123d1-240e-4e10-a552-47c99f674529
+		summarizeBy: none
+		sourceColumn: Player
+
+		annotation SummarizationSetBy = Automatic
+
+	column Round
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c5a7e22-3fb8-424e-962b-58eacfcf2411
+		summarizeBy: sum
+		sourceColumn: Round
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pick
+		dataType: int64
+		formatString: 0
+		lineageTag: ad233df3-4dac-4540-993d-f20d554d0ad8
+		summarizeBy: sum
+		sourceColumn: Pick
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Draft Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: f1a21c02-610f-4cc4-ae93-fdfc3b05fbb9
+		summarizeBy: sum
+		sourceColumn: Draft Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: 580e22f8-c3d0-44eb-b238-fdcd8b198cfd
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Draft = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    draft_Sheet = Source{[Item="draft",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(draft_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Player", type text}, {"Round", Int64.Type}, {"Pick", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Draft Order", each if Number.IsOdd([Round]) then [Pick] else 13-[Pick]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Draft Order", Int64.Type}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type1", {"Player"}, UniquePlayers, {"Player Name"}, "UniquePlayers", JoinKind.LeftOuter),
+				    #"Expanded UniquePlayers" = Table.ExpandTableColumn(#"Merged Queries", "UniquePlayers", {"Position"}, {"Position"})
+				in
+				    #"Expanded UniquePlayers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,45 @@
+table UniquePlayers
+	lineageTag: 6b077aa2-c5a7-4bc0-a66a-bd83351e63e9
+
+	column 'Player Name'
+		dataType: string
+		lineageTag: 7f7c6dc6-a43e-4207-ba76-a08836291059
+		summarizeBy: none
+		sourceColumn: Player Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: d6f7c760-987c-490b-a1ac-97056ed211ff
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Player Pic'
+		dataType: string
+		lineageTag: e73e35d8-19b8-4688-845b-e553334ec21d
+		summarizeBy: none
+		sourceColumn: Player Pic
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UniquePlayers = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\uniqueplayers.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Column1", Int64.Type}, {"player_display_name", type text}, {"NFL_Team", type text}, {"position_group", type text}, {"headshot_url", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "week"}, {"player_display_name", "Player Name"}, {"NFL_Team", "NFL Team"}, {"position_group", "Position"}, {"headshot_url", "Player Pic"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"NFL Team", "week"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

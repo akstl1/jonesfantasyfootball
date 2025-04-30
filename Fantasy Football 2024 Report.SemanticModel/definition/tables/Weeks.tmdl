@@ -1,0 +1,27 @@
+table Weeks
+	lineageTag: bfe34520-4ecd-4340-9bc6-b22a50d91f86
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 53b90455-fadd-46d7-87a0-d4b18c2d9c42
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Weeks = m
+		mode: import
+		source =
+				let
+				    Source = List.Numbers(1,17),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Week"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Week", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

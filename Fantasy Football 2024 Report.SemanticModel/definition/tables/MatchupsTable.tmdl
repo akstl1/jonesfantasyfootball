@@ -1,0 +1,150 @@
+table MatchupsTable
+	lineageTag: 953f438f-86d1-4d5a-88c2-daedc552e940
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 41b2b81b-7573-4733-9ad5-d326f255a711
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: c5a07824-f188-4461-b30c-9d42ca6fced5
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 58d5510e-4bba-4dca-9016-778b358f9bfd
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opponent
+		dataType: string
+		lineageTag: 1bff98fb-0693-4209-b0dc-f33fe0f21a91
+		summarizeBy: none
+		sourceColumn: Opponent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Points'
+		dataType: double
+		lineageTag: e21cb466-a961-47d4-9bd0-dcd5fdbc8a4c
+		summarizeBy: sum
+		sourceColumn: Actual Points
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Result
+		dataType: string
+		lineageTag: a00feb74-55d7-41ad-a22a-5bb8c7f73fb7
+		summarizeBy: none
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matchup Header'
+		dataType: string
+		lineageTag: 7f8ed995-0258-471a-bd5d-184553176213
+		summarizeBy: none
+		sourceColumn: Matchup Header
+
+		annotation SummarizationSetBy = Automatic
+
+	column Number
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f194657-9301-41b9-863b-067b017043ac
+		summarizeBy: sum
+		sourceColumn: Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column MatchupKey
+		dataType: string
+		lineageTag: feddec63-64ea-4d10-b4f4-47d317408928
+		summarizeBy: none
+		sourceColumn: MatchupKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeeklyMatchupID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ba6ae8f-b1d2-4718-88be-d70bcccd95f7
+		summarizeBy: count
+		sourceColumn: WeeklyMatchupID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Home_Or_Away
+		dataType: string
+		lineageTag: facfa2ac-a3ca-45a3-a9fa-b08108f65177
+		summarizeBy: none
+		sourceColumn: Home_Or_Away
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Projected Points'
+		dataType: double
+		lineageTag: 6cf18baa-3367-44db-9f18-e499e9dec9fa
+		summarizeBy: sum
+		sourceColumn: Projected Points
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column matchup_type
+		dataType: string
+		lineageTag: 3af64dbc-f109-4640-bad8-17b95c261c93
+		summarizeBy: none
+		sourceColumn: matchup_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column projected_variance
+		dataType: double
+		lineageTag: 57b014ce-d76d-43b1-8fd2-562ced25b4ad
+		summarizeBy: sum
+		sourceColumn: projected_variance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_variance
+		dataType: double
+		lineageTag: 4243c220-5aff-4b85-a71b-f2304b3fa91d
+		summarizeBy: sum
+		sourceColumn: actual_variance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition MatchupsTable = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\matchups.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Opponent", type text}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"Projected Points", type number}, {"Actual Points", type number}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}, {"Matchup Header", type text}, {"Result", type text}, {"Number", Int64.Type}, {"MatchupKey", type text}, {"WeeklyMatchupID", Int64.Type}, {"ID", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

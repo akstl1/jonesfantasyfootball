@@ -1,0 +1,357 @@
+table *Measures
+	lineageTag: c5bdf72e-8ae1-460d-931d-1c51e532acd9
+
+	measure Team1 =
+			
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
+			var _number = 1
+			return CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
+		lineageTag: 67ccd857-4617-4c81-a534-91bc8509ebf4
+
+	measure Team2 =
+			
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
+			var _number = 2
+			return CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
+		lineageTag: 4330831d-2e92-402d-a6bc-3defde965dbd
+
+	measure 'Scoreboard Team1 Points' =
+			
+			var _team = min(MatchupsTable[ID])
+			return CALCULATE(sum(PlayerPointsStats[TotalPoints]),MatchupsTable[ID]=_team)
+		displayFolder: Scoreboard
+		lineageTag: 2d899964-1c5b-4b98-ab65-2bb9d4e74270
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scoreboard Team1 Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
+		displayFolder: Scoreboard
+		lineageTag: c4ea3df8-d05a-4c50-9c9c-e797ea3985fc
+
+	measure 'Scoreboard Team2 Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=MAX(MatchupsTable[ID]))
+		displayFolder: Scoreboard
+		lineageTag: 02b86543-4d5a-46b1-a032-f4706ed1b9aa
+
+	measure 'Scoreboard Team2 Points' =
+			
+			var _team = max(MatchupsTable[ID])
+			return CALCULATE(sum(PlayerPointsStats[TotalPoints]),MatchupsTable[ID]=_team)
+		displayFolder: Scoreboard
+		lineageTag: d52c3d93-78ec-43f0-a06c-02a47d763129
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scoreboard Team1 Image' =
+			
+			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
+			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
+		displayFolder: Scoreboard
+		lineageTag: 0c1145a7-6372-44ed-8f36-bff42168760e
+
+	measure 'Scoreboard Team2 Image' =
+			
+			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=max(MatchupsTable[ID]))
+			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
+		displayFolder: Scoreboard
+		lineageTag: 9b6c691f-2748-4069-8180-0e2a3ec7c5f6
+
+	measure 'Scoreboard Points Variance' = [Scoreboard Team2 Points] - [Scoreboard Team1 Points]
+		displayFolder: Scoreboard
+		lineageTag: 982fb7fa-6229-4ab3-8dca-b836de4a8385
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Scoreboard Team1 Text Color' = if([Scoreboard Points Variance]<0,"#000000","#7f8487")
+		displayFolder: Scoreboard
+		lineageTag: 9c450bcb-db54-4469-b8f4-52afb5304732
+
+	measure 'Scoreboard Team2 Text Color' = if([Scoreboard Points Variance]>0,"#000000","#7f8487")
+		displayFolder: Scoreboard
+		lineageTag: eb8e750a-3b4b-4e79-9ece-ae22a4b4dc20
+
+	measure DraftName =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _round = SELECTEDVALUE(Draft[Round])
+			return calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+		displayFolder: Draft
+		lineageTag: 4aa148a2-13bf-4318-a250-7026065931a8
+
+	measure DraftPic =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = [DraftName]
+			return calculate(max(UniquePlayers[Player Pic]),UniquePlayers[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: 33dc16ac-790c-48e2-9911-4728c0b55431
+
+	measure DraftPlayerTeam =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			return calculate(max(PlayersTable[Team City]),PlayersTable[Week]=1,PlayersTable[Player Name]=_player)&"  "&calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: a0eb1c3e-4dc2-4f3a-ac5b-44d892ab05bf
+
+	measure DraftPlayerPosition =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			return calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: 4d3f3707-5b60-4302-9f69-a27fbc9807a0
+
+	measure DraftName2 =
+			
+			var _team = SELECTEDVALUE(Draft[Team])
+			var _round = SELECTEDVALUE(Draft[Round])
+			return calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+		displayFolder: Draft
+		lineageTag: 5f7c6234-b9aa-4f61-8c59-c1d1ec92f262
+
+	measure DraftPic2 =
+			
+			var _team = SELECTEDVALUE(Draft[Team])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			return calculate(max(PlayerPointsStats[headshot_url]),PlayerPointsStats[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: e4d799c3-2cb7-4606-983b-8c66a7cda7e9
+
+	measure DraftPlayerPosition2 =
+			
+			var _team = SELECTEDVALUE(Draft[Team])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			return calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: fad5bb37-4d3c-42b3-8898-04fe3ac4afa7
+
+	measure DraftPlayerTeam2 =
+			
+			var _team = SELECTEDVALUE(Draft[Team])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			return calculate(max(PlayersTable[Team City]),PlayersTable[Week]=1,PlayersTable[Player Name]=_player)&"  "&calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
+		displayFolder: Draft
+		lineageTag: d32b7cfe-e48d-47f4-bf79-d06bd44d533f
+
+	measure DraftTeam = ```
+			SELECTEDVALUE(Draft[Team]) 
+			```
+		displayFolder: Draft
+		lineageTag: aaaf9149-2697-4736-9b5d-eddb901a132d
+
+	measure DraftRoundPick =
+			
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _pick = SELECTEDVALUE(Draft[Pick])
+			return "Round: "&_round&" Pick: "&_pick
+		displayFolder: Draft
+		lineageTag: 78dff62d-645d-43ab-8fcc-49ddb36cb2b0
+
+	measure DraftRound = SELECTEDVALUE(Draft[Round])
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 54ead8fd-7ec2-45f5-acf2-d8bd14e61f7c
+
+	measure DraftPick = SELECTEDVALUE(Draft[Pick])
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 44836456-32c6-43e0-80f8-98145649f31e
+
+	measure DraftPlayerName = ```
+			
+			var _team = [DraftTeam]
+			var _round = [DraftRound]
+			return calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
+			
+			```
+		displayFolder: Draft
+		lineageTag: f9472f4c-c095-4229-883b-8c6860f007c5
+
+	measure DraftRoundText = "Round: "&[DraftRound]
+		displayFolder: Draft
+		lineageTag: 7e5099fc-e052-4634-8c9c-9461410c82df
+
+	measure DraftPositionColor =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _round = SELECTEDVALUE(Draft[Round])
+			var _player = [DraftName]
+			var _position = calculate(max(UniquePlayers[Position]),UniquePlayers[Player Name]=_player)
+			return _position
+		displayFolder: Draft
+		lineageTag: 64a7cf83-3177-4fd0-8cf0-eb09541a19d1
+
+	measure QB# = calculate(COUNTROWS(Draft),Draft[Position]="QB",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 3e835d6f-2590-4102-bd05-ee06ae35b2ec
+
+	measure RB# = calculate(COUNTROWS(Draft),Draft[Position]="RB",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: bbe6a735-c35d-4a46-90db-9ab1744ac2bc
+
+	measure WR# = calculate(COUNTROWS(Draft),Draft[Position]="WR",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 02814e79-dc46-4464-a6af-87fce0d041cc
+
+	measure K# = calculate(COUNTROWS(Draft),Draft[Position]="K",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 4c19c30b-6cc8-4584-8bca-fcc596b1d18f
+
+	measure D# = calculate(COUNTROWS(Draft),Draft[Position]="D/ST",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: 43500788-b30b-44bc-b2c4-e68db12bf6f2
+
+	measure TE# = calculate(COUNTROWS(Draft),Draft[Position]="TE",Draft[Team]=SELECTEDVALUE(TeamsTable[Fantasy Name]),ALLEXCEPT(Draft,Draft[Team],Draft[Position]))
+		formatString: 0
+		displayFolder: Draft
+		lineageTag: ec247aa7-33d6-45ae-be19-434db26d4aa9
+
+	measure 'League Ranking Up/Down' = ```
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _week2 = if(_week=1,_week,_week-1)
+			
+			var _team = max('New Standings'[Team])
+			var _current = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_week)
+			var _prior = CALCULATE(max('New Standings'[League_Rank]),ALLEXCEPT('New Standings','New Standings'[Team],Weeks[Week]),'New Standings'[Team]=_team,'New Standings'[Week]=_week2,all(Weeks))
+			var _variance = _current - _prior
+			var _difference = SWITCH(TRUE(),
+			                            // _week=1,"Same",
+			                            _current - _prior = 0, "Same",
+			                            _current - _prior > 0, "Down",
+			                            _current - _prior < 0, "Up",
+			                            "None"
+			                            
+			)
+			return _variance
+			```
+		formatString: 0
+		lineageTag: 6f51eb59-29dc-45f6-ac21-a8ab1908393a
+
+	measure Record =
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			
+			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
+			return _result
+		lineageTag: 712cd4b9-e785-494b-8b7f-d2afb33305fc
+
+	measure week = SELECTEDVALUE(Weeks[Week])
+		formatString: 0
+		lineageTag: 74a1cba1-46fb-4428-8aa4-a0df323d25f0
+
+	measure PF =
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _pf = CALCULATE(sum('MatchupsTable'[Actual Points]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Team]))
+			
+			return _pf
+		lineageTag: c8d89d21-6004-4289-b1a5-46321672f9e6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PA =
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _opponent = calculate(max(MatchupsTable[Opponent]),MatchupsTable[Week]=_week, MatchupsTable[Team]=_team)
+			// SELECTEDVALUE('MatchupsTable'[Opponent])
+			var _pf = CALCULATE(sum('MatchupsTable'[Actual Points]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Opponent]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Opponent]))
+			
+			return _pf
+		lineageTag: 4e678ef9-f411-44a4-801e-b08d9f0eda84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Win% =
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _calc = DIVIDE(_wins,_wins+_losses+_tie,0)
+			return if(_calc,_calc,0)
+		formatString: 0.000
+		lineageTag: b8fb1196-e2cc-4b24-a299-438a01710761
+
+	measure Streak =
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _result = CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team)
+			var _resultAbbr = LEFT(_result,1)
+			var _streak = CALCULATE(max('MatchupsTable'[Week]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]<>_result, 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			// var _streak = CALCULATE(max('MatchupsTable'[Week]),filter(MatchupsTable,'MatchupsTable'[Week]<=_week&&'MatchupsTable'[Result]<>_result&&'MatchupsTable'[Team]=_team))
+			var _resultFinal = _resultAbbr&(_week-_streak)
+			return _resultFinal
+		lineageTag: 16ee94d2-d975-4a4e-8a2c-b96f31b7c074
+
+	measure 'Net Pts' = [PF] - [PA]
+		lineageTag: 02794213-a34d-45e5-bc91-379d52fa9c05
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'League Ranking Up/Down ABS' = ```
+			
+			var _week = selectedvalue(Weeks[Week])
+			var _week2 = if(_week=1,_week,_week-1)
+			
+			var _team = max('New Standings'[Team])
+			var _current = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_week)
+			var _prior = CALCULATE(max('New Standings'[League_Rank]),ALLEXCEPT('New Standings','New Standings'[Team],Weeks[Week]),'New Standings'[Team]=_team,'New Standings'[Week]=_week2,all(Weeks))
+			var _variance = _current - _prior
+			var _difference = SWITCH(TRUE(),
+			                            // _week=1,"Same",
+			                            _current - _prior = 0, "Same",
+			                            _current - _prior > 0, "Down",
+			                            _current - _prior < 0, "Up",
+			                            "None"
+			                            
+			)
+			return ABS(_variance)
+			```
+		formatString: 0
+		lineageTag: 07f1a59c-8ba4-4b60-b380-b9ba771fb633
+
+	column *Measures
+		dataType: string
+		isHidden
+		lineageTag: f1102372-ef72-48d0-b927-5b70c90d236d
+		summarizeBy: none
+		sourceColumn: *Measures
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition *Measures = m
+		mode: import
+		source =
+				let
+				    Source = ""
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,51 @@
+table PointsMap
+	lineageTag: a9f89ebb-4451-480e-ae71-4871c6ef9eb3
+
+	column Category
+		dataType: string
+		lineageTag: 561689bf-7013-4993-914c-9e31af5127c3
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stat
+		dataType: string
+		lineageTag: 64025968-341e-417e-a990-61ce6d00bd55
+		summarizeBy: none
+		sourceColumn: Stat
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abbreviation
+		dataType: string
+		lineageTag: dac98267-ed48-4d85-a02d-2cc2fa3ac746
+		summarizeBy: none
+		sourceColumn: Abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Points
+		dataType: double
+		lineageTag: 5dd068f3-df91-487a-9a1f-a57e0022f762
+		summarizeBy: sum
+		sourceColumn: Points
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition PointsMap = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    ScoringTable_Table = Source{[Item="ScoringTable",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(ScoringTable_Table,{{"Category", type text}, {"Stat", type text}, {"Abbreviation", type text}, {"Points", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

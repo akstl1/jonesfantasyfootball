@@ -1,0 +1,140 @@
+table StandingsTable
+	lineageTag: 5f73d8d5-0ce9-4a1c-b725-bfae4f3578cb
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ce269bd-2931-407d-9d8e-9e3dc03945d4
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 4bc1b292-a167-45e6-9e52-6cd462e39d17
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Ranking'
+		dataType: int64
+		formatString: 0
+		lineageTag: 21b72b3e-57ee-49f3-b4d9-68d1133339f8
+		summarizeBy: sum
+		sourceColumn: Division Ranking
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Playoff Ranking'
+		dataType: int64
+		formatString: 0
+		lineageTag: aba7aa1e-8382-4198-8bb9-b641669271b8
+		summarizeBy: sum
+		sourceColumn: Playoff Ranking
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record
+		dataType: string
+		lineageTag: 09ca6e1c-0c7c-4212-b4f1-68150baa8572
+		summarizeBy: none
+		sourceColumn: Record
+
+		annotation SummarizationSetBy = Automatic
+
+	column GB
+		dataType: int64
+		formatString: 0
+		lineageTag: 46f3f494-1c2b-4a6e-ab3d-8bf8ae6746a8
+		summarizeBy: sum
+		sourceColumn: GB
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Win PCT'
+		dataType: double
+		lineageTag: 82fb1b8f-8169-402b-b4e3-4b1097bef818
+		summarizeBy: sum
+		sourceColumn: Win PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PF
+		dataType: double
+		lineageTag: 67ba3f8c-9eb6-40a3-a4e9-84535f0d821b
+		summarizeBy: sum
+		sourceColumn: PF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PA
+		dataType: double
+		lineageTag: 507e5489-1a00-41f4-9e08-c28a5207b0c5
+		summarizeBy: sum
+		sourceColumn: PA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STRK
+		dataType: string
+		lineageTag: c343e880-d99e-4652-9905-fe4a326d0dad
+		summarizeBy: none
+		sourceColumn: STRK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Playoff %'
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 61cd748f-5f7b-4b71-a45c-800604850d31
+		summarizeBy: sum
+		sourceColumn: Playoff %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Playoff Status'
+		dataType: string
+		lineageTag: 41b9224f-cd7b-44cf-8f6e-ab41072380a2
+		summarizeBy: none
+		sourceColumn: Playoff Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Power Ranking'
+		dataType: string
+		lineageTag: 9f4fc7d3-0be3-499e-81c7-3ffd6233c6c0
+		summarizeBy: none
+		sourceColumn: Power Ranking
+
+		annotation SummarizationSetBy = Automatic
+
+	column Moves
+		dataType: string
+		lineageTag: 11a2ebe2-e212-45d4-8a25-7fc19e98a02d
+		summarizeBy: none
+		sourceColumn: Moves
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StandingsTable = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    StandingsTable_Table = Source{[Item="StandingsTable",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(StandingsTable_Table,{{"Week", Int64.Type}, {"Team", type text}, {"Division Ranking", Int64.Type}, {"Playoff Ranking", Int64.Type}, {"Record", type text}, {"GB", Int64.Type}, {"Win PCT", Percentage.Type}, {"PF", type number}, {"PA", type number}, {"STRK", type text}, {"Playoff %", Percentage.Type}, {"Playoff Status", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

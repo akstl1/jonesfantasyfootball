@@ -1,0 +1,53 @@
+table 'New Standings'
+	lineageTag: b4ae813c-b4b7-4b7e-8f47-1b6f84c7e0d8
+
+	column Team
+		dataType: string
+		lineageTag: f18c95f0-766e-4bcc-b613-00f617b37cb5
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 97fa1c78-7dd3-453f-8e57-764fc5063b9d
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column League_Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 7697d9be-2354-473c-bcf4-27e6cb96aec0
+		summarizeBy: sum
+		sourceColumn: League_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division_Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cdc145a-506d-44b9-b85d-e5a5c3a551f8
+		summarizeBy: sum
+		sourceColumn: Division_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New Standings' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\standings.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Week", Int64.Type}, {"League_Rank", Int64.Type}, {"Division_Rank", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

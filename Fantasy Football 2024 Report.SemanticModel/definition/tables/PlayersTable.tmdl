@@ -1,0 +1,93 @@
+table PlayersTable
+	lineageTag: 6af93a31-e711-4307-8e27-270955939562
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 2afb4c31-1e4c-47c5-a7dc-c8d379e28e6f
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fantasy Name'
+		dataType: string
+		lineageTag: e0367ca1-3c19-453d-9c31-74e98841e38e
+		summarizeBy: none
+		sourceColumn: Fantasy Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Player Name'
+		dataType: string
+		lineageTag: 753986c1-0a32-4491-aca6-d08e87e1054d
+		summarizeBy: none
+		sourceColumn: Player Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 0ba38747-03ff-40ff-9968-b749169e0179
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team City'
+		dataType: string
+		lineageTag: 2482a721-23c3-4168-a551-9f0ec6112e45
+		summarizeBy: none
+		sourceColumn: Team City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Home
+		dataType: string
+		lineageTag: 807ca97d-105d-4bf6-936d-80cb0c4d0309
+		summarizeBy: none
+		sourceColumn: Home
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ranked Position'
+		dataType: string
+		lineageTag: b5bc23b5-16bd-4e3d-9ea6-0d58de982f20
+		summarizeBy: none
+		sourceColumn: Ranked Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column MatchupKey
+		dataType: string
+		lineageTag: 9ce61e8a-a4dc-4a62-8d4f-6332da3910e1
+		summarizeBy: none
+		sourceColumn: MatchupKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlayerKey
+		dataType: string
+		lineageTag: 42eb47e3-fc8b-4e68-b44b-bfed58819e61
+		summarizeBy: none
+		sourceColumn: PlayerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PlayersTable = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    PlayersTable_Table = Source{[Item="PlayersTable",Kind="Table"]}[Data],
+				    #"Added Custom" = Table.AddColumn(PlayersTable_Table, "PlayerKey", each Text.From([Week])&[Player Name]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Projected Points", "Bust", "Boom", "Each Sack", "Interception Return TD", "Fumble Return TD", "Kickoff Return TD", "Punt Return TD", "Blocked Punt or FG return for TD", "Blocked Punt, PAT or FG", "Each Interception", "Each Fumble Recovered", "Each Safety", "0 points allowed", "1-6 points allowed", "7-13 points allowed", "14-17 points allowed", "28-34 points allowed", "35-45 points allowed", "46+ points allowed", "Less than 100 total yards allowed", "100-199 total yards allowed", "200-299 yards allowed", "350-399 yards allowed", "400-449 yards allowed", "450-499 yards allowed", "500-549 yards allowed", "550+ yards allowed", "2pt Return", "1pt Safety", "Defense Fumbles Lost"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week", Int64.Type}, {"Fantasy Name", type text}, {"Player Name", type text}, {"Status", type text}, {"Team City", type text}, {"Home", type text}, {"Ranked Position", type text}, {"PlayerKey", type text}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "MatchupKey", each Text.Combine({Text.From([Week], "en-US"), [Fantasy Name]}))
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

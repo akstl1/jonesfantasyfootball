@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Fantasy Football 2024 Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "441450ec-abdc-46ff-b54d-bab59f118d2e"
+  }
+}

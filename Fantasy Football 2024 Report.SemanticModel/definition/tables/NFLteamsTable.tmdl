@@ -1,0 +1,138 @@
+table NFLteamsTable
+	lineageTag: 2dff2253-e5b0-4060-a2ab-0e20911b489d
+
+	column team_abbr
+		dataType: string
+		lineageTag: 6f74e363-6c78-4edf-a997-aab9e7329312
+		summarizeBy: none
+		sourceColumn: team_abbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		lineageTag: 7e932f7b-7daf-45ac-b8dd-9b66282902d2
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: string
+		lineageTag: 56dccdfe-a691-46ea-9c86-86399cbc19e6
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_nick
+		dataType: string
+		lineageTag: beeee5fe-b293-4787-8f60-db50845c19d6
+		summarizeBy: none
+		sourceColumn: team_nick
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_conf
+		dataType: string
+		lineageTag: 0eb393b4-430c-4416-9946-3ea689986cff
+		summarizeBy: none
+		sourceColumn: team_conf
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_division
+		dataType: string
+		lineageTag: 7d0d3b55-8211-4113-b9af-a3252e20c5cc
+		summarizeBy: none
+		sourceColumn: team_division
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_color
+		dataType: string
+		lineageTag: 6d18ab4c-81ec-40cc-994b-07b805e238be
+		summarizeBy: none
+		sourceColumn: team_color
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_color2
+		dataType: string
+		lineageTag: 56f251a4-193d-49c7-a4dc-544306e880fe
+		summarizeBy: none
+		sourceColumn: team_color2
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_color3
+		dataType: string
+		lineageTag: 2a42b735-8cc3-428d-a2f3-2001360f561d
+		summarizeBy: none
+		sourceColumn: team_color3
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_color4
+		dataType: string
+		lineageTag: 1402d86f-bcf8-4899-90e6-8d6966812b2c
+		summarizeBy: none
+		sourceColumn: team_color4
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_logo_wikipedia
+		dataType: string
+		lineageTag: 67bb49f8-5560-4776-9529-3db0ea4e720a
+		summarizeBy: none
+		sourceColumn: team_logo_wikipedia
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_logo_espn
+		dataType: string
+		lineageTag: 671ce373-f919-4d01-8ac2-ca908741fa9d
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: team_logo_espn
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_wordmark
+		dataType: string
+		lineageTag: e9d16e6c-3e55-4665-9a69-c897bda1b10b
+		summarizeBy: none
+		sourceColumn: team_wordmark
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_conference_logo
+		dataType: string
+		lineageTag: 0cc9704d-32b0-4951-847c-f80dac429c62
+		summarizeBy: none
+		sourceColumn: team_conference_logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_league_logo
+		dataType: string
+		lineageTag: 23b142af-9546-44e2-9e3f-14147c2a6e1b
+		summarizeBy: none
+		sourceColumn: team_league_logo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NFLteamsTable = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    NFLteamsTable_Table = Source{[Item="NFLteamsTable",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(NFLteamsTable_Table,{{"team_abbr", type text}, {"team_name", type text}, {"team_nick", type text}, {"team_conf", type text}, {"team_division", type text}, {"team_color", type text}, {"team_color2", type text}, {"team_color3", type text}, {"team_color4", type text}, {"team_logo_wikipedia", type text}, {"team_logo_espn", type text}, {"team_wordmark", type text}, {"team_conference_logo", type text}, {"team_league_logo", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
