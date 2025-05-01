@@ -10,14 +10,6 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Fantasy Name'
-		dataType: string
-		lineageTag: e0367ca1-3c19-453d-9c31-74e98841e38e
-		summarizeBy: none
-		sourceColumn: Fantasy Name
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Player Name'
 		dataType: string
 		lineageTag: 753986c1-0a32-4491-aca6-d08e87e1054d
@@ -34,27 +26,11 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Team City'
-		dataType: string
-		lineageTag: 2482a721-23c3-4168-a551-9f0ec6112e45
-		summarizeBy: none
-		sourceColumn: Team City
-
-		annotation SummarizationSetBy = Automatic
-
 	column Home
 		dataType: string
 		lineageTag: 807ca97d-105d-4bf6-936d-80cb0c4d0309
 		summarizeBy: none
 		sourceColumn: Home
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Lineup Slot'
-		dataType: string
-		lineageTag: b5bc23b5-16bd-4e3d-9ea6-0d58de982f20
-		summarizeBy: none
-		sourceColumn: Lineup Slot
 
 		annotation SummarizationSetBy = Automatic
 
@@ -74,17 +50,39 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Fantasy Name'
+		dataType: string
+		lineageTag: 20f728e0-c0a0-42fc-8a5f-c5f4e3c385d4
+		summarizeBy: none
+		sourceColumn: Fantasy Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team City'
+		dataType: string
+		lineageTag: 15c64090-1e8f-40db-ae4d-87ca0ab8668d
+		summarizeBy: none
+		sourceColumn: Team City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineup Slot'
+		dataType: string
+		lineageTag: 44cad283-ca77-4a69-b133-1c95be39ea84
+		summarizeBy: none
+		sourceColumn: Lineup Slot
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PlayersTable = m
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
-				    PlayersTable_Table = Source{[Item="PlayersTable",Kind="Table"]}[Data],
-				    #"Added Custom" = Table.AddColumn(PlayersTable_Table, "PlayerKey", each Text.From([Week])&[Player Name]),
-				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Projected Points", "Bust", "Boom", "Each Sack", "Interception Return TD", "Fumble Return TD", "Kickoff Return TD", "Punt Return TD", "Blocked Punt or FG return for TD", "Blocked Punt, PAT or FG", "Each Interception", "Each Fumble Recovered", "Each Safety", "0 points allowed", "1-6 points allowed", "7-13 points allowed", "14-17 points allowed", "28-34 points allowed", "35-45 points allowed", "46+ points allowed", "Less than 100 total yards allowed", "100-199 total yards allowed", "200-299 yards allowed", "350-399 yards allowed", "400-449 yards allowed", "450-499 yards allowed", "500-549 yards allowed", "550+ yards allowed", "2pt Return", "1pt Safety", "Defense Fumbles Lost"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week", Int64.Type}, {"Fantasy Name", type text}, {"Player Name", type text}, {"Status", type text}, {"Team City", type text}, {"Home", type text}, {"Ranked Position", type text}, {"PlayerKey", type text}}),
-				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "MatchupKey", each Text.Combine({Text.From([Week], "en-US"), [Fantasy Name]})),
-				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"Ranked Position", "Lineup Slot"}})
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\playerstable.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Week", Int64.Type}, {"FantasyTeam", type text}, {"NFL_Team", type text}, {"Player Name", type text}, {"Status", type text}, {"Lineup Slot", type text}, {"PlayerKey", type text}, {"MatchupKey", type text}, {"Home", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"FantasyTeam", "Fantasy Name"}, {"NFL_Team", "Team City"}})
 				in
 				    #"Renamed Columns"
 

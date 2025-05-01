@@ -7,7 +7,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["MatchupsTable","NFLteamsTable","PointsMap","StandingsTable","PlayersTable","PlayerPointsStats","DefenseStats","TeamsTable","Weeks","*Measures","PlayersTable (2)","PlayersTable (3)","Draft","UniquePlayers","Power Rankings","New Standings","New Matchups","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)"]
+annotation PBI_QueryOrder = ["MatchupsTable","NFLteamsTable","PointsMap","StandingsTable","PlayersTable","PlayerPointsStats","DefenseStats","TeamsTable","Weeks","*Measures","PlayersTable (2)","PlayersTable (3)","Draft","UniquePlayers","Power Rankings","New Standings","New Matchups","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)","PlayerstableNew","PlayersTable (4)"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 

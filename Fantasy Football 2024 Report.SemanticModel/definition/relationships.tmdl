@@ -1,7 +1,3 @@
-relationship AutoDetected_28d6d6e7-c879-4bd4-b265-e9f5e6b8ab3e
-	fromColumn: PlayersTable.'Fantasy Name'
-	toColumn: TeamsTable.'Fantasy Name'
-
 relationship 6fd9b968-41ac-031f-06be-7c27d6140be9
 	fromColumn: StandingsTable.Team
 	toColumn: TeamsTable.'Fantasy Name'

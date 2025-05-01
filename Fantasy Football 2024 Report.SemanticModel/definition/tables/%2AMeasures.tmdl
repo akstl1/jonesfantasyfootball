@@ -19,8 +19,11 @@ table *Measures
 
 	measure 'Scoreboard Team1 Points' =
 			
-			var _team = min(MatchupsTable[ID])
-			return CALCULATE(sum(PlayerPointsStats[TotalPoints]),MatchupsTable[ID]=_team)
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Away")
+			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[FantasyTeam]=_team2,PlayerPointsStats[Week]=_wk)
+			return _result
 		displayFolder: Scoreboard
 		lineageTag: 2d899964-1c5b-4b98-ab65-2bb9d4e74270
 
@@ -36,8 +39,11 @@ table *Measures
 
 	measure 'Scoreboard Team2 Points' =
 			
-			var _team = max(MatchupsTable[ID])
-			return CALCULATE(sum(PlayerPointsStats[TotalPoints]),MatchupsTable[ID]=_team)
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Home")
+			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[FantasyTeam]=_team2,PlayerPointsStats[Week]=_wk)
+			return _result
 		displayFolder: Scoreboard
 		lineageTag: d52c3d93-78ec-43f0-a06c-02a47d763129
 

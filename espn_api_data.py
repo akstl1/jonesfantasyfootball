@@ -1,5 +1,6 @@
 from espn_api.football import League
 import pandas as pd
+import numpy as np
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -630,4 +631,14 @@ player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehun
 player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
 player_df_final = pd.DataFrame(player_df_new)
 
-player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+
+##### player stats data
+
+players_table = player_df_final[['Week','FantasyTeam','NFL_Team','Player Name','Status','Home','Lineup Slot','PlayerKey']].copy()
+
+players_table = players_table.drop_duplicates()
+
+players_table['MatchupKey'] = players_table.apply(lambda row: str(row['Week'])[0]+row['FantasyTeam'] if row['Week']<10 else str(row['Week'])[:2]+row['FantasyTeam'],axis=1)
+
+players_table.to_excel('playerstable.xlsx',sheet_name='Sheet1',index=False)

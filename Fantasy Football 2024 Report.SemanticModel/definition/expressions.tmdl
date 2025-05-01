@@ -141,3 +141,35 @@ expression 'MatchupsTable (2)' =
 
 	annotation PBI_ResultType = Table
 
+expression PlayerstableNew =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\playerstable.xlsx"), null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Week", Int64.Type}, {"FantasyTeam", type text}, {"NFL_Team", type text}, {"Player Name", type text}, {"Status", type text}, {"Lineup Slot", type text}, {"PlayerKey", type text}, {"MatchupKey", type text}, {"Home", type text}}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"FantasyTeam", "Fantasy Name"}, {"NFL_Team", "Team City"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: bf2c796c-fa87-4076-8746-740d2bb5a169
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'PlayersTable (4)' =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+		    PlayersTable_Table = Source{[Item="PlayersTable",Kind="Table"]}[Data],
+		    #"Added Custom" = Table.AddColumn(PlayersTable_Table, "PlayerKey", each Text.From([Week])&[Player Name]),
+		    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Projected Points", "Bust", "Boom", "Each Sack", "Interception Return TD", "Fumble Return TD", "Kickoff Return TD", "Punt Return TD", "Blocked Punt or FG return for TD", "Blocked Punt, PAT or FG", "Each Interception", "Each Fumble Recovered", "Each Safety", "0 points allowed", "1-6 points allowed", "7-13 points allowed", "14-17 points allowed", "28-34 points allowed", "35-45 points allowed", "46+ points allowed", "Less than 100 total yards allowed", "100-199 total yards allowed", "200-299 yards allowed", "350-399 yards allowed", "400-449 yards allowed", "450-499 yards allowed", "500-549 yards allowed", "550+ yards allowed", "2pt Return", "1pt Safety", "Defense Fumbles Lost"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week", Int64.Type}, {"Fantasy Name", type text}, {"Player Name", type text}, {"Status", type text}, {"Team City", type text}, {"Home", type text}, {"Ranked Position", type text}, {"PlayerKey", type text}}),
+		    #"Added Custom1" = Table.AddColumn(#"Changed Type", "MatchupKey", each Text.Combine({Text.From([Week], "en-US"), [Fantasy Name]})),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"Ranked Position", "Lineup Slot"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 91410ee0-fdb3-4cc9-8649-93005daca4d1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
