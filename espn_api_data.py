@@ -616,12 +616,12 @@ for wk in range(1,18):
 
 # print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
 def hundredyardgame(value):
-    if value<100:
+    if value<100 or value>199:
         return 0
     else:
         return 1
 def threehundredyardpassinggame(value):
-    if value<300:
+    if value<300 or value>399:
         return 0
     else:
         return 1
