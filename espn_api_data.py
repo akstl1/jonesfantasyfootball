@@ -309,7 +309,7 @@ for wk in range(1,18):
                     if i =='home':
                         try:
                             player_name_home = box_score[matchup].home_lineup[player].name
-                            # print(player_name_home, player_wk)
+                            print(player_name_home, player_wk)
                             player_id = box_score[matchup].home_lineup[player].playerId
                             plyr = box_score[matchup].home_lineup[player]
                             team = box_score[matchup].home_team.team_name
@@ -344,7 +344,7 @@ for wk in range(1,18):
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
-                            # print(player_name_home, player_wk)
+                            print(player_name_home, player_wk)
                             player_id = box_score[matchup].away_lineup[player].playerId
                             plyr = box_score[matchup].away_lineup[player]
                             team = box_score[matchup].away_team.team_name
@@ -443,7 +443,7 @@ for wk in range(1,18):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  :
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) :
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)
@@ -631,7 +631,7 @@ player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehun
 player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
 player_df_final = pd.DataFrame(player_df_new)
 
-# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
 
 ##### player stats data
 
