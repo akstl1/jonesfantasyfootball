@@ -48,6 +48,8 @@ for wk in range(1,18):
 
 ##### standings data
 
+print(league.box_scores(15))
+
 standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
 for wk in range(1,17):
     standings = league.standings_weekly(wk)
@@ -93,7 +95,11 @@ for wk in range(1,19):
     box_score = league.box_scores(wk)
     week=wk
     bye_counter=1
-    for matchup in range(6):
+    if week==15:
+        matchups = 7
+    else:
+        matchups = 6
+    for matchup in range(matchups):
         home_team = box_score[matchup].home_team
         home_projected = box_score[matchup].home_projected
         home_actual = box_score[matchup].home_score
@@ -163,7 +169,7 @@ for wk in range(1,19):
         matchups_df = pd.concat([matchups_df,new_row_home],ignore_index=True)
         matchups_df = pd.concat([matchups_df,new_row_away],ignore_index=True)
 
-# matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
+matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
 
 # print(matchups_df)
 
@@ -244,7 +250,7 @@ player_df = pd.DataFrame({  'Week':[],
                             })
 
 # print(league.box_scores(17))
-temp_player = league.box_scores(15)[2]
+# temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup)
 # print(temp_player.home_lineup[0].name,temp_player.home_lineup[0].points_breakdown)
 # print(temp_player.home_lineup[1].name,temp_player.home_lineup[1].points_breakdown)
@@ -265,25 +271,25 @@ temp_player = league.box_scores(15)[2]
 # print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
 # print(league.box_scores(5)[2].home_lineup[8].active_status)
 
-print(league.box_scores(13)[1].home_lineup)
-print(league.box_scores(13)[1].home_lineup[3])
-print(league.box_scores(13)[1].home_lineup[3].position)
-print(league.box_scores(13)[1].home_lineup[3].lineupSlot)
-print(league.box_scores(13)[1].home_lineup[3].active_status)
-print(league.box_scores(13)[1].home_lineup[3].on_bye_week)
-print(league.box_scores(13)[1].home_lineup[3].slot_position)
-print(league.box_scores(13)[1].home_lineup[3].pro_opponent)
-print(league.box_scores(13)[1].home_lineup[3].projected_points)
-print(league.box_scores(13)[1].home_lineup[3].proTeam)
-print(league.box_scores(13)[1].home_lineup[3].injuryStatus)
-print(league.box_scores(13)[1].home_lineup[3].injured)
-print(league.box_scores(13)[1].home_lineup[3].game_played)
-print(league.box_scores(13)[1].home_lineup[3].name)
-print(league.box_scores(13)[1].home_lineup[3].points)
-print(league.box_scores(13)[1].home_lineup[3].posRank)
-print(league.box_scores(13)[1].home_lineup[3].pro_pos_rank)
-print(league.box_scores(13)[1].home_lineup[3])
-print(league.box_scores(13)[1].home_lineup[3].total_points)
+# print(league.box_scores(13)[1].home_lineup)
+# print(league.box_scores(13)[1].home_lineup[3])
+# print(league.box_scores(13)[1].home_lineup[3].position)
+# print(league.box_scores(13)[1].home_lineup[3].lineupSlot)
+# print(league.box_scores(13)[1].home_lineup[3].active_status)
+# print(league.box_scores(13)[1].home_lineup[3].on_bye_week)
+# print(league.box_scores(13)[1].home_lineup[3].slot_position)
+# print(league.box_scores(13)[1].home_lineup[3].pro_opponent)
+# print(league.box_scores(13)[1].home_lineup[3].projected_points)
+# print(league.box_scores(13)[1].home_lineup[3].proTeam)
+# print(league.box_scores(13)[1].home_lineup[3].injuryStatus)
+# print(league.box_scores(13)[1].home_lineup[3].injured)
+# print(league.box_scores(13)[1].home_lineup[3].game_played)
+# print(league.box_scores(13)[1].home_lineup[3].name)
+# print(league.box_scores(13)[1].home_lineup[3].points)
+# print(league.box_scores(13)[1].home_lineup[3].posRank)
+# print(league.box_scores(13)[1].home_lineup[3].pro_pos_rank)
+# print(league.box_scores(13)[1].home_lineup[3])
+# print(league.box_scores(13)[1].home_lineup[3].total_points)
 # print(league.free_agents(week=1,position='D/ST',size=50))
 # print(league.draft)
 
@@ -296,7 +302,13 @@ for wk in range(1,18):
     box_score = league.box_scores(wk)
     player_wk=wk
     print(wk)
-    for matchup in range(6):
+    if wk==15:
+        matchups = 7
+    else:
+        matchups = 6
+    for matchup in range(matchups):
+        if matchup==6:
+            print("matchup 6")
         for i in ['home','away']:
             wrNum = 1
             rbNum = 1
@@ -309,7 +321,7 @@ for wk in range(1,18):
                     if i =='home':
                         try:
                             player_name_home = box_score[matchup].home_lineup[player].name
-                            print(player_name_home, player_wk)
+                            # print(player_name_home, player_wk)
                             player_id = box_score[matchup].home_lineup[player].playerId
                             plyr = box_score[matchup].home_lineup[player]
                             team = box_score[matchup].home_team.team_name
@@ -344,7 +356,7 @@ for wk in range(1,18):
                     else:
                         try:
                             player_name_home = box_score[matchup].away_lineup[player].name
-                            print(player_name_home, player_wk)
+                            # print(player_name_home, player_wk)
                             player_id = box_score[matchup].away_lineup[player].playerId
                             plyr = box_score[matchup].away_lineup[player]
                             team = box_score[matchup].away_team.team_name
@@ -443,7 +455,7 @@ for wk in range(1,18):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6):
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
                         for item in stats:
                             try:
                                 # print(plyr.name, item, player_wk)

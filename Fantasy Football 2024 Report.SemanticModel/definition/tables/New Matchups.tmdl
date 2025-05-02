@@ -26,26 +26,6 @@ table 'New Matchups'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Projected_score
-		dataType: double
-		lineageTag: 20eb843b-7ac7-4d51-9536-b9418acd8a29
-		summarizeBy: sum
-		sourceColumn: Projected_score
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Actual_score
-		dataType: double
-		lineageTag: 694d2344-81e6-4332-b025-6cbe4c2aa0b3
-		summarizeBy: sum
-		sourceColumn: Actual_score
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column matchup_type
 		dataType: string
 		lineageTag: a3939906-c24a-487b-976c-5294786ad904
@@ -82,19 +62,74 @@ table 'New Matchups'
 
 		annotation SummarizationSetBy = Automatic
 
-	column matchup_header
-		dataType: string
-		lineageTag: f41afd04-a5a7-491c-bd81-5ae6fbb2733d
-		summarizeBy: none
-		sourceColumn: matchup_header
+	column 'Projected Points'
+		dataType: double
+		lineageTag: 68c81d4c-7d13-4000-a5cd-7ccd0911f88a
+		summarizeBy: sum
+		sourceColumn: Projected Points
 
 		annotation SummarizationSetBy = Automatic
 
-	column result
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Points'
+		dataType: double
+		lineageTag: eaf4014f-2f6f-4d48-be47-70c20703d383
+		summarizeBy: sum
+		sourceColumn: Actual Points
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Matchup Header'
 		dataType: string
-		lineageTag: de8e01c7-a3ad-4b34-8450-43f9fa89df87
+		lineageTag: fb80c54b-3698-4691-b73b-6a007d79aff7
 		summarizeBy: none
-		sourceColumn: result
+		sourceColumn: Matchup Header
+
+		annotation SummarizationSetBy = Automatic
+
+	column Result
+		dataType: string
+		lineageTag: 604caf9f-f7fa-4958-a4d5-36a5f9662493
+		summarizeBy: none
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = Automatic
+
+	column Number
+		dataType: int64
+		formatString: 0
+		lineageTag: b7ea3273-ccdb-4865-b40c-e97a56b101f4
+		summarizeBy: sum
+		sourceColumn: Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column MatchupKey
+		dataType: string
+		lineageTag: 728e1369-25f1-407b-a2d7-9c60c194961d
+		summarizeBy: none
+		sourceColumn: MatchupKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeeklyMatchupID
+		dataType: int64
+		formatString: 0
+		lineageTag: 152c37b5-d1bf-47f5-a511-49094ea247de
+		summarizeBy: count
+		sourceColumn: WeeklyMatchupID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: f5404bdd-51d5-4f0d-b11e-717adc5846e4
+		summarizeBy: count
+		sourceColumn: ID
 
 		annotation SummarizationSetBy = Automatic
 
@@ -105,7 +140,7 @@ table 'New Matchups'
 				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\matchups.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type any}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"Projected_score", type number}, {"Actual_score", type number}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type any}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}, {"Opponent", type text}, {"Actual Points", type number}, {"Projected Points", type number}, {"Matchup Header", type text}, {"Result", type text}, {"Number", Int64.Type}, {"MatchupKey", type text}, {"WeeklyMatchupID", Int64.Type}, {"ID", Int64.Type}})
 				in
 				    #"Changed Type"
 

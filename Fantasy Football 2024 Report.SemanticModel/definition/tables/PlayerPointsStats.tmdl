@@ -157,6 +157,22 @@ table PlayerPointsStats
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Home
+		dataType: string
+		lineageTag: 72f36756-f538-4737-b71d-0a02118c06e8
+		summarizeBy: none
+		sourceColumn: Home
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineup Slot'
+		dataType: string
+		lineageTag: ceb6ad73-ea46-462c-a38c-053d285ac8fd
+		summarizeBy: none
+		sourceColumn: Lineup Slot
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PlayerPointsStats = m
 		mode: import
 		source =
