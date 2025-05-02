@@ -439,7 +439,7 @@ for wk in range(1,18):
                         'defensive550PlusYardsAllowed',
                         # '2pt Return':[],
                         'junk',
-                        'defensiveSafeties',
+                        'junk', #1pt safety
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
