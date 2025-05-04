@@ -9,7 +9,7 @@ league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), e
 
 ###############################
 ###############################
-### Run at start of season ####
+### Run after draft is over ###
 ###############################
 ###############################
 
@@ -69,9 +69,6 @@ def powerRankingsMultiWeek(week,players=12):
         # print(power_ranking_df)
         power_ranking_df.to_excel('power_rankingWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
-
-
-# (league.power_rankings(week=13)[0][1].team_name)
 
 ##### standings data
 
