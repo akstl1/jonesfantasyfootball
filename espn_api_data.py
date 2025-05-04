@@ -27,44 +27,62 @@ def draft():
 
 ###############################
 ###############################
-####### Run each week #########
+### Individual Week Queries ###
 ###############################
 ###############################
 
 ##### power rankings data
 
-def powerRankingsWeekly(wk,players=12):
+def powerRankingsWeekly(current_wk,players=12):
     power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
-    rankings = league.power_rankings(week=wk)
-    week=wk
+    rankings = league.power_rankings(week=current_wk)
     for rank in range(players):
         team = rankings[rank][1].team_name
         ranking = rank+1
-        new_row = pd.DataFrame({'Team':[team],'Week':[week],'Rank':[ranking]})
+        new_row = pd.DataFrame({'Team':[team],'Week':[current_wk],'Rank':[ranking]})
         power_ranking_df = pd.concat([power_ranking_df,new_row],ignore_index=True)
     # print(power_ranking_df)
-    power_ranking_df.to_excel('power_rankingWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
+    power_ranking_df.to_excel('power_rankingWk'+str(current_wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
+##### standings data
 
+def standingsWeekly(current_wk, players=12):
+    standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
+    standings = league.standings_weekly(current_wk)
+    travis = 1
+    taylor = 1
+    for rank in range(12):
+        team = standings[rank].team_name
+        league_ranking = rank+1
+        if standings[rank].division_name=="Team Travis":
+            div_standing = travis
+            travis+=1
+        else:
+            div_standing = taylor
+            taylor+=1
+        new_row = pd.DataFrame({'Team':[team],'Week':[current_wk],'League_Rank':[league_ranking],'Division_Rank':[div_standing]})
+        standings_df = pd.concat([standings_df,new_row],ignore_index=True)
+
+    # print(standings_df)
+    standings_df.to_excel('standingsWk'+str(current_wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
 ###############################
 ###############################
-#### Run multi-week query #####
+#### Season-to-date queries ###
 ###############################
 ###############################
 
 
 ##### power rankings data
 
-def powerRankingsMultiWeek(week,players=12):
-    power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
-    for wk in range(1,week):
-        rankings = league.power_rankings(week=wk)
-        week=wk
+def powerRankingsMultiWeek(current_wk,start_wk=1,players=12):
+    for wk in range(start_wk,current_wk):
+        power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
+        rankings = league.power_rankings(week=current_wk)
         for rank in range(players):
             team = rankings[rank][1].team_name
             ranking = rank+1
-            new_row = pd.DataFrame({'Team':[team],'Week':[week],'Rank':[ranking]})
+            new_row = pd.DataFrame({'Team':[team],'Week':[wk],'Rank':[ranking]})
             power_ranking_df = pd.concat([power_ranking_df,new_row],ignore_index=True)
         # print(power_ranking_df)
         power_ranking_df.to_excel('power_rankingWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
@@ -72,14 +90,13 @@ def powerRankingsMultiWeek(week,players=12):
 
 ##### standings data
 
-def standings():
-    standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
-    for wk in range(1,17):
+def standings(current_wk,start_wk=1,players=12):
+    for wk in range(start_wk,current_wk):
+        standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
-        week=wk
         travis = 1
         taylor = 1
-        for rank in range(12):
+        for rank in range(players):
             team = standings[rank].team_name
             league_ranking = rank+1
             if standings[rank].division_name=="Team Travis":
@@ -88,11 +105,11 @@ def standings():
             else:
                 div_standing = taylor
                 taylor+=1
-            new_row = pd.DataFrame({'Team':[team],'Week':[week],'League_Rank':[league_ranking],'Division_Rank':[div_standing]})
+            new_row = pd.DataFrame({'Team':[team],'Week':[wk],'League_Rank':[league_ranking],'Division_Rank':[div_standing]})
             standings_df = pd.concat([standings_df,new_row],ignore_index=True)
 
-    # print(standings_df)
-    standings_df.to_excel('standings.xlsx', sheet_name='Sheet1', index=False)
+        # print(standings_df)
+        standings_df.to_excel('standingsWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
 
 
