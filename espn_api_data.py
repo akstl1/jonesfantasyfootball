@@ -24,20 +24,50 @@ def draft():
         draft_df = pd.concat([draft_df,new_row],ignore_index=True)
     draft_df.to_excel('draft.xlsx', sheet_name='Sheet1', index=False)
 
+
+###############################
+###############################
+####### Run each week #########
+###############################
+###############################
+
 ##### power rankings data
 
-def powerRankings():
+def powerRankingsWeekly(wk,players=12):
     power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
-    for wk in range(1,18):
+    rankings = league.power_rankings(week=wk)
+    week=wk
+    for rank in range(players):
+        team = rankings[rank][1].team_name
+        ranking = rank+1
+        new_row = pd.DataFrame({'Team':[team],'Week':[week],'Rank':[ranking]})
+        power_ranking_df = pd.concat([power_ranking_df,new_row],ignore_index=True)
+    # print(power_ranking_df)
+    power_ranking_df.to_excel('power_rankingWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
+
+
+
+###############################
+###############################
+#### Run multi-week query #####
+###############################
+###############################
+
+
+##### power rankings data
+
+def powerRankingsMultiWeek(week,players=12):
+    power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
+    for wk in range(1,week):
         rankings = league.power_rankings(week=wk)
         week=wk
-        for rank in range(12):
+        for rank in range(players):
             team = rankings[rank][1].team_name
             ranking = rank+1
             new_row = pd.DataFrame({'Team':[team],'Week':[week],'Rank':[ranking]})
             power_ranking_df = pd.concat([power_ranking_df,new_row],ignore_index=True)
-    # print(power_ranking_df)
-    power_ranking_df.to_excel('power_ranking.xlsx', sheet_name='Sheet1', index=False)
+        # print(power_ranking_df)
+        power_ranking_df.to_excel('power_rankingWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
 
 
