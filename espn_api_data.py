@@ -273,55 +273,6 @@ player_df = pd.DataFrame({  'Week':[],
                             'Fumble Recovered for TD':[]
                             })
 
-# print(league.box_scores(17))
-# temp_player = league.box_scores(15)[2]
-# print(temp_player.home_lineup)
-# print(temp_player.home_lineup[0].name,temp_player.home_lineup[0].points_breakdown)
-# print(temp_player.home_lineup[1].name,temp_player.home_lineup[1].points_breakdown)
-# print(temp_player.home_lineup[2].name,temp_player.home_lineup[2].points_breakdown)
-# print(temp_player.home_lineup[3].name,temp_player.home_lineup[3].points_breakdown)
-# print(temp_player.home_lineup[4].name,temp_player.home_lineup[4].points_breakdown)
-# print(temp_player.home_lineup[5].name,temp_player.home_lineup[5].points_breakdown)
-# print(temp_player.home_lineup[6].name,temp_player.home_lineup[6].points_breakdown)
-# print(temp_player.home_lineup[7].name,temp_player.home_lineup[7].points_breakdown)
-# print(temp_player.home_lineup[8].name,temp_player.home_lineup[8].points_breakdown)
-# print(temp_player.home_lineup[9].name,temp_player.home_lineup[9].points_breakdown)
-# print(temp_player.home_lineup[10].name,temp_player.home_lineup[10].points_breakdown)
-# print(temp_player.home_lineup[11].name,temp_player.home_lineup[11].points_breakdown)
-# print(temp_player.home_lineup[12].name,temp_player.home_lineup[12].points_breakdown)
-# print(temp_player.home_lineup[13].name,temp_player.home_lineup[13].points_breakdown)
-# print(temp_player.home_lineup[14].name,temp_player.home_lineup[14].points_breakdown)
-# print(temp_player.home_lineup[15].name,temp_player.home_lineup[15].points_breakdown)
-# print(temp_player.home_lineup[16].name,temp_player.home_lineup[16].points_breakdown)
-# print(league.box_scores(5)[2].home_lineup[8].active_status)
-
-# print(league.box_scores(13)[1].home_lineup)
-# print(league.box_scores(13)[1].home_lineup[3])
-# print(league.box_scores(13)[1].home_lineup[3].position)
-# print(league.box_scores(13)[1].home_lineup[3].lineupSlot)
-# print(league.box_scores(13)[1].home_lineup[3].active_status)
-# print(league.box_scores(13)[1].home_lineup[3].on_bye_week)
-# print(league.box_scores(13)[1].home_lineup[3].slot_position)
-# print(league.box_scores(13)[1].home_lineup[3].pro_opponent)
-# print(league.box_scores(13)[1].home_lineup[3].projected_points)
-# print(league.box_scores(13)[1].home_lineup[3].proTeam)
-# print(league.box_scores(13)[1].home_lineup[3].injuryStatus)
-# print(league.box_scores(13)[1].home_lineup[3].injured)
-# print(league.box_scores(13)[1].home_lineup[3].game_played)
-# print(league.box_scores(13)[1].home_lineup[3].name)
-# print(league.box_scores(13)[1].home_lineup[3].points)
-# print(league.box_scores(13)[1].home_lineup[3].posRank)
-# print(league.box_scores(13)[1].home_lineup[3].pro_pos_rank)
-# print(league.box_scores(13)[1].home_lineup[3])
-# print(league.box_scores(13)[1].home_lineup[3].total_points)
-# print(league.free_agents(week=1,position='D/ST',size=50))
-# print(league.draft)
-
-# player = league.box_scores(8)[1].away_lineup[10]
-# print(player)
-
-# print(player.points_breakdown,player.name,player.proTeam)
-
 for wk in range(1,18):
     box_score = league.box_scores(wk)
     player_wk=wk
