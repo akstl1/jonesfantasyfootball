@@ -7,14 +7,11 @@ load_dotenv()
 
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 
-
-# print(league.standings_weekly(1))
-# standing = team.stats
-# print(league.standings_weekly(1))
-# print(team.roster[0].stats)
-# print(league.load_roster_week(7))
-# print(team.outcomes)
-
+###############################
+###############################
+### Run at start of season ####
+###############################
+###############################
 
 ##### draft data
 
