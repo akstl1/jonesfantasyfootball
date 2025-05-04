@@ -5,8 +5,15 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 
+###############################
+###############################
+### Load in League Settings ###
+###############################
+###############################
+
+league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
+curr_week=league.current_week
 ###############################
 ###############################
 ### Run after draft is over ###
@@ -16,10 +23,10 @@ league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), e
 ##### draft data
 
 
-def draft():
+def draft(players=12,rounds=17):
     draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 
-    for i in range(204):
+    for i in range(players*rounds):
         new_row = pd.DataFrame({'Team':[league.draft[i].team.team_name],'Player':[league.draft[i].playerName],'Round':[league.draft[i].round_num],'Pick':[league.draft[i].round_pick]})
         draft_df = pd.concat([draft_df,new_row],ignore_index=True)
     draft_df.to_excel('draft.xlsx', sheet_name='Sheet1', index=False)
@@ -33,7 +40,7 @@ def draft():
 
 ##### power rankings data
 
-def powerRankingsWeekly(current_wk,players=12):
+def powerRankingsWeekly(current_wk=curr_week,players=12):
     power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
     rankings = league.power_rankings(week=current_wk)
     for rank in range(players):
@@ -46,12 +53,12 @@ def powerRankingsWeekly(current_wk,players=12):
 
 ##### standings data
 
-def standingsWeekly(current_wk, players=12):
+def standingsWeekly(current_wk=curr_week, players=12):
     standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
     standings = league.standings_weekly(current_wk)
     travis = 1
     taylor = 1
-    for rank in range(12):
+    for rank in range(players):
         team = standings[rank].team_name
         league_ranking = rank+1
         if standings[rank].division_name=="Team Travis":
@@ -75,7 +82,7 @@ def standingsWeekly(current_wk, players=12):
 
 ##### power rankings data
 
-def powerRankingsMultiWeek(current_wk,start_wk=1,players=12):
+def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
     for wk in range(start_wk,current_wk+1):
         power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
         rankings = league.power_rankings(week=wk)
@@ -90,7 +97,7 @@ def powerRankingsMultiWeek(current_wk,start_wk=1,players=12):
 
 ##### standings data
 
-def standings(current_wk,start_wk=1,players=12):
+def standings(current_wk=curr_week,start_wk=1,players=12):
     for wk in range(start_wk,current_wk+1):
         standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
