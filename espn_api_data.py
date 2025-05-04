@@ -76,9 +76,9 @@ def standingsWeekly(current_wk, players=12):
 ##### power rankings data
 
 def powerRankingsMultiWeek(current_wk,start_wk=1,players=12):
-    for wk in range(start_wk,current_wk):
+    for wk in range(start_wk,current_wk+1):
         power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
-        rankings = league.power_rankings(week=current_wk)
+        rankings = league.power_rankings(week=wk)
         for rank in range(players):
             team = rankings[rank][1].team_name
             ranking = rank+1
@@ -91,7 +91,7 @@ def powerRankingsMultiWeek(current_wk,start_wk=1,players=12):
 ##### standings data
 
 def standings(current_wk,start_wk=1,players=12):
-    for wk in range(start_wk,current_wk):
+    for wk in range(start_wk,current_wk+1):
         standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
         travis = 1
