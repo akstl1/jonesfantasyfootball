@@ -73,6 +73,105 @@ def standingsWeekly(current_wk=curr_week, players=12):
     # print(standings_df)
     standings_df.to_excel('standingsWk'+str(current_wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
+##### matchup data
+
+def matchups(current_wk=curr_week,players=12):
+    matchups_df = pd.DataFrame({'Team':[],
+                            'Opponent':[],
+                            'Week':[],
+                            'Home_Or_Away':[],
+                            'Projected Points':[],
+                            'Actual Points':[],
+                            'matchup_type':[],
+                            'projected_variance':[],
+                            'actual_variance':[],
+                            'Matchup Header':[],
+                            'Result':[],
+                            'Number':[],
+                            'MatchupKey':[],
+                            'WeeklyMatchupID':[],
+                            'ID':[]
+                            })
+    box_score = league.box_scores(current_wk)
+    bye_counter=1
+    if current_wk==15:
+        matchups = 7
+    else:
+        matchups = 6
+    for matchup in range(matchups):
+        home_team = box_score[matchup].home_team
+        home_projected = box_score[matchup].home_projected
+        home_actual = box_score[matchup].home_score
+
+        away_team = box_score[matchup].away_team
+        
+        if away_team==0:
+            away_tm = 'Bye'
+            matchupkeyaway = str(current_wk)+away_tm+str(bye_counter)
+            bye_counter+=1
+            
+        else:
+            away_tm = away_team.team_name
+            matchupkeyaway = str(current_wk)+away_tm
+        away_projected = box_score[matchup].away_projected
+        away_actual = box_score[matchup].away_score  
+        header = home_team.team_name + " vs. " + away_tm
+        matchup_type = box_score[matchup].matchup_type
+
+        if home_actual - away_actual>0:
+            result_home, result_away='Win','Loss'
+        elif  home_actual - away_actual <0:
+            result_home, result_away='Loss','Win'
+        else:
+            result_home, result_away = 'Tie', 'Tie'
+        new_row_home = pd.DataFrame({
+                            'Team':[home_team.team_name],
+                            'Opponent':[away_tm],
+                            'Week':[current_wk],
+                            'Home_Or_Away':['Home'],
+                            'Projected Points':[home_projected],
+                            'Actual Points':[home_actual],
+                            'matchup_type':[matchup_type],
+                            'projected_variance':[home_projected-away_projected],
+                            'actual_variance':[home_actual-away_actual],
+                            'Matchup Header':[header],
+                            'Result':[result_home],
+                            'Number':2,
+                            'MatchupKey':str(current_wk)+home_team.team_name,
+                            'ID':matchup+7,
+                            'WeeklyMatchupID':matchup+1
+                            })
+        
+        new_row_away = pd.DataFrame({
+                            'Team':[away_tm],
+                            'Opponent':[home_team.team_name],
+                            'Week':[current_wk],
+                            'Home_Or_Away':['Away'],
+                            'Projected Points':[away_projected],
+                            'Actual Points':[away_actual],
+                            'matchup_type':[matchup_type],
+                            'projected_variance':[away_projected-home_projected],
+                            'actual_variance':[away_actual-home_actual],
+                            'Matchup Header':[header],
+                            'Result':[result_away],
+                            'Number':1,
+                            'MatchupKey':matchupkeyaway,
+                            'ID':matchup+1,
+                            'WeeklyMatchupID':matchup+1
+                            })
+        new_row_home['projected_variance'] = new_row_home['projected_variance'].round(2)
+        new_row_home['actual_variance'] = new_row_home['actual_variance'].round(2)
+
+        new_row_away['projected_variance'] = new_row_away['projected_variance'].round(2)
+        new_row_away['actual_variance'] = new_row_away['actual_variance'].round(2)
+
+        matchups_df = pd.concat([matchups_df,new_row_home],ignore_index=True)
+        matchups_df = pd.concat([matchups_df,new_row_away],ignore_index=True)
+
+        matchups_df.to_excel('matchupsWk'+str(current_wk)+'.xlsx', sheet_name='Sheet1', index=False)
+
+        # print(matchups_df)
+
 ###############################
 ###############################
 #### Season-to-date queries ###
@@ -97,7 +196,7 @@ def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
 
 ##### standings data
 
-def standings(current_wk=curr_week,start_wk=1,players=12):
+def standings(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
@@ -122,7 +221,7 @@ def standings(current_wk=curr_week,start_wk=1,players=12):
 
 ##### matchup data
 
-def matchups():
+def matchups(start_wk=1,current_wk=curr_week,players=12):
     matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
                             'Week':[],
@@ -139,7 +238,23 @@ def matchups():
                             'WeeklyMatchupID':[],
                             'ID':[]
                             })
-    for wk in range(1,19):
+    for wk in range(start_wk,current_wk+1):
+        matchups_df = pd.DataFrame({'Team':[],
+                            'Opponent':[],
+                            'Week':[],
+                            'Home_Or_Away':[],
+                            'Projected Points':[],
+                            'Actual Points':[],
+                            'matchup_type':[],
+                            'projected_variance':[],
+                            'actual_variance':[],
+                            'Matchup Header':[],
+                            'Result':[],
+                            'Number':[],
+                            'MatchupKey':[],
+                            'WeeklyMatchupID':[],
+                            'ID':[]
+                            })
         box_score = league.box_scores(wk)
         week=wk
         bye_counter=1
@@ -217,9 +332,11 @@ def matchups():
             matchups_df = pd.concat([matchups_df,new_row_home],ignore_index=True)
             matchups_df = pd.concat([matchups_df,new_row_away],ignore_index=True)
 
-    matchups_df.to_excel('matchups.xlsx', sheet_name='Sheet1', index=False)
+        matchups_df.to_excel('matchupsWk'+str(wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
-    # print(matchups_df)
+            # print(matchups_df)
+
+
 
 ##### player stats data
 
