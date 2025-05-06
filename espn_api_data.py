@@ -222,22 +222,6 @@ def standings(start_wk=1,current_wk=curr_week,players=12):
 ##### matchup data
 
 def matchups(start_wk=1,current_wk=curr_week,players=12):
-    matchups_df = pd.DataFrame({'Team':[],
-                            'Opponent':[],
-                            'Week':[],
-                            'Home_Or_Away':[],
-                            'Projected Points':[],
-                            'Actual Points':[],
-                            'matchup_type':[],
-                            'projected_variance':[],
-                            'actual_variance':[],
-                            'Matchup Header':[],
-                            'Result':[],
-                            'Number':[],
-                            'MatchupKey':[],
-                            'WeeklyMatchupID':[],
-                            'ID':[]
-                            })
     for wk in range(start_wk,current_wk+1):
         matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
@@ -258,7 +242,7 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
         box_score = league.box_scores(wk)
         week=wk
         bye_counter=1
-        if week==15:
+        if wk==15:
             matchups = 7
         else:
             matchups = 6
@@ -271,12 +255,12 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
         
             if away_team==0:
                 away_tm = 'Bye'
-                matchupkeyaway = str(week)+away_tm+str(bye_counter)
+                matchupkeyaway = str(wk)+away_tm+str(bye_counter)
                 bye_counter+=1
             
             else:
                 away_tm = away_team.team_name
-                matchupkeyaway = str(week)+away_tm
+                matchupkeyaway = str(wk)+away_tm
             away_projected = box_score[matchup].away_projected
             away_actual = box_score[matchup].away_score  
             header = home_team.team_name + " vs. " + away_tm
@@ -291,7 +275,7 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
             new_row_home = pd.DataFrame({
                             'Team':[home_team.team_name],
                             'Opponent':[away_tm],
-                            'Week':[week],
+                            'Week':[wk],
                             'Home_Or_Away':['Home'],
                             'Projected Points':[home_projected],
                             'Actual Points':[home_actual],
@@ -309,7 +293,7 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
             new_row_away = pd.DataFrame({
                             'Team':[away_tm],
                             'Opponent':[home_team.team_name],
-                            'Week':[week],
+                            'Week':[wk],
                             'Home_Or_Away':['Away'],
                             'Projected Points':[away_projected],
                             'Actual Points':[away_actual],
@@ -340,9 +324,22 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
 
 ##### player stats data
 
+# print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
+def hundredyardgame(value):
+    if value<100 or value>199:
+        return 0
+    else:
+        return 1
+def threehundredyardpassinggame(value):
+    if value<300 or value>399:
+        return 0
+    else:
+        return 1
 
-
-player_df = pd.DataFrame({  'Week':[],
+def player_stats(start_wk=1,current_wk=curr_week,players=12):
+    for wk in range(start_wk,current_wk+1):
+        player_df = pd.DataFrame({  
+                            'Week':[],
                             'FantasyTeam':[],
                             'Player Name':[],
                             'PlayerID':[],
@@ -413,104 +410,102 @@ player_df = pd.DataFrame({  'Week':[],
                             'Actual':[],
                             'Fumble Recovered for TD':[]
                             })
-
-for wk in range(1,18):
-    box_score = league.box_scores(wk)
-    player_wk=wk
-    print(wk)
-    if wk==15:
-        matchups = 7
-    else:
-        matchups = 6
-    for matchup in range(matchups):
-        for i in ['home','away']:
-            wrNum = 1
-            rbNum = 1
-            beNum = 1
-            for player in range(17):
-                if box_score[matchup].away_team==0:
-                    pass
-                else:
-                    empty=0
-                    if i =='home':
-                        try:
-                            player_name_home = box_score[matchup].home_lineup[player].name
-                            # print(player_name_home, player_wk)
-                            player_id = box_score[matchup].home_lineup[player].playerId
-                            plyr = box_score[matchup].home_lineup[player]
-                            team = box_score[matchup].home_team.team_name
-                            bye = box_score[matchup].home_lineup[player].on_bye_week
-                            status = box_score[matchup].home_lineup[player].active_status
-                            pos = plyr.position
-                            player_key = str(player_wk)+player_name_home
-                            home='1'
-                            slotTemp = box_score[matchup].home_lineup[player].lineupSlot
-                            if slotTemp == 'RB/WR/TE':
-                                slot = 'Flex'
-                            elif slotTemp == 'RB':
-                                slot = slotTemp+str(rbNum)
-                                rbNum+=1
-                            elif slotTemp == 'WR':
-                                slot = slotTemp+str(wrNum)
-                                wrNum+=1
-                            elif slotTemp == 'BE':
-                                slot = slotTemp+str(beNum)
-                                beNum+=1
-                            else:
-                                slot = slotTemp
-                            if pos != 'D/ST':
-                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
-                            else:
-                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
-                            # if player_id==8439:
-                                # print("loop1", player_name_home, plyr, team, bye, status)
-                        except IndexError:
-                            empty=1
-                            # print('empty1')
+        box_score = league.box_scores(wk)
+        player_wk=wk
+        print(wk)
+        if wk==15:
+            matchups = 7
+        else:
+            matchups = 6
+        for matchup in range(matchups):
+            for i in ['home','away']:
+                wrNum = 1
+                rbNum = 1
+                beNum = 1
+                for player in range(17):
+                    if box_score[matchup].away_team==0:
+                        pass
                     else:
-                        try:
-                            player_name_home = box_score[matchup].away_lineup[player].name
-                            # print(player_name_home, player_wk)
-                            player_id = box_score[matchup].away_lineup[player].playerId
-                            plyr = box_score[matchup].away_lineup[player]
-                            team = box_score[matchup].away_team.team_name
-                            bye = box_score[matchup].away_lineup[player].on_bye_week
-                            status = box_score[matchup].away_lineup[player].active_status
-                            pos = plyr.position
-                            player_key = str(player_wk)+player_name_home
-                            home='0'
-                            slotTemp = box_score[matchup].away_lineup[player].lineupSlot
-                            if slotTemp == 'RB/WR/TE':
-                                slot = 'Flex'
-                            elif slotTemp == 'RB':
-                                slot = slotTemp+str(rbNum)
-                                rbNum+=1
-                            elif slotTemp == 'WR':
-                                slot = slotTemp+str(wrNum)
-                                wrNum+=1
-                            elif slotTemp == 'BE':
-                                slot = slotTemp+str(beNum)
-                                beNum+=1
-                            else:
-                                slot = slotTemp
-                            if pos != 'D/ST':
-                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
-                            else:
-                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
-                            # if player_id==8439:
-                                # print("loop2", player_name_home, plyr, team, bye, status)
-                        except IndexError:
-                            empty=1
-                            # print('empty2')
-                    qb,rb,other = '','',''
-                    if pos=='QB':
-                        qb,rb,other='lostFumbles','junk','junk'
-                    elif pos=='RB':
-                        qb,rb,other='junk','lostFumbles','junk'
-                    else:
-                        qb,rb,other='junk','junk','lostFumbles'
-                    temp = []
-                    stats = [
+                        empty=0
+                        if i =='home':
+                            try:
+                                player_name_home = box_score[matchup].home_lineup[player].name
+                                # print(player_name_home, player_wk)
+                                player_id = box_score[matchup].home_lineup[player].playerId
+                                plyr = box_score[matchup].home_lineup[player]
+                                team = box_score[matchup].home_team.team_name
+                                bye = box_score[matchup].home_lineup[player].on_bye_week
+                                status = box_score[matchup].home_lineup[player].active_status
+                                pos = plyr.position
+                                player_key = str(player_wk)+player_name_home
+                                home='1'
+                                slotTemp = box_score[matchup].home_lineup[player].lineupSlot
+                                if slotTemp == 'RB/WR/TE':
+                                    slot = 'Flex'
+                                elif slotTemp == 'RB':
+                                    slot = slotTemp+str(rbNum)
+                                    rbNum+=1
+                                elif slotTemp == 'WR':
+                                    slot = slotTemp+str(wrNum)
+                                    wrNum+=1
+                                elif slotTemp == 'BE':
+                                    slot = slotTemp+str(beNum)
+                                    beNum+=1
+                                else:
+                                    slot = slotTemp
+                                if pos != 'D/ST':
+                                    headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                                else:
+                                    headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                                # if player_id==8439:
+                                    # print("loop1", player_name_home, plyr, team, bye, status)
+                            except IndexError:
+                                empty=1
+                                # print('empty1')
+                        else:
+                            try:
+                                player_name_home = box_score[matchup].away_lineup[player].name
+                                # print(player_name_home, player_wk)
+                                player_id = box_score[matchup].away_lineup[player].playerId
+                                plyr = box_score[matchup].away_lineup[player]
+                                team = box_score[matchup].away_team.team_name
+                                bye = box_score[matchup].away_lineup[player].on_bye_week
+                                status = box_score[matchup].away_lineup[player].active_status
+                                pos = plyr.position
+                                player_key = str(player_wk)+player_name_home
+                                home='0'
+                                slotTemp = box_score[matchup].away_lineup[player].lineupSlot
+                                if slotTemp == 'RB/WR/TE':
+                                    slot = 'Flex'
+                                elif slotTemp == 'RB':
+                                    slot = slotTemp+str(rbNum)
+                                    rbNum+=1
+                                elif slotTemp == 'WR':
+                                    slot = slotTemp+str(wrNum)
+                                    wrNum+=1
+                                elif slotTemp == 'BE':
+                                    slot = slotTemp+str(beNum)
+                                    beNum+=1
+                                else:
+                                    slot = slotTemp
+                                if pos != 'D/ST':
+                                    headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                                else:
+                                    headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                                # if player_id==8439:
+                                    # print("loop2", player_name_home, plyr, team, bye, status)
+                            except IndexError:
+                                empty=1
+                                # print('empty2')
+                        qb,rb,other = '','',''
+                        if pos=='QB':
+                            qb,rb,other='lostFumbles','junk','junk'
+                        elif pos=='RB':
+                            qb,rb,other='junk','lostFumbles','junk'
+                        else:
+                            qb,rb,other='junk','junk','lostFumbles'
+                        temp = []
+                        stats = [
                         'madeExtraPoints',
                         'attemptedExtraPoints',
                         'madeFieldGoalsFromUnder40',
@@ -569,22 +564,22 @@ for wk in range(1,18):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
-                        for item in stats:
-                            try:
-                                # print(plyr.name, item, player_wk)
-                                value=plyr.points_breakdown[item]
-                                # if player_id==8439:
-                                    # print("try2", player_name_home, item, value)
+                        if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
+                            for item in stats:
+                                try:
+                                    # print(plyr.name, item, player_wk)
+                                    value=plyr.points_breakdown[item]
+                                    # if player_id==8439:
+                                        # print("try2", player_name_home, item, value)
 
-                            except KeyError:
-                                value=0
+                                except KeyError:
+                                    value=0
+                                    # if player_id==8439:
+                                        # print("keyerror2", player_name_home, item, value)
+                                temp.append(value)
                                 # if player_id==8439:
-                                    # print("keyerror2", player_name_home, item, value)
-                            temp.append(value)
-                            # if player_id==8439:
-                                # print("loop3", player_name_home, plyr, team, bye, status)
-                        player_row_home = pd.DataFrame({
+                                    # print("loop3", player_name_home, plyr, team, bye, status)
+                            player_row_home = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
                                 'Player Name':[player_name_home],
@@ -657,14 +652,14 @@ for wk in range(1,18):
                                 'Fumble Recovered for TD':temp[53]
                                 })
 
-                        player_df = pd.concat([player_df,player_row_home],ignore_index=True)
-                    elif empty==1:
-                        # print('emptyloop')
-                        pass
-                    else:
+                            player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+                        elif empty==1:
+                            # print('emptyloop')
+                            pass
+                        else:
                         # print('zerosloop', player_id,bye, status, empty,not(bye), status!='bye', empty==0, not(bye) and status!='bye' and empty==0)
-                        temp2 = [0]*55
-                        player_row_bye = pd.DataFrame({
+                            temp2 = [0]*55
+                            player_row_bye = pd.DataFrame({
                                 'Week':[player_wk],
                                 'FantasyTeam':[team],
                                 'Player Name':[player_name_home],
@@ -737,34 +732,26 @@ for wk in range(1,18):
                                 'Fumble Recovered for TD':temp2[53]
                                 })
 
-                        player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
-                    empty=0
+                            player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
+                        empty=0
 
-# print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
-def hundredyardgame(value):
-    if value<100 or value>199:
-        return 0
-    else:
-        return 1
-def threehundredyardpassinggame(value):
-    if value<300 or value>399:
-        return 0
-    else:
-        return 1
-player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
-player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
-player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehundredyardpassinggame)
-player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
-player_df_final = pd.DataFrame(player_df_new)
 
-# player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+        player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
+        player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
+        player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehundredyardpassinggame)
+        player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
+        player_df_final = pd.DataFrame(player_df_new)
 
-##### player stats data
+        # player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
 
-players_table = player_df_final[['Week','FantasyTeam','NFL_Team','Player Name','Status','Home','Lineup Slot','PlayerKey']].copy()
+        ##### player stats data
 
-players_table = players_table.drop_duplicates()
+        players_table = player_df_final[['Week','FantasyTeam','NFL_Team','Player Name','Status','Home','Lineup Slot','PlayerKey']].copy()
 
-players_table['MatchupKey'] = players_table.apply(lambda row: str(row['Week'])[0]+row['FantasyTeam'] if row['Week']<10 else str(row['Week'])[:2]+row['FantasyTeam'],axis=1)
+        players_table = players_table.drop_duplicates()
 
-# players_table.to_excel('playerstable.xlsx',sheet_name='Sheet1',index=False)
+        players_table['MatchupKey'] = players_table.apply(lambda row: str(row['Week'])[0]+row['FantasyTeam'] if row['Week']<10 else str(row['Week'])[:2]+row['FantasyTeam'],axis=1)
+        player_df_final.to_excel('playerpointsnewWk'+str(wk)+'.xlsx',sheet_name='Sheet1',index=False)
+        players_table.to_excel('playerstableWk'+str(wk)+'.xlsx',sheet_name='Sheet1',index=False)
+
+player_stats()
