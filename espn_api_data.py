@@ -60,7 +60,7 @@ def draft(players=12,rounds=17):
 
 ##### power rankings data
 
-def powerRankingsWeekly(current_wk=curr_week,players=12):
+def powerRankingsSingleWeek(current_wk=curr_week,players=12):
     power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
     rankings = league.power_rankings(week=current_wk)
     for rank in range(players):
@@ -73,7 +73,7 @@ def powerRankingsWeekly(current_wk=curr_week,players=12):
 
 ##### standings data
 
-def standingsWeekly(current_wk=curr_week, players=12):
+def standingsSingleWeek(current_wk=curr_week, players=12):
     standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
     standings = league.standings_weekly(current_wk)
     travis = 1
@@ -95,7 +95,7 @@ def standingsWeekly(current_wk=curr_week, players=12):
 
 ##### matchup data
 
-def matchups(current_wk=curr_week,players=12):
+def matchupsSingleWeek(current_wk=curr_week,players=12):
     matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
                             'Week':[],
@@ -192,6 +192,409 @@ def matchups(current_wk=curr_week,players=12):
 
         # print(matchups_df)
 
+
+def playerStatsSingleWeek(current_wk=curr_week,players=12):
+    player_df = pd.DataFrame({  
+                            'Week':[],
+                            'FantasyTeam':[],
+                            'Player Name':[],
+                            'PlayerID':[],
+                            'Headshot_url':[],
+                            'Status':[],
+                            'NFL_Team':[],
+                            'Opponent':[],
+                            'Position':[],
+                            'PositionRank':[],
+                            'Lineup Slot':[],
+                            'PlayerKey':[],
+                            'Bye':[],
+                            'Home':[],
+                            'Projected':[],
+                            'Each PAT Made':[],
+                            'PAT Attempt':[],
+                            'FG Made (0-39 yards)':[],
+                            'FG Made (40-49 yards)':[],
+                            'FG Made (50-50 yards)':[],
+                            'FG Made (60+ yards)':[],
+                            'Field Goal Attempted':[],
+                            'Passes Caught':[],
+                            'Pass Attempts':[],
+                            'Passing Yards':[],
+                            'TD Pass':[],
+                            'Interceptions Thrown':[],
+                            'Passer Fumble':[],
+                            '2pt Passing Conversion':[],
+                            'Rushing Attempts':[],
+                            'Rushing Yards':[],
+                            'TD Rush':[],
+                            'Rushing Fumble':[],
+                            '2pt Rushing Conversion':[],
+                            'Each Reception':[],
+                            'Receiving Targets':[],
+                            'Receiving Yards':[],
+                            'TD Reception':[],
+                            'Receiving Fumble':[],
+                            '2pt Receiving Conversion':[],
+                            'Each Sack':[],
+                            'Interception Return TD':[],
+                            'Fumble Return TD':[],
+                            'Kickoff Return TD':[],
+                            'Punt Return TD':[],
+                            'Blocked Punt or FG return for TD':[],
+                            'Blocked Punt, PAT or FG':[],
+                            'Each Interception':[],
+                            'Each Fumble Recovered':[],
+                            'Each Safety':[],
+                            '0 points allowed':[],
+                            '1-6 points allowed':[],
+                            '7-13 points allowed':[],
+                            '14-17 points allowed':[],
+                            '28-34 points allowed':[],
+                            '35-45 points allowed':[],
+                            '46+ points allowed':[],
+                            'Less than 100 total yards allowed':[],
+                            '100-199 total yards allowed':[],
+                            '200-299 yards allowed':[],
+                            '350-399 yards allowed':[],
+                            '400-449 yards allowed':[],
+                            '450-499 yards allowed':[],
+                            '500-549 yards allowed':[],
+                            '550+ yards allowed':[],
+                            '2pt Return':[],
+                            '1pt Safety':[],
+                            'Defense Fumbles Lost':[],
+                            'Actual':[],
+                            'Fumble Recovered for TD':[]
+                            })
+    box_score = league.box_scores(current_wk)
+    player_wk=current_wk
+    print(current_wk)
+    if current_wk==15:
+        matchups = 7
+    else:
+        matchups = 6
+    for matchup in range(matchups):
+        for i in ['home','away']:
+            wrNum = 1
+            rbNum = 1
+            beNum = 1
+            for player in range(17):
+                if box_score[matchup].away_team==0:
+                    pass
+                else:
+                    empty=0
+                    if i =='home':
+                        try:
+                            player_name_home = box_score[matchup].home_lineup[player].name
+                            # print(player_name_home, player_wk)
+                            player_id = box_score[matchup].home_lineup[player].playerId
+                            plyr = box_score[matchup].home_lineup[player]
+                            team = box_score[matchup].home_team.team_name
+                            bye = box_score[matchup].home_lineup[player].on_bye_week
+                            status = box_score[matchup].home_lineup[player].active_status
+                            pos = plyr.position
+                            player_key = str(player_wk)+player_name_home
+                            home='1'
+                            slotTemp = box_score[matchup].home_lineup[player].lineupSlot
+                            if slotTemp == 'RB/WR/TE':
+                                slot = 'Flex'
+                            elif slotTemp == 'RB':
+                                slot = slotTemp+str(rbNum)
+                                rbNum+=1
+                            elif slotTemp == 'WR':
+                                slot = slotTemp+str(wrNum)
+                                wrNum+=1
+                            elif slotTemp == 'BE':
+                                slot = slotTemp+str(beNum)
+                                beNum+=1
+                            else:
+                                slot = slotTemp
+                            if pos != 'D/ST':
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                            else:
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                        except IndexError:
+                            empty=1
+                    else:
+                        try:
+                            player_name_home = box_score[matchup].away_lineup[player].name
+                            # print(player_name_home, player_wk)
+                            player_id = box_score[matchup].away_lineup[player].playerId
+                            plyr = box_score[matchup].away_lineup[player]
+                            team = box_score[matchup].away_team.team_name
+                            bye = box_score[matchup].away_lineup[player].on_bye_week
+                            status = box_score[matchup].away_lineup[player].active_status
+                            pos = plyr.position
+                            player_key = str(player_wk)+player_name_home
+                            home='0'
+                            slotTemp = box_score[matchup].away_lineup[player].lineupSlot
+                            if slotTemp == 'RB/WR/TE':
+                                slot = 'Flex'
+                            elif slotTemp == 'RB':
+                                slot = slotTemp+str(rbNum)
+                                rbNum+=1
+                            elif slotTemp == 'WR':
+                                slot = slotTemp+str(wrNum)
+                                wrNum+=1
+                            elif slotTemp == 'BE':
+                                slot = slotTemp+str(beNum)
+                                beNum+=1
+                            else:
+                                slot = slotTemp
+                            if pos != 'D/ST':
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"+str(player_id)+".png&w=96&h=70&cb=1"
+                            else:
+                                headshot = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/"+plyr.proTeam.lower()+".png&h=50&w=50"
+                        except IndexError:
+                            empty=1
+                    qb,rb,other = '','',''
+                    if pos=='QB':
+                        qb,rb,other='lostFumbles','junk','junk'
+                    elif pos=='RB':
+                        qb,rb,other='junk','lostFumbles','junk'
+                    else:
+                        qb,rb,other='junk','junk','lostFumbles'
+                    temp = []
+                    stats = [
+                        'madeExtraPoints',
+                        'attemptedExtraPoints',
+                        'madeFieldGoalsFromUnder40',
+                        'madeFieldGoalsFrom40To49',
+                        'madeFieldGoalsFrom50Plus',
+                        'madeFieldGoalsFrom60Plus',
+                        # 'madeFieldGoals',
+                        'attemptedFieldGoals',
+                        'passingCompletions',
+                        'passingAttempts',
+                        'passingYards',
+                        'passingTouchdowns',
+                        'passingInterceptions',
+                        qb,
+                        'passing2PtConversions',
+                        'rushingAttempts',
+                        'rushingYards',
+                        'rushingTouchdowns',
+                        rb,
+                        'rushing2PtConversions',
+                        'receivingReceptions',
+                        'receivingTargets',
+                        'receivingYards',
+                        'receivingTouchdowns',
+                        other,
+                        'receiving2PtConversions',
+                        'defensiveSacks',
+                        'interceptionReturnTouchdowns',
+                        'fumbleReturnTouchdowns',
+                        'kickoffReturnTouchdowns',
+                        'puntReturnTouchdowns',
+                        'defensiveBlockedKickForTouchdowns',
+                        'defensiveBlockedKicks',
+                        'defensiveInterceptions',
+                        'defensiveFumbles',
+                        'defensiveSafeties',
+                        'defensive0PointsAllowed',
+                        'defensive1To6PointsAllowed',
+                        'defensive7To13PointsAllowed',
+                        'defensive14To17PointsAllowed',
+                        'defensive28To34PointsAllowed',
+                        'defensive35To45PointsAllowed',
+                        'defensive45PlusPointsAllowed',
+                        'defensiveLessThan100YardsAllowed',
+                        'defensive100To199YardsAllowed',
+                        'defensive200To299YardsAllowed',
+                        # 'defensive300To349YardsAllowed',
+                        'defensive350To399YardsAllowed',
+                        'defensive400To449YardsAllowed',
+                        'defensive450To499YardsAllowed',
+                        'defensive500To549YardsAllowed',
+                        'defensive550PlusYardsAllowed',
+                        # '2pt Return':[],
+                        'junk',
+                        'junk', #1pt safety
+                        'junk' #'defensiveFumbles'/,
+                        ,'fumbleRecoveredForTD'
+                        ]
+                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
+                        for item in stats:
+                            try:
+                                value=plyr.points_breakdown[item]
+                            except KeyError:
+                                value=0
+                            temp.append(value)
+                        player_row_home = pd.DataFrame({
+                                'Week':[player_wk],
+                                'FantasyTeam':[team],
+                                'Player Name':[player_name_home],
+                                'PlayerID':[player_id],
+                                'Headshot_url':[headshot],
+                                'NFL_Team':[plyr.proTeam],
+                                'Status':[plyr.active_status],
+                                'Opponent':[plyr.pro_opponent],
+                                'Position':[plyr.position],
+                                'PositionRank':[plyr.posRank],
+                                'Lineup Slot': [slot],
+                                'PlayerKey':[player_key],
+                                'Home':[home],
+                                'Bye':[plyr.on_bye_week],
+                                'Projected':[plyr.projected_points],
+                                'Each PAT Made':temp[0],
+                                'PAT Attempt':temp[1],
+                                'FG Made (0-39 yards)':temp[2],
+                                'FG Made (40-49 yards)':temp[3],
+                                'FG Made (50-59 yards)':temp[4] - temp[5],
+                                'FG Made (60+ yards)':temp[5],
+                                'Field Goal Attempted':temp[6],
+                                'Passes Caught':temp[7],
+                                'Pass Attempts':temp[8],
+                                'Passing Yards':temp[9],
+                                'TD Pass':temp[10],
+                                'Interceptions Thrown':temp[11],
+                                'Passer Fumble':temp[12],
+                                '2pt Passing Conversion':temp[13],
+                                'Rushing Attempts':temp[14],
+                                'Rushing Yards':temp[15],
+                                'TD Rush':temp[16],
+                                'Rushing Fumble':temp[17],
+                                '2pt Rushing Conversion':temp[18],
+                                'Each Reception':temp[19],
+                                'Receiving Targets':temp[20],
+                                'Receiving Yards':temp[21],
+                                'TD Reception':temp[22],
+                                'Receiving Fumble':temp[23],
+                                '2pt Receiving Conversion':temp[24],
+                                'Each Sack':temp[25],
+                                'Interception Return TD':temp[26],
+                                'Fumble Return TD':temp[27],
+                                'Kickoff Return TD':temp[28],
+                                'Punt Return TD':temp[29],
+                                'Blocked Punt or FG return for TD':temp[30],
+                                'Blocked Punt, PAT or FG':temp[31],
+                                'Each Interception':temp[32],
+                                'Each Fumble Recovered':temp[33],
+                                'Each Safety':temp[34],
+                                '0 points allowed':temp[35],
+                                '1-6 points allowed':temp[36],
+                                '7-13 points allowed':temp[37],
+                                '14-17 points allowed':temp[38],
+                                '28-34 points allowed':temp[39],
+                                '35-45 points allowed':temp[40],
+                                '46+ points allowed':temp[41],
+                                'Less than 100 total yards allowed':temp[42],
+                                '100-199 total yards allowed':temp[43],
+                                '200-299 yards allowed':temp[44],
+                                '350-399 yards allowed':temp[45],
+                                '400-449 yards allowed':temp[46],
+                                '450-499 yards allowed':temp[47],
+                                '500-549 yards allowed':temp[48],
+                                '550+ yards allowed':temp[49],
+                                '2pt Return':0,
+                                '1pt Safety':temp[51],
+                                'Defense Fumbles Lost':temp[52],
+                                'Actual':[plyr.points],
+                                'Fumble Recovered for TD':temp[53]
+                                })
+
+                        player_df = pd.concat([player_df,player_row_home],ignore_index=True)
+                    elif empty==1:
+                        pass
+                    else:
+                        player_row_bye = pd.DataFrame({
+                                'Week':[player_wk],
+                                'FantasyTeam':[team],
+                                'Player Name':[player_name_home],
+                                'PlayerID':[player_id],
+                                'Headshot_url':[headshot],
+                                'NFL_Team':[plyr.proTeam],
+                                'Status':[plyr.active_status],
+                                'Opponent':[plyr.pro_opponent],
+                                'Position':[plyr.position],
+                                'PositionRank':[plyr.posRank],
+                                'PlayerKey':[player_key],
+                                'Lineup Slot': [slot],
+                                'Home':'Bye',
+                                'Bye':1,
+                                'Projected':0,
+                                'Each PAT Made':0,
+                                'PAT Attempt':0,
+                                'FG Made (0-39 yards)':0,
+                                'FG Made (40-49 yards)':0,
+                                'FG Made (50-50 yards)':0,
+                                'FG Made (60+ yards)':0,
+                                'Field Goal Attempted':0,
+                                'Passes Caught':0,
+                                'Pass Attempts':0,
+                                'Passing Yards':0,
+                                'TD Pass':0,
+                                'Interceptions Thrown':0,
+                                'Passer Fumble':0,
+                                '2pt Passing Conversion':0,
+                                'Rushing Attempts':0,
+                                'Rushing Yards':0,
+                                'TD Rush':0,
+                                'Rushing Fumble':0,
+                                '2pt Rushing Conversion':0,
+                                'Each Reception':0,
+                                'Receiving Targets':0,
+                                'Receiving Yards':0,
+                                'TD Reception':0,
+                                'Receiving Fumble':0,
+                                '2pt Receiving Conversion':0,
+                                'Each Sack':0,
+                                'Interception Return TD':0,
+                                'Fumble Return TD':0,
+                                'Kickoff Return TD':0,
+                                'Punt Return TD':0,
+                                'Blocked Punt or FG return for TD':0,
+                                'Blocked Punt, PAT or FG':0,
+                                'Each Interception':0,
+                                'Each Fumble Recovered':0,
+                                'Each Safety':0,
+                                '0 points allowed':0,
+                                '1-6 points allowed':0,
+                                '7-13 points allowed':0,
+                                '14-17 points allowed':0,
+                                '28-34 points allowed':0,
+                                '35-45 points allowed':0,
+                                '46+ points allowed':0,
+                                'Less than 100 total yards allowed':0,
+                                '100-199 total yards allowed':0,
+                                '200-299 yards allowed':0,
+                                '350-399 yards allowed':0,
+                                '400-449 yards allowed':0,
+                                '450-499 yards allowed':0,
+                                '500-549 yards allowed':0,
+                                '550+ yards allowed':0,
+                                '2pt Return':0,
+                                '1pt Safety':0,
+                                'Defense Fumbles Lost':0,
+                                'Actual':0,
+                                'Fumble Recovered for TD':0
+                                })
+
+                        player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
+                    empty=0
+
+
+    player_df['100-199 yard receiving game'] = player_df['Receiving Yards'].map(hundredyardgame)
+    player_df['100-199 yard rushing game'] = player_df['Rushing Yards'].map(hundredyardgame)
+    player_df['300-399 yard passing game'] = player_df['Passing Yards'].map(threehundredyardpassinggame)
+    player_df_new = pd.melt(player_df,id_vars=['Week','FantasyTeam','Player Name','PlayerID','Headshot_url','Status','NFL_Team','Opponent','Position','PositionRank','PlayerKey','Bye','Projected','Actual', 'Home', 'Lineup Slot'],var_name='Attribute',value_name='Value')
+    player_df_final = pd.DataFrame(player_df_new)
+
+
+    ##### player stats data
+
+    players_table = player_df_final[['Week','FantasyTeam','NFL_Team','Player Name','Status','Home','Lineup Slot','PlayerKey']].copy()
+
+    players_table = players_table.drop_duplicates()
+
+    players_table['MatchupKey'] = players_table.apply(lambda row: str(row['Week'])[0]+row['FantasyTeam'] if row['Week']<10 else str(row['Week'])[:2]+row['FantasyTeam'],axis=1)
+    player_df_final.to_excel('playerpointsnewWk'+str(current_wk)+'.xlsx',sheet_name='Sheet1',index=False)
+    players_table.to_excel('playerstableWk'+str(current_wk)+'.xlsx',sheet_name='Sheet1',index=False)
+    # player_df_final.to_excel('playerpointsnew.xlsx',sheet_name='Sheet1',index=False)
+
+
+
 ###############################
 ###############################
 #### Season-to-date queries ###
@@ -216,7 +619,7 @@ def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
 
 ##### standings data
 
-def standings(start_wk=1,current_wk=curr_week,players=12):
+def standingsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
@@ -241,7 +644,7 @@ def standings(start_wk=1,current_wk=curr_week,players=12):
 
 ##### matchup data
 
-def matchups(start_wk=1,current_wk=curr_week,players=12):
+def matchupsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
@@ -344,7 +747,7 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
 
 ##### player stats data
 
-def player_stats(start_wk=1,current_wk=curr_week,players=12):
+def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         player_df = pd.DataFrame({  
                             'Week':[],
