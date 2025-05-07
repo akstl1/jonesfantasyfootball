@@ -14,6 +14,26 @@ load_dotenv()
 
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 curr_week=league.current_week
+
+###############################
+###############################
+###### Helper Functions #######
+###############################
+###############################
+
+
+def hundredyardgame(value):
+    if value<100 or value>199:
+        return 0
+    else:
+        return 1
+def threehundredyardpassinggame(value):
+    if value<300 or value>399:
+        return 0
+    else:
+        return 1
+    
+
 ###############################
 ###############################
 ### Run after draft is over ###
@@ -323,18 +343,6 @@ def matchups(start_wk=1,current_wk=curr_week,players=12):
 
 
 ##### player stats data
-
-# print(player_df[player_df.PlayerID==8439][['Pass Attempts']])
-def hundredyardgame(value):
-    if value<100 or value>199:
-        return 0
-    else:
-        return 1
-def threehundredyardpassinggame(value):
-    if value<300 or value>399:
-        return 0
-    else:
-        return 1
 
 def player_stats(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
