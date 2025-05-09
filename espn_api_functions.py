@@ -13,7 +13,10 @@ load_dotenv()
 ###############################
 
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
-curr_week=league.current_week
+
+def curr_week():
+    curr_week=league.current_week
+    return curr_week
 
 ###############################
 ###############################
