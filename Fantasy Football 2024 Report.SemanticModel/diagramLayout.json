@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 621.18385396571625
+        "x": 412.09036025404288,
+        "y": 819.1244739860955
       },
       "nodes": [
         {
           "location": {
-            "x": 782.2761376686467,
-            "y": 639.021431228183
+            "x": 1054.0535352196075,
+            "y": 637.44133007963092
           },
           "nodeIndex": "MatchupsTable",
           "nodeLineageTag": "953f438f-86d1-4d5a-88c2-daedc552e940",
@@ -19,7 +19,7 @@
             "height": 189.39291960135239,
             "width": 234
           },
-          "zIndex": 14
+          "zIndex": 11
         },
         {
           "location": {
@@ -32,12 +32,12 @@
             "height": 176.98313560511531,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 268.9031328037961,
-            "y": 1156.3244241906748
+            "x": 330.52707759732795,
+            "y": 1067.8387598717572
           },
           "nodeIndex": "PlayersTable",
           "nodeLineageTag": "6af93a31-e711-4307-8e27-270955939562",
@@ -45,7 +45,7 @@
             "height": 285.7790896630309,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 9
         },
         {
           "location": {
@@ -58,12 +58,12 @@
             "height": 177.28161837683371,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 10
         },
         {
           "location": {
-            "x": 1067.2869796658574,
-            "y": 818.22252597029922
+            "x": 751.266749955438,
+            "y": 645.99150077812067
           },
           "nodeIndex": "Weeks",
           "nodeLineageTag": "bfe34520-4ecd-4340-9bc6-b22a50d91f86",
@@ -71,12 +71,12 @@
             "height": 176.68465283339691,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 1383.9160277284891,
-            "y": 652.49065953025809
+            "x": 1539.8133957284883,
+            "y": 599.34382953025829
           },
           "nodeIndex": "*Measures",
           "nodeLineageTag": "c5bdf72e-8ae1-460d-931d-1c51e532acd9",
@@ -84,12 +84,12 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 1390.5691179960215,
-            "y": 817.79871925171665
+            "x": 1806.8859529960196,
+            "y": 603.43983825171767
           },
           "nodeIndex": "PointsMap",
           "nodeLineageTag": "a9f89ebb-4451-480e-ae71-4871c6ef9eb3",
@@ -97,12 +97,12 @@
             "height": 183.90050574276052,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 372.978872486419,
-            "y": 1633.0067525844354
+            "x": 328.73604032696028,
+            "y": 1500.9103833630284
           },
           "nodeIndex": "PlayerPointsStats",
           "nodeLineageTag": "81942150-b37b-4a81-a511-f30e725da61a",
@@ -110,12 +110,12 @@
             "height": 290.51939310868738,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 0,
-            "y": 1249.4611059072438
+            "x": 14.220910336968871,
+            "y": 1067.7494738237524
           },
           "nodeIndex": "Draft",
           "nodeLineageTag": "f4cb47a3-0219-4889-a448-d4b66395e8e9",
@@ -123,7 +123,7 @@
             "height": 218.662731010907,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 6
         },
         {
           "location": {
@@ -136,25 +136,12 @@
             "height": 194.39415317929706,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 8
         },
         {
           "location": {
-            "x": 1755.4994421891911,
-            "y": 1317.9268866765099
-          },
-          "nodeIndex": "New Matchups",
-          "nodeLineageTag": "a79045f4-9fa0-45ca-8324-750033029aa0",
-          "size": {
-            "height": 272,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 2004.3123447138998,
-            "y": 1320.1836599586313
+            "x": 1197.5302136522255,
+            "y": 1371.3696986036111
           },
           "nodeIndex": "New Standings",
           "nodeLineageTag": "b4ae813c-b4b7-4b7e-8f47-1b6f84c7e0d8",
@@ -162,12 +149,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 1464.9342637920881,
-            "y": 1304.0339819783985
+            "x": 1466.4614836108155,
+            "y": 1374.8613766199965
           },
           "nodeIndex": "Power Rankings",
           "nodeLineageTag": "20859478-2046-456a-9b00-2b2904fa5681",
@@ -179,7 +166,7 @@
         }
       ],
       "name": "All tables",
-      "zoomValue": 40.052554724883329,
+      "zoomValue": 63.287087723234393,
       "pinKeyFieldsToTop": true,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

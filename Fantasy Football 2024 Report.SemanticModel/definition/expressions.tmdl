@@ -196,3 +196,18 @@ expression StandingsTable =
 
 	annotation PBI_ResultType = Table
 
+expression 'New Matchups' =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\matchups.xlsx"), null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type any}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}, {"Opponent", type text}, {"Actual Points", type number}, {"Projected Points", type number}, {"Matchup Header", type text}, {"Result", type text}, {"Number", Int64.Type}, {"MatchupKey", type text}, {"WeeklyMatchupID", Int64.Type}, {"ID", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: 92f8ed7b-228c-4650-b1e1-a2057f1d7cdf
+	queryGroup: archive
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -18,36 +18,12 @@ relationship e5a3b4ab-e57b-59fd-86f0-cbe632c614b1
 	fromColumn: 'Power Rankings'.Team
 	toColumn: TeamsTable.'Fantasy Name'
 
-relationship 197562e9-a20c-17a9-1df9-efca6231ace2
-	fromColumn: 'New Matchups'.Team
-	toColumn: TeamsTable.'Fantasy Name'
-
 relationship 51f75b96-8a1d-e678-0806-7aa56aa96837
 	fromColumn: 'New Standings'.Team
 	toColumn: TeamsTable.'Fantasy Name'
 
-relationship AutoDetected_53876db5-d027-49af-961a-186c9f05eac9
-	isActive: false
-	fromColumn: PlayerPointsStats.'Player Name'
-	toColumn: UniquePlayers.'Player Name'
-
-relationship AutoDetected_6312ebf9-172a-403c-9ec1-507a9d4baa03
-	isActive: false
-	fromColumn: PlayerPointsStats.'Player Name'
-	toColumn: Draft.Player
-
 relationship AutoDetected_9aaa2ab4-a009-41ec-95dd-401e0ab12df9
 	fromColumn: MatchupsTable.Week
-	toColumn: Weeks.Week
-
-relationship AutoDetected_f89cb716-7f60-42b9-94df-92dd52621baf
-	isActive: false
-	fromColumn: PlayersTable.Week
-	toColumn: Weeks.Week
-
-relationship AutoDetected_3a1a766d-2848-460a-94e9-0a85271c926a
-	isActive: false
-	fromColumn: PlayerPointsStats.Week
 	toColumn: Weeks.Week
 
 relationship AutoDetected_93768ca1-57a1-4ee7-b34a-d9d48db8577e
@@ -56,9 +32,5 @@ relationship AutoDetected_93768ca1-57a1-4ee7-b34a-d9d48db8577e
 
 relationship AutoDetected_100cbf2b-c4fc-4a72-b58c-9ee57b55f3d8
 	fromColumn: 'New Standings'.Week
-	toColumn: Weeks.Week
-
-relationship AutoDetected_e1dc508d-0893-474d-9142-98d20cd1a74f
-	fromColumn: 'New Matchups'.Week
 	toColumn: Weeks.Week
 
