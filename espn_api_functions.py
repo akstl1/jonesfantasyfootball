@@ -4,7 +4,7 @@ import numpy as np
 from dotenv import load_dotenv
 import os
 load_dotenv()
-from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassinggame, draft, powerRankingsSingleWeek, powerRankingsMultiWeek, standingsSingleWeek, standingsMultiWeek, matchupsSingleWeek, matchupsMultiWeek, playerStatsSingleWeek, playerStatsMultiWeek
+
 
 ###############################
 ###############################
@@ -14,44 +14,6 @@ from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassi
 
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 curr_week=league.current_week
-
-###############################
-###############################
-### Run after draft is done ###
-###############################
-###############################
-
-# draft()
-
-###############################
-###############################
-# Run to get indiv week stats #
-###############################
-###############################
-
-def weeklyStats(curr_week = curr_week):
-    powerRankingsSingleWeek(current_wk=curr_week)
-    matchupsSingleWeek(current_wk=curr_week)
-    powerRankingsSingleWeek(current_wk=curr_week)
-    playerStatsSingleWeek(current_wk=curr_week)
-    return None
-
-weeklyStats()
-
-###############################
-###############################
-# Run to get multi week stats #
-###############################
-###############################
-
-def multiWeekStats(curr_week = curr_week):
-    powerRankingsMultiWeek(current_wk=curr_week)
-    matchupsMultiWeek(current_wk=curr_week)
-    powerRankingsMultiWeek(current_wk=curr_week)
-    playerStatsMultiWeek(current_wk=curr_week)
-    return None
-
-# multiWeekStats()
 
 ###############################
 ###############################
@@ -71,13 +33,6 @@ def threehundredyardpassinggame(value):
     else:
         return 1
     
-
-
-## original data, moved to functions file
-
-
-
-
 
 ###############################
 ###############################
