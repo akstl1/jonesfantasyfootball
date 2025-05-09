@@ -55,16 +55,25 @@ table Draft
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Name Abbrev'
+		dataType: string
+		lineageTag: 107e4f96-b78a-47cf-a1c0-9442f986b46e
+		summarizeBy: none
+		sourceColumn: Name Abbrev
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Draft = m
 		mode: import
+		queryGroup: Main
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
-				    draft_Sheet = Source{[Item="draft",Kind="Sheet"]}[Data],
-				    #"Promoted Headers" = Table.PromoteHeaders(draft_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Player", type text}, {"Round", Int64.Type}, {"Pick", Int64.Type}}),
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\draft.xlsx"), null, true),
+				    draft_Sheet = Source{[Item="draft",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(draft_Sheet,{{"Team", type text}, {"Player", type text}, {"Round", Int64.Type}, {"Pick", Int64.Type}}),
 				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Draft Order", each if Number.IsOdd([Round]) then [Pick] else 13-[Pick]),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Draft Order", Int64.Type}}),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Name Abbrev", each if Text.Contains([Player],"D/ST") then [Player] else Text.Start(Text.BeforeDelimiter([Player]," "),1) & ". "&Text.AfterDelimiter([Player]," ")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"Draft Order", Int64.Type}, {"Name Abbrev", type text}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Changed Type1", {"Player"}, UniquePlayers, {"Player Name"}, "UniquePlayers", JoinKind.LeftOuter),
 				    #"Expanded UniquePlayers" = Table.ExpandTableColumn(#"Merged Queries", "UniquePlayers", {"Position"}, {"Position"})
 				in

@@ -1,7 +1,3 @@
-relationship 6fd9b968-41ac-031f-06be-7c27d6140be9
-	fromColumn: StandingsTable.Team
-	toColumn: TeamsTable.'Fantasy Name'
-
 relationship AutoDetected_e0a7f230-94bb-4c16-85b9-be6558bad4d2
 	fromColumn: PlayersTable.MatchupKey
 	toColumn: MatchupsTable.MatchupKey
@@ -42,10 +38,6 @@ relationship AutoDetected_6312ebf9-172a-403c-9ec1-507a9d4baa03
 
 relationship AutoDetected_9aaa2ab4-a009-41ec-95dd-401e0ab12df9
 	fromColumn: MatchupsTable.Week
-	toColumn: Weeks.Week
-
-relationship AutoDetected_c2ec78b0-f5e7-4546-9795-5d1a8ce23b8f
-	fromColumn: StandingsTable.Week
 	toColumn: Weeks.Week
 
 relationship AutoDetected_f89cb716-7f60-42b9-94df-92dd52621baf

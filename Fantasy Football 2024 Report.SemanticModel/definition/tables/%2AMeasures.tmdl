@@ -134,7 +134,7 @@ table *Measures
 			var _team = SELECTEDVALUE(Draft[Team])
 			var _round = SELECTEDVALUE(Draft[Round])
 			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
-			return calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
+			return calculate(max(Draft[Position]),Draft[Player]=_player)
 		displayFolder: Draft
 		lineageTag: fad5bb37-4d3c-42b3-8898-04fe3ac4afa7
 

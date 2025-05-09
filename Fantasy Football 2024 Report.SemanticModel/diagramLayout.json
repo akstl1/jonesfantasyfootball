@@ -49,19 +49,6 @@
         },
         {
           "location": {
-            "x": 947.687101437174,
-            "y": 1208.4677620928946
-          },
-          "nodeIndex": "StandingsTable",
-          "nodeLineageTag": "5f73d8d5-0ce9-4a1c-b725-bfae4f3578cb",
-          "size": {
-            "height": 439.96223698571191,
-            "width": 234
-          },
-          "zIndex": 5
-        },
-        {
-          "location": {
             "x": 258.0758803226808,
             "y": 646.77403022622661
           },

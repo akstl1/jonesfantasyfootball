@@ -49,38 +49,6 @@ table NFLteamsTable
 
 		annotation SummarizationSetBy = Automatic
 
-	column team_color
-		dataType: string
-		lineageTag: 6d18ab4c-81ec-40cc-994b-07b805e238be
-		summarizeBy: none
-		sourceColumn: team_color
-
-		annotation SummarizationSetBy = Automatic
-
-	column team_color2
-		dataType: string
-		lineageTag: 56f251a4-193d-49c7-a4dc-544306e880fe
-		summarizeBy: none
-		sourceColumn: team_color2
-
-		annotation SummarizationSetBy = Automatic
-
-	column team_color3
-		dataType: string
-		lineageTag: 2a42b735-8cc3-428d-a2f3-2001360f561d
-		summarizeBy: none
-		sourceColumn: team_color3
-
-		annotation SummarizationSetBy = Automatic
-
-	column team_color4
-		dataType: string
-		lineageTag: 1402d86f-bcf8-4899-90e6-8d6966812b2c
-		summarizeBy: none
-		sourceColumn: team_color4
-
-		annotation SummarizationSetBy = Automatic
-
 	column team_logo_wikipedia
 		dataType: string
 		lineageTag: 67bb49f8-5560-4776-9529-3db0ea4e720a
@@ -124,11 +92,14 @@ table NFLteamsTable
 
 	partition NFLteamsTable = m
 		mode: import
+		queryGroup: Main
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
-				    NFLteamsTable_Table = Source{[Item="NFLteamsTable",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(NFLteamsTable_Table,{{"team_abbr", type text}, {"team_name", type text}, {"team_nick", type text}, {"team_conf", type text}, {"team_division", type text}, {"team_color", type text}, {"team_color2", type text}, {"team_color3", type text}, {"team_color4", type text}, {"team_logo_wikipedia", type text}, {"team_logo_espn", type text}, {"team_wordmark", type text}, {"team_conference_logo", type text}, {"team_league_logo", type text}})
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\nflTeams.xlsx"), null, true),
+				    NFLteamsTable_Table = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(NFLteamsTable_Table, [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Column1", "team_color", "team_color2", "team_color3", "team_color4"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"team_abbr", type text}, {"team_name", type text}, {"team_nick", type text}, {"team_conf", type text}, {"team_division", type text}, {"team_logo_wikipedia", type text}, {"team_logo_espn", type text}, {"team_wordmark", type text}, {"team_conference_logo", type text}, {"team_league_logo", type text}})
 				in
 				    #"Changed Type"
 

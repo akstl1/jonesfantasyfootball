@@ -182,3 +182,17 @@ expression 'PlayersTable (4)' =
 
 	annotation PBI_ResultType = Table
 
+expression StandingsTable =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+		    StandingsTable_Table = Source{[Item="StandingsTable",Kind="Table"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(StandingsTable_Table,{{"Week", Int64.Type}, {"Team", type text}, {"Division Ranking", Int64.Type}, {"Playoff Ranking", Int64.Type}, {"Record", type text}, {"GB", Int64.Type}, {"Win PCT", Percentage.Type}, {"PF", type number}, {"PA", type number}, {"STRK", type text}, {"Playoff %", Percentage.Type}, {"Playoff Status", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: dad56915-0ef1-46c7-817d-244c8564d722
+	queryGroup: archive
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

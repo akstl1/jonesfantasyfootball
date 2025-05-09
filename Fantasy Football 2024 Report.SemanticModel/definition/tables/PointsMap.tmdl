@@ -37,9 +37,10 @@ table PointsMap
 
 	partition PointsMap = m
 		mode: import
+		queryGroup: Main
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\Fantasy2024.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\pointSettings.xlsx"), null, true),
 				    ScoringTable_Table = Source{[Item="ScoringTable",Kind="Table"]}[Data],
 				    #"Changed Type" = Table.TransformColumnTypes(ScoringTable_Table,{{"Category", type text}, {"Stat", type text}, {"Abbreviation", type text}, {"Points", type number}})
 				in

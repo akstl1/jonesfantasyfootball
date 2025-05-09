@@ -15,7 +15,7 @@ queryGroup Main
 
 	annotation PBI_QueryGroupOrder = 1
 
-annotation PBI_QueryOrder = ["MatchupsTable","PlayersTable","PlayerPointsStats","Weeks","UniquePlayers","Power Rankings","New Matchups","New Standings","NFLteamsTable","PointsMap","StandingsTable","DefenseStats","TeamsTable","*Measures","PlayersTable (2)","PlayersTable (3)","Draft","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)","PlayerstableNew","PlayersTable (4)"]
+annotation PBI_QueryOrder = ["MatchupsTable","PlayersTable","PlayerPointsStats","Weeks","UniquePlayers","Power Rankings","New Matchups","New Standings","PointsMap","Draft","TeamsTable","NFLteamsTable","DefenseStats","*Measures","PlayersTable (2)","PlayersTable (3)","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)","PlayerstableNew","PlayersTable (4)","StandingsTable"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -26,7 +26,6 @@ annotation PBI_ProTooling = ["DevMode"]
 ref table MatchupsTable
 ref table NFLteamsTable
 ref table PointsMap
-ref table StandingsTable
 ref table PlayersTable
 ref table TeamsTable
 ref table Weeks
