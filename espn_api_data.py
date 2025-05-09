@@ -4,7 +4,7 @@ import numpy as np
 from dotenv import load_dotenv
 import os
 load_dotenv()
-from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassinggame, draft, powerRankingsSingleWeek, powerRankingsMultiWeek, standingsSingleWeek, standingsMultiWeek, matchupsSingleWeek, matchupsMultiWeek, playerStatsSingleWeek, playerStatsMultiWeek
+from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassinggame, draft, powerRankingsSingleWeek, powerRankingsMultiWeek, standingsSingleWeek, standingsMultiWeek, matchupsSingleWeek, matchupsMultiWeek, playerStatsSingleWeek, playerStatsMultiWeek, fantasy_teams
 
 ###############################
 ###############################
@@ -21,7 +21,11 @@ curr_week=league.current_week
 ###############################
 ###############################
 
-# draft()
+def startup():
+    draft()
+    fantasy_teams()
+
+# startup()
 
 ###############################
 ###############################
@@ -36,7 +40,7 @@ def weeklyStats(curr_week = curr_week):
     playerStatsSingleWeek(current_wk=curr_week)
     return None
 
-weeklyStats()
+# weeklyStats()
 
 ###############################
 ###############################

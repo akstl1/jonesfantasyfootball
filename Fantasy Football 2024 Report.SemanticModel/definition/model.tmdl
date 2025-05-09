@@ -7,11 +7,19 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["MatchupsTable","NFLteamsTable","PointsMap","StandingsTable","PlayersTable","PlayerPointsStats","DefenseStats","TeamsTable","Weeks","*Measures","PlayersTable (2)","PlayersTable (3)","Draft","UniquePlayers","Power Rankings","New Standings","New Matchups","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)","PlayerstableNew","PlayersTable (4)"]
+queryGroup archive
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Main
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["MatchupsTable","PlayersTable","PlayerPointsStats","Weeks","UniquePlayers","Power Rankings","New Matchups","New Standings","NFLteamsTable","PointsMap","StandingsTable","DefenseStats","TeamsTable","*Measures","PlayersTable (2)","PlayersTable (3)","Draft","playerpointsnew","PlayerPointsStats (2)","matchups","MatchupsTable (2)","PlayerstableNew","PlayersTable (4)"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+annotation PBIDesktopVersion = 2.142.1277.0 (25.04)+014fde450f93691fc9537f0758d73d1c5df153ef
 
 annotation PBI_ProTooling = ["DevMode"]
 

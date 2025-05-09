@@ -12,6 +12,7 @@ table Weeks
 
 	partition Weeks = m
 		mode: import
+		queryGroup: Main
 		source =
 				let
 				    Source = List.Numbers(1,17),

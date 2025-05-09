@@ -9,10 +9,11 @@ expression 'PlayersTable (2)' =
 		in
 		    #"Filtered Rows"
 	lineageTag: 0252e745-1bd5-4cc0-8a10-15d4b997724b
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 expression DefenseStats =
 		let
@@ -30,6 +31,7 @@ expression DefenseStats =
 		in
 		    #"Renamed Columns1"
 	lineageTag: 8e3408e5-af17-4360-af74-fc755fc3a87d
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -46,10 +48,11 @@ expression 'PlayersTable (3)' =
 		in
 		    #"Filtered Rows"
 	lineageTag: faaf3e7e-3e00-4bbd-a669-c9c2f2daf612
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 expression playerpointsnew =
 		let
@@ -66,6 +69,7 @@ expression playerpointsnew =
 		in
 		    #"Rounded Off"
 	lineageTag: 0b5d1193-448c-445c-b8ae-b0655d22e485
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -107,6 +111,7 @@ expression 'PlayerPointsStats (2)' =
 		in
 		    #"Rounded Off"
 	lineageTag: 4d83839f-6703-4b38-8619-49bcbdc2a4cd
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -121,6 +126,7 @@ expression matchups =
 		in
 		    #"Changed Type"
 	lineageTag: b85f7c57-38c0-4f30-bebe-4feaffc39d78
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -136,6 +142,7 @@ expression 'MatchupsTable (2)' =
 		in
 		    #"Inserted Merged Column"
 	lineageTag: 234e4105-e453-47aa-b752-53caffa9bc2c
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -151,6 +158,7 @@ expression PlayerstableNew =
 		in
 		    #"Renamed Columns"
 	lineageTag: bf2c796c-fa87-4076-8746-740d2bb5a169
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -168,6 +176,7 @@ expression 'PlayersTable (4)' =
 		in
 		    #"Renamed Columns"
 	lineageTag: 91410ee0-fdb3-4cc9-8649-93005daca4d1
+	queryGroup: archive
 
 	annotation PBI_NavigationStepName = Navigation
 

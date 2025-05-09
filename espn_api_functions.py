@@ -18,6 +18,30 @@ def curr_week():
     curr_week=league.current_week
     return curr_week
 
+def fantasy_teams():
+    teams = league.teams
+    fantasyTeams_df = pd.DataFrame({
+        'Manager Name':[],
+        'Fantasy Name':[],
+        'Acronym':[],
+        'Division':[],
+        'Image':[]
+    })
+    for team in teams:
+        manager = team.owners[0]['firstName'][0]+team.owners[0]['lastName'][0]
+        fantasy = team.team_name
+        acronym = team.team_abbrev
+        division = team.division_name
+        image = team.logo_url
+        new_row = pd.DataFrame({
+        'Manager Name':[manager],
+        'Fantasy Name':[fantasy],
+        'Acronym':[acronym],
+        'Division':[division],
+        'Image':[image]
+        })
+        fantasyTeams_df = pd.concat([fantasyTeams_df,new_row],ignore_index=True)
+    fantasyTeams_df.to_excel('fantasyTeams_df.xlsx', sheet_name='Sheet1', index=False)
 ###############################
 ###############################
 ###### Helper Functions #######

@@ -29,6 +29,7 @@ table 'Power Rankings'
 
 	partition 'Power Rankings' = m
 		mode: import
+		queryGroup: Main
 		source =
 				let
 				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\power_ranking.xlsx"), null, true),
