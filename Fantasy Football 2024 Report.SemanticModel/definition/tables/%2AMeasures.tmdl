@@ -6,7 +6,8 @@ table *Measures
 			var _wk = SELECTEDVALUE(Weeks[Week])
 			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
 			var _number = 1
-			return CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
+			var _result = CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
+			return _result
 		lineageTag: 67ccd857-4617-4c81-a534-91bc8509ebf4
 
 	measure Team2 =

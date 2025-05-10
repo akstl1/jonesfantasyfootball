@@ -34,3 +34,7 @@ relationship AutoDetected_100cbf2b-c4fc-4a72-b58c-9ee57b55f3d8
 	fromColumn: 'New Standings'.Week
 	toColumn: Weeks.Week
 
+relationship 18b1c6c7-ddb3-1214-7f1e-3a83232173a4
+	fromColumn: MatchupsTable.Team
+	toColumn: TeamsTable.'Fantasy Name'
+
