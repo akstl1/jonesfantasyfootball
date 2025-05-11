@@ -339,6 +339,48 @@ table *Measures
 		formatString: 0
 		lineageTag: 07f1a59c-8ba4-4b60-b380-b9ba771fb633
 
+	measure 'Box Score Away Record' =
+			
+			var _week = selectedvalue(Weeks[Week])-1
+			var _team = [Scoreboard Team2 Name]
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			
+			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
+			return _result
+		lineageTag: 16e52bf5-b9f3-4254-9f00-4e5b6284d772
+
+	measure 'Scoreboard Away Points and arrow' = ```
+			
+			var _points = [Scoreboard Team2 Points]
+			var _arrow = if([Scoreboard Team2 Points]>[Scoreboard Team1 Points],UNICHAR(9204),BLANK())
+			return _points&_arrow
+			
+			```
+		lineageTag: f48490c9-4cc1-493b-90bd-764b5d4b0b24
+
+	measure 'Scoreboard Home Points and arrow' = ```
+			
+			var _points = [Scoreboard Team1 Points]
+			var _arrow = if([Scoreboard Team2 Points]<[Scoreboard Team1 Points],UNICHAR(9205),BLANK())
+			return _arrow&_points
+			
+			```
+		lineageTag: 7dc20ca0-b652-4414-a9b2-39153c46a141
+
+	measure 'Box Score home Record' =
+			
+			var _week = selectedvalue(Weeks[Week])-1
+			var _team = [Scoreboard Team1 Name]
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			
+			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
+			return _result
+		lineageTag: ba6c9ad5-2d87-4afc-b266-60db1ffecac9
+
 	column *Measures
 		dataType: string
 		isHidden
