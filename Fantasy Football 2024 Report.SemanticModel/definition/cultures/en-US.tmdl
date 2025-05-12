@@ -2515,6 +2515,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "Player": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -11516,6 +11526,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "NFL Team": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -18038,6 +18058,79 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "unique_player_Play_players_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unique_player": {
+			          "Target": {
+			            "Entity": "unique_player"
+			          },
+			          "Nouns": [
+			            {
+			              "Player": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        },
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "unique_player"
+			            },
+			            "Verbs": [
+			              {
+			                "Play": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "unique_players_Play_players_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "unique_player"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_unique_players"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unique_player"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unique_players_have_players_tables"
+			        }
+			      ]
+			    },
 			    "players_table_has_matchups_table": {
 			      "Binding": {
 			        "ConceptualEntity": "PlayersTable"
@@ -18081,52 +18174,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "matchups_tables_have_players_tables"
-			        }
-			      ]
-			    },
-			    "players_table_has_unique_player": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "unique_player": {
-			          "Target": {
-			            "Entity": "unique_player"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "unique_player"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_unique_players"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "unique_player"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "unique_players_have_players_tables"
 			        }
 			      ]
 			    },
