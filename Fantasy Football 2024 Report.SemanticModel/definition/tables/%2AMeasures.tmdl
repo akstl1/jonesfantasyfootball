@@ -381,6 +381,22 @@ table *Measures
 			return _result
 		lineageTag: ba6c9ad5-2d87-4afc-b266-60db1ffecac9
 
+	measure 'Tornado Points' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Home")
+			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[Week]=_wk)
+			return _result
+		lineageTag: 847dc8a5-d4f0-465b-99de-0dd9091df5b6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tornado Team 2 points' = -[Scoreboard Team2 Points]
+		lineageTag: d69367ec-ec6b-423d-b114-99cb5ff7b82f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column *Measures
 		dataType: string
 		isHidden

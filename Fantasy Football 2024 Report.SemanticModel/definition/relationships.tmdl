@@ -38,3 +38,7 @@ relationship 18b1c6c7-ddb3-1214-7f1e-3a83232173a4
 	fromColumn: MatchupsTable.Team
 	toColumn: TeamsTable.'Fantasy Name'
 
+relationship c39ba27b-704d-6477-1ef2-2abf499266d6
+	fromColumn: PlayerPointsStats.Attribute
+	toColumn: PointsMap.Stat
+

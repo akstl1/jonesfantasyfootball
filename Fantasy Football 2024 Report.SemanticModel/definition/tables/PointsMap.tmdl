@@ -28,7 +28,7 @@ table PointsMap
 	column Points
 		dataType: double
 		lineageTag: 5dd068f3-df91-487a-9a1f-a57e0022f762
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Points
 
 		annotation SummarizationSetBy = Automatic
