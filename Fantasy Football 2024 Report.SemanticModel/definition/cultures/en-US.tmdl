@@ -3730,18 +3730,18 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team1 Points"
+			          "ConceptualProperty": "Scoreboard Away Points"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team1 points": {
+			          "scoreboard away points": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team1 opinion": {
+			          "scoreboard away opinion": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3751,7 +3751,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 fact": {
+			          "scoreboard away fact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3761,7 +3761,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 idea": {
+			          "scoreboard away idea": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3771,7 +3771,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 argument": {
+			          "scoreboard away argument": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3781,7 +3781,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 topic": {
+			          "scoreboard away topic": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3791,7 +3791,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 theme": {
+			          "scoreboard away theme": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3801,7 +3801,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 outlet": {
+			          "scoreboard away outlet": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3811,7 +3811,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 socket": {
+			          "scoreboard away socket": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3821,7 +3821,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 plug": {
+			          "scoreboard away plug": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3831,7 +3831,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 contact": {
+			          "scoreboard away contact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3841,7 +3841,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Home Team": {
+			          "Actual": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4953,18 +4953,18 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team1 Name"
+			          "ConceptualProperty": "Scoreboard Away Name"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team1 name": {
+			          "scoreboard away name": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team1 nickname": {
+			          "scoreboard away nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4974,7 +4974,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 title": {
+			          "scoreboard away title": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4984,7 +4984,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 label": {
+			          "scoreboard away label": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4994,7 +4994,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 tag": {
+			          "scoreboard away tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5009,18 +5009,30 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team2 Name"
+			          "ConceptualProperty": "Scoreboard Home Name"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team2 name": {
+			          "scoreboard home name": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team2 nickname": {
+			          "scoreboard home": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "home name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "scoreboard home nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5030,7 +5042,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 title": {
+			          "scoreboard home title": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5040,7 +5052,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 label": {
+			          "scoreboard home label": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5050,13 +5062,53 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 tag": {
+			          "scoreboard home tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "home nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "home title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "home label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "home tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -5065,18 +5117,30 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team2 Points"
+			          "ConceptualProperty": "Scoreboard Home Points"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team2 points": {
+			          "scoreboard home points": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team2 opinion": {
+			          "points": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "home points": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "scoreboard home opinion": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5086,7 +5150,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 fact": {
+			          "scoreboard home fact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5096,7 +5160,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 idea": {
+			          "scoreboard home idea": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5106,7 +5170,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 argument": {
+			          "scoreboard home argument": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5116,7 +5180,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 topic": {
+			          "scoreboard home topic": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5126,53 +5190,63 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 theme": {
+			          "home opinion": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.492
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "scoreboard team2 outlet": {
+			          "home fact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.482
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "scoreboard team2 socket": {
+			          "home idea": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.468
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "scoreboard team2 plug": {
+			          "home argument": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.468
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "scoreboard team2 contact": {
+			          "home topic": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.468
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -5181,18 +5255,18 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team1 Image"
+			          "ConceptualProperty": "Scoreboard Away Image"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team1 image": {
+			          "scoreboard away image": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team1 doppelgänger": {
+			          "scoreboard away doppelgänger": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5202,7 +5276,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 copy": {
+			          "scoreboard away copy": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5212,7 +5286,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 twin": {
+			          "scoreboard away twin": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5222,7 +5296,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 double": {
+			          "scoreboard away double": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5232,7 +5306,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 duplicate": {
+			          "scoreboard away duplicate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5242,7 +5316,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 appearance": {
+			          "scoreboard away appearance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5252,7 +5326,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 persona": {
+			          "scoreboard away persona": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5262,7 +5336,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 aura": {
+			          "scoreboard away aura": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5272,7 +5346,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 aspect": {
+			          "scoreboard away aspect": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5282,7 +5356,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 semblance": {
+			          "scoreboard away semblance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5297,18 +5371,24 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team2 Image"
+			          "ConceptualProperty": "Scoreboard Home Image"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team2 image": {
+			          "scoreboard home image": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team2 doppelgänger": {
+			          "home image": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "scoreboard home doppelgänger": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5318,7 +5398,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 copy": {
+			          "home doppelgänger": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "scoreboard home copy": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5328,7 +5418,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 twin": {
+			          "scoreboard home twin": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5338,7 +5428,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 double": {
+			          "scoreboard home double": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5348,7 +5438,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 duplicate": {
+			          "scoreboard home duplicate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5358,53 +5448,43 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 appearance": {
+			          "home copy": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.482
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "scoreboard team2 persona": {
+			          "home twin": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.482
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "scoreboard team2 aura": {
+			          "home double": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.482
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "scoreboard team2 aspect": {
+			          "home duplicate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "scoreboard team2 semblance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
+			            "Weight": 0.485
 			          }
 			        }
 			      ]
@@ -5421,12 +5501,6 @@ cultureInfo en-US
 			        {
 			          "scoreboard points variance": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "variance": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -5506,33 +5580,33 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "alteration": {
+			          "point change": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "modification": {
+			          "scoreboard point discrepancy": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.482
 			          }
 			        },
 			        {
-			          "adjustment": {
+			          "scoreboard point inconsistency": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.482
 			          }
 			        }
 			      ]
@@ -5541,18 +5615,18 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team1 Text Color"
+			          "ConceptualProperty": "Scoreboard Away Text Color"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team1 text color": {
+			          "scoreboard away text color": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team1 text hue": {
+			          "scoreboard away text hue": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5562,7 +5636,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 text tint": {
+			          "scoreboard away text tint": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5572,7 +5646,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 text shade": {
+			          "scoreboard away text shade": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5582,7 +5656,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 text dye": {
+			          "scoreboard away text dye": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5592,7 +5666,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 text paint": {
+			          "scoreboard away text paint": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5602,7 +5676,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team1 text pigment": {
+			          "scoreboard away text pigment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5617,18 +5691,36 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Team2 Text Color"
+			          "ConceptualProperty": "Scoreboard Home Text Color"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "scoreboard Team2 text color": {
+			          "scoreboard home text color": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scoreboard team2 text hue": {
+			          "color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "text color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "home text color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "scoreboard home text hue": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5638,7 +5730,27 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 text tint": {
+			          "home text hue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "text hue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "scoreboard home text tint": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5648,7 +5760,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 text shade": {
+			          "scoreboard home text shade": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5658,7 +5770,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 text dye": {
+			          "scoreboard home text dye": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5668,7 +5780,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 text paint": {
+			          "scoreboard home text paint": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -5678,13 +5790,33 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard team2 text pigment": {
+			          "scoreboard home text pigment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "home text tint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "home text shade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
 			          }
 			        }
 			      ]
@@ -9889,12 +10021,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "variance": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "projected alteration": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -9925,36 +10051,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "alteration": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "modification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "adjustment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
 			          "projected change": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -9962,16 +10058,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "change": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        },
 			        {
@@ -9986,6 +10072,46 @@ cultureInfo en-US
 			        },
 			        {
 			          "projected inconsistency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "projected disagreement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "projected variation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "projected divergence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "projected disparity": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -10015,12 +10141,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "variance": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -10084,36 +10204,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "alteration": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "modification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "adjustment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
 			          "actual change": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -10121,6 +10211,36 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "actual discrepancy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "actual inconsistency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "actual disagreement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
 			          }
 			        }
 			      ]
@@ -11541,140 +11661,6 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Away Points and arrow"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "scoreboard away points and arrow": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "scoreboard away points": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "scoreboard away points arrow": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "arrow": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "scoreboard away point and missile": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.52
-			          }
-			        },
-			        {
-			          "scoreboard away point missile": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "scoreboard away opinion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard away fact": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard away idea": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard away argument": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard away topic": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard away point and projectile": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "scoreboard away point and dart": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "scoreboard away point and barb": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        }
-			      ]
-			    },
-			    "measure.scoreboard_home_points_and_arrow": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "*Measures",
 			          "ConceptualProperty": "Scoreboard Home Points and arrow"
 			        }
 			      },
@@ -11683,12 +11669,6 @@ cultureInfo en-US
 			        {
 			          "scoreboard home points and arrow": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "scoreboard home points": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -11736,56 +11716,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "scoreboard home opinion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard home fact": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard home idea": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard home argument": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "scoreboard home topic": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
 			          "scoreboard home point and projectile": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -11813,6 +11743,184 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard home point and shaft": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard home point and bolt": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "home opinion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "home fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "home idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "measure.scoreboard_home_points_and_arrow": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Scoreboard Away Points and arrow"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "scoreboard away points and arrow": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "scoreboard away points arrow": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "arrow": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "scoreboard away point and missile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "scoreboard away point missile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "scoreboard away point and projectile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard away point and dart": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard away point and barb": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard away point and shaft": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard away point and bolt": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "scoreboard away point projectile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "scoreboard away point dart": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "scoreboard away point barb": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
 			          }
 			        }
 			      ]
@@ -12410,101 +12518,827 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.scoreboard_home_projected_points": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Projected Points"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score projected points": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "box score projected opinion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score projected fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score projected idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score projected argument": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score projected topic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score projected theme": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "box score projected outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "box score projected socket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        },
+			        {
+			          "box score projected plug": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        },
+			        {
+			          "box score projected contact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        },
+			        {
+			          "Projected": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_home_plusOrMinus_text": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Home plusOrMinus Text"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score home plusOrMinus text": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "box score home plusorminus manuscript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score home plusorminus transcript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score home plusorminus typescript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score home plusorminus edition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score home plusorminus version": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score home plusorminus writing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score home plusorminus script": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score home plusorminus copy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score home plusorminus schoolbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        },
+			        {
+			          "box score home plusorminus reader": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        },
+			        {
+			          "Variance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_offensive_TDs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Offensive TDs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score offensive TDs": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "offensive TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score offensive TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_offensive_FGs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Offensive FGs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score offensive FGs": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FGs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_offensive_fumbles": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Offensive Fumbles"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score offensive fumbles": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "offensive fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score offensive fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Turnovers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_offensive_yards": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Offensive Yards"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score offensive yards": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yards": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "offensive yards": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score offensive yards": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "box score offensive lawn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "score offensive lawn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "offensive lawn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "box score offensive plot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "box score offensive patch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "box score offensive grass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "score offensive plot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "score offensive patch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "score offensive grass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "lawn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_defensive_TDs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Defensive TDs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score defensive TDs": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "defensive TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score defensive TDs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_defensive_interceptions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Defensive Interceptions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score defensive interceptions": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "interceptions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "defensive interceptions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score defensive interceptions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "box score defensive seizure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score defensive interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score defensive interference": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score defensive intervention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "score defensive seizure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "score defensive interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "score defensive interference": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "score defensive intervention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "defensive seizure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "defensive interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_defensive_fumbles": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Defensive Fumbles"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score defensive fumbles": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "defensive fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score defensive fumbles": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_away_plusOrMinus_text": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score Away plusOrMinus Text"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score away plusOrMinus text": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "box score away plusorminus manuscript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score away plusorminus transcript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score away plusorminus typescript": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score away plusorminus edition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score away plusorminus version": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score away plusorminus writing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score away plusorminus script": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score away plusorminus copy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score away plusorminus schoolbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        },
+			        {
+			          "box score away plusorminus reader": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        },
+			        {
+			          "Variance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "players_table_has_unique_player": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "unique_player": {
-			          "Target": {
-			            "Entity": "unique_player"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "unique_player"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_unique_players"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "unique_player"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "unique_players_have_players_tables"
-			        }
-			      ]
-			    },
-			    "players_table_has_matchups_table": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "matchups_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_matchups_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_players_tables"
-			        }
-			      ]
-			    },
 			    "matchups_table_has_teams_table": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
@@ -12594,6 +13428,356 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "weeks_have_matchups_tables"
+			        }
+			      ]
+			    },
+			    "measure_has_box_score_away_plusOrMinus_text": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.box_score_away_plusOrMinus_text": {
+			          "Target": {
+			            "Entity": "measure.box_score_away_plusOrMinus_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_away_plusOrMinus_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_box_score_away_plusOrMinus_text"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_defensive_fumbles": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_defensive_fumbles": {
+			          "Target": {
+			            "Entity": "measure.box_score_defensive_fumbles"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_defensive_fumbles"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_defensive_fumbles"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_defensive_interceptions": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_defensive_interceptions": {
+			          "Target": {
+			            "Entity": "measure.box_score_defensive_interceptions"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_defensive_interceptions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_defensive_interceptions"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_defensive_TDs": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_defensive_TDs": {
+			          "Target": {
+			            "Entity": "measure.box_score_defensive_TDs"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_defensive_TDs"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_defensive_TDs"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_offensive_yards": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_offensive_yards": {
+			          "Target": {
+			            "Entity": "measure.box_score_offensive_yards"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_offensive_yards"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_offensive_yards"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_offensive_fumbles": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_offensive_fumbles": {
+			          "Target": {
+			            "Entity": "measure.box_score_offensive_fumbles"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_offensive_fumbles"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_offensive_fumbles"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_offensive_FGs": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_offensive_FGs": {
+			          "Target": {
+			            "Entity": "measure.box_score_offensive_FGs"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_offensive_FGs"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_offensive_FGs"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_box_score_offensive_TDs": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.box_score_offensive_TDs": {
+			          "Target": {
+			            "Entity": "measure.box_score_offensive_TDs"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_offensive_TDs"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_box_score_offensive_TDs"
+			        }
+			      ]
+			    },
+			    "measure_has_box_score_home_plusOrMinus_text": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.box_score_home_plusOrMinus_text": {
+			          "Target": {
+			            "Entity": "measure.box_score_home_plusOrMinus_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_home_plusOrMinus_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_box_score_home_plusOrMinus_text"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_scoreboard_home_projected_points": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.scoreboard_home_projected_points": {
+			          "Target": {
+			            "Entity": "measure.scoreboard_home_projected_points"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.scoreboard_home_projected_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_box_score_projected_points"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Adjectives": [
+			              {
+			                "Projected": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "measure.scoreboard_home_projected_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "box_score_projected_points_indicates_how_Projected_matchups_tables_are"
 			        }
 			      ]
 			    },
@@ -12824,7 +14008,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_home_points_and_arrow"
+			          "ID": "measures_have_scoreboard_away_points_and_arrow"
 			        }
 			      ]
 			    },
@@ -12857,7 +14041,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_away_points_and_arrow"
+			          "ID": "measures_have_scoreboard_home_points_and_arrow"
 			        }
 			      ]
 			    },
@@ -15221,7 +16405,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_Team2_text_color"
+			          "ID": "measures_have_scoreboard_home_text_color"
 			        }
 			      ]
 			    },
@@ -15254,7 +16438,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_Team1_text_color"
+			          "ID": "measures_have_scoreboard_away_text_color"
 			        }
 			      ]
 			    },
@@ -15320,7 +16504,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "teams_tables_have_scoreboard_Team2_image"
+			          "ID": "teams_tables_have_scoreboard_home_image"
 			        }
 			      ]
 			    },
@@ -15353,7 +16537,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "teams_tables_have_scoreboard_Team1_image"
+			          "ID": "teams_tables_have_scoreboard_away_image"
 			        }
 			      ]
 			    },
@@ -15386,7 +16570,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "player_points_stats_have_scoreboard_Team2_points"
+			          "ID": "player_points_stats_have_scoreboard_home_points"
 			        }
 			      ]
 			    },
@@ -15419,7 +16603,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_scoreboard_Team2_name"
+			          "ID": "matchups_tables_have_scoreboard_home_name"
 			        }
 			      ]
 			    },
@@ -15452,7 +16636,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_scoreboard_Team1_name"
+			          "ID": "matchups_tables_have_scoreboard_away_name"
 			        }
 			      ]
 			    },
@@ -15716,7 +16900,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "player_points_stats_have_scoreboard_Team1_points"
+			          "ID": "player_points_stats_have_scoreboard_away_points"
 			        }
 			      ]
 			    },
@@ -16851,6 +18035,98 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "players_tables_are_in_team_cities"
+			        }
+			      ]
+			    },
+			    "players_table_has_matchups_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        },
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_matchups_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_players_tables"
+			        }
+			      ]
+			    },
+			    "players_table_has_unique_player": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        },
+			        "unique_player": {
+			          "Target": {
+			            "Entity": "unique_player"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "unique_player"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_unique_players"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unique_player"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unique_players_have_players_tables"
 			        }
 			      ]
 			    },

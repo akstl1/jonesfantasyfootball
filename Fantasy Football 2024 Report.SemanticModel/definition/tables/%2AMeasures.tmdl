@@ -8,6 +8,7 @@ table *Measures
 			var _number = 1
 			var _result = CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
 			return _result
+		displayFolder: Scoreboard
 		lineageTag: 67ccd857-4617-4c81-a534-91bc8509ebf4
 
 	measure Team2 =
@@ -16,9 +17,10 @@ table *Measures
 			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
 			var _number = 2
 			return CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
+		displayFolder: Scoreboard
 		lineageTag: 4330831d-2e92-402d-a6bc-3defde965dbd
 
-	measure 'Scoreboard Team1 Points' =
+	measure 'Scoreboard Away Points' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -30,15 +32,15 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Team1 Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
+	measure 'Scoreboard Away Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
 		displayFolder: Scoreboard
 		lineageTag: c4ea3df8-d05a-4c50-9c9c-e797ea3985fc
 
-	measure 'Scoreboard Team2 Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=MAX(MatchupsTable[ID]))
+	measure 'Scoreboard Home Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=MAX(MatchupsTable[ID]))
 		displayFolder: Scoreboard
 		lineageTag: 02b86543-4d5a-46b1-a032-f4706ed1b9aa
 
-	measure 'Scoreboard Team2 Points' =
+	measure 'Scoreboard Home Points' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -50,31 +52,31 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Team1 Image' =
+	measure 'Scoreboard Away Image' =
 			
 			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
 			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
 		displayFolder: Scoreboard
 		lineageTag: 0c1145a7-6372-44ed-8f36-bff42168760e
 
-	measure 'Scoreboard Team2 Image' =
+	measure 'Scoreboard Home Image' =
 			
 			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=max(MatchupsTable[ID]))
 			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
 		displayFolder: Scoreboard
 		lineageTag: 9b6c691f-2748-4069-8180-0e2a3ec7c5f6
 
-	measure 'Scoreboard Points Variance' = [Scoreboard Team2 Points] - [Scoreboard Team1 Points]
+	measure 'Scoreboard Points Variance' = [Scoreboard Home Points] - [Scoreboard Away Points]
 		displayFolder: Scoreboard
 		lineageTag: 982fb7fa-6229-4ab3-8dca-b836de4a8385
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Team1 Text Color' = if([Scoreboard Points Variance]<0,"#000000","#7f8487")
+	measure 'Scoreboard Away Text Color' = if([Scoreboard Points Variance]<0,"#000000","#7f8487")
 		displayFolder: Scoreboard
 		lineageTag: 9c450bcb-db54-4469-b8f4-52afb5304732
 
-	measure 'Scoreboard Team2 Text Color' = if([Scoreboard Points Variance]>0,"#000000","#7f8487")
+	measure 'Scoreboard Home Text Color' = if([Scoreboard Points Variance]>0,"#000000","#7f8487")
 		displayFolder: Scoreboard
 		lineageTag: eb8e750a-3b4b-4e79-9ece-ae22a4b4dc20
 
@@ -246,6 +248,7 @@ table *Measures
 			return _variance
 			```
 		formatString: 0
+		displayFolder: Scoreboard
 		lineageTag: 6f51eb59-29dc-45f6-ac21-a8ab1908393a
 
 	measure Record =
@@ -258,10 +261,12 @@ table *Measures
 			
 			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
 			return _result
+		displayFolder: Box Scores
 		lineageTag: 712cd4b9-e785-494b-8b7f-d2afb33305fc
 
 	measure week = SELECTEDVALUE(Weeks[Week])
 		formatString: 0
+		displayFolder: Scoreboard
 		lineageTag: 74a1cba1-46fb-4428-8aa4-a0df323d25f0
 
 	measure PF =
@@ -271,6 +276,7 @@ table *Measures
 			var _pf = CALCULATE(sum('MatchupsTable'[Actual Points]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Team]))
 			
 			return _pf
+		displayFolder: Scoreboard
 		lineageTag: c8d89d21-6004-4289-b1a5-46321672f9e6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -284,6 +290,7 @@ table *Measures
 			var _pf = CALCULATE(sum('MatchupsTable'[Actual Points]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Opponent]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Opponent]))
 			
 			return _pf
+		displayFolder: Scoreboard
 		lineageTag: 4e678ef9-f411-44a4-801e-b08d9f0eda84
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -298,6 +305,7 @@ table *Measures
 			var _calc = DIVIDE(_wins,_wins+_losses+_tie,0)
 			return if(_calc,_calc,0)
 		formatString: 0.000
+		displayFolder: Scoreboard
 		lineageTag: b8fb1196-e2cc-4b24-a299-438a01710761
 
 	measure Streak =
@@ -310,9 +318,11 @@ table *Measures
 			// var _streak = CALCULATE(max('MatchupsTable'[Week]),filter(MatchupsTable,'MatchupsTable'[Week]<=_week&&'MatchupsTable'[Result]<>_result&&'MatchupsTable'[Team]=_team))
 			var _resultFinal = _resultAbbr&(_week-_streak)
 			return _resultFinal
+		displayFolder: Scoreboard
 		lineageTag: 16ee94d2-d975-4a4e-8a2c-b96f31b7c074
 
 	measure 'Net Pts' = [PF] - [PA]
+		displayFolder: Scoreboard
 		lineageTag: 02794213-a34d-45e5-bc91-379d52fa9c05
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -337,48 +347,53 @@ table *Measures
 			return ABS(_variance)
 			```
 		formatString: 0
+		displayFolder: Scoreboard
 		lineageTag: 07f1a59c-8ba4-4b60-b380-b9ba771fb633
 
 	measure 'Box Score Away Record' =
 			
 			var _week = selectedvalue(Weeks[Week])-1
-			var _team = [Scoreboard Team2 Name]
+			var _team = [Scoreboard Home Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
 			
 			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
 			return _result
+		displayFolder: Box Scores
 		lineageTag: 16e52bf5-b9f3-4254-9f00-4e5b6284d772
-
-	measure 'Scoreboard Away Points and arrow' = ```
-			
-			var _points = [Scoreboard Team2 Points]
-			var _arrow = if([Scoreboard Team2 Points]>[Scoreboard Team1 Points],UNICHAR(9204),BLANK())
-			return _points&_arrow
-			
-			```
-		lineageTag: f48490c9-4cc1-493b-90bd-764b5d4b0b24
 
 	measure 'Scoreboard Home Points and arrow' = ```
 			
-			var _points = [Scoreboard Team1 Points]
-			var _arrow = if([Scoreboard Team2 Points]<[Scoreboard Team1 Points],UNICHAR(9205),BLANK())
+			var _points = [Scoreboard Home Points]
+			var _arrow = if([Scoreboard Home Points]>[Scoreboard Away Points],UNICHAR(9205),BLANK())
 			return _arrow&_points
 			
 			```
+		displayFolder: Box Scores
+		lineageTag: f48490c9-4cc1-493b-90bd-764b5d4b0b24
+
+	measure 'Scoreboard Away Points and arrow' = ```
+			
+			var _points = [Scoreboard Away Points]
+			var _arrow = if([Scoreboard Home Points]<[Scoreboard Away Points],UNICHAR(9204),BLANK())
+			return _points&_arrow
+			
+			```
+		displayFolder: Box Scores
 		lineageTag: 7dc20ca0-b652-4414-a9b2-39153c46a141
 
 	measure 'Box Score home Record' =
 			
 			var _week = selectedvalue(Weeks[Week])-1
-			var _team = [Scoreboard Team1 Name]
+			var _team = [Scoreboard Away Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
 			
 			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
 			return _result
+		displayFolder: Box Scores
 		lineageTag: ba6c9ad5-2d87-4afc-b266-60db1ffecac9
 
 	measure 'Tornado Points' =
@@ -388,14 +403,120 @@ table *Measures
 			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Home")
 			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[Week]=_wk)
 			return _result
+		displayFolder: Box Scores
 		lineageTag: 847dc8a5-d4f0-465b-99de-0dd9091df5b6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Tornado Team 2 points' = -[Scoreboard Team2 Points]
+	measure 'Tornado Team 2 points' = -[Scoreboard Away Points]
+		displayFolder: Box Scores
 		lineageTag: d69367ec-ec6b-423d-b114-99cb5ff7b82f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Box Score Projected Points' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(MatchupsTable[Projected Points]),MatchupsTable[Week]=_wk)
+			return _result
+		displayFolder: Box Scores
+		lineageTag: 9a34f6a6-6fda-4064-ad5f-386c4911f0fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Box Score Home plusOrMinus Text' =
+			
+			var _result = round([Scoreboard Home Points] - [Box Score Projected Points],2)
+			var _sign = SWITCH(TRUE(),
+			                    _result>0,"+",
+			                    _result<0,"-"
+			)
+			return _sign&abs(_result)
+		displayFolder: Box Scores
+		lineageTag: 1884745e-1e3a-4e15-af99-50dfd4042c8c
+
+	measure 'Box Score Offensive TDs' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"TD Pass","TD Reception","TD Rush"})
+			return _result
+		displayFolder: Box Scores
+		lineageTag: f2e7f0e3-c41c-48c2-818a-4eb81d981ec9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Box Score Offensive FGs' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, CONTAINSSTRING(PlayerPointsStats[Attribute],"FG Made"))
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 3e77c864-62a5-4fe4-be9b-de415ae9bb2b
+
+	measure 'Box Score Offensive Fumbles' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"Receiving Fumble","Rushing Fumble","Passer Fumble", "Interceptions Thrown"})
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 28b88044-ab56-47f6-b0dd-1ad1a00e8187
+
+	measure 'Box Score Offensive Yards' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"Receiving Yards","Rushing Yards","Passer Yards"})
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 1f94d87a-4b55-4f73-a996-65e22cb172f2
+
+	measure 'Box Score Defensive TDs' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]<>"TD Pass", PlayerPointsStats[Attribute]<>"TD Reception", PlayerPointsStats[Attribute]<>"TD Rush" ,CONTAINSSTRING(PlayerPointsStats[Attribute],"TD"))
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 39ab1d12-a47e-4cfe-ac55-0dc4c2cf5a46
+
+	measure 'Box Score Defensive Interceptions' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]="Each Interception")
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 0363239b-c631-4af8-8990-fff760392ab1
+
+	measure 'Box Score Defensive Fumbles' =
+			
+			var _id = min(MatchupsTable[ID])
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]="Each Fumble Recovered")
+			return _result
+		formatString: 0
+		displayFolder: Box Scores
+		lineageTag: 89415fd8-acea-4618-81fa-aa6dd3594754
+
+	measure 'Box Score Away plusOrMinus Text' =
+			
+			var _result = round([Scoreboard Away Points] - [Box Score Projected Points],2)
+			var _sign = SWITCH(TRUE(),
+			                    _result>0,"+",
+			                    _result<0,"-"
+			)
+			return _sign&abs(_result)
+		displayFolder: Box Scores
+		lineageTag: 0063cec5-08ce-4e21-881c-191f2ad8a6ac
 
 	column *Measures
 		dataType: string
