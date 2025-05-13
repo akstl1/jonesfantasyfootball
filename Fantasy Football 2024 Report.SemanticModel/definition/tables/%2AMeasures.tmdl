@@ -518,6 +518,54 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 0063cec5-08ce-4e21-881c-191f2ad8a6ac
 
+	measure 'Box Score narrative expected or unexpected result' =
+			
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team = [Scoreboard Home Name]
+			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _result = lower(CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team))
+			var _expected = SWITCH(TRUE(),
+			                        (_projected<0 && _actual<0) || (_projected>0 && _actual>0), "expected ",
+			                        "unexpected "
+			)
+			return _expected&_result
+		displayFolder: Box Scores
+		lineageTag: 23a66573-6aa2-4248-a93e-75408a89f4ae
+
+	measure 'Box Score narrative actual result' =
+			
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team = [Scoreboard Home Name]
+			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _result = if(_actual < 0,"lost","won")
+			var _expected = SWITCH(TRUE(),
+			                        (_projected<0 && _actual<0) || (_projected>0 && _actual>0), "expected ",
+			                        "unexpected "
+			)
+			var _pts = if(_actual=1," point"," points")
+			return _result&" by "&abs(_actual)&_pts
+		displayFolder: Box Scores
+		lineageTag: 66df18a8-127e-4b05-8f59-66463fd1e8ae
+
+	measure 'Box Score narrative projected result' =
+			
+			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _team = [Scoreboard Home Name]
+			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
+			var _result = if(_projected < 0,"lose","win")
+			var _expected = SWITCH(TRUE(),
+			                        (_projected<0 && _actual<0) || (_projected>0 && _actual>0), "expected ",
+			                        "unexpected "
+			)
+			var _pts = if(_projected=1," point"," points")
+			
+			return _result&" by "&abs(_projected)&_pts
+		displayFolder: Box Scores
+		lineageTag: a8484c75-7117-46cc-9fb2-a5754560e231
+
 	column *Measures
 		dataType: string
 		isHidden
