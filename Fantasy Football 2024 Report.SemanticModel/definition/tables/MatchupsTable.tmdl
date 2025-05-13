@@ -133,6 +133,14 @@ table MatchupsTable
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Matchup Header Abbrev'
+		dataType: string
+		lineageTag: cd4fed78-15b0-48f8-bc0d-b359392a2bd9
+		summarizeBy: none
+		sourceColumn: Matchup Header Abbrev
+
+		annotation SummarizationSetBy = Automatic
+
 	partition MatchupsTable = m
 		mode: import
 		queryGroup: Main
@@ -141,9 +149,22 @@ table MatchupsTable
 				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\matchups.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Opponent", type text}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"Projected Points", type number}, {"Actual Points", type number}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}, {"Matchup Header", type text}, {"Result", type text}, {"Number", Int64.Type}, {"MatchupKey", type text}, {"WeeklyMatchupID", Int64.Type}, {"ID", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Team", type text}, {"Opponent", type text}, {"Week", Int64.Type}, {"Home_Or_Away", type text}, {"Projected Points", type number}, {"Actual Points", type number}, {"matchup_type", type text}, {"projected_variance", type number}, {"actual_variance", type number}, {"Matchup Header", type text}, {"Result", type text}, {"Number", Int64.Type}, {"MatchupKey", type text}, {"WeeklyMatchupID", Int64.Type}, {"ID", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "Matchup Header", "Matchup Header Abbrev"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Duplicated Column","Sith Happens","SH",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Compile and Conquer","CNC",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Kuppenheimer","THAr",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","A's Astounding Team","AAT",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Drafted by AI","JST",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","Baby Back Gibbs","JG",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","Mighty Rubber Ducks","MRD",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","Bring the heat","BT",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","Magic M","MM",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","Apex Predators","AP",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value9","K's Deluxe Team","KDT",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value10","Boomer Sooners","OU",Replacer.ReplaceText,{"Matchup Header Abbrev"})
 				in
-				    #"Changed Type"
+				    #"Replaced Value11"
 
 	annotation PBI_NavigationStepName = Navigation
 
