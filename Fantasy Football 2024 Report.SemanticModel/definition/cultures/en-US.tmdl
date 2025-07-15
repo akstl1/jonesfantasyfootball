@@ -3736,7 +3736,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team1_points": {
+			    "measure.scoreboard_away_points": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -4959,7 +4959,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team1_name": {
+			    "measure.scoreboard_away_name": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5015,7 +5015,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team2_name": {
+			    "measure.scoreboard_home_name": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5123,7 +5123,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team2_points": {
+			    "measure.scoreboard_home_points": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5258,10 +5258,20 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Home Team Points": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team1_image": {
+			    "measure.scoreboard_away_image": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5377,7 +5387,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team2_image": {
+			    "measure.scoreboard_home_image": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5621,7 +5631,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team1_text_color": {
+			    "measure.scoreboard_away_text_color": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -5697,7 +5707,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_Team2_text_color": {
+			    "measure.scoreboard_home_text_color": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -11677,7 +11687,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_away_points_and_arrow": {
+			    "measure.scoreboard_home_points_and_arrow": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -11817,7 +11827,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_home_points_and_arrow": {
+			    "measure.scoreboard_away_points_and_arrow": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -12328,7 +12338,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Away Team": {
+			          "Away Team Points": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -12539,7 +12549,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.scoreboard_home_projected_points": {
+			    "measure.box_score_projected_points": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
@@ -13356,6 +13366,418 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "matchups_table.matchup_header_abbrev": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MatchupsTable",
+			          "ConceptualProperty": "Matchup Header Abbrev"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matchup header abbrev": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "abbrev": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "header abbrev": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_narrative_expected_or_unexpected_result": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score narrative expected or unexpected result"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score narrative expected or unexpected result": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "box score narrative expected": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "box score narrative expected unexpected result": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unexpected result": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "box score tale expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score description expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "box score history expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "unexpected consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "unexpected outcome": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "unexpected upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "unexpected product": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "box score story expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "box score account expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "box score chronicle expected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_narrative_actual_result": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score narrative actual result"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score narrative actual result": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "actual result": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "narrative actual result": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "score narrative actual result": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "box score narrative real result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "box score narrative existent result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "box score narrative tangible result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "score narrative real result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "score narrative existent result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "score narrative tangible result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "narrative real result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "narrative existent result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "narrative tangible result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "real result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "measure.box_score_narrative_projected_result": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Box Score narrative projected result"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "box score narrative projected result": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "box score narrative projected consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score narrative projected outcome": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score narrative projected upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score narrative projected product": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "box score narrative projected effect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score narrative projected end": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "box score narrative projected mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "box score narrative projected grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "box score narrative projected score": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "box score narrative projected calculation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.469
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -13448,6 +13870,138 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "weeks_have_matchups_tables"
+			        }
+			      ]
+			    },
+			    "measure_has_box_score_narrative_projected_result": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.box_score_narrative_projected_result": {
+			          "Target": {
+			            "Entity": "measure.box_score_narrative_projected_result"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_narrative_projected_result"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_box_score_narrative_projected_result"
+			        }
+			      ]
+			    },
+			    "measure_has_box_score_narrative_actual_result": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.box_score_narrative_actual_result": {
+			          "Target": {
+			            "Entity": "measure.box_score_narrative_actual_result"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_narrative_actual_result"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_box_score_narrative_actual_result"
+			        }
+			      ]
+			    },
+			    "measure_has_box_score_narrative_expected_or_unexpected_result": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.box_score_narrative_expected_or_unexpected_result": {
+			          "Target": {
+			            "Entity": "measure.box_score_narrative_expected_or_unexpected_result"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_narrative_expected_or_unexpected_result"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_box_score_narrative_expected_or_unexpected_result"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_matchup_header_abbrev": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "matchups_table.matchup_header_abbrev": {
+			          "Target": {
+			            "Entity": "matchups_table.matchup_header_abbrev"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table.matchup_header_abbrev"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_matchup_header_abbrev"
 			        }
 			      ]
 			    },
@@ -13748,7 +14302,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "matchups_table_has_measure_scoreboard_home_projected_points": {
+			    "matchups_table_has_measure_box_score_projected_points": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
 			      },
@@ -13759,9 +14313,9 @@ cultureInfo en-US
 			            "Entity": "matchups_table"
 			          }
 			        },
-			        "measure.scoreboard_home_projected_points": {
+			        "measure.box_score_projected_points": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_home_projected_points"
+			            "Entity": "measure.box_score_projected_points"
 			          }
 			        }
 			      },
@@ -13772,7 +14326,7 @@ cultureInfo en-US
 			              "Role": "matchups_table"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_home_projected_points"
+			              "Role": "measure.box_score_projected_points"
 			            }
 			          },
 			          "State": "Generated",
@@ -13792,7 +14346,7 @@ cultureInfo en-US
 			              }
 			            ],
 			            "Measurement": {
-			              "Role": "measure.scoreboard_home_projected_points"
+			              "Role": "measure.box_score_projected_points"
 			            }
 			          },
 			          "State": "Generated",
@@ -13999,39 +14553,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_home_points_and_arrow": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.scoreboard_home_points_and_arrow": {
-			          "Target": {
-			            "Entity": "measure.scoreboard_home_points_and_arrow"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.scoreboard_home_points_and_arrow"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_away_points_and_arrow"
-			        }
-			      ]
-			    },
 			    "measure_has_scoreboard_away_points_and_arrow": {
 			      "Binding": {
 			        "ConceptualEntity": "*Measures"
@@ -14057,6 +14578,39 @@ cultureInfo en-US
 			            },
 			            "Object": {
 			              "Role": "measure.scoreboard_away_points_and_arrow"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_scoreboard_away_points_and_arrow"
+			        }
+			      ]
+			    },
+			    "measure_has_scoreboard_home_points_and_arrow": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.scoreboard_home_points_and_arrow": {
+			          "Target": {
+			            "Entity": "measure.scoreboard_home_points_and_arrow"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.scoreboard_home_points_and_arrow"
 			            }
 			          },
 			          "State": "Generated",
@@ -16396,7 +16950,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_Team2_text_color": {
+			    "measure_has_scoreboard_home_text_color": {
 			      "Binding": {
 			        "ConceptualEntity": "*Measures"
 			      },
@@ -16407,9 +16961,9 @@ cultureInfo en-US
 			            "Entity": "measure"
 			          }
 			        },
-			        "measure.scoreboard_Team2_text_color": {
+			        "measure.scoreboard_home_text_color": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team2_text_color"
+			            "Entity": "measure.scoreboard_home_text_color"
 			          }
 			        }
 			      },
@@ -16420,7 +16974,7 @@ cultureInfo en-US
 			              "Role": "measure"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team2_text_color"
+			              "Role": "measure.scoreboard_home_text_color"
 			            }
 			          },
 			          "State": "Generated",
@@ -16429,7 +16983,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_Team1_text_color": {
+			    "measure_has_scoreboard_away_text_color": {
 			      "Binding": {
 			        "ConceptualEntity": "*Measures"
 			      },
@@ -16440,9 +16994,9 @@ cultureInfo en-US
 			            "Entity": "measure"
 			          }
 			        },
-			        "measure.scoreboard_Team1_text_color": {
+			        "measure.scoreboard_away_text_color": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team1_text_color"
+			            "Entity": "measure.scoreboard_away_text_color"
 			          }
 			        }
 			      },
@@ -16453,7 +17007,7 @@ cultureInfo en-US
 			              "Role": "measure"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team1_text_color"
+			              "Role": "measure.scoreboard_away_text_color"
 			            }
 			          },
 			          "State": "Generated",
@@ -16495,7 +17049,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "teams_table_has_measure_scoreboard_Team2_image": {
+			    "teams_table_has_measure_scoreboard_home_image": {
 			      "Binding": {
 			        "ConceptualEntity": "TeamsTable"
 			      },
@@ -16506,9 +17060,9 @@ cultureInfo en-US
 			            "Entity": "teams_table"
 			          }
 			        },
-			        "measure.scoreboard_Team2_image": {
+			        "measure.scoreboard_home_image": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team2_image"
+			            "Entity": "measure.scoreboard_home_image"
 			          }
 			        }
 			      },
@@ -16519,7 +17073,7 @@ cultureInfo en-US
 			              "Role": "teams_table"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team2_image"
+			              "Role": "measure.scoreboard_home_image"
 			            }
 			          },
 			          "State": "Generated",
@@ -16528,7 +17082,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "teams_table_has_measure_scoreboard_Team1_image": {
+			    "teams_table_has_measure_scoreboard_away_image": {
 			      "Binding": {
 			        "ConceptualEntity": "TeamsTable"
 			      },
@@ -16539,9 +17093,9 @@ cultureInfo en-US
 			            "Entity": "teams_table"
 			          }
 			        },
-			        "measure.scoreboard_Team1_image": {
+			        "measure.scoreboard_away_image": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team1_image"
+			            "Entity": "measure.scoreboard_away_image"
 			          }
 			        }
 			      },
@@ -16552,7 +17106,7 @@ cultureInfo en-US
 			              "Role": "teams_table"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team1_image"
+			              "Role": "measure.scoreboard_away_image"
 			            }
 			          },
 			          "State": "Generated",
@@ -16561,7 +17115,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "player_points_stat_has_measure_scoreboard_Team2_points": {
+			    "player_points_stat_has_measure_scoreboard_home_points": {
 			      "Binding": {
 			        "ConceptualEntity": "PlayerPointsStats"
 			      },
@@ -16572,9 +17126,9 @@ cultureInfo en-US
 			            "Entity": "player_points_stat"
 			          }
 			        },
-			        "measure.scoreboard_Team2_points": {
+			        "measure.scoreboard_home_points": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team2_points"
+			            "Entity": "measure.scoreboard_home_points"
 			          }
 			        }
 			      },
@@ -16585,7 +17139,7 @@ cultureInfo en-US
 			              "Role": "player_points_stat"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team2_points"
+			              "Role": "measure.scoreboard_home_points"
 			            }
 			          },
 			          "State": "Generated",
@@ -16594,7 +17148,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "matchups_table_has_measure_scoreboard_Team2_name": {
+			    "matchups_table_has_measure_scoreboard_home_name": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
 			      },
@@ -16605,9 +17159,9 @@ cultureInfo en-US
 			            "Entity": "matchups_table"
 			          }
 			        },
-			        "measure.scoreboard_Team2_name": {
+			        "measure.scoreboard_home_name": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team2_name"
+			            "Entity": "measure.scoreboard_home_name"
 			          }
 			        }
 			      },
@@ -16618,7 +17172,7 @@ cultureInfo en-US
 			              "Role": "matchups_table"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team2_name"
+			              "Role": "measure.scoreboard_home_name"
 			            }
 			          },
 			          "State": "Generated",
@@ -16627,7 +17181,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "matchups_table_has_measure_scoreboard_Team1_name": {
+			    "matchups_table_has_measure_scoreboard_away_name": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
 			      },
@@ -16638,9 +17192,9 @@ cultureInfo en-US
 			            "Entity": "matchups_table"
 			          }
 			        },
-			        "measure.scoreboard_Team1_name": {
+			        "measure.scoreboard_away_name": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team1_name"
+			            "Entity": "measure.scoreboard_away_name"
 			          }
 			        }
 			      },
@@ -16651,7 +17205,7 @@ cultureInfo en-US
 			              "Role": "matchups_table"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team1_name"
+			              "Role": "measure.scoreboard_away_name"
 			            }
 			          },
 			          "State": "Generated",
@@ -16891,7 +17445,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "player_points_stat_has_measure_scoreboard_Team1_points": {
+			    "player_points_stat_has_measure_scoreboard_away_points": {
 			      "Binding": {
 			        "ConceptualEntity": "PlayerPointsStats"
 			      },
@@ -16902,9 +17456,9 @@ cultureInfo en-US
 			            "Entity": "player_points_stat"
 			          }
 			        },
-			        "measure.scoreboard_Team1_points": {
+			        "measure.scoreboard_away_points": {
 			          "Target": {
-			            "Entity": "measure.scoreboard_Team1_points"
+			            "Entity": "measure.scoreboard_away_points"
 			          }
 			        }
 			      },
@@ -16915,7 +17469,7 @@ cultureInfo en-US
 			              "Role": "player_points_stat"
 			            },
 			            "Object": {
-			              "Role": "measure.scoreboard_Team1_points"
+			              "Role": "measure.scoreboard_away_points"
 			            }
 			          },
 			          "State": "Generated",
@@ -18502,7 +19056,7 @@ cultureInfo en-US
 			  },
 			  "Agents": {
 			    "Internal": {
-			      "Version": "1.0.0"
+			      "Version": "1.1.0"
 			    }
 			  }
 			}

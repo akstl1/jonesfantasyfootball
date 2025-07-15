@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "6f159b99dbe097190892",
   "position": {
     "x": 53.0833878779945,
@@ -101,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'OU vs. AAT'"
+                                "Value": "'AAT vs. AP'"
                               }
                             }
                           ]
@@ -368,6 +368,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "a4a6be0f33a19fe3e5e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

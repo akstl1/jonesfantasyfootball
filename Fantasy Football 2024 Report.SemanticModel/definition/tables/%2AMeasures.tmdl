@@ -566,6 +566,16 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: a8484c75-7117-46cc-9fb2-a5754560e231
 
+	measure quadrantMin = CALCULATE(min(MatchupsTable[actual_variance]),all(MatchupsTable))-5
+		lineageTag: 0729e7a6-6b7c-4267-b9d3-cb2d085c5725
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure quadrantMax = CALCULATE(max(MatchupsTable[actual_variance]),all(MatchupsTable))+5
+		lineageTag: f0263f45-2779-4011-ba35-08304c015b16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column *Measures
 		dataType: string
 		isHidden

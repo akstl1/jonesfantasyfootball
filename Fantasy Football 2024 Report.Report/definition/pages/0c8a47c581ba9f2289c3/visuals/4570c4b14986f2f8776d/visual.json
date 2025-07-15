@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4570c4b14986f2f8776d",
   "position": {
     "x": 0,
@@ -121,7 +121,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'MM'"
+                                "Value": "'OU'"
                               }
                             }
                           ]
@@ -360,6 +360,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "01442b39f0a3081da5bb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Acronym"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
