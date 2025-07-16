@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "12ae4b0a0dad8a99c5c7",
   "position": {
     "x": 641.41906873614187,
@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "Sum(New Standings.Division_Rank)",
-              "nativeQueryRef": "Division_Rank"
+              "nativeQueryRef": "Rank",
+              "displayName": "Rank"
             }
           ]
         }
@@ -63,6 +64,68 @@
           }
         ]
       }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(New Standings.Division_Rank)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TeamsTable.Fantasy Name"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.10840211067514D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(New Standings.Division_Rank)"
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "border": [

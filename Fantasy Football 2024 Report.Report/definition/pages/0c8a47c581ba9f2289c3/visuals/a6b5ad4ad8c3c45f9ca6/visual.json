@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a6b5ad4ad8c3c45f9ca6",
   "position": {
-    "x": 661.37777777777774,
-    "y": 213.37777777777777,
+    "x": 60.8955223880597,
+    "y": 412.83582089552237,
     "z": 4000,
-    "height": 156.44444444444446,
-    "width": 581.68888888888887,
+    "height": 307.16417910447763,
+    "width": 535.52238805970148,
     "tabOrder": 4000
   },
   "visual": {
@@ -19,7 +19,112 @@
               {
                 "textRuns": [
                   {
-                    "value": "add spider chart?"
+                    "value": "This season, TEAM had XXX close games - decided by less than 10 points. There were also XXX blowouts, with point differentials of 30 or more. "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "XXX did well/poorly against teams with winning records, winning 8/9 such games, and did well/poorly against teams with losing records, winning 8/9 such games. "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Overall, XXX performed well/poorly/as expected compared to ESPN's forecasts - winning X% of games they were projected to win, \"stealing\" X games they were supposed to lose, and over/underperforming by XX points on average."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "XXX's match breakdown is:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A Expected Wins, with an average margin of victory of XXX. ++over/under performance"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "B Expected Losses, with an average loss margin of XXX. ++over/under performance"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "C Unexpected Wins, in which XXX overperformed in YY matches by an average of XXX points and opponents on average over/underperformed by XXX points"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "D Unexpected Losses, in which XXX underperformed in YY matches by an average of XXX points and opponents on average performed by XXX points"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
                   }
                 ]
               }

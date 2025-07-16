@@ -417,48 +417,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "edae5f90a457c282ebc7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PointsMap"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "904f859d93bd2eb2bd83",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Tornado Team 2 points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a7acbe0118ed8b24225b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Scoreboard Home Points"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

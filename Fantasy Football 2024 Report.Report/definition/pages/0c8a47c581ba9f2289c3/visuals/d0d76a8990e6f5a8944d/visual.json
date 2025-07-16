@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d0d76a8990e6f5a8944d",
   "position": {
-    "x": 0,
-    "y": 179.7584079256105,
+    "x": 79.701492537313428,
+    "y": 154.92537313432837,
     "z": 0,
-    "height": 304.34344312157816,
-    "width": 535.715651342661,
-    "tabOrder": 0
+    "height": 257.910447761194,
+    "width": 516.71641791044772
   },
   "visual": {
     "visualType": "scatterChart",
@@ -99,6 +98,13 @@
                   "Property": "quadrantMax"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Actual Point Difference'"
+                }
+              }
             }
           }
         }
@@ -127,6 +133,13 @@
                     }
                   },
                   "Property": "quadrantMax"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Projected Point Difference'"
                 }
               }
             }
@@ -329,12 +342,34 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Expected Match Result Analysis'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "f4ae0523be714642b1f8",
+        "name": "0436176cf5aa6ebf45dd",
         "field": {
           "Column": {
             "Expression": {
@@ -348,7 +383,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0959f5d2fe061b7283c1",
+        "name": "8f91d56f1e2852fe87b2",
         "field": {
           "Column": {
             "Expression": {

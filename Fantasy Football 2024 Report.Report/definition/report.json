@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/2.1.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY24SU08",
@@ -7,7 +7,6 @@
       "type": "SharedResources"
     }
   },
-  "layoutOptimization": "None",
   "objects": {
     "section": [
       {
@@ -36,6 +35,9 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "violinPlot4D46EB9EB3A141D9BA2289793175D971"
+  ],
   "resourcePackages": [
     {
       "name": "RegisteredResources",
@@ -44,11 +46,6 @@
         {
           "name": "counting24713142949536238.png",
           "path": "counting24713142949536238.png",
-          "type": "Image"
-        },
-        {
-          "name": "filter24157955787055678.png",
-          "path": "filter24157955787055678.png",
           "type": "Image"
         },
         {

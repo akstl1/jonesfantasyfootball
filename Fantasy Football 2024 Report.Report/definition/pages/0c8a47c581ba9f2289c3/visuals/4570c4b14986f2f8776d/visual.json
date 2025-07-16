@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4570c4b14986f2f8776d",
   "position": {
-    "x": 0,
-    "y": 57.5,
+    "x": 60.8955223880597,
+    "y": 62.6865671641791,
     "z": 2000,
-    "height": 112.5,
-    "width": 1280,
+    "height": 92.238805970149258,
+    "width": 327.76119402985074,
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "advancedSlicerVisual",
+    "visualType": "listSlicer",
     "query": {
       "queryState": {
         "Values": {
@@ -23,11 +23,12 @@
                       "Entity": "TeamsTable"
                     }
                   },
-                  "Property": "Acronym"
+                  "Property": "Fantasy Name"
                 }
               },
-              "queryRef": "TeamsTable.Acronym",
-              "nativeQueryRef": "Acronym"
+              "queryRef": "TeamsTable.Fantasy Name",
+              "nativeQueryRef": "Fantasy Name",
+              "active": true
             }
           ]
         }
@@ -113,7 +114,7 @@
                                   "Source": "t"
                                 }
                               },
-                              "Property": "Acronym"
+                              "Property": "Fantasy Name"
                             }
                           }
                         ],
@@ -121,7 +122,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'OU'"
+                                "Value": "'Baby Back Gibbs'"
                               }
                             }
                           ]
@@ -141,7 +142,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -170,6 +171,28 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TeamsTable.Fantasy Name",
+            "id": "default"
+          }
         }
       ],
       "padding": [
@@ -184,6 +207,21 @@
             }
           },
           "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TeamsTable.Fantasy Name",
             "id": "default"
           }
         }
@@ -207,6 +245,20 @@
               "expr": {
                 "Literal": {
                   "Value": "12L"
+                }
+              }
+            },
+            "fixedButtonsCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "indentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
                 }
               }
             }
@@ -240,6 +292,21 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TeamsTable.Fantasy Name",
+            "id": "default"
+          }
         }
       ],
       "outline": [
@@ -262,6 +329,50 @@
             "id": "default"
           }
         }
+      ],
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TeamsTable.Fantasy Name",
+            "id": "default"
+          }
+        }
+      ],
+      "overFlow": [
+        {
+          "properties": {
+            "overFlowStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -272,6 +383,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }
@@ -344,7 +468,6 @@
             }
           ]
         },
-        "howCreated": "User",
         "objects": {
           "general": [
             {
@@ -360,20 +483,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "01442b39f0a3081da5bb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Acronym"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

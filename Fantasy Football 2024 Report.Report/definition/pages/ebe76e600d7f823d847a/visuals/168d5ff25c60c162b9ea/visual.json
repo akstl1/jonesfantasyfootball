@@ -120,51 +120,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "044197870f9a768d8939",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Rank"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b9763e0c75abe142ae92",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Team"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f847242882e026293754",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

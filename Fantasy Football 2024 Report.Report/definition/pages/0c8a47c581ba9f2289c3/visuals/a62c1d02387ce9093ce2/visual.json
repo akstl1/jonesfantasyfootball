@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a62c1d02387ce9093ce2",
   "position": {
-    "x": 0,
-    "y": 497.77777777777777,
+    "x": 669.85074626865674,
+    "y": 369.85074626865668,
     "z": 3000,
-    "height": 156.44444444444446,
-    "width": 581.68888888888887,
+    "height": 146.86567164179104,
+    "width": 582.08955223880594,
     "tabOrder": 3000
   },
   "visual": {
@@ -19,21 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "add power rankings"
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
                     "value": "add aqcuisitions?"
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "add rankings?"
                   }
                 ]
               }

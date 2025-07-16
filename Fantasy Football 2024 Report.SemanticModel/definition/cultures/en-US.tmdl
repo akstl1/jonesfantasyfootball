@@ -9424,6 +9424,16 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -13778,6 +13788,72 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.quadrant_min": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "quadrantMin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quadrant min": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quadrantMin": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "quadrant minimum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "measure.quadrant_max": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "quadrantMax"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quadrant max": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quadrantMax": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "quadrant maximum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -13873,15 +13949,81 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_box_score_narrative_projected_result": {
+			    "matchups_table_has_measure_quadrant_max": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "MatchupsTable"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "matchups_table": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.quadrant_max": {
+			          "Target": {
+			            "Entity": "measure.quadrant_max"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.quadrant_max"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_quadrant_max"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_quadrant_min": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.quadrant_min": {
+			          "Target": {
+			            "Entity": "measure.quadrant_min"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.quadrant_min"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_quadrant_min"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_box_score_narrative_projected_result": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
 			          }
 			        },
 			        "measure.box_score_narrative_projected_result": {
@@ -13894,7 +14036,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "matchups_table"
 			            },
 			            "Object": {
 			              "Role": "measure.box_score_narrative_projected_result"
@@ -13902,19 +14044,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_box_score_narrative_projected_result"
+			          "ID": "matchups_tables_have_box_score_narrative_projected_result"
 			        }
 			      ]
 			    },
-			    "measure_has_box_score_narrative_actual_result": {
+			    "matchups_table_has_measure_box_score_narrative_actual_result": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "MatchupsTable"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "matchups_table": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "matchups_table"
 			          }
 			        },
 			        "measure.box_score_narrative_actual_result": {
@@ -13927,7 +14069,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "matchups_table"
 			            },
 			            "Object": {
 			              "Role": "measure.box_score_narrative_actual_result"
@@ -13935,19 +14077,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_box_score_narrative_actual_result"
+			          "ID": "matchups_tables_have_box_score_narrative_actual_result"
 			        }
 			      ]
 			    },
-			    "measure_has_box_score_narrative_expected_or_unexpected_result": {
+			    "matchups_table_has_measure_box_score_narrative_expected_or_unexpected_result": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "MatchupsTable"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "matchups_table": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "matchups_table"
 			          }
 			        },
 			        "measure.box_score_narrative_expected_or_unexpected_result": {
@@ -13960,7 +14102,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "matchups_table"
 			            },
 			            "Object": {
 			              "Role": "measure.box_score_narrative_expected_or_unexpected_result"
@@ -13968,7 +14110,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_box_score_narrative_expected_or_unexpected_result"
+			          "ID": "matchups_tables_have_box_score_narrative_expected_or_unexpected_result"
 			        }
 			      ]
 			    },
@@ -14005,15 +14147,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_box_score_away_plusOrMinus_text": {
+			    "player_points_stat_has_measure_box_score_away_plusOrMinus_text": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.box_score_away_plusOrMinus_text": {
@@ -14026,7 +14168,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.box_score_away_plusOrMinus_text"
@@ -14034,7 +14176,40 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_box_score_away_plusOrMinus_text"
+			          "ID": "player_points_stats_have_box_score_away_plusOrMinus_text"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_box_score_away_plusOrMinus_text": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.box_score_away_plusOrMinus_text": {
+			          "Target": {
+			            "Entity": "measure.box_score_away_plusOrMinus_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_away_plusOrMinus_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_box_score_away_plusOrMinus_text"
 			        }
 			      ]
 			    },
@@ -14269,15 +14444,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_box_score_home_plusOrMinus_text": {
+			    "player_points_stat_has_measure_box_score_home_plusOrMinus_text": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.box_score_home_plusOrMinus_text": {
@@ -14290,7 +14465,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.box_score_home_plusOrMinus_text"
@@ -14298,7 +14473,40 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_box_score_home_plusOrMinus_text"
+			          "ID": "player_points_stats_have_box_score_home_plusOrMinus_text"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_box_score_home_plusOrMinus_text": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.box_score_home_plusOrMinus_text": {
+			          "Target": {
+			            "Entity": "measure.box_score_home_plusOrMinus_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.box_score_home_plusOrMinus_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_box_score_home_plusOrMinus_text"
 			        }
 			      ]
 			    },
@@ -14553,15 +14761,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_away_points_and_arrow": {
+			    "player_points_stat_has_measure_scoreboard_away_points_and_arrow": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.scoreboard_away_points_and_arrow": {
@@ -14574,7 +14782,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.scoreboard_away_points_and_arrow"
@@ -14582,19 +14790,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_away_points_and_arrow"
+			          "ID": "player_points_stats_have_scoreboard_away_points_and_arrow"
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_home_points_and_arrow": {
+			    "player_points_stat_has_measure_scoreboard_home_points_and_arrow": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.scoreboard_home_points_and_arrow": {
@@ -14607,7 +14815,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.scoreboard_home_points_and_arrow"
@@ -14615,7 +14823,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_home_points_and_arrow"
+			          "ID": "player_points_stats_have_scoreboard_home_points_and_arrow"
 			        }
 			      ]
 			    },
@@ -15462,15 +15670,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_streak": {
+			    "week_has_measure_streak": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Weeks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "week": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "week"
 			          }
 			        },
 			        "measure.streak": {
@@ -15483,7 +15691,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "week"
 			            },
 			            "Object": {
 			              "Role": "measure.streak"
@@ -15491,7 +15699,40 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_streak"
+			          "ID": "weeks_have_streak"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_streak": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.streak": {
+			          "Target": {
+			            "Entity": "measure.streak"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.streak"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_streak"
 			        }
 			      ]
 			    },
@@ -15594,15 +15835,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_week": {
+			    "week_has_measure_week": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Weeks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "week": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "week"
 			          }
 			        },
 			        "measure.week": {
@@ -15615,7 +15856,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "week"
 			            },
 			            "Object": {
 			              "Role": "measure.week"
@@ -15623,7 +15864,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_week"
+			          "ID": "weeks_have_week"
 			        }
 			      ]
 			    },
@@ -16320,15 +16561,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_draft_round_text": {
+			    "draft_has_measure_draft_round_text": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Draft"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "draft": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "draft"
 			          }
 			        },
 			        "measure.draft_round_text": {
@@ -16341,7 +16582,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Object": {
 			              "Role": "measure.draft_round_text"
@@ -16349,12 +16590,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_draft_round_text"
+			          "ID": "drafts_have_draft_round_text"
 			        },
 			        {
 			          "Verb": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Verbs": [
 			              {
@@ -16380,12 +16621,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.95,
-			          "ID": "measures_draft_round_draft_round_text"
+			          "ID": "drafts_draft_round_draft_round_text"
 			        },
 			        {
 			          "Preposition": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Prepositions": [
 			              {
@@ -16400,7 +16641,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_are_round_draft_round_text"
+			          "ID": "drafts_are_round_draft_round_text"
 			        }
 			      ]
 			    },
@@ -16437,15 +16678,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_draft_pick": {
+			    "draft_has_measure_draft_pick": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Draft"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "draft": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "draft"
 			          }
 			        },
 			        "measure.draft_pick": {
@@ -16458,7 +16699,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Object": {
 			              "Role": "measure.draft_pick"
@@ -16466,19 +16707,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_draft_pick"
+			          "ID": "drafts_have_draft_pick"
 			        }
 			      ]
 			    },
-			    "measure_has_draft_round": {
+			    "draft_has_measure_draft_round": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Draft"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "draft": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "draft"
 			          }
 			        },
 			        "measure.draft_round": {
@@ -16491,7 +16732,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Object": {
 			              "Role": "measure.draft_round"
@@ -16499,19 +16740,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_draft_round"
+			          "ID": "drafts_have_draft_round"
 			        }
 			      ]
 			    },
-			    "measure_has_draft_round_pick": {
+			    "draft_has_measure_draft_round_pick": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Draft"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "draft": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "draft"
 			          }
 			        },
 			        "measure.draft_round_pick": {
@@ -16524,7 +16765,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Object": {
 			              "Role": "measure.draft_round_pick"
@@ -16532,12 +16773,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_draft_round_pick"
+			          "ID": "drafts_have_draft_round_pick"
 			        },
 			        {
 			          "Verb": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Verbs": [
 			              {
@@ -16563,12 +16804,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.95,
-			          "ID": "measures_draft_round_draft_round_pick"
+			          "ID": "drafts_draft_round_draft_round_pick"
 			        },
 			        {
 			          "Preposition": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Prepositions": [
 			              {
@@ -16583,19 +16824,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_are_round_draft_round_pick"
+			          "ID": "drafts_are_round_draft_round_pick"
 			        }
 			      ]
 			    },
-			    "measure_has_draft_team": {
+			    "draft_has_measure_draft_team": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "Draft"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "draft": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "draft"
 			          }
 			        },
 			        "measure.draft_team": {
@@ -16608,7 +16849,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "draft"
 			            },
 			            "Object": {
 			              "Role": "measure.draft_team"
@@ -16616,7 +16857,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_draft_team"
+			          "ID": "drafts_have_draft_team"
 			        }
 			      ]
 			    },
@@ -16950,15 +17191,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_home_text_color": {
+			    "player_points_stat_has_measure_scoreboard_home_text_color": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.scoreboard_home_text_color": {
@@ -16971,7 +17212,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.scoreboard_home_text_color"
@@ -16979,19 +17220,19 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_home_text_color"
+			          "ID": "player_points_stats_have_scoreboard_home_text_color"
 			        }
 			      ]
 			    },
-			    "measure_has_scoreboard_away_text_color": {
+			    "player_points_stat_has_measure_scoreboard_away_text_color": {
 			      "Binding": {
-			        "ConceptualEntity": "*Measures"
+			        "ConceptualEntity": "PlayerPointsStats"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "player_points_stat": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "player_points_stat"
 			          }
 			        },
 			        "measure.scoreboard_away_text_color": {
@@ -17004,7 +17245,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "player_points_stat"
 			            },
 			            "Object": {
 			              "Role": "measure.scoreboard_away_text_color"
@@ -17012,7 +17253,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_scoreboard_away_text_color"
+			          "ID": "player_points_stats_have_scoreboard_away_text_color"
 			        }
 			      ]
 			    },
