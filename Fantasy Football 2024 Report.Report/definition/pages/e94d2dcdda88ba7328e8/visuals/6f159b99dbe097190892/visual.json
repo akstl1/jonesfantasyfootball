@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "6f159b99dbe097190892",
   "position": {
-    "x": 53.0833878779945,
-    "y": 57.909150412357633,
+    "x": 62.955665024630541,
+    "y": 52.315270935960591,
     "z": 1000,
-    "height": 51.876947244403716,
-    "width": 417.42845922241128
+    "height": 56.748768472906406,
+    "width": 415.86206896551727
   },
   "visual": {
     "visualType": "slicer",
@@ -56,6 +56,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -100,7 +107,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AAT vs. AP'"
+                                "Value": "'AAT vs. JG'"
                               }
                             }
                           ]
@@ -134,6 +141,13 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -367,6 +381,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "906d722fb5fc9841b9d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

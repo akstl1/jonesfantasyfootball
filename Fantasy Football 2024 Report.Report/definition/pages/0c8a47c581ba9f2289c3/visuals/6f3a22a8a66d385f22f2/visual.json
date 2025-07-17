@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 243.58208955223881,
-    "z": 4006,
+    "z": 10000,
     "height": 64.4776119402985,
     "width": 54.626865671641788,
-    "tabOrder": 4006
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "image",

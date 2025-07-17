@@ -365,37 +365,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0436176cf5aa6ebf45dd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "projected_variance"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8f91d56f1e2852fe87b2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "actual_variance"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
