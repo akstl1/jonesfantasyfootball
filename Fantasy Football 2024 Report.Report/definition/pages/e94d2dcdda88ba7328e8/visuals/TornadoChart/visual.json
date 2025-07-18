@@ -102,6 +102,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "optimizeLabelDisplay": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
             }
           }
         },
@@ -246,7 +260,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tornado'"
+                  "Value": "'Point Category Breakdown'"
                 }
               }
             },
@@ -417,6 +431,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "b2459fc1a92eb0fd19e7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PointsMap"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6756158083cd013b2c74",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Tornado Team 2 points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e664b62fb67254a1d82b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Scoreboard Home Points"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

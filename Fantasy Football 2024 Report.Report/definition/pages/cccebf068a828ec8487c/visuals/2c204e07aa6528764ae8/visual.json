@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "2c204e07aa6528764ae8",
   "position": {
-    "x": 63.85809312638581,
-    "y": 608.78048780487791,
+    "x": 64.729064039408868,
+    "y": 609.16256157635473,
     "z": 8000,
-    "height": 86.563192904656319,
-    "width": 559.11308203991132,
+    "height": 86.009852216748769,
+    "width": 558.62068965517244,
     "tabOrder": 7000
   },
   "visual": {
@@ -943,6 +943,34 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "0d5adc0adb2063520366",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Scoreboard Away Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2d7631210ba1eef455dd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Scoreboard Home Points"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

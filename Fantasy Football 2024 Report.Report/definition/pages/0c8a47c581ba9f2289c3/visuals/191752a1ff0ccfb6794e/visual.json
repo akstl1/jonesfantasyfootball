@@ -5,7 +5,7 @@
     "x": 485.37313432835822,
     "y": 58.208955223880594,
     "z": 5000,
-    "height": 96.71641791044776,
+    "height": 119.1044776119403,
     "width": 794.32835820895525,
     "tabOrder": 5000
   },
@@ -26,7 +26,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Games Back"
+                    "value": "Record"
                   }
                 ]
               },
@@ -40,14 +40,21 @@
               {
                 "textRuns": [
                   {
-                    "value": "playoff odds"
+                    "value": "Streak"
                   }
                 ]
               },
               {
                 "textRuns": [
                   {
-                    "value": "rankings and power rankings"
+                    "value": "rankings"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "power rankings"
                   }
                 ]
               }

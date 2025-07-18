@@ -19,6 +19,20 @@
               {
                 "textRuns": [
                   {
+                    "value": "Team Analysis"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
                     "value": "add spider chart? or performance by category compared to other teams?"
                   }
                 ]
@@ -26,7 +40,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "top and worst performers"
+                    "value": "top and worst performers by points and over/under points"
                   }
                 ]
               }
