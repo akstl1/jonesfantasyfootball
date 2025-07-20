@@ -23,11 +23,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Image"
+                  "Property": "Away Image"
                 }
               },
               "queryRef": "*Measures.Scoreboard Team1 Image",
-              "nativeQueryRef": "Scoreboard Away Image"
+              "nativeQueryRef": "Away Image"
             }
           ]
         }
@@ -62,7 +62,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Image"
+                  "Property": "Away Image"
                 }
               }
             },
@@ -533,7 +533,7 @@
                 "Entity": "*Measures"
               }
             },
-            "Property": "Scoreboard Away Image"
+            "Property": "Away Image"
           }
         },
         "type": "Advanced"

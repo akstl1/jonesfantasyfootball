@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "62db02b7b64305d32008",
   "position": {
     "x": 864,
@@ -23,7 +23,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Offensive TDs"
+                  "Property": "Offensive TDs"
                 }
               },
               "queryRef": "*Measures.Box Score Offensive TDs",
@@ -38,7 +38,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Offensive FGs"
+                  "Property": "Offensive FGs"
                 }
               },
               "queryRef": "*Measures.Box Score FGs",
@@ -53,7 +53,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Offensive Fumbles"
+                  "Property": "Offensive Fumbles"
                 }
               },
               "queryRef": "*Measures.Box Score Offensive Fumbles",
@@ -68,7 +68,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Offensive Yards"
+                  "Property": "Offensive Yards"
                 }
               },
               "queryRef": "*Measures.Box Score Offensive Yards",
@@ -88,7 +88,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Box Score Offensive TDs"
+                "Property": "Offensive TDs"
               }
             },
             "direction": "Descending"

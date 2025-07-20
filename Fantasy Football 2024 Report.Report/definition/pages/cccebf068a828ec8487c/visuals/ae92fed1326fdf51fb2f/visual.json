@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "TeamsTable.Fantasy Name",
-              "nativeQueryRef": "Fantasy Name"
+              "nativeQueryRef": "Team",
+              "displayName": "Team"
             },
             {
               "field": {
@@ -161,7 +162,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Team Travis Standings'"
+                  "Value": "'Travis Division Standings'"
                 }
               }
             },

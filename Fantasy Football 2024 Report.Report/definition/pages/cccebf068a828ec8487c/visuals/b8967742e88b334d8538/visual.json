@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "TeamsTable.Fantasy Name",
-              "nativeQueryRef": "Fantasy Name"
+              "nativeQueryRef": "Team",
+              "displayName": "Team"
             },
             {
               "field": {
@@ -204,6 +205,62 @@
           },
           "selector": {
             "metadata": "*Measures.League Ranking Up/Down ABS"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Win%"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.PF"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.PA"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Net Pts"
           }
         }
       ],
@@ -446,6 +503,19 @@
           },
           "selector": {
             "metadata": "*Measures.Net Pts"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
           }
         }
       ]

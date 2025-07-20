@@ -23,11 +23,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Name"
+                  "Property": "Away Name"
                 }
               },
               "queryRef": "*Measures.Scoreboard Team1 Name",
-              "nativeQueryRef": "Scoreboard Away Name"
+              "nativeQueryRef": "Away Name"
             }
           ]
         }
@@ -213,7 +213,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score home Record"
+                  "Property": "home Record"
                 }
               }
             }
@@ -692,7 +692,7 @@
                 "Entity": "*Measures"
               }
             },
-            "Property": "Scoreboard Away Name"
+            "Property": "Away Name"
           }
         },
         "type": "Advanced"

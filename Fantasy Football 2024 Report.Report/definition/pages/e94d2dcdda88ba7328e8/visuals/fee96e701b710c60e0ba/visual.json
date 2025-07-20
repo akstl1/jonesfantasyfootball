@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fee96e701b710c60e0ba",
   "position": {
     "x": 82,
@@ -23,7 +23,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Projected Points"
+                  "Property": "Projected Points"
                 }
               },
               "queryRef": "*Measures.Scoreboard Away Projected Points",
@@ -38,7 +38,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Points"
+                  "Property": "Away Points"
                 }
               },
               "queryRef": "*Measures.Scoreboard Away Points",
@@ -53,7 +53,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Away plusOrMinus Text"
+                  "Property": "Away plusOrMinus Text"
                 }
               },
               "queryRef": "*Measures.Box Score Away plusOrMinus Text",
@@ -73,7 +73,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Box Score Projected Points"
+                "Property": "Projected Points"
               }
             },
             "direction": "Descending"

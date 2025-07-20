@@ -57,7 +57,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Points"
+                  "Property": "Home Points"
                 }
               },
               "queryRef": "*Measures.Scoreboard Home Points",
@@ -129,7 +129,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Points"
+                  "Property": "Away Points"
                 }
               }
             }
@@ -469,7 +469,7 @@
                 "Entity": "*Measures"
               }
             },
-            "Property": "Scoreboard Home Points"
+            "Property": "Home Points"
           }
         },
         "type": "Advanced"

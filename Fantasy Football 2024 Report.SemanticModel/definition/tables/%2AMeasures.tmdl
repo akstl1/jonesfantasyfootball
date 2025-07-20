@@ -20,7 +20,7 @@ table *Measures
 		displayFolder: Scoreboard
 		lineageTag: 4330831d-2e92-402d-a6bc-3defde965dbd
 
-	measure 'Scoreboard Away Points' =
+	measure 'Away Points' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -32,15 +32,15 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Away Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
+	measure 'Away Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
 		displayFolder: Scoreboard
 		lineageTag: c4ea3df8-d05a-4c50-9c9c-e797ea3985fc
 
-	measure 'Scoreboard Home Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=MAX(MatchupsTable[ID]))
+	measure 'Home Name' = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=MAX(MatchupsTable[ID]))
 		displayFolder: Scoreboard
 		lineageTag: 02b86543-4d5a-46b1-a032-f4706ed1b9aa
 
-	measure 'Scoreboard Home Points' =
+	measure 'Home Points' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -52,31 +52,31 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Away Image' =
+	measure 'Away Image' =
 			
 			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=min(MatchupsTable[ID]))
 			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
 		displayFolder: Scoreboard
 		lineageTag: 0c1145a7-6372-44ed-8f36-bff42168760e
 
-	measure 'Scoreboard Home Image' =
+	measure 'Home Image' =
 			
 			var _team = calculate(max(MatchupsTable[Team]),MatchupsTable[ID]=max(MatchupsTable[ID]))
 			return CALCULATE(max(TeamsTable[Image]),TeamsTable[Fantasy Name]=_team)
 		displayFolder: Scoreboard
 		lineageTag: 9b6c691f-2748-4069-8180-0e2a3ec7c5f6
 
-	measure 'Scoreboard Points Variance' = [Scoreboard Home Points] - [Scoreboard Away Points]
+	measure 'Points Variance' = [Home Points] - [Away Points]
 		displayFolder: Scoreboard
 		lineageTag: 982fb7fa-6229-4ab3-8dca-b836de4a8385
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Scoreboard Away Text Color' = if([Scoreboard Points Variance]<0,"#000000","#7f8487")
+	measure 'Away Text Color' = if([Points Variance]<0,"#000000","#7f8487")
 		displayFolder: Scoreboard
 		lineageTag: 9c450bcb-db54-4469-b8f4-52afb5304732
 
-	measure 'Scoreboard Home Text Color' = if([Scoreboard Points Variance]>0,"#000000","#7f8487")
+	measure 'Home Text Color' = if([Points Variance]>0,"#000000","#7f8487")
 		displayFolder: Scoreboard
 		lineageTag: eb8e750a-3b4b-4e79-9ece-ae22a4b4dc20
 
@@ -350,10 +350,10 @@ table *Measures
 		displayFolder: Scoreboard
 		lineageTag: 07f1a59c-8ba4-4b60-b380-b9ba771fb633
 
-	measure 'Box Score Away Record' =
+	measure 'Away Record' =
 			
 			var _week = selectedvalue(Weeks[Week])-1
-			var _team = [Scoreboard Home Name]
+			var _team = [Home Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
@@ -365,8 +365,8 @@ table *Measures
 
 	measure 'Scoreboard Home Points and arrow' = ```
 			
-			var _points = [Scoreboard Home Points]
-			var _arrow = if([Scoreboard Home Points]>[Scoreboard Away Points],UNICHAR(9205),BLANK())
+			var _points = [Home Points]
+			var _arrow = if([Home Points]>[Away Points],UNICHAR(9205),BLANK())
 			return _arrow&_points
 			
 			```
@@ -375,18 +375,18 @@ table *Measures
 
 	measure 'Scoreboard Away Points and arrow' = ```
 			
-			var _points = [Scoreboard Away Points]
-			var _arrow = if([Scoreboard Home Points]<[Scoreboard Away Points],UNICHAR(9204),BLANK())
+			var _points = [Away Points]
+			var _arrow = if([Home Points]<[Away Points],UNICHAR(9204),BLANK())
 			return _points&_arrow
 			
 			```
 		displayFolder: Box Scores
 		lineageTag: 7dc20ca0-b652-4414-a9b2-39153c46a141
 
-	measure 'Box Score home Record' =
+	measure 'home Record' =
 			
 			var _week = selectedvalue(Weeks[Week])-1
-			var _team = [Scoreboard Away Name]
+			var _team = [Away Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
@@ -408,13 +408,13 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Tornado Team 2 points' = -[Scoreboard Away Points]
+	measure 'Tornado Team 2 points' = -[Away Points]
 		displayFolder: Box Scores
 		lineageTag: d69367ec-ec6b-423d-b114-99cb5ff7b82f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Box Score Projected Points' =
+	measure 'Projected Points' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -425,9 +425,9 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Box Score Home plusOrMinus Text' =
+	measure 'Home plusOrMinus Text' =
 			
-			var _result = round([Scoreboard Home Points] - [Box Score Projected Points],2)
+			var _result = round([Home Points] - [Projected Points],2)
 			var _sign = SWITCH(TRUE(),
 			                    _result>0,"+",
 			                    _result<0,"-"
@@ -436,7 +436,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 1884745e-1e3a-4e15-af99-50dfd4042c8c
 
-	measure 'Box Score Offensive TDs' =
+	measure 'Offensive TDs' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -447,7 +447,7 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Box Score Offensive FGs' =
+	measure 'Offensive FGs' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -457,7 +457,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 3e77c864-62a5-4fe4-be9b-de415ae9bb2b
 
-	measure 'Box Score Offensive Fumbles' =
+	measure 'Offensive Fumbles' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -467,7 +467,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 28b88044-ab56-47f6-b0dd-1ad1a00e8187
 
-	measure 'Box Score Offensive Yards' =
+	measure 'Offensive Yards' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -477,7 +477,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 1f94d87a-4b55-4f73-a996-65e22cb172f2
 
-	measure 'Box Score Defensive TDs' =
+	measure 'Defensive TDs' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -487,7 +487,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 39ab1d12-a47e-4cfe-ac55-0dc4c2cf5a46
 
-	measure 'Box Score Defensive Interceptions' =
+	measure 'Defensive Interceptions' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -497,7 +497,7 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 0363239b-c631-4af8-8990-fff760392ab1
 
-	measure 'Box Score Defensive Fumbles' =
+	measure 'Defensive Fumbles' =
 			
 			var _id = min(MatchupsTable[ID])
 			var _wk = SELECTEDVALUE(Weeks[Week])
@@ -507,9 +507,9 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 89415fd8-acea-4618-81fa-aa6dd3594754
 
-	measure 'Box Score Away plusOrMinus Text' =
+	measure 'Away plusOrMinus Text' =
 			
-			var _result = round([Scoreboard Away Points] - [Box Score Projected Points],2)
+			var _result = round([Away Points] - [Projected Points],2)
 			var _sign = SWITCH(TRUE(),
 			                    _result>0,"+",
 			                    _result<0,"-"
@@ -518,10 +518,10 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 0063cec5-08ce-4e21-881c-191f2ad8a6ac
 
-	measure 'Box Score narrative expected or unexpected result' =
+	measure 'narrative expected or unexpected result' =
 			
 			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _team = [Scoreboard Home Name]
+			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _result = lower(CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team))
@@ -533,10 +533,10 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 23a66573-6aa2-4248-a93e-75408a89f4ae
 
-	measure 'Box Score narrative actual result' =
+	measure 'narrative actual result' =
 			
 			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _team = [Scoreboard Home Name]
+			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _result = if(_actual < 0,"lost","won")
@@ -549,10 +549,10 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 66df18a8-127e-4b05-8f59-66463fd1e8ae
 
-	measure 'Box Score narrative projected result' =
+	measure 'narrative projected result' =
 			
 			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _team = [Scoreboard Home Name]
+			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _result = if(_projected < 0,"lose","win")
@@ -575,6 +575,70 @@ table *Measures
 		lineageTag: f0263f45-2779-4011-ba35-08304c015b16
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'narrative home categories' =
+			
+			var _rushing = CALCULATE([Home Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _receiving = CALCULATE([Home Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _passing = CALCULATE([Home Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _kicking = CALCULATE([Home Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _d = CALCULATE([Home Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _differential = if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0)
+			
+			var _allcategories = SWITCH(TRUE(),
+			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by " & CONVERT(_differential,STRING) & " points",
+			                             _differential=0, "None",
+			                             BLANK()
+			)
+			
+			var _partialcategories = if(_rushing>0,"rushing,",BLANK()) & if(_receiving>0,"receiving,",BLANK()) & if(_passing>0,"passing,",BLANK()) & if(_kicking>0,"kicking,",BLANK()) & if(_d>0,"defense,",BLANK())
+			
+			return SWITCH(TRUE(),
+			                _allcategories<>"None" && NOT(ISBLANK(_allcategories)), [Home Name] & _allcategories,
+			                _allcategories="None",BLANK(),
+			                [Home Name] & " led in " & _partialcategories & "by " & CONVERT(_differential,STRING) & " points"
+			)
+		displayFolder: Box Scores
+		lineageTag: adfe65f7-a5ff-4065-a834-1635643a66ea
+
+	measure 'narrative away categories' =
+			
+			var _rushing = CALCULATE([Away Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _receiving = CALCULATE([Away Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _passing = CALCULATE([Away Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _kicking = CALCULATE([Away Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _d = CALCULATE([Away Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
+			
+			var _differential = if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0)
+			
+			var _allcategories = SWITCH(TRUE(),
+			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by " & CONVERT(_differential,STRING) & " points. ",
+			                             _differential=0, "None",
+			                             BLANK()
+			)
+			
+			var _partialcategories = if(_rushing>0,"rushing,",BLANK()) & if(_receiving>0,"receiving,",BLANK()) & if(_passing>0,"passing,",BLANK()) & if(_kicking>0,"kicking,",BLANK()) & if(_d>0,"defense,",BLANK())
+			
+			return SWITCH(TRUE(),
+			                ISBLANK([narrative home categories]),[Away Name] & _allcategories,
+			                CONTAINSSTRING([narrative home categories],"all major"),".",
+			                ", while " & [Away Name] & " led in " & _partialcategories & "by " & CONVERT(_differential,STRING) & " points."
+			)
+		displayFolder: Box Scores
+		lineageTag: 9644d51b-6641-466b-8f6d-03c9a292a0a2
+
+	measure 'narrative categories combined' = [narrative home categories] & [narrative away categories]
+		displayFolder: Box Scores
+		lineageTag: c8d579b6-a1f6-4dc7-9f99-e8dda08b1a69
 
 	column *Measures
 		dataType: string

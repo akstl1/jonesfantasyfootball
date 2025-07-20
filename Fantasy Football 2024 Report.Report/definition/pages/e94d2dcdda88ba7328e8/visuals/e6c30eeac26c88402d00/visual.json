@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "e6c30eeac26c88402d00",
   "position": {
     "x": 881,
@@ -23,11 +23,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Name"
+                  "Property": "Home Name"
                 }
               },
               "queryRef": "*Measures.Scoreboard Team2 Name",
-              "nativeQueryRef": "Scoreboard Home Name"
+              "nativeQueryRef": "Home Name"
             }
           ]
         }
@@ -139,7 +139,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Image"
+                  "Property": "Home Image"
                 }
               }
             }
@@ -293,7 +293,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Away Record"
+                  "Property": "Away Record"
                 }
               }
             },

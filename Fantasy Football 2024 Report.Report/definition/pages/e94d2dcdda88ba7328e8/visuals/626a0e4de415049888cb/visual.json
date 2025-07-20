@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "626a0e4de415049888cb",
   "position": {
     "x": 478.95693153554129,
@@ -2293,7 +2293,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3"
                                           },
@@ -3615,7 +3615,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -3629,7 +3629,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -4132,7 +4132,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -4146,7 +4146,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -4649,7 +4649,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -4663,7 +4663,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -5166,7 +5166,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -5180,7 +5180,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -5683,7 +5683,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -5697,7 +5697,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -6200,7 +6200,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -6214,7 +6214,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -6717,7 +6717,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -6731,7 +6731,7 @@
                                                   "Source": "v"
                                                 }
                                               },
-                                              "Property": "Scoreboard Home Points"
+                                              "Property": "Home Points"
                                             },
                                             "Name": "d3_0"
                                           },
@@ -7086,7 +7086,7 @@
                                       "Source": "*"
                                     }
                                   },
-                                  "Property": "Box Score narrative expected or unexpected result"
+                                  "Property": "narrative expected or unexpected result"
                                 },
                                 "Name": "*Measures.Box Score narrative expected or unexpected"
                               }
@@ -7142,7 +7142,7 @@
                                       "Source": "*"
                                     }
                                   },
-                                  "Property": "Scoreboard Home Name"
+                                  "Property": "Home Name"
                                 },
                                 "Name": "*Measures.Scoreboard Home Name"
                               }
@@ -7198,7 +7198,7 @@
                                       "Source": "*"
                                     }
                                   },
-                                  "Property": "Box Score narrative actual result"
+                                  "Property": "narrative actual result"
                                 },
                                 "Name": "*Measures.Box Score narrative actual result"
                               }
@@ -7254,7 +7254,7 @@
                                       "Source": "*"
                                     }
                                   },
-                                  "Property": "Box Score narrative projected result"
+                                  "Property": "narrative projected result"
                                 },
                                 "Name": "*Measures.Box Score narrative projected result"
                               }
@@ -7282,6 +7282,62 @@
           },
           "selector": {
             "id": "Value 4"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "narrative categories combined"
+                                },
+                                "Name": "*Measures.narrative categories combined"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.narrative categories combined"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 5",
+                      "utterance": "narrative categories combined"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 5"
           }
         }
       ],
@@ -7362,7 +7418,15 @@
               {
                 "textRuns": [
                   {
-                    "value": "second paragraph:  X led in receiving, rushing, etc with a differential of X points while Y led in Z categories with a differential of XX points."
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 5"
+                      }
+                    }
                   }
                 ]
               },
@@ -7390,21 +7454,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "This was a playoff game in the X round, with Xs win they continue on while Y is eliminated. "
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "OR This was the championship game, congrats to XX on their league victory this season!"
+                    "value": "This was a playoff game in the X round, with Xs win they continue on while Y is eliminated. OR This was the championship game, congrats to XX on their league victory this season!"
                   }
                 ]
               }

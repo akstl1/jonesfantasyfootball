@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d636bcd4b048bc26866c",
   "position": {
     "x": 864,
@@ -23,7 +23,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Defensive TDs"
+                  "Property": "Defensive TDs"
                 }
               },
               "queryRef": "*Measures.Box Score Defensive TDs",
@@ -38,7 +38,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Defensive Interceptions"
+                  "Property": "Defensive Interceptions"
                 }
               },
               "queryRef": "*Measures.Box Score Defensive Interceptions",
@@ -53,7 +53,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Box Score Defensive Fumbles"
+                  "Property": "Defensive Fumbles"
                 }
               },
               "queryRef": "*Measures.Box Score Defensive Fumbles",
@@ -73,7 +73,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Box Score Defensive TDs"
+                "Property": "Defensive TDs"
               }
             },
             "direction": "Descending"

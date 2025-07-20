@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "3df8f2b2249e97a23901",
   "position": {
     "x": 64.4776119402985,
@@ -23,7 +23,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Points"
+                  "Property": "Away Points"
                 }
               },
               "queryRef": "*Measures.Scoreboard Team1 Points",
@@ -37,7 +37,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Points"
+                  "Property": "Home Points"
                 }
               },
               "queryRef": "*Measures.Scoreboard Team2 Points",
@@ -56,7 +56,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Scoreboard Away Points"
+                "Property": "Away Points"
               }
             },
             "direction": "Descending"
@@ -154,7 +154,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Image"
+                  "Property": "Away Image"
                 }
               }
             },
@@ -180,7 +180,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Image"
+                  "Property": "Home Image"
                 }
               }
             },
@@ -242,7 +242,7 @@
                           "Entity": "*Measures"
                         }
                       },
-                      "Property": "Scoreboard Away Text Color"
+                      "Property": "Away Text Color"
                     }
                   }
                 }
@@ -272,7 +272,7 @@
                           "Entity": "*Measures"
                         }
                       },
-                      "Property": "Scoreboard Home Text Color"
+                      "Property": "Home Text Color"
                     }
                   }
                 }
@@ -309,7 +309,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Away Name"
+                  "Property": "Away Name"
                 }
               }
             },
@@ -323,7 +323,7 @@
                           "Entity": "*Measures"
                         }
                       },
-                      "Property": "Scoreboard Away Text Color"
+                      "Property": "Away Text Color"
                     }
                   }
                 }
@@ -344,7 +344,7 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Scoreboard Home Name"
+                  "Property": "Home Name"
                 }
               }
             },
@@ -358,7 +358,7 @@
                           "Entity": "*Measures"
                         }
                       },
-                      "Property": "Scoreboard Home Text Color"
+                      "Property": "Home Text Color"
                     }
                   }
                 }
@@ -488,7 +488,7 @@
                                       "Entity": "*Measures"
                                     }
                                   },
-                                  "Property": "Scoreboard Points Variance"
+                                  "Property": "Points Variance"
                                 }
                               },
                               "Right": {
@@ -515,7 +515,7 @@
                                       "Entity": "*Measures"
                                     }
                                   },
-                                  "Property": "Scoreboard Points Variance"
+                                  "Property": "Points Variance"
                                 }
                               },
                               "Right": {
@@ -570,7 +570,7 @@
                                           "Entity": "*Measures"
                                         }
                                       },
-                                      "Property": "Scoreboard Points Variance"
+                                      "Property": "Points Variance"
                                     }
                                   },
                                   "Right": {
@@ -590,7 +590,7 @@
                                           "Entity": "*Measures"
                                         }
                                       },
-                                      "Property": "Scoreboard Points Variance"
+                                      "Property": "Points Variance"
                                     }
                                   },
                                   "Right": {
@@ -621,7 +621,7 @@
                                           "Entity": "*Measures"
                                         }
                                       },
-                                      "Property": "Scoreboard Points Variance"
+                                      "Property": "Points Variance"
                                     }
                                   },
                                   "Right": {
@@ -641,7 +641,7 @@
                                           "Entity": "*Measures"
                                         }
                                       },
-                                      "Property": "Scoreboard Points Variance"
+                                      "Property": "Points Variance"
                                     }
                                   },
                                   "Right": {

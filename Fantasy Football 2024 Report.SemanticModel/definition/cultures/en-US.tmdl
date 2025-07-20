@@ -1057,12 +1057,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "team nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1101,66 +1095,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
-			        },
-			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "side": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "squad": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "crew": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "club": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "unit": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
 			        }
 			      ]
 			    },
@@ -1183,12 +1117,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -1229,66 +1157,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "side": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "squad": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "crew": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "club": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "unit": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
 			          }
 			        }
 			      ]
@@ -3361,6 +3229,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.466
 			          }
+			        },
+			        {
+			          "Team": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3740,7 +3618,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Away Points"
+			          "ConceptualProperty": "Away Points"
 			        }
 			      },
 			      "State": "Generated",
@@ -3926,12 +3804,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "nfl lineup": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -3939,16 +3811,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        },
 			        {
@@ -3992,43 +3854,53 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "side": {
+			          "nfl unit": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
 			          }
 			        },
 			        {
-			          "squad": {
+			          "nfl group": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "crew": {
+			          "nfl band": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "club": {
+			          "nfl panel": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "nfl set": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
 			          }
 			        }
 			      ]
@@ -4963,7 +4835,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Away Name"
+			          "ConceptualProperty": "Away Name"
 			        }
 			      },
 			      "State": "Generated",
@@ -5019,7 +4891,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Home Name"
+			          "ConceptualProperty": "Home Name"
 			        }
 			      },
 			      "State": "Generated",
@@ -5127,7 +4999,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Home Points"
+			          "ConceptualProperty": "Home Points"
 			        }
 			      },
 			      "State": "Generated",
@@ -5275,7 +5147,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Away Image"
+			          "ConceptualProperty": "Away Image"
 			        }
 			      },
 			      "State": "Generated",
@@ -5391,7 +5263,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Home Image"
+			          "ConceptualProperty": "Home Image"
 			        }
 			      },
 			      "State": "Generated",
@@ -5513,7 +5385,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Points Variance"
+			          "ConceptualProperty": "Points Variance"
 			        }
 			      },
 			      "State": "Generated",
@@ -5635,7 +5507,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Away Text Color"
+			          "ConceptualProperty": "Away Text Color"
 			        }
 			      },
 			      "State": "Generated",
@@ -5711,7 +5583,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Scoreboard Home Text Color"
+			          "ConceptualProperty": "Home Text Color"
 			        }
 			      },
 			      "State": "Generated",
@@ -5999,12 +5871,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "player team": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -6071,16 +5937,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
 			          "player side": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -6102,6 +5958,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "player crew": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "player club": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -6459,12 +6325,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "draft lineup": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -6472,16 +6332,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        },
 			        {
@@ -6525,43 +6375,53 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "side": {
+			          "draft unit": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
 			          }
 			        },
 			        {
-			          "squad": {
+			          "draft group": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "crew": {
+			          "draft band": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "club": {
+			          "draft panel": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "draft set": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
 			          }
 			        }
 			      ]
@@ -10385,12 +10245,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "team": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "fantasy lineup": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -10398,16 +10252,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        },
 			        {
@@ -10451,43 +10295,53 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "side": {
+			          "fantasy unit": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
 			          }
 			        },
 			        {
-			          "squad": {
+			          "fantasy group": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "crew": {
+			          "fantasy band": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
 			          }
 			        },
 			        {
-			          "club": {
+			          "fantasy panel": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "fantasy set": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
 			          }
 			        }
 			      ]
@@ -11585,7 +11439,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Away Record"
+			          "ConceptualProperty": "Away Record"
 			        }
 			      },
 			      "State": "Generated",
@@ -11969,7 +11823,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score home Record"
+			          "ConceptualProperty": "home Record"
 			        }
 			      },
 			      "State": "Generated",
@@ -12563,7 +12417,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Projected Points"
+			          "ConceptualProperty": "Projected Points"
 			        }
 			      },
 			      "State": "Generated",
@@ -12689,7 +12543,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Home plusOrMinus Text"
+			          "ConceptualProperty": "Home plusOrMinus Text"
 			        }
 			      },
 			      "State": "Generated",
@@ -12815,7 +12669,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Offensive TDs"
+			          "ConceptualProperty": "Offensive TDs"
 			        }
 			      },
 			      "State": "Generated",
@@ -12849,7 +12703,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Offensive FGs"
+			          "ConceptualProperty": "Offensive FGs"
 			        }
 			      },
 			      "State": "Generated",
@@ -12875,7 +12729,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Offensive Fumbles"
+			          "ConceptualProperty": "Offensive Fumbles"
 			        }
 			      },
 			      "State": "Generated",
@@ -12919,7 +12773,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Offensive Yards"
+			          "ConceptualProperty": "Offensive Yards"
 			        }
 			      },
 			      "State": "Generated",
@@ -13053,7 +12907,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Defensive TDs"
+			          "ConceptualProperty": "Defensive TDs"
 			        }
 			      },
 			      "State": "Generated",
@@ -13087,7 +12941,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Defensive Interceptions"
+			          "ConceptualProperty": "Defensive Interceptions"
 			        }
 			      },
 			      "State": "Generated",
@@ -13221,7 +13075,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Defensive Fumbles"
+			          "ConceptualProperty": "Defensive Fumbles"
 			        }
 			      },
 			      "State": "Generated",
@@ -13255,7 +13109,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score Away plusOrMinus Text"
+			          "ConceptualProperty": "Away plusOrMinus Text"
 			        }
 			      },
 			      "State": "Generated",
@@ -13409,7 +13263,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score narrative expected or unexpected result"
+			          "ConceptualProperty": "narrative expected or unexpected result"
 			        }
 			      },
 			      "State": "Generated",
@@ -13543,7 +13397,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score narrative actual result"
+			          "ConceptualProperty": "narrative actual result"
 			        }
 			      },
 			      "State": "Generated",
@@ -13677,7 +13531,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "*Measures",
-			          "ConceptualProperty": "Box Score narrative projected result"
+			          "ConceptualProperty": "narrative projected result"
 			        }
 			      },
 			      "State": "Generated",
