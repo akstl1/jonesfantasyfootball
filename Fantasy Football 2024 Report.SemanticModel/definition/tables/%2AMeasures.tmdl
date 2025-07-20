@@ -576,7 +576,7 @@ table *Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'narrative home categories' =
+	measure 'narrative categories home' =
 			
 			var _rushing = CALCULATE([Home Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
 			
@@ -588,25 +588,32 @@ table *Measures
 			
 			var _d = CALCULATE([Home Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
 			
-			var _differential = if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0)
+			var _differential = round(if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0),2)
 			
 			var _allcategories = SWITCH(TRUE(),
-			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by " & CONVERT(_differential,STRING) & " points",
+			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points",
 			                             _differential=0, "None",
 			                             BLANK()
 			)
 			
-			var _partialcategories = if(_rushing>0,"rushing,",BLANK()) & if(_receiving>0,"receiving,",BLANK()) & if(_passing>0,"passing,",BLANK()) & if(_kicking>0,"kicking,",BLANK()) & if(_d>0,"defense,",BLANK())
+			var _partialcategories = if(_rushing>0,"rushing, ",BLANK()) & if(_receiving>0,"receiving, ",BLANK()) & if(_passing>0,"passing, ",BLANK()) & if(_kicking>0,"kicking, ",BLANK()) & if(_d>0,"defense, ",BLANK())
 			
+			var _partialCount = if(_rushing>0,1) + if(_receiving>0,1) + if(_passing>0,1) + if(_kicking>0,1) + if(_d>0,1)
+			
+			var _partialnew = SWITCH(TRUE(),
+			                            _partialCount=1, SUBSTITUTE(_partialcategories,", "," "),
+			                            _partialCount=2, SUBSTITUTE(_partialcategories,", "," and "),
+			                            SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," ",_partialCount),", ",", and ",_partialCount-1)
+			)
 			return SWITCH(TRUE(),
 			                _allcategories<>"None" && NOT(ISBLANK(_allcategories)), [Home Name] & _allcategories,
 			                _allcategories="None",BLANK(),
-			                [Home Name] & " led in " & _partialcategories & "by " & CONVERT(_differential,STRING) & " points"
+			                [Home Name] & " led in " & _partialnew & "by " & CONVERT(_differential,STRING) & " points"
 			)
 		displayFolder: Box Scores
 		lineageTag: adfe65f7-a5ff-4065-a834-1635643a66ea
 
-	measure 'narrative away categories' =
+	measure 'narrative categories away' =
 			
 			var _rushing = CALCULATE([Away Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
 			
@@ -618,25 +625,33 @@ table *Measures
 			
 			var _d = CALCULATE([Away Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Home Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
 			
-			var _differential = if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0)
+			var _differential = round(if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0),2)
 			
 			var _allcategories = SWITCH(TRUE(),
-			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by " & CONVERT(_differential,STRING) & " points. ",
+			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points. ",
 			                             _differential=0, "None",
 			                             BLANK()
 			)
 			
-			var _partialcategories = if(_rushing>0,"rushing,",BLANK()) & if(_receiving>0,"receiving,",BLANK()) & if(_passing>0,"passing,",BLANK()) & if(_kicking>0,"kicking,",BLANK()) & if(_d>0,"defense,",BLANK())
+			var _partialcategories = if(_rushing>0,"rushing, ",BLANK()) & if(_receiving>0,"receiving, ",BLANK()) & if(_passing>0,"passing, ",BLANK()) & if(_kicking>0,"kicking, ",BLANK()) & if(_d>0,"defense, ",BLANK())
+			
+			var _partialCount = if(_rushing>0,1) + if(_receiving>0,1) + if(_passing>0,1) + if(_kicking>0,1) + if(_d>0,1)
+			
+			var _partialnew = SWITCH(TRUE(),
+			                            _partialCount=1, SUBSTITUTE(_partialcategories,", "," "),
+			                            _partialCount=2, SUBSTITUTE(_partialcategories,", "," and "),
+			                            SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," ",_partialCount),", ",", and ",_partialCount-1)
+			)
 			
 			return SWITCH(TRUE(),
-			                ISBLANK([narrative home categories]),[Away Name] & _allcategories,
-			                CONTAINSSTRING([narrative home categories],"all major"),".",
-			                ", while " & [Away Name] & " led in " & _partialcategories & "by " & CONVERT(_differential,STRING) & " points."
+			                ISBLANK([narrative categories home]),[Away Name] & _allcategories,
+			                CONTAINSSTRING([narrative categories home],"all major"),".",
+			                ", while " & [Away Name] & " led in " & _partialnew & "by " & CONVERT(_differential,STRING) & " points."
 			)
 		displayFolder: Box Scores
 		lineageTag: 9644d51b-6641-466b-8f6d-03c9a292a0a2
 
-	measure 'narrative categories combined' = [narrative home categories] & [narrative away categories]
+	measure 'narrative categories combined' = [narrative categories home] & [narrative categories away]
 		displayFolder: Box Scores
 		lineageTag: c8d579b6-a1f6-4dc7-9f99-e8dda08b1a69
 
