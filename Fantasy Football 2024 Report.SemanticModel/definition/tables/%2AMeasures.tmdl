@@ -655,6 +655,51 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: c8d579b6-a1f6-4dc7-9f99-e8dda08b1a69
 
+	measure 'narrative number of games' =
+			
+			var _home = [Home Name]
+			var _away = [Away Name]
+			
+			var _games = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))
+			
+			var _gamesText = CONVERT(_games,STRING)
+			
+			return SWITCH(TRUE(),
+			                _games = 11,"11th ",
+			                _games = 12,"12th ",
+			                _games = 13,"13th ",
+			                MOD(_games,10)=1,_gamesText & "st ",
+			                MOD(_games,10)=2,_gamesText & "nd ",
+			                MOD(_games,10)=3,_gamesText & "rd ",
+			                _gamesText & "th "
+			
+			)
+		displayFolder: Box Scores
+		lineageTag: abf62e3d-8285-4bc6-a2f9-e02d5c13f012
+
+	measure 'narrative series' =
+			
+			var _home = [Home Name]
+			var _away = [Away Name]
+			
+			var _homeWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			
+			var _awayWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			
+			var _ties = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Tie",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			
+			var _homeNum = if(_homeWins,_homeWins,0)
+			var _awayNum = if(_awayWins,_awayWins,0)
+			var _tieNum = if(_ties,_ties,0)
+			
+			return SWITCH(TRUE(),
+			                _homeWins>_awayWins,_home & " leads the series " & CONVERT(_homeNum,STRING) & "-" & CONVERT(_awayNum,STRING) & "-" & CONVERT(_tieNum,STRING) & ".",
+			                _homeWins<_awayWins,_away & " leads the series " & CONVERT(_awayNum,STRING) & "-" & CONVERT(_homeNum,STRING) & "-" & CONVERT(_tieNum,STRING) & ".",
+			                "the series is tied " & CONVERT(_awayWins,STRING) & "-" & CONVERT(_homeNum,STRING) & "-" & CONVERT(_tieNum,STRING) & "."
+			)
+		displayFolder: Box Scores
+		lineageTag: 87953c18-e96b-4412-8208-291d5d8a532c
+
 	column *Measures
 		dataType: string
 		isHidden

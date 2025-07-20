@@ -6,8 +6,7 @@
     "y": 343.7185929648241,
     "z": 1000,
     "height": 376.28140703517585,
-    "width": 1210.251256281407,
-    "tabOrder": 1000
+    "width": 1210.251256281407
   },
   "visual": {
     "visualType": "pythonVisual",
@@ -120,51 +119,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e07ff7e330da5bef49a7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Rank"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1af69dccb88bdbba974d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Team"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e8db0853d8de46bd908a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Power Rankings"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

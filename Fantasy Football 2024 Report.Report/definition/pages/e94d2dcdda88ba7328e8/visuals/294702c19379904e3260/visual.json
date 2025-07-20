@@ -4,10 +4,10 @@
   "position": {
     "x": 173,
     "y": 115,
-    "z": 18000,
+    "z": 17000,
     "height": 66,
     "width": 281,
-    "tabOrder": 18000
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -682,20 +682,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "ccac57ac4a9ce840a00d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away Name"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

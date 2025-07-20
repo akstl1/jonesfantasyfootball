@@ -4,10 +4,10 @@
   "position": {
     "x": 478.95693153554129,
     "y": 481.36981280272283,
-    "z": 31000,
+    "z": 30000,
     "height": 229.22372038224898,
     "width": 377.61591831391542,
-    "tabOrder": 31000
+    "tabOrder": 29000
   },
   "visual": {
     "visualType": "textbox",
@@ -7339,6 +7339,118 @@
           "selector": {
             "id": "Value 5"
           }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "narrative number of games"
+                                },
+                                "Name": "*Measures.narrative number of games"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.narrative number of games"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 6",
+                      "utterance": "narrative number of games"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 6"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "narrative series"
+                                },
+                                "Name": "*Measures.narrative series"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.narrative series"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 7",
+                      "utterance": "narrative series"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 7"
+          }
         }
       ],
       "general": [
@@ -7440,7 +7552,32 @@
               {
                 "textRuns": [
                   {
-                    "value": "This is the X game in the season series between these two teams, and X team leads the series 1-0."
+                    "value": "This is the "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 6"
+                      }
+                    }
+                  },
+                  {
+                    "value": " game in the season series between these teams, and  "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 7"
+                      }
+                    }
                   }
                 ]
               },

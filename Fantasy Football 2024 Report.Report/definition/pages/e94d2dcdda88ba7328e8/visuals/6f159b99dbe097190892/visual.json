@@ -6,7 +6,8 @@
     "y": 52.315270935960591,
     "z": 1000,
     "height": 56.748768472906406,
-    "width": 415.86206896551727
+    "width": 415.86206896551727,
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "slicer",
@@ -107,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BT vs. AP'"
+                                "Value": "'JST vs. MRD'"
                               }
                             }
                           ]
@@ -383,7 +384,7 @@
         }
       },
       {
-        "name": "906d722fb5fc9841b9d6",
+        "name": "0455fba9a97279d5f184",
         "field": {
           "Column": {
             "Expression": {
