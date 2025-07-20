@@ -606,6 +606,8 @@ table *Measures
 			                            SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," ",_partialCount),", ",", and ",_partialCount-1)
 			)
 			return SWITCH(TRUE(),
+			                [Home Name]="BYE","This was a bye week matchup, so no points were scored.",
+			                [Away Name]="BYE",BLANK(),
 			                _allcategories<>"None" && NOT(ISBLANK(_allcategories)), [Home Name] & _allcategories,
 			                _allcategories="None",BLANK(),
 			                [Home Name] & " led in " & _partialnew & "by " & CONVERT(_differential,STRING) & " points"
@@ -644,6 +646,8 @@ table *Measures
 			)
 			
 			return SWITCH(TRUE(),
+			                [Away Name]="BYE","This was a bye week matchup, so no points were scored.",
+			                [Home Name]="BYE",BLANK(),
 			                ISBLANK([narrative categories home]),[Away Name] & _allcategories,
 			                CONTAINSSTRING([narrative categories home],"all major"),".",
 			                ", while " & [Away Name] & " led in " & _partialnew & "by " & CONVERT(_differential,STRING) & " points."
@@ -699,6 +703,30 @@ table *Measures
 			)
 		displayFolder: Box Scores
 		lineageTag: 87953c18-e96b-4412-8208-291d5d8a532c
+
+	measure 'narrative playoff' =
+			
+			var _home = [Home Name]
+			var _away = [Away Name]
+			// var _games = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))
+			
+			var _isplayoff = if(CALCULATE(max(MatchupsTable[matchup_type]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="WINNERS_BRACKET",1,0)
+			
+			var _winner = if(CALCULATE(max(MatchupsTable[Result]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="Win",_home,_away)
+			
+			var _round = SWITCH(TRUE(),
+			                    SELECTEDVALUE(Weeks[Week])=15," 1st ",
+			                    SELECTEDVALUE(Weeks[Week])=15," 2nd "
+			)
+			
+			return SWITCH(TRUE(),
+			                _isplayoff=0,"",
+			                _away = "BYE", "This was a playoff bye week for " & _home & ", who now advances to the second round.",
+			                SELECTEDVALUE(Weeks[Week])=17, "This was the championship game, congrats to " & _winner & " on their league victory this season!",
+			                "This was a playoff game in the" & _round & " round, and with " & _winner & "'s victory they advance to the next round."
+			)
+		displayFolder: Box Scores
+		lineageTag: 2b8fb810-e137-45b6-8629-424a1b28fe2e
 
 	column *Measures
 		dataType: string

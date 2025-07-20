@@ -7451,6 +7451,62 @@
           "selector": {
             "id": "Value 7"
           }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "narrative playoff"
+                                },
+                                "Name": "*Measures.narrative playoff"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.narrative playoff"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 8",
+                      "utterance": "narrative playoff"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 8"
+          }
         }
       ],
       "general": [
@@ -7566,7 +7622,7 @@
                     }
                   },
                   {
-                    "value": " game in the season series between these teams, and  "
+                    "value": "game in the season series between these teams, and "
                   },
                   {
                     "value": {
@@ -7591,7 +7647,15 @@
               {
                 "textRuns": [
                   {
-                    "value": "This was a playoff game in the X round, with Xs win they continue on while Y is eliminated. OR This was the championship game, congrats to XX on their league victory this season!"
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 8"
+                      }
+                    }
                   }
                 ]
               }
