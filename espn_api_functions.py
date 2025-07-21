@@ -42,6 +42,7 @@ def fantasy_teams():
         })
         fantasyTeams_df = pd.concat([fantasyTeams_df,new_row],ignore_index=True)
     fantasyTeams_df.to_excel('fantasyTeams_df.xlsx', sheet_name='Sheet1', index=False)
+
 ###############################
 ###############################
 ###### Helper Functions #######
