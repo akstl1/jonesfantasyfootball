@@ -2,17 +2,35 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d0d76a8990e6f5a8944d",
   "position": {
-    "x": 79.701492537313428,
-    "y": 154.92537313432837,
+    "x": 68.75,
+    "y": 177.5,
     "z": 0,
-    "height": 257.910447761194,
-    "width": 516.71641791044772,
+    "height": 257.5,
+    "width": 472.5,
     "tabOrder": 12000
   },
   "visual": {
     "visualType": "scatterChart",
     "query": {
       "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MatchupsTable"
+                    }
+                  },
+                  "Property": "Legend"
+                }
+              },
+              "queryRef": "MatchupsTable.Legend",
+              "nativeQueryRef": "Legend"
+            }
+          ]
+        },
         "X": {
           "projections": [
             {
@@ -366,5 +384,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "988905a8ff9366eb59f5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "projected_variance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f56ecb37d5aa1b51c52e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "actual_variance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c69e14fe6d49fd450bcf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Legend"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

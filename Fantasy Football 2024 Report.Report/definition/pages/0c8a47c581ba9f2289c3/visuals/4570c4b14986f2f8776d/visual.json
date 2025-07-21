@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4570c4b14986f2f8776d",
   "position": {
-    "x": 60.8955223880597,
-    "y": 62.6865671641791,
+    "x": 53.75,
+    "y": 57.5,
     "z": 2000,
-    "height": 92.238805970149258,
-    "width": 327.76119402985074,
+    "height": 82.5,
+    "width": 327.5,
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "listSlicer",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
@@ -35,60 +35,6 @@
       }
     },
     "objects": {
-      "image": [
-        {
-          "properties": {
-            "image": {
-              "expr": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "TeamsTable"
-                        }
-                      },
-                      "Property": "Image"
-                    }
-                  },
-                  "Function": 3
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "ignorePadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "imageFit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
@@ -122,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Baby Back Gibbs'"
+                                "Value": "'Apex Predators'"
                               }
                             }
                           ]
@@ -136,129 +82,13 @@
           }
         }
       ],
-      "value": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'middle'"
-                }
-              }
-            },
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'left'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "TeamsTable.Fantasy Name",
-            "id": "default"
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "paddingSelection": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Narrow'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "paddingSelection": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Narrow'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "TeamsTable.Fantasy Name",
-            "id": "default"
-          }
-        }
-      ],
       "data": [
         {
-          "properties": {}
-        }
-      ],
-      "layout": [
-        {
           "properties": {
-            "rowCount": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
-                }
-              }
-            },
-            "columnCount": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            },
-            "fixedButtonsCount": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "indentation": {
-              "expr": {
-                "Literal": {
-                  "Value": "20L"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -272,102 +102,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "shapeCustomRectangle": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'rectangleRoundedByPixel'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "rectangleRoundedCurve": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "TeamsTable.Fantasy Name",
-            "id": "default"
-          }
-        }
-      ],
-      "outline": [
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "label": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "TeamsTable.Fantasy Name",
-            "id": "default"
-          }
-        }
-      ],
-      "overFlow": [
-        {
-          "properties": {
-            "overFlowStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
                 }
               }
             }

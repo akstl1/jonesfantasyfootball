@@ -141,6 +141,14 @@ table MatchupsTable
 
 		annotation SummarizationSetBy = Automatic
 
+	column Legend
+		dataType: string
+		lineageTag: ad0a57e1-06c4-4aa8-8272-408ba54de4c8
+		summarizeBy: none
+		sourceColumn: Legend
+
+		annotation SummarizationSetBy = Automatic
+
 	partition MatchupsTable = m
 		mode: import
 		queryGroup: Main
@@ -162,9 +170,10 @@ table MatchupsTable
 				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","Magic M","MM",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
 				    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","Apex Predators","AP",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
 				    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value9","K's Deluxe Team","KDT",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
-				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value10","Boomer Sooners","OU",Replacer.ReplaceText,{"Matchup Header Abbrev"})
+				    #"Replaced Value11" = Table.ReplaceValue(#"Replaced Value10","Boomer Sooners","OU",Replacer.ReplaceText,{"Matchup Header Abbrev"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value11", "Legend", each if [projected_variance]>0 and [actual_variance]<0 then "Unexpected Loss" else if [projected_variance]<0 and [actual_variance]>0 then "Unexpected Win" else if [projected_variance]>0 and [actual_variance]>0 then "Expected Win" else "Expected Loss")
 				in
-				    #"Replaced Value11"
+				    #"Added Custom"
 
 	annotation PBI_NavigationStepName = Navigation
 

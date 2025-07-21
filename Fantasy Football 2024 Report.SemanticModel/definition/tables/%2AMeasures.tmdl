@@ -567,11 +567,13 @@ table *Measures
 		lineageTag: a8484c75-7117-46cc-9fb2-a5754560e231
 
 	measure quadrantMin = CALCULATE(min(MatchupsTable[actual_variance]),all(MatchupsTable))-5
+		displayFolder: Team Summary
 		lineageTag: 0729e7a6-6b7c-4267-b9d3-cb2d085c5725
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure quadrantMax = CALCULATE(max(MatchupsTable[actual_variance]),all(MatchupsTable))+5
+		displayFolder: Team Summary
 		lineageTag: f0263f45-2779-4011-ba35-08304c015b16
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -720,13 +722,96 @@ table *Measures
 			)
 			
 			return SWITCH(TRUE(),
-			                _isplayoff=0,"",
+			                _isplayoff=0," ",
 			                _away = "BYE", "This was a playoff bye week for " & _home & ", who now advances to the second round.",
 			                SELECTEDVALUE(Weeks[Week])=17, "This was the championship game, congrats to " & _winner & " on their league victory this season!",
-			                "This was a playoff game in the" & _round & " round, and with " & _winner & "'s victory they advance to the next round."
+			                "This was a playoff game in the" & _round & "round, and with " & _winner & "'s victory they advance to the next round."
 			)
 		displayFolder: Box Scores
 		lineageTag: 2b8fb810-e137-45b6-8629-424a1b28fe2e
+
+	measure 'Point Performance Summary' = max(MatchupsTable[Projected Points]) - max(MatchupsTable[Actual Points])
+		displayFolder: Team Summary
+		lineageTag: a4419258-70e4-4b82-8f97-21b9159124fa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelectedTeam = SELECTEDVALUE(MatchupsTable[Team])
+		displayFolder: Team Summary
+		lineageTag: 1bcd75af-adca-4353-97ad-067e27a1eeb4
+
+	measure 'Close games' =
+			
+			var _team = [SelectedTeam]
+			return CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])<=10)
+		formatString: 0
+		displayFolder: Team Summary
+		lineageTag: 0a032aff-e851-4bf3-a34d-ba3ca4ad21f6
+
+	measure Blowouts =
+			
+			var _team = [SelectedTeam]
+			return CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])>=30)
+		formatString: 0
+		displayFolder: Team Summary
+		lineageTag: 71f22516-a0c8-4cb8-9cff-fd74bdfbb680
+
+	measure 'Close or Blowout Record' =
+			
+			var _team = [SelectedTeam]
+			var _blow = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])>=30 || ABS(MatchupsTable[actual_variance])<=10)
+			var _blowWins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,MatchupsTable[Result]="Win",ABS(MatchupsTable[actual_variance])>=30 || ABS(MatchupsTable[actual_variance])<=10)
+			return CONVERT(_blowWins,STRING) & " out of " & CONVERT(_blow,STRING)
+		displayFolder: Team Summary
+		lineageTag: 6e703723-7d9e-4052-8e57-072b1337f23e
+
+	measure 'Forecast Comparison' =
+			
+			var _team = [SelectedTeam]
+			var _projectedwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0)
+			var _actualwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0,MatchupsTable[Result]="Win")
+			var _result = ROUND(100*DIVIDE(_actualwins,_projectedwins,0),0)
+			return _result
+		formatString: 0
+		displayFolder: Team Summary
+		lineageTag: e48f45fe-ae21-4db0-a5be-954832805541
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Forecast comparison text' =
+			
+			SWITCH(TRUE(),
+			        [Forecast Comparison]>=40 && [Forecast Comparison]<=60, "as expected",
+			        [Forecast Comparison]>60,"well",
+			        [Forecast Comparison]<40,"poorly"
+			)
+		displayFolder: Team Summary
+		lineageTag: 147c5a21-1aa8-473c-bd28-82ee6f0f10f4
+
+	measure 'Stolen Games' =
+			
+			var _team = [SelectedTeam]
+			var _wins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]<0,MatchupsTable[Result]="Win")
+			return SWITCH(TRUE(),
+			                _wins=1, _wins & " game",
+			                _wins
+			)
+		formatString: 0
+		displayFolder: Team Summary
+		lineageTag: c8dfce30-9e5f-4178-a022-05199baa1276
+
+	measure 'Performance Summary Value' = ```
+			
+			var _value = round(AVERAGEX(MatchupsTable,MatchupsTable[Actual Points] - MatchupsTable[Projected Points]),2)
+			var _result = SWITCH(TRUE(),
+			                        _value=0, "scored their expected number of points on average.",
+			                        _value>0, "overperforming by " & abs(_value) & " points on average.",
+			                        "underperforming by " & abs(_value) & " points on average."
+			)
+			return _result 
+			```
+		displayFolder: Team Summary
+		lineageTag: f9b28137-24e1-4ea9-ad0b-ec0386dbbef2
 
 	column *Measures
 		dataType: string
