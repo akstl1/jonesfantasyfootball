@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "34dd5e037604a75a60ee",
+  "name": "e5c6a00820b6476396d1",
   "position": {
-    "x": 753.82940108892922,
-    "y": 109.18330308529946,
-    "z": 2000,
-    "height": 198.62068965517241,
-    "width": 147.513611615245,
-    "tabOrder": 1000
+    "x": 579.600725952813,
+    "y": 88.275862068965509,
+    "z": 4000,
+    "height": 229.98185117967333,
+    "width": 174.22867513611615,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -57,7 +57,7 @@
             "imageUrl": {
               "expr": {
                 "Literal": {
-                  "Value": "'https://g.espncdn.com/lm-static/ffl/images/playoff_bracket/trophy_third.svg'"
+                  "Value": "'https://g.espncdn.com/lm-static/ffl/images/playoff_bracket/trophy_first.svg'"
                 }
               }
             },
@@ -85,7 +85,7 @@
             "size": {
               "expr": {
                 "Literal": {
-                  "Value": "125L"
+                  "Value": "150L"
                 }
               }
             },
@@ -617,7 +617,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Third Place'"
+                  "Value": "'Champion'"
                 }
               }
             },
@@ -939,7 +939,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sith Happens'"
+                  "Value": "'Baby Back Gibbs'"
                 }
               }
             },
@@ -1038,20 +1038,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "f3fb11ba792178cb2c7d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "DraftName"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

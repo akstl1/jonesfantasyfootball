@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Weeks.Week",
-              "nativeQueryRef": "Week"
+              "nativeQueryRef": "Week",
+              "active": true
             }
           ]
         },

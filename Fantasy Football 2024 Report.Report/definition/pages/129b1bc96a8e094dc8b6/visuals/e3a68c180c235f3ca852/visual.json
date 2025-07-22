@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "168d5ff25c60c162b9ea",
+  "name": "e3a68c180c235f3ca852",
   "position": {
-    "x": 68.743718592964825,
-    "y": 343.7185929648241,
+    "x": 101.65617433414043,
+    "y": 386.78934624697337,
     "z": 1000,
-    "height": 376.28140703517585,
-    "width": 1210.251256281407
+    "height": 332.24213075060533,
+    "width": 1177.72397094431,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "pythonVisual",
@@ -119,5 +120,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ff8828605a6945d2d819",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Power Rankings"
+              }
+            },
+            "Property": "Rank"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ab99d5847453b4c87c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Power Rankings"
+              }
+            },
+            "Property": "Team"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba6bceeb0ee74d23be71",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Power Rankings"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

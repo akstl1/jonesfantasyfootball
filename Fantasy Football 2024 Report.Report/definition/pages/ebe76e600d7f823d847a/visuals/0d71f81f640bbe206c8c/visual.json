@@ -1,0 +1,349 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "0d71f81f640bbe206c8c",
+  "position": {
+    "x": 59.918796274181993,
+    "y": 309.11617864819686,
+    "z": 11002,
+    "height": 410.8717458801051,
+    "width": 1213.0499164079292,
+    "tabOrder": 10002
+  },
+  "visual": {
+    "visualType": "changeChart63B1E8C33CBE4BC6913014096224EE2C",
+    "query": {
+      "queryState": {
+        "baseline": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Power Ranking Start"
+                }
+              },
+              "queryRef": "*Measures.Power Ranking Start",
+              "nativeQueryRef": "Power Ranking Start"
+            }
+          ]
+        },
+        "compared": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Power Ranking End"
+                }
+              },
+              "queryRef": "*Measures.Power Ranking End",
+              "nativeQueryRef": "Power Ranking End"
+            }
+          ]
+        },
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TeamsTable"
+                    }
+                  },
+                  "Property": "Fantasy Name"
+                }
+              },
+              "queryRef": "TeamsTable.Fantasy Name",
+              "nativeQueryRef": "Fantasy Name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "*Measures"
+                  }
+                },
+                "Property": "Power Ranking Start"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "changeLabels": [
+        {
+          "properties": {
+            "enabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueLabels": [
+        {
+          "properties": {
+            "enabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "chartAxis": [
+        {
+          "properties": {
+            "thickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "noOfTicks": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataArrows": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "*Measures"
+                                    }
+                                  },
+                                  "Property": "Power Ranking Color Indicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#b3b3b3'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "*Measures"
+                                        }
+                                      },
+                                      "Property": "Power Ranking Color Indicator"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-15D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "*Measures"
+                                        }
+                                      },
+                                      "Property": "Power Ranking Color Indicator"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#32CD32'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 1,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "*Measures"
+                                        }
+                                      },
+                                      "Property": "Power Ranking Color Indicator"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "*Measures"
+                                        }
+                                      },
+                                      "Property": "Power Ranking Color Indicator"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "15D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FF0000'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5616458212fc35e64366",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Power Ranking Start"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f0ecbdd726c7d75a498",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Power Ranking End"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d6264fe1ad7a35e73c7b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Fantasy Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

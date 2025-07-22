@@ -813,6 +813,34 @@ table *Measures
 		displayFolder: Team Summary
 		lineageTag: f9b28137-24e1-4ea9-ad0b-ec0386dbbef2
 
+	measure 'Power Ranking Start' = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=1)
+		formatString: 0
+		lineageTag: 0ebbf1df-fecb-4d72-83e6-af4e5858532b
+
+	measure 'Power Ranking Start Dummy' = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=1)
+		formatString: 0
+		lineageTag: 789fb892-b274-42af-ad5e-894e4091b44e
+
+	measure 'Power Ranking End' =
+			
+			var _wk = CALCULATE(max(PlayerPointsStats[Week]),ALL(PlayerPointsStats))
+			var _result = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=_wk)
+			return _result
+		formatString: 0
+		lineageTag: 432ad601-fa3c-466d-92b8-412d8f14a125
+
+	measure 'Positive Arrow' = if([Power Ranking End]>[Power Ranking Start],[Power Ranking End])
+		formatString: 0
+		lineageTag: 055b9bc0-bc33-452b-8dda-96def325ac65
+
+	measure 'Negative Arrow' = if([Power Ranking End]<[Power Ranking Start],[Power Ranking End])
+		formatString: 0
+		lineageTag: ad9eb144-e084-404a-8b42-d0decfcbd4d8
+
+	measure 'Power Ranking Color Indicator' = [Power Ranking End] - [Power Ranking Start]
+		formatString: 0
+		lineageTag: 5cd6c825-8e13-440c-9479-35568f8fadd3
+
 	column *Measures
 		dataType: string
 		isHidden
