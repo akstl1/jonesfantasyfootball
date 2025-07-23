@@ -7,7 +7,7 @@
     "z": 0,
     "height": 257.5,
     "width": 472.5,
-    "tabOrder": 12000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -384,51 +384,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "988905a8ff9366eb59f5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "projected_variance"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f56ecb37d5aa1b51c52e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "actual_variance"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c69e14fe6d49fd450bcf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Legend"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

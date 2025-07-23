@@ -841,6 +841,16 @@ table *Measures
 		formatString: 0
 		lineageTag: 5cd6c825-8e13-440c-9479-35568f8fadd3
 
+	measure 'Top Player' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = [Home Name]
+			var _points = CALCULATE(max(PlayerPointsStats[Actual]),PlayerPointsStats[FantasyTeam]=_team,PlayerPointsStats[Week]=_week)
+			var _player = CALCULATE(max(PlayerPointsStats[Player Name]),PlayerPointsStats[FantasyTeam]=_team,PlayerPointsStats[Week]=_week,PlayerPointsStats[Actual]=_points)
+			return _player
+		displayFolder: Box Scores
+		lineageTag: c4255327-4854-4e22-a6e7-f3ddafeb5720
+
 	column *Measures
 		dataType: string
 		isHidden

@@ -5,9 +5,9 @@
     "x": 53.804633389061379,
     "y": 67.255791736326728,
     "z": 0,
-    "height": 633.4272748984954,
+    "height": 651.76976355385716,
     "width": 1226.5010747551946,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -960,5 +960,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bb4b62c5f6b6fbb2fa37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Draft"
+              }
+            },
+            "Property": "Team"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3dd4b1911310e297c049",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Draft"
+              }
+            },
+            "Property": "Round"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6d5c21709666198c0f5e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Draft"
+                  }
+                },
+                "Property": "Name Abbrev"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

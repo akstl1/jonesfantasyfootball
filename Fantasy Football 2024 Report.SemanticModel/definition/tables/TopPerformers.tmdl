@@ -1,0 +1,63 @@
+table TopPerformers
+	lineageTag: d2adfefd-f01b-49e4-8e0a-551cb0ec78dc
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e24d654-4b76-4dee-94b7-3503160914e3
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column FantasyTeam
+		dataType: string
+		lineageTag: 56c9f0dc-2e40-45be-b52e-63995bcedfeb
+		summarizeBy: none
+		sourceColumn: FantasyTeam
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Player Name'
+		dataType: string
+		lineageTag: 0bf996ce-26b1-44c3-b5b9-47f763eff04f
+		summarizeBy: none
+		sourceColumn: Player Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: string
+		lineageTag: 5056ad82-fd6c-4b42-98bd-d8c45e4b81c3
+		summarizeBy: none
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: string
+		lineageTag: 4ae9e47b-c919-4b33-9ff6-b3195cac5709
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TopPerformers = m
+		mode: import
+		queryGroup: Main
+		source =
+				let
+				    Source = PlayerPointsStats,
+				    #"Removed Duplicates" = Table.Distinct(Source, {"PlayerKey"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Duplicates",{"Week", "FantasyTeam", "Player Name", "Actual"}),
+				    #"Grouped Rows" = Table.Group(#"Removed Other Columns", {"Week", "FantasyTeam"}, {{"Group", each _, type table [Week=nullable number, FantasyTeam=nullable text, Player Name=nullable text, Actual=nullable number]}}),
+				    #"Added Custom" = Table.AddColumn(#"Grouped Rows", "Rank", each Table.AddRankColumn([Group],"Rank",{{"Actual",Order.Descending},{"Player Name",Order.Ascending}},[RankKind = RankKind.Competition])),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Group"}),
+				    #"Expanded Rank" = Table.ExpandTableColumn(#"Removed Columns", "Rank", {"Player Name", "Actual", "Rank"}, {"Player Name", "Actual", "Rank"})
+				in
+				    #"Expanded Rank"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

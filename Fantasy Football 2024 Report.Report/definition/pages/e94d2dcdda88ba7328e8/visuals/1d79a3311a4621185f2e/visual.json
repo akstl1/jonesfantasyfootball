@@ -7,7 +7,7 @@
     "z": 31000,
     "height": 55.496269145176065,
     "width": 115.81830082471527,
-    "tabOrder": 30000
+    "tabOrder": 29000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "DraftName"
+                  "Property": "Top Player"
                 }
               },
-              "queryRef": "*Measures.DraftName",
-              "nativeQueryRef": "DraftName"
+              "queryRef": "*Measures.Top Player",
+              "nativeQueryRef": "Top Player"
             }
           ]
         }
@@ -131,7 +131,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "8D"
                 }
               }
             },
@@ -159,13 +159,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "19D"
+                  "Value": "11D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.DraftName"
+            "metadata": "*Measures.Top Player"
           }
         }
       ],
@@ -200,21 +200,16 @@
         },
         {
           "properties": {
-            "text": {
+            "fontSize": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "DraftPlayerTeam"
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.DraftName"
+            "metadata": "*Measures.Top Player"
           }
         }
       ],
@@ -341,21 +336,6 @@
       "referenceLabelTitle": [
         {
           "properties": {
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'fieldName'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName",
-            "id": "field-e4c02d88-704d-fb8f-9c4d-a02d62388410"
-          }
-        },
-        {
-          "properties": {
             "show": {
               "expr": {
                 "Literal": {
@@ -366,50 +346,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Team'"
-                }
-              }
-            },
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName",
-            "id": "field-9f6d4b66-6b5f-a99a-14cf-ecafdc5069cb"
-          }
-        },
-        {
-          "properties": {
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Position'"
-                }
-              }
-            },
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName",
-            "id": "field-64f89631-c719-2bc5-232e-8d9a79657947"
           }
         }
       ],
@@ -492,76 +428,7 @@
           }
         }
       ],
-      "referenceLabelValue": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName"
-          }
-        },
-        {
-          "properties": {
-            "valueTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName",
-            "id": "field-64f89631-c719-2bc5-232e-8d9a79657947"
-          }
-        }
-      ],
-      "divider": [
-        {
-          "properties": {
-            "dividerWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "dividerIgnorePadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName"
-          }
-        }
-      ],
       "referenceLabelDetail": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.DraftName",
-            "id": "field-64f89631-c719-2bc5-232e-8d9a79657947"
-          }
-        },
         {
           "properties": {
             "show": {
@@ -603,7 +470,7 @@
             }
           },
           "selector": {
-            "metadata": "*Measures.DraftName"
+            "metadata": "*Measures.Top Player"
           }
         }
       ]
@@ -1045,46 +912,21 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Draft",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Round"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
+      },
+      {
+        "name": "bcc48ca425207d6f7ef6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Player"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

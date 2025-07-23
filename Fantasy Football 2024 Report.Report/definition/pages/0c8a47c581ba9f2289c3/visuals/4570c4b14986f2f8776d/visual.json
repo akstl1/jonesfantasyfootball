@@ -6,8 +6,7 @@
     "y": 57.5,
     "z": 2000,
     "height": 82.5,
-    "width": 327.5,
-    "tabOrder": 1000
+    "width": 327.5
   },
   "visual": {
     "visualType": "slicer",
@@ -68,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Apex Predators'"
+                                "Value": "'A''s Astounding Team'"
                               }
                             }
                           ]
@@ -102,6 +101,19 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

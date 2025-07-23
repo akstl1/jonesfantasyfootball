@@ -7,7 +7,7 @@
     "z": 26000,
     "height": 89,
     "width": 389,
-    "tabOrder": 25000
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -528,48 +528,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "ec2050245329d7727935",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Projected Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dab53c37970f83b05ff4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dd6b3468db72e2f224a4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away plusOrMinus Text"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
