@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d636bcd4b048bc26866c",
   "position": {
-    "x": 864,
-    "y": 481.25,
+    "x": 863.47337542882713,
+    "y": 480.61253915378114,
     "z": 24000,
-    "height": 89,
-    "width": 389,
+    "height": 89.605727638840563,
+    "width": 389.64914897495817,
     "tabOrder": 22000
   },
   "visual": {
@@ -23,12 +23,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Defensive TDs"
+                  "Property": "Top Performer 1"
                 }
               },
-              "queryRef": "*Measures.Box Score Defensive TDs",
-              "nativeQueryRef": "TDs",
-              "displayName": "TDs"
+              "queryRef": "*Measures.Top Performer 1",
+              "nativeQueryRef": "Top Performer 1"
             },
             {
               "field": {
@@ -38,12 +37,11 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Defensive Interceptions"
+                  "Property": "Top Performer 2"
                 }
               },
-              "queryRef": "*Measures.Box Score Defensive Interceptions",
-              "nativeQueryRef": "Interceptions",
-              "displayName": "Interceptions"
+              "queryRef": "*Measures.Top Performer 2",
+              "nativeQueryRef": "Top Performer 2"
             },
             {
               "field": {
@@ -53,32 +51,17 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Defensive Fumbles"
+                  "Property": "Top Performer 3"
                 }
               },
-              "queryRef": "*Measures.Box Score Defensive Fumbles",
-              "nativeQueryRef": "Fumbles",
-              "displayName": "Fumbles"
+              "queryRef": "*Measures.Top Performer 3",
+              "nativeQueryRef": "Top Performer 3"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "*Measures"
-                  }
-                },
-                "Property": "Defensive TDs"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -88,7 +71,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "14D"
                 }
               }
             },
@@ -139,6 +122,84 @@
           },
           "selector": {
             "metadata": "*Measures.Box Score Offensive Fumbles"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Top Performer 1 Points"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'belowValue'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Top Performer 1"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Top Performer 2 Points"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'belowValue'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Top Performer 2"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Top Performer 3 Points"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'belowValue'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Top Performer 3"
           }
         }
       ],
@@ -393,6 +454,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "a9987dfc0d2e5ec68932",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bfc94be62fb6f3f1c1ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e1beda2e274d4404e930",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 3"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -7516,7 +7516,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "This was an "
+                    "value": "This was an ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7527,10 +7530,16 @@
                       "selector": {
                         "id": "Value"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   },
                   {
-                    "value": " for "
+                    "value": " for ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7541,10 +7550,16 @@
                       "selector": {
                         "id": "Value 2"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   },
                   {
-                    "value": ", who "
+                    "value": ", who ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7555,10 +7570,16 @@
                       "selector": {
                         "id": "Value 3"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   },
                   {
-                    "value": " points after being projected to "
+                    "value": " after being projected to ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7569,10 +7590,16 @@
                       "selector": {
                         "id": "Value 4"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   },
                   {
-                    "value": "."
+                    "value": ".",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   }
                 ]
               },
@@ -7594,6 +7621,9 @@
                       "selector": {
                         "id": "Value 5"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   }
                 ]
@@ -7608,7 +7638,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "This is the "
+                    "value": "This is the ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7619,10 +7652,16 @@
                       "selector": {
                         "id": "Value 6"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   },
                   {
-                    "value": "game in the season series between these teams, and "
+                    "value": "game in the season series between these teams, and ",
+                    "textStyle": {
+                      "fontSize": "9pt"
+                    }
                   },
                   {
                     "value": {
@@ -7633,6 +7672,9 @@
                       "selector": {
                         "id": "Value 7"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   }
                 ]
@@ -7655,6 +7697,9 @@
                       "selector": {
                         "id": "Value 8"
                       }
+                    },
+                    "textStyle": {
+                      "fontSize": "9pt"
                     }
                   }
                 ]

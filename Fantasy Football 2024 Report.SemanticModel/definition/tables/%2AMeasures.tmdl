@@ -593,7 +593,7 @@ table *Measures
 			var _differential = round(if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0),2)
 			
 			var _allcategories = SWITCH(TRUE(),
-			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points",
+			                            _rushing>=0 && _receiving>=0 && _passing>=0 && _kicking>=0 && _d>=0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points",
 			                             _differential=0, "None",
 			                             BLANK()
 			)
@@ -604,7 +604,7 @@ table *Measures
 			
 			var _partialnew = SWITCH(TRUE(),
 			                            _partialCount=1, SUBSTITUTE(_partialcategories,", "," "),
-			                            _partialCount=2, SUBSTITUTE(_partialcategories,", "," and "),
+			                            _partialCount=2, SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," and ",1),",",""),
 			                            SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," ",_partialCount),", ",", and ",_partialCount-1)
 			)
 			return SWITCH(TRUE(),
@@ -632,7 +632,7 @@ table *Measures
 			var _differential = round(if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0),2)
 			
 			var _allcategories = SWITCH(TRUE(),
-			                            _rushing>0 && _receiving>0 && _passing>0 && _kicking>0 && _d>0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points. ",
+			                            _rushing>=0 && _receiving>=0 && _passing>=0 && _kicking>=0 && _d>=0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points. ",
 			                             _differential=0, "None",
 			                             BLANK()
 			)
@@ -841,15 +841,65 @@ table *Measures
 		formatString: 0
 		lineageTag: 5cd6c825-8e13-440c-9479-35568f8fadd3
 
-	measure 'Top Player' =
+	measure 'Top Performer 1' =
 			
 			var _week = SELECTEDVALUE(Weeks[Week])
-			var _team = [Home Name]
-			var _points = CALCULATE(max(PlayerPointsStats[Actual]),PlayerPointsStats[FantasyTeam]=_team,PlayerPointsStats[Week]=_week)
-			var _player = CALCULATE(max(PlayerPointsStats[Player Name]),PlayerPointsStats[FantasyTeam]=_team,PlayerPointsStats[Week]=_week,PlayerPointsStats[Actual]=_points)
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=1)
 			return _player
 		displayFolder: Box Scores
 		lineageTag: c4255327-4854-4e22-a6e7-f3ddafeb5720
+
+	measure 'Top Performer 2' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=2)
+			return _player
+		displayFolder: Box Scores
+		lineageTag: c0ae7ed9-0e09-4b10-8108-5b43ad048b43
+
+	measure 'Top Performer 3' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=3)
+			return _player
+		displayFolder: Box Scores
+		lineageTag: fbf73f5a-8643-43c1-83a8-248b135b1bf2
+
+	measure 'Top Performer 1 Points' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=1)
+			return  CONVERT(_points,STRING) & " pts"
+		displayFolder: Box Scores
+		lineageTag: d99415c7-d873-480f-92dc-5bf3b7b68253
+
+	measure 'Top Performer 2 Points' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=2)
+			return  CONVERT(_points,STRING) & " pts"
+		displayFolder: Box Scores
+		lineageTag: a3632b5c-24ad-4836-9b04-cc5eb0bf30dd
+
+	measure 'Top Performer 3 Points' =
+			
+			var _week = SELECTEDVALUE(Weeks[Week])
+			var _team = SWITCH(TRUE(),
+			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
+			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=3)
+			return  CONVERT(_points,STRING) & " pts"
+		displayFolder: Box Scores
+		lineageTag: 70f43dde-f1f7-425d-a9bd-fcbea424a419
 
 	column *Measures
 		dataType: string

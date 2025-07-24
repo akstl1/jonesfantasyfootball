@@ -492,6 +492,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "a389238d960f361b64ed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Player Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2fa4e58bf91e6575b8d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Team City"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

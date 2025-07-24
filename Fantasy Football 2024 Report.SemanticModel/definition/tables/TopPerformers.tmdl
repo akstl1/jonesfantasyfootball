@@ -27,18 +27,29 @@ table TopPerformers
 		annotation SummarizationSetBy = Automatic
 
 	column Actual
-		dataType: string
+		dataType: double
 		lineageTag: 5056ad82-fd6c-4b42-98bd-d8c45e4b81c3
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Actual
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Rank
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 4ae9e47b-c919-4b33-9ff6-b3195cac5709
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name Abbrev'
+		dataType: string
+		lineageTag: bc1ce03f-8925-43a1-97e3-063332973721
+		summarizeBy: none
+		sourceColumn: Name Abbrev
 
 		annotation SummarizationSetBy = Automatic
 
@@ -53,9 +64,11 @@ table TopPerformers
 				    #"Grouped Rows" = Table.Group(#"Removed Other Columns", {"Week", "FantasyTeam"}, {{"Group", each _, type table [Week=nullable number, FantasyTeam=nullable text, Player Name=nullable text, Actual=nullable number]}}),
 				    #"Added Custom" = Table.AddColumn(#"Grouped Rows", "Rank", each Table.AddRankColumn([Group],"Rank",{{"Actual",Order.Descending},{"Player Name",Order.Ascending}},[RankKind = RankKind.Competition])),
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Group"}),
-				    #"Expanded Rank" = Table.ExpandTableColumn(#"Removed Columns", "Rank", {"Player Name", "Actual", "Rank"}, {"Player Name", "Actual", "Rank"})
+				    #"Expanded Rank" = Table.ExpandTableColumn(#"Removed Columns", "Rank", {"Player Name", "Actual", "Rank"}, {"Player Name", "Actual", "Rank"}),
+				    #"Added Custom1" = Table.AddColumn(#"Expanded Rank", "Name Abbrev", each if Text.Contains([Player Name],"D/ST") then [Player Name] else Text.Start(Text.BeforeDelimiter([Player Name]," "),1) & ". "&Text.AfterDelimiter([Player Name]," ")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"Rank", Int64.Type}, {"Actual", type number}, {"Player Name", type text}, {"Name Abbrev", type text}})
 				in
-				    #"Expanded Rank"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 
