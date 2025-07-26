@@ -1,0 +1,71 @@
+table SpiderChart
+	lineageTag: d89e9d8a-7238-4f28-879a-944a55c332c4
+
+	column Category
+		dataType: string
+		lineageTag: eb7ce4fc-5128-47ce-bb48-7932497bb4ab
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column FantasyTeam
+		dataType: string
+		lineageTag: ad8688ab-b446-4b5f-b387-9349d2d1fd66
+		summarizeBy: none
+		sourceColumn: FantasyTeam
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalPoints
+		dataType: double
+		lineageTag: efd79f1c-17a3-4859-a707-a6ab7d1c03f5
+		summarizeBy: sum
+		sourceColumn: TotalPoints
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b6a8160-50e2-42fc-874a-30619a846d9a
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Condensed Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: ca7504df-589a-409b-bc7e-dd309e2893e7
+		summarizeBy: sum
+		sourceColumn: Condensed Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SpiderChart = m
+		mode: import
+		queryGroup: Main
+		source =
+				let
+				    Source = PlayerPointsStats,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Lineup Slot] <> "BE1" and [Lineup Slot] <> "BE2" and [Lineup Slot] <> "BE3" and [Lineup Slot] <> "BE4" and [Lineup Slot] <> "BE5" and [Lineup Slot] <> "BE6" and [Lineup Slot] <> "BE7" and [Lineup Slot] <> "BE8")),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Filtered Rows",{"FantasyTeam", "TotalPoints", "Attribute"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Other Columns1", {"Attribute"}, PointsMap, {"Stat"}, "PointsMap", JoinKind.LeftOuter),
+				    #"Expanded PointsMap" = Table.ExpandTableColumn(#"Merged Queries", "PointsMap", {"Category"}, {"Category"}),
+				    #"Grouped Rows1" = Table.Group(#"Expanded PointsMap", {"FantasyTeam", "Category"}, {{"TotalPoints", each List.Sum([TotalPoints]), type number}}),
+				    #"Grouped Rows" = Table.Group(#"Grouped Rows1", {"Category"}, {{"Group", each _, type table [FantasyTeam=nullable text, Category=nullable text, TotalPoints=number]}}),
+				    #"Added Custom" = Table.AddColumn(#"Grouped Rows", "Rank", each Table.AddRankColumn([Group],"Rank",{{"TotalPoints",Order.Ascending}},[RankKind = RankKind.Competition])),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Group"}),
+				    #"Expanded Rank" = Table.ExpandTableColumn(#"Removed Columns", "Rank", {"FantasyTeam", "TotalPoints", "Rank"}, {"FantasyTeam", "TotalPoints", "Rank"}),
+				    #"Added Custom1" = Table.AddColumn(#"Expanded Rank", "Condensed Rank", each if Number.Mod([Rank],2)=0 then [Rank]/2 else Number.RoundUp([Rank]/2)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"Condensed Rank", Int64.Type}, {"Rank", Int64.Type}, {"TotalPoints", type number}, {"FantasyTeam", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

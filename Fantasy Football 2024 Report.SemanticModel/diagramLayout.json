@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 322.34063430462783,
-        "y": 599.17437481929937
+        "x": 0,
+        "y": 881.88164443838775
       },
       "nodes": [
         {
           "location": {
             "x": 1054.0535352196075,
-            "y": 637.44133007963092
+            "y": 1334.9706889626891
           },
           "nodeIndex": "MatchupsTable",
           "nodeLineageTag": "953f438f-86d1-4d5a-88c2-daedc552e940",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 0,
-            "y": 637.14568429521773
+            "y": 1334.6750431782757
           },
           "nodeIndex": "NFLteamsTable",
           "nodeLineageTag": "2dff2253-e5b0-4060-a2ab-0e20911b489d",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 330.52707759732795,
-            "y": 1067.8387598717572
+            "y": 1765.3681187548154
           },
           "nodeIndex": "PlayersTable",
           "nodeLineageTag": "6af93a31-e711-4307-8e27-270955939562",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 258.0758803226808,
-            "y": 646.77403022622661
+            "y": 1344.3033891092846
           },
           "nodeIndex": "TeamsTable",
           "nodeLineageTag": "fe9fd550-8518-4fbf-8b4d-710dd1b4fa6a",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 751.266749955438,
-            "y": 645.99150077812067
+            "y": 1343.5208596611787
           },
           "nodeIndex": "Weeks",
           "nodeLineageTag": "bfe34520-4ecd-4340-9bc6-b22a50d91f86",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1539.8133957284883,
-            "y": 599.34382953025829
+            "y": 1296.8731884133163
           },
           "nodeIndex": "*Measures",
           "nodeLineageTag": "c5bdf72e-8ae1-460d-931d-1c51e532acd9",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1311.9982539811585,
-            "y": 644.52246811407224
+            "y": 1342.0518269971303
           },
           "nodeIndex": "PointsMap",
           "nodeLineageTag": "a9f89ebb-4451-480e-ae71-4871c6ef9eb3",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 328.73604032696028,
-            "y": 1500.9103833630284
+            "y": 2198.4397422460866
           },
           "nodeIndex": "PlayerPointsStats",
           "nodeLineageTag": "81942150-b37b-4a81-a511-f30e725da61a",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 14.220910336968871,
-            "y": 1067.7494738237524
+            "y": 1765.2788327068106
           },
           "nodeIndex": "Draft",
           "nodeLineageTag": "f4cb47a3-0219-4889-a448-d4b66395e8e9",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 502.45191200000056,
-            "y": 636.10105950000059
+            "y": 1333.6304183830587
           },
           "nodeIndex": "UniquePlayers",
           "nodeLineageTag": "6b077aa2-c5a7-4bc0-a66a-bd83351e63e9",
@@ -141,7 +141,7 @@
         {
           "location": {
             "x": 1197.5302136522255,
-            "y": 1371.3696986036111
+            "y": 2068.8990574866693
           },
           "nodeIndex": "New Standings",
           "nodeLineageTag": "b4ae813c-b4b7-4b7e-8f47-1b6f84c7e0d8",
@@ -154,7 +154,7 @@
         {
           "location": {
             "x": 1466.4614836108155,
-            "y": 1374.8613766199965
+            "y": 2072.3907355030547
           },
           "nodeIndex": "Power Rankings",
           "nodeLineageTag": "20859478-2046-456a-9b00-2b2904fa5681",
@@ -163,10 +163,36 @@
             "width": 234
           },
           "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1839.7031550877384,
+            "y": 2075.4539767921747
+          },
+          "nodeIndex": "TopPerformers",
+          "nodeLineageTag": "d2adfefd-f01b-49e4-8e0a-551cb0ec78dc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2038.5249700547511,
+            "y": 1787.9364840711521
+          },
+          "nodeIndex": "SpiderChart",
+          "nodeLineageTag": "d89e9d8a-7238-4f28-879a-944a55c332c4",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 63.287087723234393,
+      "zoomValue": 50.346892102823425,
       "pinKeyFieldsToTop": true,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

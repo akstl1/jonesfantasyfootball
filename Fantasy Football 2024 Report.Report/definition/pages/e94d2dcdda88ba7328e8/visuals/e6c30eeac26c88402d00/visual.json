@@ -4,10 +4,10 @@
   "position": {
     "x": 881,
     "y": 116,
-    "z": 16000,
+    "z": 15000,
     "height": 66,
     "width": 281,
-    "tabOrder": 14000
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -930,20 +930,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "69ad2fcb444aebffac2f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Name"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

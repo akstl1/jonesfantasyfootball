@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "80880db8643516919a21",
   "position": {
-    "x": 651.37777777777774,
-    "y": 203.37777777777777,
+    "x": 88.75,
+    "y": 120,
     "z": 1000,
-    "height": 156.44444444444446,
-    "width": 581.68888888888887,
+    "height": 73.75,
+    "width": 581.25,
     "tabOrder": 13000
   },
   "visual": {
@@ -27,13 +27,6 @@
                 "textRuns": [
                   {
                     "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "add spider chart? or performance by category compared to other teams?"
                   }
                 ]
               },

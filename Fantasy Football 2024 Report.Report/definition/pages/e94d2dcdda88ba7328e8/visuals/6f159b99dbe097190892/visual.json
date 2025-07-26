@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 56.748768472906406,
     "width": 415.86206896551727,
-    "tabOrder": 30000
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "slicer",
@@ -382,20 +382,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "b29dc932c5f1ee00e815",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Matchup Header Abbrev"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

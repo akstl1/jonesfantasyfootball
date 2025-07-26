@@ -4,10 +4,10 @@
   "position": {
     "x": 82,
     "y": 387,
-    "z": 28000,
+    "z": 27000,
     "height": 89,
     "width": 389,
-    "tabOrder": 26000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -527,48 +527,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "cd851c385f9e36f49a39",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive TDs"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "704e30e481c3f1d47873",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive Interceptions"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9c5dd8feb6a4e53e3c7b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive Fumbles"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

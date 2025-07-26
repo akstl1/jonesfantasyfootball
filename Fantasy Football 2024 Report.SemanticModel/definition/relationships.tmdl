@@ -42,3 +42,11 @@ relationship c39ba27b-704d-6477-1ef2-2abf499266d6
 	fromColumn: PlayerPointsStats.Attribute
 	toColumn: PointsMap.Stat
 
+relationship 55801556-3c7f-92ad-fce7-efcda060630c
+	fromColumn: SpiderChart.FantasyTeam
+	toColumn: TeamsTable.'Fantasy Name'
+
+relationship 8e117481-c931-cf59-9e1c-e1e4ed07d7dd
+	fromColumn: TopPerformers.FantasyTeam
+	toColumn: TeamsTable.'Fantasy Name'
+

@@ -4,10 +4,10 @@
   "position": {
     "x": 863.47337542882713,
     "y": 480.61253915378114,
-    "z": 24000,
+    "z": 23000,
     "height": 89.605727638840563,
     "width": 389.64914897495817,
-    "tabOrder": 22000
+    "tabOrder": 21000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -454,48 +454,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "a9987dfc0d2e5ec68932",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 1"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bfc94be62fb6f3f1c1ab",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e1beda2e274d4404e930",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 3"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
