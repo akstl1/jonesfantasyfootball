@@ -99,6 +99,13 @@
                   "Value": "100D"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Points Above/Below Expected'"
+                }
+              }
             }
           }
         }
