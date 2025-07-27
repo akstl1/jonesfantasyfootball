@@ -805,8 +805,8 @@ table *Measures
 			var _value = round(AVERAGEX(MatchupsTable,MatchupsTable[Actual Points] - MatchupsTable[Projected Points]),2)
 			var _result = SWITCH(TRUE(),
 			                        _value=0, "scored their expected number of points on average.",
-			                        _value>0, "overperforming by " & abs(_value) & " points on average.",
-			                        "underperforming by " & abs(_value) & " points on average."
+			                        _value>0, "overperformed by " & abs(_value) & " points on average.",
+			                        "underperformed by " & abs(_value) & " points on average."
 			)
 			return _result 
 			```

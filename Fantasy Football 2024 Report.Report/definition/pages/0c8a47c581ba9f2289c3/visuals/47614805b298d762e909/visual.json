@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "47614805b298d762e909",
   "position": {
-    "x": 68.75,
-    "y": 448.75,
-    "z": 13000,
+    "x": 70,
+    "y": 463.75,
+    "z": 14000,
     "height": 230,
-    "width": 472.5,
+    "width": 455,
     "tabOrder": 12000
   },
   "visual": {
@@ -102,8 +102,75 @@
             }
           }
         }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Points Scored Above/Below Expected by Week'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fafd0424834a527917a6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Weeks"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7cca40dffc8394fe262e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Point Performance Summary"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
