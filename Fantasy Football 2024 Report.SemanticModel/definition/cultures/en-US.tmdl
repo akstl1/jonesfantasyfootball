@@ -18204,55 +18204,159 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.close_or_blowout_indicator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Close Or Blowout Indicator"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "close or blowout indicator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "close": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "close blowout indicator": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "blowout indicator": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "indicator": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "close blowout pointer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "blowout pointer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "close blowout needle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "close blowout gage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "close blowout gauge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "close blowout dial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "close blowout meter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "close blowout display": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "pointer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "blowout needle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Result Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "players_table_has_matchups_table": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "matchups_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_matchups_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_players_tables"
-			        }
-			      ]
-			    },
 			    "matchups_table_has_teams_table": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
@@ -18342,6 +18446,70 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "weeks_have_matchups_tables"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_close_or_blowout_indicator": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.close_or_blowout_indicator": {
+			          "Target": {
+			            "Entity": "measure.close_or_blowout_indicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.close_or_blowout_indicator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_close_or_blowout_indicator"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Verbs": [
+			              {
+			                "close": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "or": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.close_or_blowout_indicator"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "matchups_tables_close_or_close_or_blowout_indicator"
 			        }
 			      ]
 			    },
@@ -24867,6 +25035,52 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "unique_players_have_players_tables"
+			        }
+			      ]
+			    },
+			    "players_table_has_matchups_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        },
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_matchups_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_players_tables"
 			        }
 			      ]
 			    },

@@ -4,10 +4,10 @@
   "position": {
     "x": 406.99507389162562,
     "y": 60.295566502463053,
-    "z": 15002,
+    "z": 14000,
     "height": 80.6896551724138,
     "width": 868.07881773399015,
-    "tabOrder": 14004
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -185,96 +185,81 @@
             "id": "default"
           }
         }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shapeCustomRectangle": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRoundedByPixel'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0906adc4a208a4d73daf",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final League Standing"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7c6a3260c54a761c68c6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Division Standing"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "41f36fb09069ced7251f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Season Record"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "982c83a9931d28dc7a58",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Season Win %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c235082eca769ab1fd7e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Streak"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3941eab307b1fafe5140",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Power Ranking"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

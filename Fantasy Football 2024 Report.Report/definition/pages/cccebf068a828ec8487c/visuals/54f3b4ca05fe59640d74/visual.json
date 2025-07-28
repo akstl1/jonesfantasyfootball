@@ -7,7 +7,7 @@
     "z": 0,
     "height": 57.448818897637793,
     "width": 1280,
-    "tabOrder": 14000
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Regular Season Scoreboard",
+                    "value": "Regular Season Scoreboard + Standings",
                     "textStyle": {
                       "fontSize": "24pt"
                     }

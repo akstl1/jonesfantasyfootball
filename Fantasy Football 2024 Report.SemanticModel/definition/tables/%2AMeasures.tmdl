@@ -975,6 +975,18 @@ table *Measures
 		displayFolder: Season Team Summary
 		lineageTag: 831836f0-3046-4fb3-84a3-80e76e5a2494
 
+	measure 'Close Or Blowout Indicator' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _blow = SWITCH(TRUE(),
+			                    ABS(CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Team]=_team))>=30,"Blowout",
+			                    ABS(CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Team]=_team))<=10,"Close Game",
+			                    "--"
+			                    )
+			return _blow
+		displayFolder: Season Team Summary
+		lineageTag: 104cf399-a297-43e7-a399-5e3614804159
+
 	column *Measures
 		dataType: string
 		isHidden

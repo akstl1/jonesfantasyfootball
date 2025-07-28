@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 279,
     "width": 377,
-    "tabOrder": 29000
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "barChart",
@@ -144,6 +144,20 @@
             ],
             "metadata": "*Measures.Tornado Team 2 points",
             "highlightMatching": 1
+          }
+        },
+        {
+          "properties": {
+            "labelContentLayout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SingleLine'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Tornado Team 2 points"
           }
         }
       ],

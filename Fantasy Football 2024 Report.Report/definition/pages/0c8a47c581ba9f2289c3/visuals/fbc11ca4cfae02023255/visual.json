@@ -2,15 +2,320 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fbc11ca4cfae02023255",
   "position": {
-    "x": 70.049261083743843,
-    "y": 463.74384236453204,
-    "z": 15003,
-    "height": 230.54187192118226,
-    "width": 454.8768472906404,
-    "tabOrder": 14005
+    "x": 69.7523000707714,
+    "y": 463.80750176928518,
+    "z": 15000,
+    "height": 230.0920028308563,
+    "width": 454.74876150035379,
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MatchupsTable"
+                    }
+                  },
+                  "Property": "Week"
+                }
+              },
+              "queryRef": "MatchupsTable.Week",
+              "nativeQueryRef": "Week"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MatchupsTable"
+                    }
+                  },
+                  "Property": "Opponent"
+                }
+              },
+              "queryRef": "MatchupsTable.Opponent",
+              "nativeQueryRef": "Opponent"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "MatchupsTable"
+                        }
+                      },
+                      "Property": "projected_variance"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(MatchupsTable.projected_variance)",
+              "nativeQueryRef": "Projected Difference",
+              "displayName": "Projected Difference"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "MatchupsTable"
+                        }
+                      },
+                      "Property": "actual_variance"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(MatchupsTable.actual_variance)",
+              "nativeQueryRef": "Actual Difference",
+              "displayName": "Actual Difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MatchupsTable"
+                    }
+                  },
+                  "Property": "Result"
+                }
+              },
+              "queryRef": "MatchupsTable.Result",
+              "nativeQueryRef": "Result"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Close Or Blowout Indicator"
+                }
+              },
+              "queryRef": "*Measures.Close Or Blowout Indicator",
+              "nativeQueryRef": "Result Type",
+              "displayName": "Result Type"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.3411235821251D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Close Or Blowout Indicator"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.98867657466384D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(MatchupsTable.projected_variance)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.8591593968731D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(MatchupsTable.actual_variance)"
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e909dab08446bcf6aa0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6b928645cd29e87b76e3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Opponent"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f92d1bc97ea20c34e750",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MatchupsTable"
+                  }
+                },
+                "Property": "projected_variance"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "MatchupsTable",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "m"
+                                }
+                              },
+                              "Property": "projected_variance"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "6a79f8d72668776245e5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MatchupsTable"
+                  }
+                },
+                "Property": "actual_variance"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c6a18056f7b590007576",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Result"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "05479df3b7244614ce76",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Close Or Blowout Indicator"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

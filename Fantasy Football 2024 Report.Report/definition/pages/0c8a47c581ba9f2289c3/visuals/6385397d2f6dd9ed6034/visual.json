@@ -4,10 +4,10 @@
   "position": {
     "x": 561.25,
     "y": 197.5,
-    "z": 15000,
+    "z": 13000,
     "height": 257.5,
     "width": 333.75,
-    "tabOrder": 14000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "RadarChart1446119667547",
@@ -172,42 +172,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ac06adb328cf13f60ed5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SpiderChart"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8f7444917b96bd74cfd2",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "SpiderChart"
-                  }
-                },
-                "Property": "Condensed Rank"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

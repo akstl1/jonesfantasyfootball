@@ -7,7 +7,7 @@
     "z": 19000,
     "height": 82.388059701492537,
     "width": 1225.0746268656717,
-    "tabOrder": 17000
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -128,7 +128,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AAT'"
+                                "Value": "'AP'"
                               }
                             }
                           ]
@@ -380,20 +380,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "f23c5ac6d9c2c4d300c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Acronym"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

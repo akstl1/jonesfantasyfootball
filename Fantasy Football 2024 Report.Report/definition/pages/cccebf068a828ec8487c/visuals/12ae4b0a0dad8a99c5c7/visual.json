@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 207.18403547671841,
     "width": 276.71840354767181,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -257,34 +257,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "f35b045b2814d5f65efd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "da11ae94155c10675ddd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "New Standings"
-              }
-            },
-            "Property": "Division_Rank"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
