@@ -128,7 +128,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'MRD'"
+                                "Value": "'AAT'"
                               }
                             }
                           ]
@@ -380,6 +380,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "f23c5ac6d9c2c4d300c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Acronym"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

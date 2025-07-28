@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4570c4b14986f2f8776d",
   "position": {
-    "x": 53.75,
-    "y": 57.5,
+    "x": 62.068965517241381,
+    "y": 59.408866995073893,
     "z": 3000,
-    "height": 82.5,
-    "width": 327.5
+    "height": 82.463054187192114,
+    "width": 327.192118226601
   },
   "visual": {
     "visualType": "slicer",
@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'K''s Deluxe Team'"
+                                "Value": "'Baby Back Gibbs'"
                               }
                             }
                           ]
@@ -128,7 +128,21 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Select a Team'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
@@ -142,6 +156,38 @@
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

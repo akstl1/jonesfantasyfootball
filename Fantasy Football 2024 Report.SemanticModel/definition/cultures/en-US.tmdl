@@ -9971,6 +9971,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.475
 			          }
+			        },
+			        {
+			          "Projected Point Difference": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -10093,6 +10103,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "Actual Point Difference": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -13613,6 +13633,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "Result": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -17508,9 +17538,2329 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.season_record": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Season Record"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "season record": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "season high": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "season best": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "season documentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "season confirmation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "season verification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "season testimony": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "Record": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.season_win_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Season Win %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "season win %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "season win percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "season win pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "Win %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.final_league_standing": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Final League Standing"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "final league standing": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "standing": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "league standing": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "standup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stand-up": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "vertical": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "upright": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "perpendicular": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "final league status": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "final league reputation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "final league eminence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "permanent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "durable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "League Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.final_division_standing": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Final Division Standing"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "final division standing": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "standing": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "division standing": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "standup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stand-up": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "vertical": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "upright": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "perpendicular": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "final division status": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "final division reputation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "final division eminence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "permanent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "durable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "Divisional Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.final_streak": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Final Streak"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "final streak": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "final line": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final band": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final strip": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final stripe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final vein": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final smudge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final splash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final flash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "final element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "final trait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "Current Streak": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure.final_power_ranking": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "*Measures",
+			          "ConceptualProperty": "Final Power Ranking"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "final power ranking": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ranking": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "final power status": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "final power classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "final power position": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "final power place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "final power grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "final power standing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "final power level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "final power rank": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Power Ranking": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "players_table_has_matchups_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        },
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_matchups_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_players_tables"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_matchups_tables"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_week": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "week": {
+			          "Target": {
+			            "Entity": "week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_weeks"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "week"
+			            },
+			            "Object": {
+			              "Role": "matchups_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "weeks_have_matchups_tables"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_final_power_ranking": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.final_power_ranking": {
+			          "Target": {
+			            "Entity": "measure.final_power_ranking"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.final_power_ranking"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_final_power_ranking"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_measure_final_streak": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "measure.final_streak": {
+			          "Target": {
+			            "Entity": "measure.final_streak"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "measure.final_streak"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_final_streak"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_final_streak": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.final_streak": {
+			          "Target": {
+			            "Entity": "measure.final_streak"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.final_streak"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_final_streak"
+			        }
+			      ]
+			    },
+			    "new_standing_has_measure_final_division_standing": {
+			      "Binding": {
+			        "ConceptualEntity": "New Standings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_standing": {
+			          "Target": {
+			            "Entity": "new_standing"
+			          }
+			        },
+			        "measure.final_division_standing": {
+			          "Target": {
+			            "Entity": "measure.final_division_standing"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_standing"
+			            },
+			            "Object": {
+			              "Role": "measure.final_division_standing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_standing_have_final_division_standing"
+			        }
+			      ]
+			    },
+			    "new_standing_has_measure_final_league_standing": {
+			      "Binding": {
+			        "ConceptualEntity": "New Standings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_standing": {
+			          "Target": {
+			            "Entity": "new_standing"
+			          }
+			        },
+			        "measure.final_league_standing": {
+			          "Target": {
+			            "Entity": "measure.final_league_standing"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_standing"
+			            },
+			            "Object": {
+			              "Role": "measure.final_league_standing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_standing_have_final_league_standing"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_season_win_": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.season_win_": {
+			          "Target": {
+			            "Entity": "measure.season_win_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.season_win_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_season_win_"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_season_record": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.season_record": {
+			          "Target": {
+			            "Entity": "measure.season_record"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.season_record"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_season_record"
+			        }
+			      ]
+			    },
+			    "spider_chart_has_condensed_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "SpiderChart"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "spider_chart": {
+			          "Target": {
+			            "Entity": "spider_chart"
+			          }
+			        },
+			        "spider_chart.condensed_rank": {
+			          "Target": {
+			            "Entity": "spider_chart.condensed_rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "spider_chart"
+			            },
+			            "Object": {
+			              "Role": "spider_chart.condensed_rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "spider_charts_have_condensed_ranks"
+			        }
+			      ]
+			    },
+			    "spider_chart_has_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "SpiderChart"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "spider_chart": {
+			          "Target": {
+			            "Entity": "spider_chart"
+			          }
+			        },
+			        "spider_chart.rank": {
+			          "Target": {
+			            "Entity": "spider_chart.rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "spider_chart"
+			            },
+			            "Object": {
+			              "Role": "spider_chart.rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "spider_charts_have_ranks"
+			        }
+			      ]
+			    },
+			    "spider_chart_has_total_point": {
+			      "Binding": {
+			        "ConceptualEntity": "SpiderChart"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "spider_chart": {
+			          "Target": {
+			            "Entity": "spider_chart"
+			          }
+			        },
+			        "spider_chart.total_point": {
+			          "Target": {
+			            "Entity": "spider_chart.total_point"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "spider_chart"
+			            },
+			            "Object": {
+			              "Role": "spider_chart.total_point"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "spider_charts_have_total_points"
+			        }
+			      ]
+			    },
+			    "spider_chart_has_category": {
+			      "Binding": {
+			        "ConceptualEntity": "SpiderChart"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "spider_chart": {
+			          "Target": {
+			            "Entity": "spider_chart"
+			          }
+			        },
+			        "spider_chart.category": {
+			          "Target": {
+			            "Entity": "spider_chart.category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "spider_chart"
+			            },
+			            "Object": {
+			              "Role": "spider_chart.category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "spider_charts_have_categories"
+			        }
+			      ]
+			    },
+			    "top_performer_has_name_abbrev": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "top_performer.name_abbrev": {
+			          "Target": {
+			            "Entity": "top_performer.name_abbrev"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "top_performer.name_abbrev"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_name_abbrev"
+			        }
+			      ]
+			    },
+			    "top_performer_has_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "top_performer.rank": {
+			          "Target": {
+			            "Entity": "top_performer.rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "top_performer.rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_ranks"
+			        }
+			      ]
+			    },
+			    "top_performer_has_actual": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "top_performer.actual": {
+			          "Target": {
+			            "Entity": "top_performer.actual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "top_performer.actual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_actuals"
+			        }
+			      ]
+			    },
+			    "top_performer_has_player_name": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "top_performer.player_name": {
+			          "Target": {
+			            "Entity": "top_performer.player_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "top_performer.player_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_player_names"
+			        }
+			      ]
+			    },
+			    "top_performer_has_week": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "top_performer.week": {
+			          "Target": {
+			            "Entity": "top_performer.week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "top_performer.week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_weeks"
+			        }
+			      ]
+			    },
+			    "measure_has_top_performer_3_points": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.top_performer_3_points": {
+			          "Target": {
+			            "Entity": "measure.top_performer_3_points"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_3_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_top_performer_3_points"
+			        }
+			      ]
+			    },
+			    "measure_has_top_performer_2_points": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.top_performer_2_points": {
+			          "Target": {
+			            "Entity": "measure.top_performer_2_points"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_2_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_top_performer_2_points"
+			        }
+			      ]
+			    },
+			    "measure_has_top_performer_1_points": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.top_performer_1_points": {
+			          "Target": {
+			            "Entity": "measure.top_performer_1_points"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_1_points"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_top_performer_1_points"
+			        }
+			      ]
+			    },
+			    "top_performer_has_measure_top_performer_3": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "measure.top_performer_3": {
+			          "Target": {
+			            "Entity": "measure.top_performer_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_top_performer_3"
+			        }
+			      ]
+			    },
+			    "top_performer_has_measure_top_performer_2": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "measure.top_performer_2": {
+			          "Target": {
+			            "Entity": "measure.top_performer_2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_top_performer_2"
+			        }
+			      ]
+			    },
+			    "top_performer_has_measure_top_performer_1": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "measure.top_performer_1": {
+			          "Target": {
+			            "Entity": "measure.top_performer_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "measure.top_performer_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_top_performer_1"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_power_ranking_color_indicator": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.power_ranking_color_indicator": {
+			          "Target": {
+			            "Entity": "measure.power_ranking_color_indicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.power_ranking_color_indicator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_power_ranking_color_indicator"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_negative_arrow": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.negative_arrow": {
+			          "Target": {
+			            "Entity": "measure.negative_arrow"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.negative_arrow"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_negative_arrow"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_positive_arrow": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.positive_arrow": {
+			          "Target": {
+			            "Entity": "measure.positive_arrow"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.positive_arrow"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_positive_arrow"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_power_ranking_end": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.power_ranking_end": {
+			          "Target": {
+			            "Entity": "measure.power_ranking_end"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.power_ranking_end"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_power_ranking_end"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_power_ranking_start_dummy": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.power_ranking_start_dummy": {
+			          "Target": {
+			            "Entity": "measure.power_ranking_start_dummy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.power_ranking_start_dummy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_power_ranking_start_dummy"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_measure_power_ranking_start": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "measure.power_ranking_start": {
+			          "Target": {
+			            "Entity": "measure.power_ranking_start"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "measure.power_ranking_start"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_power_ranking_start"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_performance_summary_value": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.performance_summary_value": {
+			          "Target": {
+			            "Entity": "measure.performance_summary_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.performance_summary_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_performance_summary_value"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_stolen_games": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.stolen_games": {
+			          "Target": {
+			            "Entity": "measure.stolen_games"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.stolen_games"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_stolen_games"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_forecast_comparison_text": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.forecast_comparison_text": {
+			          "Target": {
+			            "Entity": "measure.forecast_comparison_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.forecast_comparison_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_forecast_comparison_text"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_forecast_comparison": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.forecast_comparison": {
+			          "Target": {
+			            "Entity": "measure.forecast_comparison"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.forecast_comparison"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_forecast_comparison"
+			        }
+			      ]
+			    },
+			    "measure_has_close_or_blowout_record": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.close_or_blowout_record": {
+			          "Target": {
+			            "Entity": "measure.close_or_blowout_record"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.close_or_blowout_record"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_close_or_blowout_record"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Verbs": [
+			              {
+			                "close": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "or": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.close_or_blowout_record"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "measures_close_or_close_or_blowout_record"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_blowouts": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.blowouts": {
+			          "Target": {
+			            "Entity": "measure.blowouts"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.blowouts"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_blowouts"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_close_games": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.close_games": {
+			          "Target": {
+			            "Entity": "measure.close_games"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.close_games"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_close_games"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_selected_team": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.selected_team": {
+			          "Target": {
+			            "Entity": "measure.selected_team"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.selected_team"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_selected_team"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_point_performance_summary": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.point_performance_summary": {
+			          "Target": {
+			            "Entity": "measure.point_performance_summary"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.point_performance_summary"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_point_performance_summary"
+			        }
+			      ]
+			    },
+			    "week_has_measure_narrative_playoff": {
+			      "Binding": {
+			        "ConceptualEntity": "Weeks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "week": {
+			          "Target": {
+			            "Entity": "week"
+			          }
+			        },
+			        "measure.narrative_playoff": {
+			          "Target": {
+			            "Entity": "measure.narrative_playoff"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "week"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_playoff"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "weeks_have_narrative_playoff"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_measure_narrative_playoff": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "measure.narrative_playoff": {
+			          "Target": {
+			            "Entity": "measure.narrative_playoff"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_playoff"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_narrative_playoff"
+			        }
+			      ]
+			    },
+			    "measure_has_narrative_series": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.narrative_series": {
+			          "Target": {
+			            "Entity": "measure.narrative_series"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_series"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_narrative_series"
+			        }
+			      ]
+			    },
+			    "measure_has_narrative_number_of_games": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.narrative_number_of_games": {
+			          "Target": {
+			            "Entity": "measure.narrative_number_of_games"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_number_of_games"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_narrative_number_of_games"
+			        }
+			      ]
+			    },
+			    "measure_has_narrative_categories_combined": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.narrative_categories_combined": {
+			          "Target": {
+			            "Entity": "measure.narrative_categories_combined"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_categories_combined"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_narrative_categories_combined"
+			        }
+			      ]
+			    },
+			    "measure_has_narrative_categories_away": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.narrative_categories_away": {
+			          "Target": {
+			            "Entity": "measure.narrative_categories_away"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_categories_away"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_narrative_categories_away"
+			        }
+			      ]
+			    },
+			    "measure_has_narrative_categories_home": {
+			      "Binding": {
+			        "ConceptualEntity": "*Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.narrative_categories_home": {
+			          "Target": {
+			            "Entity": "measure.narrative_categories_home"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.narrative_categories_home"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_narrative_categories_home"
+			        }
+			      ]
+			    },
+			    "matchups_table_has_legend": {
+			      "Binding": {
+			        "ConceptualEntity": "MatchupsTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "matchups_table": {
+			          "Target": {
+			            "Entity": "matchups_table"
+			          }
+			        },
+			        "matchups_table.legend": {
+			          "Target": {
+			            "Entity": "matchups_table.legend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "matchups_table"
+			            },
+			            "Object": {
+			              "Role": "matchups_table.legend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matchups_tables_have_legends"
+			        }
+			      ]
+			    },
 			    "matchups_table_has_measure_quadrant_max": {
 			      "Binding": {
 			        "ConceptualEntity": "MatchupsTable"
@@ -22415,70 +24765,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_closes_or_close_or_blowout_record": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.close_or_blowout_record": {
-			          "Target": {
-			            "Entity": "measure.close_or_blowout_record"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Verbs": [
-			              {
-			                "close": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "PrepositionalPhrases": [
-			              {
-			                "Prepositions": [
-			                  {
-			                    "or": {
-			                      "State": "Generated"
-			                    }
-			                  }
-			                ],
-			                "Object": {
-			                  "Role": "measure.close_or_blowout_record"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.95,
-			          "ID": "measures_close_or_close_or_blowout_record"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.close_or_blowout_record"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_close_or_blowout_record"
-			        }
-			      ]
-			    },
 			    "top_performer_perform": {
 			      "Binding": {
 			        "ConceptualEntity": "TopPerformers"
@@ -22581,1365 +24867,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "unique_players_have_players_tables"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_legend": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "matchups_table.legend": {
-			          "Target": {
-			            "Entity": "matchups_table.legend"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "matchups_table.legend"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_legends"
-			        }
-			      ]
-			    },
-			    "measure_has_narrative_categories_home": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.narrative_categories_home": {
-			          "Target": {
-			            "Entity": "measure.narrative_categories_home"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_categories_home"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_narrative_categories_home"
-			        }
-			      ]
-			    },
-			    "measure_has_narrative_categories_away": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.narrative_categories_away": {
-			          "Target": {
-			            "Entity": "measure.narrative_categories_away"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_categories_away"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_narrative_categories_away"
-			        }
-			      ]
-			    },
-			    "measure_has_narrative_categories_combined": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.narrative_categories_combined": {
-			          "Target": {
-			            "Entity": "measure.narrative_categories_combined"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_categories_combined"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_narrative_categories_combined"
-			        }
-			      ]
-			    },
-			    "measure_has_narrative_number_of_games": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.narrative_number_of_games": {
-			          "Target": {
-			            "Entity": "measure.narrative_number_of_games"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_number_of_games"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_narrative_number_of_games"
-			        }
-			      ]
-			    },
-			    "measure_has_narrative_series": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.narrative_series": {
-			          "Target": {
-			            "Entity": "measure.narrative_series"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_series"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_narrative_series"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_narrative_playoff": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.narrative_playoff": {
-			          "Target": {
-			            "Entity": "measure.narrative_playoff"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_playoff"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_narrative_playoff"
-			        }
-			      ]
-			    },
-			    "week_has_measure_narrative_playoff": {
-			      "Binding": {
-			        "ConceptualEntity": "Weeks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "week": {
-			          "Target": {
-			            "Entity": "week"
-			          }
-			        },
-			        "measure.narrative_playoff": {
-			          "Target": {
-			            "Entity": "measure.narrative_playoff"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "week"
-			            },
-			            "Object": {
-			              "Role": "measure.narrative_playoff"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "weeks_have_narrative_playoff"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_point_performance_summary": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.point_performance_summary": {
-			          "Target": {
-			            "Entity": "measure.point_performance_summary"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.point_performance_summary"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_point_performance_summary"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_selected_team": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.selected_team": {
-			          "Target": {
-			            "Entity": "measure.selected_team"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.selected_team"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_selected_team"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_close_games": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.close_games": {
-			          "Target": {
-			            "Entity": "measure.close_games"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.close_games"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_close_games"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_blowouts": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.blowouts": {
-			          "Target": {
-			            "Entity": "measure.blowouts"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.blowouts"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_blowouts"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_forecast_comparison": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.forecast_comparison": {
-			          "Target": {
-			            "Entity": "measure.forecast_comparison"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.forecast_comparison"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_forecast_comparison"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_forecast_comparison_text": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.forecast_comparison_text": {
-			          "Target": {
-			            "Entity": "measure.forecast_comparison_text"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.forecast_comparison_text"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_forecast_comparison_text"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_stolen_games": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.stolen_games": {
-			          "Target": {
-			            "Entity": "measure.stolen_games"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.stolen_games"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_stolen_games"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_measure_performance_summary_value": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "measure.performance_summary_value": {
-			          "Target": {
-			            "Entity": "measure.performance_summary_value"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "measure.performance_summary_value"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_performance_summary_value"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_power_ranking_start": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.power_ranking_start": {
-			          "Target": {
-			            "Entity": "measure.power_ranking_start"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.power_ranking_start"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_power_ranking_start"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_power_ranking_start_dummy": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.power_ranking_start_dummy": {
-			          "Target": {
-			            "Entity": "measure.power_ranking_start_dummy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.power_ranking_start_dummy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_power_ranking_start_dummy"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_power_ranking_end": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.power_ranking_end": {
-			          "Target": {
-			            "Entity": "measure.power_ranking_end"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.power_ranking_end"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_power_ranking_end"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_positive_arrow": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.positive_arrow": {
-			          "Target": {
-			            "Entity": "measure.positive_arrow"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.positive_arrow"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_positive_arrow"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_negative_arrow": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.negative_arrow": {
-			          "Target": {
-			            "Entity": "measure.negative_arrow"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.negative_arrow"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_negative_arrow"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_measure_power_ranking_color_indicator": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "measure.power_ranking_color_indicator": {
-			          "Target": {
-			            "Entity": "measure.power_ranking_color_indicator"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "measure.power_ranking_color_indicator"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_power_ranking_color_indicator"
-			        }
-			      ]
-			    },
-			    "top_performer_has_measure_top_performer_1": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "measure.top_performer_1": {
-			          "Target": {
-			            "Entity": "measure.top_performer_1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_top_performer_1"
-			        }
-			      ]
-			    },
-			    "top_performer_has_measure_top_performer_2": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "measure.top_performer_2": {
-			          "Target": {
-			            "Entity": "measure.top_performer_2"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_top_performer_2"
-			        }
-			      ]
-			    },
-			    "top_performer_has_measure_top_performer_3": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "measure.top_performer_3": {
-			          "Target": {
-			            "Entity": "measure.top_performer_3"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_3"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_top_performer_3"
-			        }
-			      ]
-			    },
-			    "measure_has_top_performer_1_points": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.top_performer_1_points": {
-			          "Target": {
-			            "Entity": "measure.top_performer_1_points"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_1_points"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_top_performer_1_points"
-			        }
-			      ]
-			    },
-			    "measure_has_top_performer_2_points": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.top_performer_2_points": {
-			          "Target": {
-			            "Entity": "measure.top_performer_2_points"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_2_points"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_top_performer_2_points"
-			        }
-			      ]
-			    },
-			    "measure_has_top_performer_3_points": {
-			      "Binding": {
-			        "ConceptualEntity": "*Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "measure": {
-			          "Target": {
-			            "Entity": "measure"
-			          }
-			        },
-			        "measure.top_performer_3_points": {
-			          "Target": {
-			            "Entity": "measure.top_performer_3_points"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure"
-			            },
-			            "Object": {
-			              "Role": "measure.top_performer_3_points"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "measures_have_top_performer_3_points"
-			        }
-			      ]
-			    },
-			    "top_performer_has_week": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "top_performer.week": {
-			          "Target": {
-			            "Entity": "top_performer.week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "top_performer.week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_weeks"
-			        }
-			      ]
-			    },
-			    "top_performer_has_player_name": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "top_performer.player_name": {
-			          "Target": {
-			            "Entity": "top_performer.player_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "top_performer.player_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_player_names"
-			        }
-			      ]
-			    },
-			    "top_performer_has_actual": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "top_performer.actual": {
-			          "Target": {
-			            "Entity": "top_performer.actual"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "top_performer.actual"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_actuals"
-			        }
-			      ]
-			    },
-			    "top_performer_has_rank": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "top_performer.rank": {
-			          "Target": {
-			            "Entity": "top_performer.rank"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "top_performer.rank"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_ranks"
-			        }
-			      ]
-			    },
-			    "top_performer_has_name_abbrev": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "top_performer.name_abbrev": {
-			          "Target": {
-			            "Entity": "top_performer.name_abbrev"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "top_performer.name_abbrev"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_name_abbrev"
-			        }
-			      ]
-			    },
-			    "spider_chart_has_category": {
-			      "Binding": {
-			        "ConceptualEntity": "SpiderChart"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "spider_chart": {
-			          "Target": {
-			            "Entity": "spider_chart"
-			          }
-			        },
-			        "spider_chart.category": {
-			          "Target": {
-			            "Entity": "spider_chart.category"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "spider_chart"
-			            },
-			            "Object": {
-			              "Role": "spider_chart.category"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "spider_charts_have_categories"
-			        }
-			      ]
-			    },
-			    "spider_chart_has_total_point": {
-			      "Binding": {
-			        "ConceptualEntity": "SpiderChart"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "spider_chart": {
-			          "Target": {
-			            "Entity": "spider_chart"
-			          }
-			        },
-			        "spider_chart.total_point": {
-			          "Target": {
-			            "Entity": "spider_chart.total_point"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "spider_chart"
-			            },
-			            "Object": {
-			              "Role": "spider_chart.total_point"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "spider_charts_have_total_points"
-			        }
-			      ]
-			    },
-			    "spider_chart_has_rank": {
-			      "Binding": {
-			        "ConceptualEntity": "SpiderChart"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "spider_chart": {
-			          "Target": {
-			            "Entity": "spider_chart"
-			          }
-			        },
-			        "spider_chart.rank": {
-			          "Target": {
-			            "Entity": "spider_chart.rank"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "spider_chart"
-			            },
-			            "Object": {
-			              "Role": "spider_chart.rank"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "spider_charts_have_ranks"
-			        }
-			      ]
-			    },
-			    "spider_chart_has_condensed_rank": {
-			      "Binding": {
-			        "ConceptualEntity": "SpiderChart"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "spider_chart": {
-			          "Target": {
-			            "Entity": "spider_chart"
-			          }
-			        },
-			        "spider_chart.condensed_rank": {
-			          "Target": {
-			            "Entity": "spider_chart.condensed_rank"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "spider_chart"
-			            },
-			            "Object": {
-			              "Role": "spider_chart.condensed_rank"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "spider_charts_have_condensed_ranks"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_week": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "week": {
-			          "Target": {
-			            "Entity": "week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_weeks"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "week"
-			            },
-			            "Object": {
-			              "Role": "matchups_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "weeks_have_matchups_tables"
-			        }
-			      ]
-			    },
-			    "matchups_table_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "MatchupsTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "matchups_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_matchups_tables"
-			        }
-			      ]
-			    },
-			    "players_table_has_matchups_table": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "matchups_table": {
-			          "Target": {
-			            "Entity": "matchups_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "matchups_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_matchups_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "matchups_table"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "matchups_tables_have_players_tables"
 			        }
 			      ]
 			    },

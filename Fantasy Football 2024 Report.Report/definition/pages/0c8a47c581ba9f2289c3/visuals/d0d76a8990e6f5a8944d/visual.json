@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "MatchupsTable.Legend",
-              "nativeQueryRef": "Legend"
+              "nativeQueryRef": "Result",
+              "displayName": "Result"
             }
           ]
         },
@@ -45,8 +46,9 @@
                 }
               },
               "queryRef": "Sum(MatchupsTable.projected_variance)",
-              "nativeQueryRef": "projected_variance",
-              "active": true
+              "nativeQueryRef": "Projected Point Difference",
+              "active": true,
+              "displayName": "Projected Point Difference"
             }
           ]
         },
@@ -64,7 +66,8 @@
                 }
               },
               "queryRef": "Sum(MatchupsTable.actual_variance)",
-              "nativeQueryRef": "actual_variance"
+              "nativeQueryRef": "Actual Point Difference",
+              "displayName": "Actual Point Difference"
             }
           ]
         }
@@ -275,6 +278,173 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Expected Loss'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#61AE6E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Expected Win'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Unexpected Loss'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Unexpected Win'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "markers": [
@@ -287,6 +457,202 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Unexpected Win'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Unexpected Loss'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Expected Win'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "MatchupsTable"
+                          }
+                        },
+                        "Property": "Legend"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Expected Loss'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ],
@@ -357,6 +723,19 @@
           },
           "selector": {
             "id": "1"
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TopCenter'"
+                }
+              }
+            }
           }
         }
       ]

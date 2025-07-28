@@ -1,0 +1,280 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "6b81408ac145c1334d25",
+  "position": {
+    "x": 406.99507389162562,
+    "y": 60.295566502463053,
+    "z": 15002,
+    "height": 80.6896551724138,
+    "width": 868.07881773399015,
+    "tabOrder": 14004
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Season Record"
+                }
+              },
+              "queryRef": "*Measures.Season Record",
+              "nativeQueryRef": "Record",
+              "displayName": "Record"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Season Win %"
+                }
+              },
+              "queryRef": "*Measures.Season Win %",
+              "nativeQueryRef": "Win %",
+              "displayName": "Win %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Final Streak"
+                }
+              },
+              "queryRef": "*Measures.Final Streak",
+              "nativeQueryRef": "Current Streak",
+              "displayName": "Current Streak"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Final League Standing"
+                }
+              },
+              "queryRef": "*Measures.Final League Standing",
+              "nativeQueryRef": "League Rank",
+              "displayName": "League Rank"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Final Division Standing"
+                }
+              },
+              "queryRef": "*Measures.Final Division Standing",
+              "nativeQueryRef": "Divisional Rank",
+              "displayName": "Divisional Rank"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Final Power Ranking"
+                }
+              },
+              "queryRef": "*Measures.Final Power Ranking",
+              "nativeQueryRef": "Power Ranking",
+              "displayName": "Power Ranking"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "*Measures"
+                  }
+                },
+                "Property": "Final League Standing"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "maxTiles": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0906adc4a208a4d73daf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Final League Standing"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7c6a3260c54a761c68c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Final Division Standing"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "41f36fb09069ced7251f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Season Record"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "982c83a9931d28dc7a58",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Season Win %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c235082eca769ab1fd7e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Final Streak"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3941eab307b1fafe5140",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Final Power Ranking"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "47614805b298d762e909",
   "position": {
-    "x": 70,
-    "y": 463.75,
+    "x": 561.49253731343288,
+    "y": 463.88059701492534,
     "z": 14000,
-    "height": 230,
-    "width": 455,
+    "height": 230.14925373134326,
+    "width": 334.02985074626866,
     "tabOrder": 12000
   },
   "visual": {
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Points Scored Above/Below Expected by Week'"
+                  "Value": "'Points Scored Above/Below Expected'"
                 }
               }
             },

@@ -56,7 +56,8 @@ table SpiderChart
 				    #"Merged Queries" = Table.NestedJoin(#"Removed Other Columns1", {"Attribute"}, PointsMap, {"Stat"}, "PointsMap", JoinKind.LeftOuter),
 				    #"Expanded PointsMap" = Table.ExpandTableColumn(#"Merged Queries", "PointsMap", {"Category"}, {"Category"}),
 				    #"Grouped Rows1" = Table.Group(#"Expanded PointsMap", {"FantasyTeam", "Category"}, {{"TotalPoints", each List.Sum([TotalPoints]), type number}}),
-				    #"Grouped Rows" = Table.Group(#"Grouped Rows1", {"Category"}, {{"Group", each _, type table [FantasyTeam=nullable text, Category=nullable text, TotalPoints=number]}}),
+				    #"Rounded Off" = Table.TransformColumns(#"Grouped Rows1",{{"TotalPoints", each Number.Round(_, 2), type number}}),
+				    #"Grouped Rows" = Table.Group(#"Rounded Off", {"Category"}, {{"Group", each _, type table [FantasyTeam=nullable text, Category=nullable text, TotalPoints=number]}}),
 				    #"Added Custom" = Table.AddColumn(#"Grouped Rows", "Rank", each Table.AddRankColumn([Group],"Rank",{{"TotalPoints",Order.Ascending}},[RankKind = RankKind.Competition])),
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Group"}),
 				    #"Expanded Rank" = Table.ExpandTableColumn(#"Removed Columns", "Rank", {"FantasyTeam", "TotalPoints", "Rank"}, {"FantasyTeam", "TotalPoints", "Rank"}),
@@ -67,5 +68,5 @@ table SpiderChart
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

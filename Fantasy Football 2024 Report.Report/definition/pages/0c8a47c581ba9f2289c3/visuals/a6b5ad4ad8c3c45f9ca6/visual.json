@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a6b5ad4ad8c3c45f9ca6",
   "position": {
-    "x": 912.5,
-    "y": 177.5,
+    "x": 916.11940298507466,
+    "y": 165.67164179104478,
     "z": 5000,
-    "height": 542.5,
-    "width": 367.5,
+    "height": 544.47761194029852,
+    "width": 359.1044776119403,
     "tabOrder": 2000
   },
   "visual": {
@@ -153,7 +153,7 @@
                     }
                   },
                   {
-                    "value": "% of games they were projected to win. The team also \"stole\" "
+                    "value": "% of games they were projected to win. The team also won "
                   },
                   {
                     "value": {
@@ -167,7 +167,7 @@
                     }
                   },
                   {
-                    "value": " they were supposed to lose, and "
+                    "value": " they were expected to lose, and "
                   },
                   {
                     "value": {
@@ -894,6 +894,38 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

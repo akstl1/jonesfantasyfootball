@@ -567,13 +567,13 @@ table *Measures
 		lineageTag: a8484c75-7117-46cc-9fb2-a5754560e231
 
 	measure quadrantMin = CALCULATE(min(MatchupsTable[actual_variance]),all(MatchupsTable))-5
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 0729e7a6-6b7c-4267-b9d3-cb2d085c5725
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure quadrantMax = CALCULATE(max(MatchupsTable[actual_variance]),all(MatchupsTable))+5
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: f0263f45-2779-4011-ba35-08304c015b16
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -730,14 +730,14 @@ table *Measures
 		displayFolder: Box Scores
 		lineageTag: 2b8fb810-e137-45b6-8629-424a1b28fe2e
 
-	measure 'Point Performance Summary' = max(MatchupsTable[Projected Points]) - max(MatchupsTable[Actual Points])
-		displayFolder: Team Summary
+	measure 'Point Performance Summary' = max(MatchupsTable[Actual Points]) - max(MatchupsTable[Projected Points])
+		displayFolder: Season Team Summary
 		lineageTag: a4419258-70e4-4b82-8f97-21b9159124fa
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure SelectedTeam = SELECTEDVALUE(MatchupsTable[Team])
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 1bcd75af-adca-4353-97ad-067e27a1eeb4
 
 	measure 'Close games' =
@@ -745,7 +745,7 @@ table *Measures
 			var _team = [SelectedTeam]
 			return CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])<=10)
 		formatString: 0
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 0a032aff-e851-4bf3-a34d-ba3ca4ad21f6
 
 	measure Blowouts =
@@ -753,7 +753,7 @@ table *Measures
 			var _team = [SelectedTeam]
 			return CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])>=30)
 		formatString: 0
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 71f22516-a0c8-4cb8-9cff-fd74bdfbb680
 
 	measure 'Close or Blowout Record' =
@@ -762,7 +762,7 @@ table *Measures
 			var _blow = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,ABS(MatchupsTable[actual_variance])>=30 || ABS(MatchupsTable[actual_variance])<=10)
 			var _blowWins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team]=_team,MatchupsTable[Result]="Win",ABS(MatchupsTable[actual_variance])>=30 || ABS(MatchupsTable[actual_variance])<=10)
 			return CONVERT(_blowWins,STRING) & " out of " & CONVERT(_blow,STRING)
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 6e703723-7d9e-4052-8e57-072b1337f23e
 
 	measure 'Forecast Comparison' =
@@ -773,7 +773,7 @@ table *Measures
 			var _result = ROUND(100*DIVIDE(_actualwins,_projectedwins,0),0)
 			return _result
 		formatString: 0
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: e48f45fe-ae21-4db0-a5be-954832805541
 
 		annotation PBI_FormatHint = {"isDecimal":true}
@@ -785,7 +785,7 @@ table *Measures
 			        [Forecast Comparison]>60,"well",
 			        [Forecast Comparison]<40,"poorly"
 			)
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: 147c5a21-1aa8-473c-bd28-82ee6f0f10f4
 
 	measure 'Stolen Games' =
@@ -797,7 +797,7 @@ table *Measures
 			                _wins
 			)
 		formatString: 0
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: c8dfce30-9e5f-4178-a022-05199baa1276
 
 	measure 'Performance Summary Value' = ```
@@ -810,15 +810,17 @@ table *Measures
 			)
 			return _result 
 			```
-		displayFolder: Team Summary
+		displayFolder: Season Team Summary
 		lineageTag: f9b28137-24e1-4ea9-ad0b-ec0386dbbef2
 
 	measure 'Power Ranking Start' = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=1)
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: 0ebbf1df-fecb-4d72-83e6-af4e5858532b
 
 	measure 'Power Ranking Start Dummy' = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=1)
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: 789fb892-b274-42af-ad5e-894e4091b44e
 
 	measure 'Power Ranking End' =
@@ -827,18 +829,22 @@ table *Measures
 			var _result = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=_wk)
 			return _result
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: 432ad601-fa3c-466d-92b8-412d8f14a125
 
 	measure 'Positive Arrow' = if([Power Ranking End]>[Power Ranking Start],[Power Ranking End])
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: 055b9bc0-bc33-452b-8dda-96def325ac65
 
 	measure 'Negative Arrow' = if([Power Ranking End]<[Power Ranking Start],[Power Ranking End])
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: ad9eb144-e084-404a-8b42-d0decfcbd4d8
 
 	measure 'Power Ranking Color Indicator' = [Power Ranking End] - [Power Ranking Start]
 		formatString: 0
+		displayFolder: Power Ranking Chart
 		lineageTag: 5cd6c825-8e13-440c-9479-35568f8fadd3
 
 	measure 'Top Performer 1' =
@@ -900,6 +906,74 @@ table *Measures
 			return  CONVERT(_points,STRING) & " pts"
 		displayFolder: Box Scores
 		lineageTag: 70f43dde-f1f7-425d-a9bd-fcbea424a419
+
+	measure 'Season Record' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			
+			var _result = if(_wins,_wins,0)&"-"&if(_losses,_losses,0)&"-"&if(_tie,_tie,0)
+			return _result
+		displayFolder: Season Team Summary
+		lineageTag: cedd964d-14c6-41cf-9f5a-b35087cc8654
+
+	measure 'Season Win %' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
+			var _tie = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Result]="Tie", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			
+			var _result = DIVIDE(_wins,_wins+_losses+_tie,0)
+			return _result
+		formatString: 0%;-0%;0%
+		displayFolder: Season Team Summary
+		lineageTag: 2cea6188-a63f-4a26-be2a-ec421b841531
+
+	measure 'Final League Standing' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _wk = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _ranking = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_wk)
+			return _ranking
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 6b427b28-6d05-4cd3-b08c-07aceea2adfc
+
+	measure 'Final Division Standing' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _wk = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _ranking = CALCULATE(max('New Standings'[Division_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_wk)
+			return _ranking
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: fa5eead4-d864-49cf-92ff-f854edb69f71
+
+	measure 'Final Streak' =
+			
+			var _week = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _result = CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team)
+			var _resultAbbr = LEFT(_result,1)
+			var _streak = CALCULATE(max('MatchupsTable'[Week]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]<>_result, 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			// var _streak = CALCULATE(max('MatchupsTable'[Week]),filter(MatchupsTable,'MatchupsTable'[Week]<=_week&&'MatchupsTable'[Result]<>_result&&'MatchupsTable'[Team]=_team))
+			var _resultFinal = _resultAbbr&(_week-_streak)
+			return _resultFinal
+		displayFolder: Season Team Summary
+		lineageTag: 98511ec3-7eeb-4eb0-bc71-0a48e0a6ed9f
+
+	measure 'Final Power Ranking' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _wk = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _ranking = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Team]=_team,'Power Rankings'[Week]=_wk)
+			return _ranking
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 831836f0-3046-4fb3-84a3-80e76e5a2494
 
 	column *Measures
 		dataType: string

@@ -108,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'THAr vs. KDT'"
+                                "Value": "'JG vs. JST'"
                               }
                             }
                           ]
@@ -382,6 +382,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "ce9044d4dd426f289596",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
