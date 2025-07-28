@@ -3,7 +3,7 @@
   "name": "6b81408ac145c1334d25",
   "position": {
     "x": 406.99507389162562,
-    "y": 60.295566502463053,
+    "y": 61.9571194632384,
     "z": 14000,
     "height": 80.6896551724138,
     "width": 868.07881773399015,
@@ -216,6 +216,22 @@
               "expr": {
                 "Literal": {
                   "Value": "10L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
                 }
               }
             }

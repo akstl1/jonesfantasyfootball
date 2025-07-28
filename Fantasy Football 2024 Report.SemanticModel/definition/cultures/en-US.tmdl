@@ -8937,7 +8937,7 @@ cultureInfo en-US
 			    "new_standing": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "New Standings"
+			          "ConceptualEntity": "Standings"
 			        }
 			      },
 			      "State": "Generated",
@@ -9058,7 +9058,7 @@ cultureInfo en-US
 			    "new_standing.team": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "New Standings",
+			          "ConceptualEntity": "Standings",
 			          "ConceptualProperty": "Team"
 			        }
 			      },
@@ -9177,7 +9177,7 @@ cultureInfo en-US
 			    "new_standing.week": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "New Standings",
+			          "ConceptualEntity": "Standings",
 			          "ConceptualProperty": "Week"
 			        }
 			      },
@@ -9196,7 +9196,7 @@ cultureInfo en-US
 			    "new_standing.league_rank": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "New Standings",
+			          "ConceptualEntity": "Standings",
 			          "ConceptualProperty": "League_Rank"
 			        }
 			      },
@@ -9229,7 +9229,7 @@ cultureInfo en-US
 			    "new_standing.division_rank": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "New Standings",
+			          "ConceptualEntity": "Standings",
 			          "ConceptualProperty": "Division_Rank"
 			        }
 			      },
@@ -18344,7 +18344,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Result Type": {
+			          "Category": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -18614,7 +18614,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_measure_final_division_standing": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -18647,7 +18647,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_measure_final_league_standing": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -21041,7 +21041,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_measure_league_ranking_up_down_ABS": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -21983,7 +21983,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_division_rank": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -22016,7 +22016,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_league_rank": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -22082,7 +22082,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_measure_league_ranking_up_down": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -25316,7 +25316,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_teams_table": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -25362,7 +25362,7 @@ cultureInfo en-US
 			    },
 			    "new_standing_has_week": {
 			      "Binding": {
-			        "ConceptualEntity": "New Standings"
+			        "ConceptualEntity": "Standings"
 			      },
 			      "State": "Generated",
 			      "Roles": {

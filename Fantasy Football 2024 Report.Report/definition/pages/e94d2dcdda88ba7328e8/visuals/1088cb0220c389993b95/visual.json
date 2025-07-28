@@ -98,7 +98,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "75D"
+                  "Value": "72.2823779193206D"
                 }
               }
             }
@@ -126,7 +126,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "92D"
+                  "Value": "87.47063313200516D"
                 }
               }
             }
@@ -492,6 +492,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "74f4b744189ad5bb7839",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Player Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f4876e7aefce368b7617",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Team City"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

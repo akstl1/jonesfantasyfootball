@@ -233,9 +233,9 @@ table *Measures
 			var _week = selectedvalue(Weeks[Week])
 			var _week2 = if(_week=1,_week,_week-1)
 			
-			var _team = max('New Standings'[Team])
-			var _current = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_week)
-			var _prior = CALCULATE(max('New Standings'[League_Rank]),ALLEXCEPT('New Standings','New Standings'[Team],Weeks[Week]),'New Standings'[Team]=_team,'New Standings'[Week]=_week2,all(Weeks))
+			var _team = max('Standings'[Team])
+			var _current = CALCULATE(max('Standings'[League_Rank]),'Standings'[Team]=_team,'Standings'[Week]=_week)
+			var _prior = CALCULATE(max('Standings'[League_Rank]),ALLEXCEPT('Standings','Standings'[Team],Weeks[Week]),'Standings'[Team]=_team,'Standings'[Week]=_week2,all(Weeks))
 			var _variance = _current - _prior
 			var _difference = SWITCH(TRUE(),
 			                            // _week=1,"Same",
@@ -332,9 +332,9 @@ table *Measures
 			var _week = selectedvalue(Weeks[Week])
 			var _week2 = if(_week=1,_week,_week-1)
 			
-			var _team = max('New Standings'[Team])
-			var _current = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_week)
-			var _prior = CALCULATE(max('New Standings'[League_Rank]),ALLEXCEPT('New Standings','New Standings'[Team],Weeks[Week]),'New Standings'[Team]=_team,'New Standings'[Week]=_week2,all(Weeks))
+			var _team = max('Standings'[Team])
+			var _current = CALCULATE(max('Standings'[League_Rank]),'Standings'[Team]=_team,'Standings'[Week]=_week)
+			var _prior = CALCULATE(max('Standings'[League_Rank]),ALLEXCEPT('Standings','Standings'[Team],Weeks[Week]),'Standings'[Team]=_team,'Standings'[Week]=_week2,all(Weeks))
 			var _variance = _current - _prior
 			var _difference = SWITCH(TRUE(),
 			                            // _week=1,"Same",
@@ -804,9 +804,9 @@ table *Measures
 			
 			var _value = round(AVERAGEX(MatchupsTable,MatchupsTable[Actual Points] - MatchupsTable[Projected Points]),2)
 			var _result = SWITCH(TRUE(),
-			                        _value=0, "scored their expected number of points on average.",
-			                        _value>0, "overperformed by " & abs(_value) & " points on average.",
-			                        "underperformed by " & abs(_value) & " points on average."
+			                        _value=0, "scored their expected number of",
+			                        _value>0, "overperformed by " & abs(_value),
+			                        "underperformed by " & abs(_value)
 			)
 			return _result 
 			```
@@ -936,7 +936,7 @@ table *Measures
 			
 			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
 			var _wk = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
-			var _ranking = CALCULATE(max('New Standings'[League_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_wk)
+			var _ranking = CALCULATE(max('Standings'[League_Rank]),'Standings'[Team]=_team,'Standings'[Week]=_wk)
 			return _ranking
 		formatString: 0
 		displayFolder: Season Team Summary
@@ -946,7 +946,7 @@ table *Measures
 			
 			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
 			var _wk = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
-			var _ranking = CALCULATE(max('New Standings'[Division_Rank]),'New Standings'[Team]=_team,'New Standings'[Week]=_wk)
+			var _ranking = CALCULATE(max('Standings'[Division_Rank]),'Standings'[Team]=_team,'Standings'[Week]=_wk)
 			return _ranking
 		formatString: 0
 		displayFolder: Season Team Summary

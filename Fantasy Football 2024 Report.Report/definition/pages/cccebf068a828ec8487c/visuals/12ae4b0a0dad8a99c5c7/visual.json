@@ -35,7 +35,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "New Standings"
+                      "Entity": "Standings"
                     }
                   },
                   "Property": "Division_Rank"
@@ -55,7 +55,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "New Standings"
+                    "Entity": "Standings"
                   }
                 },
                 "Property": "Division_Rank"

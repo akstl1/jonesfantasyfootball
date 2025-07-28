@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fbc11ca4cfae02023255",
   "position": {
-    "x": 69.7523000707714,
-    "y": 463.80750176928518,
+    "x": 70.049261083743843,
+    "y": 443.3497536945813,
     "z": 15000,
-    "height": 230.0920028308563,
-    "width": 454.74876150035379,
+    "height": 259.80295566502463,
+    "width": 454.8768472906404,
     "tabOrder": 14000
   },
   "visual": {
@@ -53,26 +53,6 @@
                           "Entity": "MatchupsTable"
                         }
                       },
-                      "Property": "projected_variance"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(MatchupsTable.projected_variance)",
-              "nativeQueryRef": "Projected Difference",
-              "displayName": "Projected Difference"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "MatchupsTable"
-                        }
-                      },
                       "Property": "actual_variance"
                     }
                   },
@@ -80,8 +60,23 @@
                 }
               },
               "queryRef": "Sum(MatchupsTable.actual_variance)",
-              "nativeQueryRef": "Actual Difference",
-              "displayName": "Actual Difference"
+              "nativeQueryRef": "Point Margin",
+              "displayName": "Point Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Close Or Blowout Indicator"
+                }
+              },
+              "queryRef": "*Measures.Close Or Blowout Indicator",
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
             },
             {
               "field": {
@@ -96,21 +91,6 @@
               },
               "queryRef": "MatchupsTable.Result",
               "nativeQueryRef": "Result"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Close Or Blowout Indicator"
-                }
-              },
-              "queryRef": "*Measures.Close Or Blowout Indicator",
-              "nativeQueryRef": "Result Type",
-              "displayName": "Result Type"
             }
           ]
         }
@@ -136,7 +116,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "84.3411235821251D"
+                  "Value": "82.5364254866388D"
                 }
               }
             }
@@ -150,13 +130,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "81.98867657466384D"
+                  "Value": "115.73248129792857D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Sum(MatchupsTable.projected_variance)"
+            "metadata": "Sum(MatchupsTable.actual_variance)"
           }
         },
         {
@@ -164,13 +144,127 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "74.8591593968731D"
+                  "Value": "52.753694308480576D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Sum(MatchupsTable.actual_variance)"
+            "metadata": "MatchupsTable.Result"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Close Games and Blowouts'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
           }
         }
       ]
@@ -179,34 +273,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "e909dab08446bcf6aa0a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6b928645cd29e87b76e3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Opponent"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "f92d1bc97ea20c34e750",
         "field": {
@@ -267,10 +333,90 @@
               }
             }
           ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "05479df3b7244614ce76",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Close Or Blowout Indicator"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "*",
+              "Entity": "*Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Contains": {
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "*"
+                            }
+                          },
+                          "Property": "Close Or Blowout Indicator"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'--'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
         }
       },
       {
-        "name": "6a79f8d72668776245e5",
+        "name": "2f7f45ef7b905df22611",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4e1f20ec27d623418e70",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Opponent"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0b3a077367998d3cb81",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -289,7 +435,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c6a18056f7b590007576",
+        "name": "88cd8726645a98d067f0",
         "field": {
           "Column": {
             "Expression": {
@@ -301,20 +447,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "05479df3b7244614ce76",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Close Or Blowout Indicator"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

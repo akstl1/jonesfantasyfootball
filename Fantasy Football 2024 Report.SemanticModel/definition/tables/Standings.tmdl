@@ -1,4 +1,4 @@
-table 'New Standings'
+table Standings
 	lineageTag: b4ae813c-b4b7-4b7e-8f47-1b6f84c7e0d8
 
 	column Team
@@ -36,7 +36,7 @@ table 'New Standings'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'New Standings' = m
+	partition Standings = m
 		mode: import
 		queryGroup: Main
 		source =

@@ -140,19 +140,6 @@
         },
         {
           "location": {
-            "x": 1197.5302136522255,
-            "y": 2068.8990574866693
-          },
-          "nodeIndex": "New Standings",
-          "nodeLineageTag": "b4ae813c-b4b7-4b7e-8f47-1b6f84c7e0d8",
-          "size": {
-            "height": 176,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
             "x": 1466.4614836108155,
             "y": 2072.3907355030547
           },
@@ -186,6 +173,18 @@
           "nodeLineageTag": "d89e9d8a-7238-4f28-879a-944a55c332c4",
           "size": {
             "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1197.5302136522255,
+            "y": 2068.8990574866693
+          },
+          "nodeIndex": "Standings",
+          "size": {
+            "height": 176,
             "width": 234
           },
           "zIndex": 0
