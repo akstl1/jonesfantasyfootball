@@ -18,8 +18,19 @@
               {
                 "textRuns": [
                   {
-                    "value": "This season, "
-                  },
+                    "value": "XXX's team is currently <record>, with a win/loss streak of XXX. This has led the team to be Xth in the league, and since the start of the season the team has moved up/down X slots in the power rankings from X to Y."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
                   {
                     "value": {
                       "propertyIdentifier": {
@@ -46,7 +57,7 @@
                     }
                   },
                   {
-                    "value": " close games, decided by less than 10 points, and "
+                    "value": " close game(S) (decided by less than 10 points) and "
                   },
                   {
                     "value": {
@@ -60,7 +71,7 @@
                     }
                   },
                   {
-                    "value": " blowouts, decided by 30+ points, and won "
+                    "value": " blowouts (decided by 30+ points) and won "
                   },
                   {
                     "value": {
@@ -102,7 +113,7 @@
                     }
                   },
                   {
-                    "value": " "
+                    "value": " performed above average in X and Y, average in X and Y. The team has performed below average in Z and may want to consider shoring up players in these categories."
                   }
                 ]
               },
