@@ -197,6 +197,9 @@
               {
                 "textRuns": [
                   {
+                    "value": "Most of XXX's wins were expected/un, and most of their losses were expected/un. "
+                  },
+                  {
                     "value": {
                       "propertyIdentifier": {
                         "objectName": "values",
@@ -229,7 +232,7 @@
                     }
                   },
                   {
-                    "value": " Expected Wins, with an average margin of victory of XXX. ++over/under performance",
+                    "value": " Expected Wins, with an average margin of victory of XXX. ",
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
@@ -251,7 +254,7 @@
                     }
                   },
                   {
-                    "value": " Expected Losses, with an average loss margin of XXX. ++over/under performance"
+                    "value": " Expected Losses, with an average loss margin of XXX. "
                   }
                 ],
                 "listType": "bullet"
@@ -270,7 +273,13 @@
                     }
                   },
                   {
-                    "value": " Unexpected Wins, in which XXX overperformed in YY matches by an average of XXX points and opponents on average over/underperformed by XXX points"
+                    "value": " Unexpected Wins, "
+                  },
+                  {
+                    "value": "with an average margin of victory of XXX.",
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
                   }
                 ],
                 "listType": "bullet"
@@ -289,7 +298,7 @@
                     }
                   },
                   {
-                    "value": " Unexpected Losses, in which XXX underperformed in YY matches by an average of XXX points and opponents on average performed by XXX points"
+                    "value": " Unexpected Losses, with an average loss margin of XXX. "
                   }
                 ],
                 "listType": "bullet"
