@@ -987,6 +987,34 @@ table *Measures
 		displayFolder: Season Team Summary
 		lineageTag: 104cf399-a297-43e7-a399-5e3614804159
 
+	measure 'Expected Wins' = ```
+			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Win") 
+			```
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: f8bd58d6-decf-4639-b5c4-90f7edb1a019
+
+	measure 'Expected Losses' = ```
+			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Loss") 
+			```
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 2c740487-5075-441c-ab55-3f30aaaf7717
+
+	measure 'Unexpected Wins' = ```
+			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Win") 
+			```
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 6395451d-0941-4d13-8d81-33a8cb5ee936
+
+	measure 'Unexpected Losses' = ```
+			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Loss") 
+			```
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 80478f54-9fe8-4326-886e-42701cc5078c
+
 	column *Measures
 		dataType: string
 		isHidden

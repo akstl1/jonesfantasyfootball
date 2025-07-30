@@ -32,6 +32,9 @@
             }
           ]
         },
+        "Size": {
+          "projections": []
+        },
         "X": {
           "projections": [
             {

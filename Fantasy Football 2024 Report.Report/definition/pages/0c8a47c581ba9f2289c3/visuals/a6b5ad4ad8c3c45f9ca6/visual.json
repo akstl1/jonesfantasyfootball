@@ -88,6 +88,9 @@
               {
                 "textRuns": [
                   {
+                    "value": "Of the major point categories, "
+                  },
+                  {
                     "value": {
                       "propertyIdentifier": {
                         "objectName": "values",
@@ -99,7 +102,7 @@
                     }
                   },
                   {
-                    "value": " did well/poorly against teams with winning records, winning 8/9 such games, and did well/poorly against teams with losing records, winning 8/9 such games. "
+                    "value": " "
                   }
                 ]
               },
@@ -212,7 +215,21 @@
               {
                 "textRuns": [
                   {
-                    "value": "A Expected Wins, with an average margin of victory of XXX. ++over/under performance",
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 12"
+                      }
+                    },
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
+                  },
+                  {
+                    "value": " Expected Wins, with an average margin of victory of XXX. ++over/under performance",
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
@@ -223,7 +240,18 @@
               {
                 "textRuns": [
                   {
-                    "value": "B Expected Losses, with an average loss margin of XXX. ++over/under performance"
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 13"
+                      }
+                    }
+                  },
+                  {
+                    "value": " Expected Losses, with an average loss margin of XXX. ++over/under performance"
                   }
                 ],
                 "listType": "bullet"
@@ -231,7 +259,18 @@
               {
                 "textRuns": [
                   {
-                    "value": "C Unexpected Wins, in which XXX overperformed in YY matches by an average of XXX points and opponents on average over/underperformed by XXX points"
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 16"
+                      }
+                    }
+                  },
+                  {
+                    "value": " Unexpected Wins, in which XXX overperformed in YY matches by an average of XXX points and opponents on average over/underperformed by XXX points"
                   }
                 ],
                 "listType": "bullet"
@@ -239,7 +278,18 @@
               {
                 "textRuns": [
                   {
-                    "value": "D Unexpected Losses, in which XXX underperformed in YY matches by an average of XXX points and opponents on average performed by XXX points"
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 17"
+                      }
+                    }
+                  },
+                  {
+                    "value": " Unexpected Losses, in which XXX underperformed in YY matches by an average of XXX points and opponents on average performed by XXX points"
                   }
                 ],
                 "listType": "bullet"
@@ -870,6 +920,557 @@
           },
           "selector": {
             "id": "Value 11"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Expected Wins"
+                                },
+                                "Name": "*Measures.Expected Wins"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Expected Wins"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 12",
+                      "utterance": "expected wins"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 12"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Expected Losses"
+                                },
+                                "Name": "*Measures.Expected Losses"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Expected Losses"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 13",
+                      "utterance": "expected losses"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 13"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "m",
+                                "Entity": "MatchupsTable",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "ID"
+                                },
+                                "Name": "MatchupsTable.ID"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Week"
+                                },
+                                "Name": "MatchupsTable.Week"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Team"
+                                },
+                                "Name": "MatchupsTable.Team"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Opponent"
+                                },
+                                "Name": "MatchupsTable.Opponent"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Actual Points"
+                                },
+                                "Name": "MatchupsTable.Actual Points"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Result"
+                                },
+                                "Name": "MatchupsTable.Result"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Matchup Header"
+                                },
+                                "Name": "MatchupsTable.Matchup Header"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Number"
+                                },
+                                "Name": "MatchupsTable.Number"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "MatchupKey"
+                                },
+                                "Name": "MatchupsTable.MatchupKey"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "WeeklyMatchupID"
+                                },
+                                "Name": "MatchupsTable.WeeklyMatchupID"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Home_Or_Away"
+                                },
+                                "Name": "MatchupsTable.Home_Or_Away"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Projected Points"
+                                },
+                                "Name": "MatchupsTable.Projected Points"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "matchup_type"
+                                },
+                                "Name": "MatchupsTable.matchup_type"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "projected_variance"
+                                },
+                                "Name": "MatchupsTable.projected_variance"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "actual_variance"
+                                },
+                                "Name": "MatchupsTable.actual_variance"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Matchup Header Abbrev"
+                                },
+                                "Name": "MatchupsTable.Matchup Header Abbrev"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Legend"
+                                },
+                                "Name": "MatchupsTable.Legend"
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Comparison": {
+                                    "ComparisonKind": 0,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "m"
+                                          }
+                                        },
+                                        "Property": "Legend"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "'Unexpected Win'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "OrderBy": [
+                              {
+                                "Direction": 1,
+                                "Expression": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "m"
+                                      }
+                                    },
+                                    "Property": "ID"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "MatchupsTable.ID"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 14",
+                      "utterance": "Unexpected Win"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 14"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Unexpected Wins"
+                                },
+                                "Name": "*Measures.Unexpected Wins"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Unexpected Wins"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 15",
+                      "utterance": "unexpected wins"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 15"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Unexpected Wins"
+                                },
+                                "Name": "*Measures.Unexpected Wins"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Unexpected Wins"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 16",
+                      "utterance": "unexpected wins"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 16"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Unexpected Losses"
+                                },
+                                "Name": "*Measures.Unexpected Losses"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Unexpected Losses"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 17",
+                      "utterance": "unexpected losses"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 17"
           }
         }
       ]

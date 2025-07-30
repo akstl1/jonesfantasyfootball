@@ -128,7 +128,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AP'"
+                                "Value": "'AAT'"
                               }
                             }
                           ]
@@ -380,6 +380,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "6b15144124b64916301c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Acronym"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
