@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a6b5ad4ad8c3c45f9ca6",
   "position": {
-    "x": 915.960591133005,
-    "y": 148.07881773399015,
+    "x": 916,
+    "y": 148,
     "z": 4000,
-    "height": 562.167487684729,
-    "width": 359.11330049261085
+    "height": 562,
+    "width": 359
   },
   "visual": {
     "visualType": "textbox",
@@ -18,7 +18,74 @@
               {
                 "textRuns": [
                   {
-                    "value": "XXX's team is currently <record>, with a win/loss streak of XXX. This has led the team to be Xth in the league, and since the start of the season the team has moved up/down X slots in the power rankings from X to Y."
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 23"
+                      }
+                    }
+                  },
+                  {
+                    "value": "'s team is currently "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 24"
+                      }
+                    }
+                  },
+                  {
+                    "value": ", with a "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 25"
+                      }
+                    }
+                  },
+                  {
+                    "value": " streak of "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 26"
+                      }
+                    }
+                  },
+                  {
+                    "value": ". This has led the team to be "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 27"
+                      }
+                    }
+                  },
+                  {
+                    "value": "in the league, and since the start of the season the team has moved up/down X slots in the power rankings from X to Y."
                   }
                 ]
               },
@@ -57,7 +124,7 @@
                     }
                   },
                   {
-                    "value": " close game(S) (decided by less than 10 points) and "
+                    "value": " close game(s) (decided by less than 10 points) and "
                   },
                   {
                     "value": {
@@ -71,7 +138,7 @@
                     }
                   },
                   {
-                    "value": " blowouts (decided by 30+ points) and won "
+                    "value": " blowout(s) (decided by 30+ points) and won "
                   },
                   {
                     "value": {
@@ -147,12 +214,12 @@
                         "propertyName": "expr"
                       },
                       "selector": {
-                        "id": "Value 8"
+                        "id": "Value 22"
                       }
                     }
                   },
                   {
-                    "value": " compared to ESPN's forecasts - winning "
+                    "value": " compared to ESPN's projections - with the team finishing "
                   },
                   {
                     "value": {
@@ -166,7 +233,7 @@
                     }
                   },
                   {
-                    "value": "% of games they were projected to win. The team also won "
+                    "value": "% of games with the forecasted result. The team also won "
                   },
                   {
                     "value": {
@@ -208,9 +275,6 @@
               {
                 "textRuns": [
                   {
-                    "value": "Most of XXX's wins were expected/un, and most of their losses were expected/un. "
-                  },
-                  {
                     "value": {
                       "propertyIdentifier": {
                         "objectName": "values",
@@ -243,7 +307,27 @@
                     }
                   },
                   {
-                    "value": " Expected Wins, with an average margin of victory of XXX. ",
+                    "value": " Expected Wins, with an average margin of victory of ",
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 18"
+                      }
+                    },
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
+                  },
+                  {
+                    "value": " pts",
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
@@ -265,7 +349,21 @@
                     }
                   },
                   {
-                    "value": " Expected Losses, with an average loss margin of XXX. "
+                    "value": " Expected Losses, with an average loss margin of "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 19"
+                      }
+                    }
+                  },
+                  {
+                    "value": " pts"
                   }
                 ],
                 "listType": "bullet"
@@ -287,7 +385,27 @@
                     "value": " Unexpected Wins, "
                   },
                   {
-                    "value": "with an average margin of victory of XXX.",
+                    "value": "with an average margin of victory of ",
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 20"
+                      }
+                    },
+                    "textStyle": {
+                      "fontFamily": "inherit"
+                    }
+                  },
+                  {
+                    "value": " pts",
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
@@ -309,7 +427,21 @@
                     }
                   },
                   {
-                    "value": " Unexpected Losses, with an average loss margin of XXX. "
+                    "value": " Unexpected Losses, with an average loss margin of "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 21"
+                      }
+                    }
+                  },
+                  {
+                    "value": " pts"
                   }
                 ],
                 "listType": "bullet"
@@ -1491,6 +1623,566 @@
           },
           "selector": {
             "id": "Value 17"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Expected Win Margin"
+                                },
+                                "Name": "*Measures.Expected Win Margin"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Expected Win Margin"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 18",
+                      "utterance": "expected win margin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 18"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Expected Loss Margin"
+                                },
+                                "Name": "*Measures.Expected Loss Margin"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Expected Loss Margin"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 19",
+                      "utterance": "expected loss margin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 19"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Unexpected Win Margin"
+                                },
+                                "Name": "*Measures.Unexpected Win Margin"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Unexpected Win Margin"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 20",
+                      "utterance": "unexpected win margin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 20"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Unexpected Loss Margin"
+                                },
+                                "Name": "*Measures.Unexpected Loss Margin"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Unexpected Loss Margin"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 21",
+                      "utterance": "unexpected loss margin"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 21"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Forecast comparison text"
+                                },
+                                "Name": "*Measures.Forecast comparison text"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Forecast comparison text"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 22",
+                      "utterance": "forecast comparison text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 22"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "SelectedTeam"
+                                },
+                                "Name": "*Measures.SelectedTeam"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.SelectedTeam"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 23",
+                      "utterance": "SelectedTeam"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 23"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Season Record"
+                                },
+                                "Name": "*Measures.Season Record"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Season Record"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 24",
+                      "utterance": "season record"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 24"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Final Streak WinLoss"
+                                },
+                                "Name": "*Measures.Final Streak WinLoss"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Final Streak WinLoss"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 25",
+                      "utterance": "final streak WinLoss"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 25"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Final Streak Number"
+                                },
+                                "Name": "*Measures.Final Streak Number"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Final Streak Number"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 26",
+                      "utterance": "final streak number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 26"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "season summary league rank text"
+                                },
+                                "Name": "*Measures.season summary league rank text"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.season summary league rank text"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 27",
+                      "utterance": "season summary league rank text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 27"
           }
         }
       ]

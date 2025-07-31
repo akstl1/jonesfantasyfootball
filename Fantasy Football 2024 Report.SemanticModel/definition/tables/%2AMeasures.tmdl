@@ -768,9 +768,11 @@ table *Measures
 	measure 'Forecast Comparison' =
 			
 			var _team = [SelectedTeam]
-			var _projectedwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0)
-			var _actualwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0,MatchupsTable[Result]="Win")
-			var _result = ROUND(100*DIVIDE(_actualwins,_projectedwins,0),0)
+			// var _projectedwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0)
+			// var _actualwins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]>0,MatchupsTable[Result]="Win")
+			var _expectedResults = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,NOT(CONTAINSSTRING(MatchupsTable[Legend],"Un")))
+			var _totalresults = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team)
+			var _result = ROUND(100*DIVIDE(_expectedResults,_totalresults,0),0)
 			return _result
 		formatString: 0
 		displayFolder: Season Team Summary
@@ -781,7 +783,7 @@ table *Measures
 	measure 'Forecast comparison text' =
 			
 			SWITCH(TRUE(),
-			        [Forecast Comparison]>=40 && [Forecast Comparison]<=60, "as expected",
+			        [Forecast Comparison]>=40 && [Forecast Comparison]<=60, "neutrally",
 			        [Forecast Comparison]>60,"well",
 			        [Forecast Comparison]<40,"poorly"
 			)
@@ -954,13 +956,8 @@ table *Measures
 
 	measure 'Final Streak' =
 			
-			var _week = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
-			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
-			var _result = CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team)
-			var _resultAbbr = LEFT(_result,1)
-			var _streak = CALCULATE(max('MatchupsTable'[Week]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]<>_result, 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
-			// var _streak = CALCULATE(max('MatchupsTable'[Week]),filter(MatchupsTable,'MatchupsTable'[Week]<=_week&&'MatchupsTable'[Result]<>_result&&'MatchupsTable'[Team]=_team))
-			var _resultFinal = _resultAbbr&(_week-_streak)
+			var _resultAbbr = UPPER(LEFT([Final Streak WinLoss],1))
+			var _resultFinal = _resultAbbr&([Final Streak Number])
 			return _resultFinal
 		displayFolder: Season Team Summary
 		lineageTag: 98511ec3-7eeb-4eb0-bc71-0a48e0a6ed9f
@@ -1014,6 +1011,87 @@ table *Measures
 		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: 80478f54-9fe8-4326-886e-42701cc5078c
+
+	measure 'Expected Win Margin' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			return ROUND(CALCULATE(AVERAGE(MatchupsTable[actual_variance]),MatchupsTable[Legend] = "Expected Win",MatchupsTable[Team]=_team),0)
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 2344c392-e90d-4d84-ae98-05c31c84cab7
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Expected Loss Margin' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			return abs(ROUND(CALCULATE(AVERAGE(MatchupsTable[actual_variance]),MatchupsTable[Legend] = "Expected Loss",MatchupsTable[Team]=_team),0))
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 6dfbe8a0-6946-4a94-b16b-af6c998f734c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Unexpected Win Margin' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			return ROUND(CALCULATE(AVERAGE(MatchupsTable[actual_variance]),MatchupsTable[Legend] = "Unexpected Win",MatchupsTable[Team]=_team),0)
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 1cf2bd3c-c614-44f2-8e87-c2f73c2d6f5a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Unexpected Loss Margin' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			return abs(ROUND(CALCULATE(AVERAGE(MatchupsTable[actual_variance]),MatchupsTable[Legend] = "Unexpected Loss",MatchupsTable[Team]=_team),0))
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: f59e02d6-031b-4136-a467-7dd78906e47e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Final Streak WinLoss' =
+			
+			var _week = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _result = Lower(CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team))
+			return SWITCH(TRUE(),_result="loss","losing",_result)
+		displayFolder: Season Team Summary
+		lineageTag: 46808c06-71af-4092-8aa1-5c563eca7b88
+
+	measure 'Final Streak Number' =
+			
+			var _week = CALCULATE(max(PlayerPointsStats[Week]),all(PlayerPointsStats))
+			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
+			var _result = CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team)
+			var _streak = CALCULATE(max('MatchupsTable'[Week]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]<>_result, 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Result],'MatchupsTable'[Team]))
+			return _week-_streak
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: f3893d6d-388e-4a33-a03b-586b4fc94323
+
+	measure 'season summary league rank text' =
+			
+			var _team = [SelectedTeam]
+			
+			var _value = [Final League Standing]
+			
+			var _gamesText = CONVERT(_value,STRING)
+			
+			return SWITCH(TRUE(),
+			                _value = 11,"11th ",
+			                _value = 12,"12th ",
+			                _value = 13,"13th ",
+			                MOD(_value,10)=1,_gamesText & "st ",
+			                MOD(_value,10)=2,_gamesText & "nd ",
+			                MOD(_value,10)=3,_gamesText & "rd ",
+			                _gamesText & "th "
+			
+			)
+		displayFolder: Season Team Summary
+		lineageTag: fff28793-28e6-402e-b304-ac48c5b573f8
 
 	column *Measures
 		dataType: string
