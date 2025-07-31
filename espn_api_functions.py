@@ -442,7 +442,7 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                    if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
+                    if (not(bye) and status!='bye' and empty==0): ## or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9)
                         for item in stats:
                             try:
                                 value=plyr.points_breakdown[item]
@@ -1003,7 +1003,7 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                         'junk' #'defensiveFumbles'/,
                         ,'fumbleRecoveredForTD'
                         ]
-                        if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
+                        if (not(bye) and status!='bye' and empty==0): ## or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
                             for item in stats:
                                 try:
                                     # print(plyr.name, item, player_wk)
