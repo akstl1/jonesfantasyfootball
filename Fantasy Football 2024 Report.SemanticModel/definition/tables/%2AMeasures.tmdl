@@ -796,9 +796,9 @@ table *Measures
 			var _wins = CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Team] = _team,MatchupsTable[projected_variance]<0,MatchupsTable[Result]="Win")
 			return SWITCH(TRUE(),
 			                _wins=1, _wins & " game",
-			                _wins
+			                _wins=0,"no games",
+			                _wins & " games"
 			)
-		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: c8dfce30-9e5f-4178-a022-05199baa1276
 
@@ -1125,6 +1125,19 @@ table *Measures
 	measure 'Blowout Games text' = SWITCH(TRUE(),[Blowouts]=1,"blowout","blowouts")
 		displayFolder: Season Team Summary
 		lineageTag: 6727dd7d-5494-433c-9b14-22c98fb00008
+
+	measure 'Category Rankings Text' =
+			
+			var _team = [SelectedTeam]
+			var _numberOver = CALCULATE(COUNTROWS(SpiderChart),SpiderChart[FantasyTeam]=_team,SpiderChart[Condensed Rank]>=5)
+			var _numberUnder = CALCULATE(COUNTROWS(SpiderChart),SpiderChart[FantasyTeam]=_team,SpiderChart[Condensed Rank]<=2)
+			return SWITCH(TRUE(),
+			                _numberOver=6," above average in all five areas",
+			                _numberUnder=6," below average in all five areas",
+			                "placeholder"
+			)
+		displayFolder: Season Team Summary
+		lineageTag: 2f8b8cbd-92fe-4975-a279-83aefca381a9
 
 	column *Measures
 		dataType: string

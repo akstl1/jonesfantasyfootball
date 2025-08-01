@@ -223,6 +223,17 @@
                   },
                   {
                     "value": " performed above average in X and Y, average in X and Y. The team has performed below average in Z and may want to consider shoring up players in these categories."
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 33"
+                      }
+                    }
                   }
                 ]
               },
@@ -2512,6 +2523,62 @@
           },
           "selector": {
             "id": "Value 32"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Category Rankings Text"
+                                },
+                                "Name": "*Measures.Category Rankings Text"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Category Rankings Text"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 33",
+                      "utterance": "category rankings text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 33"
           }
         }
       ]

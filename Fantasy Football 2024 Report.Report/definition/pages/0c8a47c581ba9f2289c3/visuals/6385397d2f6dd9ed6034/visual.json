@@ -90,6 +90,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "lineWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
             }
           }
         }
@@ -406,6 +413,13 @@
               "expr": {
                 "Literal": {
                   "Value": "-1D"
+                }
+              }
+            },
+            "minValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
