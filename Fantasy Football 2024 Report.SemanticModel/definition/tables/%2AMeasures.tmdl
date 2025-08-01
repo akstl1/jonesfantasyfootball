@@ -1093,6 +1093,39 @@ table *Measures
 		displayFolder: Season Team Summary
 		lineageTag: fff28793-28e6-402e-b304-ac48c5b573f8
 
+	measure 'Initial Power Ranking' =
+			
+			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
+			var _ranking = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Team]=_team,'Power Rankings'[Week]=1)
+			return _ranking
+		formatString: 0
+		displayFolder: Season Team Summary
+		lineageTag: 8d93848a-a6bb-4ed8-bdb1-e7739f5e8a2c
+
+	measure 'Power Ranking Difference' =
+			
+			var _diff = [Initial Power Ranking] - [Final Power Ranking]
+			var _slot = SWITCH(TRUE(),_diff=1,"slot","slots")
+			return SWITCH(TRUE(),
+			                _diff=0, "remained at the same power ranking slot of "&[Final Power Ranking],
+			                _diff>0,"improved in the power rankings by "&abs(_diff)& " "&_slot&" from "&[Initial Power Ranking]&" to "&[Final Power Ranking],
+			                "regressed in the power rankings by "&abs(_diff)& " "&_slot&" from "&[Initial Power Ranking]&" to "&[Final Power Ranking]
+			)
+		displayFolder: Season Team Summary
+		lineageTag: afb62414-a1de-4c62-9c91-2450c2d979cd
+
+	measure 'Close Game Text' =
+			SWITCH(TRUE(),
+			                            [Close games]=1,"game",
+			                            "games"
+			)
+		displayFolder: Season Team Summary
+		lineageTag: 2d0d0b45-ed5e-4827-a2c6-8ee922bc0b49
+
+	measure 'Blowout Games text' = SWITCH(TRUE(),[Blowouts]=1,"blowout","blowouts")
+		displayFolder: Season Team Summary
+		lineageTag: 6727dd7d-5494-433c-9b14-22c98fb00008
+
 	column *Measures
 		dataType: string
 		isHidden

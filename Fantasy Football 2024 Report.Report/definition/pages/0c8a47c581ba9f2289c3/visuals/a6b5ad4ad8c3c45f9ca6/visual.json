@@ -85,7 +85,21 @@
                     }
                   },
                   {
-                    "value": "in the league, and since the start of the season the team has moved up/down X slots in the power rankings from X to Y."
+                    "value": "in the league, and since the start of the season the team has "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 30"
+                      }
+                    }
+                  },
+                  {
+                    "value": "."
                   }
                 ]
               },
@@ -124,7 +138,21 @@
                     }
                   },
                   {
-                    "value": " close game(s) (decided by less than 10 points) and "
+                    "value": " close "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 31"
+                      }
+                    }
+                  },
+                  {
+                    "value": " (decided by less than 10 points) and "
                   },
                   {
                     "value": {
@@ -138,7 +166,21 @@
                     }
                   },
                   {
-                    "value": " blowout(s) (decided by 30+ points) and won "
+                    "value": " "
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value 32"
+                      }
+                    }
+                  },
+                  {
+                    "value": " (decided by 30+ points) and won "
                   },
                   {
                     "value": {
@@ -450,6 +492,13 @@
                 "textRuns": [
                   {
                     "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "fix null values issue for breakdowns"
                   }
                 ]
               }
@@ -2183,6 +2232,286 @@
           },
           "selector": {
             "id": "Value 27"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Final Power Ranking"
+                                },
+                                "Name": "*Measures.Final Power Ranking"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Final Power Ranking"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 28",
+                      "utterance": "final power ranking"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 28"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Initial Power Ranking"
+                                },
+                                "Name": "*Measures.Initial Power Ranking"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Initial Power Ranking"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 29",
+                      "utterance": "initial power ranking"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 29"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Power Ranking Difference"
+                                },
+                                "Name": "*Measures.Power Ranking Difference"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Power Ranking Difference"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 30",
+                      "utterance": "power ranking difference"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 30"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Close Game Text"
+                                },
+                                "Name": "*Measures.Close Game Text"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Close Game Text"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 31",
+                      "utterance": "close game text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 31"
+          }
+        },
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "*",
+                                "Entity": "*Measures",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "*"
+                                    }
+                                  },
+                                  "Property": "Blowout Games text"
+                                },
+                                "Name": "*Measures.Blowout Games text"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "*Measures.Blowout Games text"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value 32",
+                      "utterance": "blowout games text"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value 32"
           }
         }
       ]
