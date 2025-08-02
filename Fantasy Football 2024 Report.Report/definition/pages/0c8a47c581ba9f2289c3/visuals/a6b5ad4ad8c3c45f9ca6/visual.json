@@ -233,7 +233,8 @@
                       "selector": {
                         "id": "Value 33"
                       }
-                    }
+                    },
+                    "textStyle": {}
                   }
                 ]
               },
