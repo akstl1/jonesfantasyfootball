@@ -10,7 +10,7 @@
     "tabOrder": 10000
   },
   "visual": {
-    "visualType": "RadarChart1446119667547",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "SpiderChart.Category",
-              "nativeQueryRef": "Category"
+              "nativeQueryRef": "Category",
+              "active": true
             }
           ]
         },
@@ -50,8 +51,8 @@
                 }
               },
               "queryRef": "Sum(SpiderChart.Condensed Rank)",
-              "nativeQueryRef": "Category Ranking",
-              "displayName": "Category Ranking"
+              "nativeQueryRef": "Ranking",
+              "displayName": "Ranking"
             }
           ]
         }
@@ -81,26 +82,6 @@
       }
     },
     "objects": {
-      "line": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "lineWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "legend": [
         {
           "properties": {
@@ -117,98 +98,20 @@
                   "Value": "false"
                 }
               }
+            },
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
       ],
       "dataPoint": [
         {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "MatchupsTable"
-                                        }
-                                      },
-                                      "Property": "Result"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Loss'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#de6a73'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "MatchupsTable"
-                                        }
-                                      },
-                                      "Property": "Result"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Win'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#62D057'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -406,20 +309,13 @@
           }
         }
       ],
-      "displaySettings": [
+      "valueAxis": [
         {
           "properties": {
-            "axisBeginning": {
+            "end": {
               "expr": {
                 "Literal": {
-                  "Value": "-1D"
-                }
-              }
-            },
-            "minValue": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
+                  "Value": "6D"
                 }
               }
             }
@@ -553,7 +449,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "bf267ebbbb9f214a9b23",
+        "name": "6bbdfdb0d8c2dc73ec1b",
         "field": {
           "Column": {
             "Expression": {
@@ -567,7 +463,7 @@
         "type": "Categorical"
       },
       {
-        "name": "8fe6dc9d1d849d2bf561",
+        "name": "a3d3ba0414163858cd73",
         "field": {
           "Aggregation": {
             "Expression": {
