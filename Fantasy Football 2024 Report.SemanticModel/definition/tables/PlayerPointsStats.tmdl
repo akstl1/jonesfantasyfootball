@@ -1,14 +1,6 @@
 table PlayerPointsStats
 	lineageTag: 81942150-b37b-4a81-a511-f30e725da61a
 
-	column NFL_Team
-		dataType: string
-		lineageTag: 857511e5-f44d-4ac0-94bf-8d4213907811
-		summarizeBy: none
-		sourceColumn: NFL_Team
-
-		annotation SummarizationSetBy = Automatic
-
 	column Attribute
 		dataType: string
 		lineageTag: 5afe4f07-3500-4839-b9a9-c2c3912e77e1
@@ -25,24 +17,6 @@ table PlayerPointsStats
 		sourceColumn: Value
 
 		annotation SummarizationSetBy = Automatic
-
-	column Status
-		dataType: string
-		lineageTag: bc9c76dd-0ca7-420c-90f3-efd49722c8e5
-		summarizeBy: none
-		sourceColumn: Status
-
-		annotation SummarizationSetBy = Automatic
-
-	column PointsPerItem
-		dataType: double
-		lineageTag: 5a59e73a-9bb5-408c-9fe2-1144eecb6379
-		summarizeBy: sum
-		sourceColumn: PointsPerItem
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column TotalPoints
 		dataType: double
@@ -87,28 +61,11 @@ table PlayerPointsStats
 
 		annotation SummarizationSetBy = Automatic
 
-	column PlayerID
-		dataType: int64
-		formatString: 0
-		lineageTag: 7c384913-ab3e-401d-93b7-e13bda1fe3e8
-		summarizeBy: count
-		sourceColumn: PlayerID
-
-		annotation SummarizationSetBy = Automatic
-
 	column Headshot_url
 		dataType: string
 		lineageTag: 41af25dd-2db8-467b-a9a5-5a7102c5dbc5
 		summarizeBy: none
 		sourceColumn: Headshot_url
-
-		annotation SummarizationSetBy = Automatic
-
-	column Opponent
-		dataType: string
-		lineageTag: 4e5f1fad-030a-48b0-afb8-2cd9d7292548
-		summarizeBy: none
-		sourceColumn: Opponent
 
 		annotation SummarizationSetBy = Automatic
 
@@ -120,33 +77,6 @@ table PlayerPointsStats
 
 		annotation SummarizationSetBy = Automatic
 
-	column PositionRank
-		dataType: string
-		lineageTag: 0006baf5-c379-4929-a06a-9a495b0d83a8
-		summarizeBy: none
-		sourceColumn: PositionRank
-
-		annotation SummarizationSetBy = Automatic
-
-	column Bye
-		dataType: int64
-		formatString: 0
-		lineageTag: aa1c9f7c-d47d-4e5f-a4ce-7a857f37583d
-		summarizeBy: sum
-		sourceColumn: Bye
-
-		annotation SummarizationSetBy = Automatic
-
-	column Projected
-		dataType: double
-		lineageTag: feeb6042-ce32-4212-b602-321633f2e3c0
-		summarizeBy: sum
-		sourceColumn: Projected
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Actual
 		dataType: double
 		lineageTag: f2e753c9-a0ea-4ef6-bebc-9fe880f9682e
@@ -156,14 +86,6 @@ table PlayerPointsStats
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Home
-		dataType: string
-		lineageTag: 72f36756-f538-4737-b71d-0a02118c06e8
-		summarizeBy: none
-		sourceColumn: Home
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'Lineup Slot'
 		dataType: string
@@ -187,9 +109,10 @@ table PlayerPointsStats
 				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded PointsMap",{{"Points", "PointsPerItem"}}),
 				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "TotalPoints", each [Value]*[PointsPerItem]),
 				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom1",{{"TotalPoints", type number}}),
-				    #"Rounded Off" = Table.TransformColumns(#"Changed Type3",{{"TotalPoints", each Number.Round(_, 2), type number}})
+				    #"Rounded Off" = Table.TransformColumns(#"Changed Type3",{{"TotalPoints", each Number.Round(_, 2), type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Rounded Off",{"Opponent", "NFL_Team", "Home", "Status", "PositionRank", "Projected", "PlayerID", "Bye", "PointsPerItem"})
 				in
-				    #"Rounded Off"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

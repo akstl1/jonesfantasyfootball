@@ -20,7 +20,6 @@ annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table MatchupsTable
-ref table NFLteamsTable
 ref table PointsMap
 ref table PlayersTable
 ref table TeamsTable

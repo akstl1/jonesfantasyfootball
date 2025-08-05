@@ -26,14 +26,6 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
-	column Home
-		dataType: string
-		lineageTag: 807ca97d-105d-4bf6-936d-80cb0c4d0309
-		summarizeBy: none
-		sourceColumn: Home
-
-		annotation SummarizationSetBy = Automatic
-
 	column MatchupKey
 		dataType: string
 		lineageTag: 9ce61e8a-a4dc-4a62-8d4f-6332da3910e1
@@ -83,9 +75,10 @@ table PlayersTable
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Week", Int64.Type}, {"FantasyTeam", type text}, {"NFL_Team", type text}, {"Player Name", type text}, {"Status", type text}, {"Lineup Slot", type text}, {"PlayerKey", type text}, {"MatchupKey", type text}, {"Home", type text}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"FantasyTeam", "Fantasy Name"}, {"NFL_Team", "Team City"}})
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"FantasyTeam", "Fantasy Name"}, {"NFL_Team", "Team City"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Home"})
 				in
-				    #"Renamed Columns"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

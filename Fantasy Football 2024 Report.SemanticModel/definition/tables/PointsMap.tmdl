@@ -17,14 +17,6 @@ table PointsMap
 
 		annotation SummarizationSetBy = Automatic
 
-	column Abbreviation
-		dataType: string
-		lineageTag: dac98267-ed48-4d85-a02d-2cc2fa3ac746
-		summarizeBy: none
-		sourceColumn: Abbreviation
-
-		annotation SummarizationSetBy = Automatic
-
 	column Points
 		dataType: double
 		lineageTag: 5dd068f3-df91-487a-9a1f-a57e0022f762
@@ -42,9 +34,10 @@ table PointsMap
 				let
 				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\pointSettings.xlsx"), null, true),
 				    ScoringTable_Table = Source{[Item="ScoringTable",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(ScoringTable_Table,{{"Category", type text}, {"Stat", type text}, {"Abbreviation", type text}, {"Points", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(ScoringTable_Table,{{"Category", type text}, {"Stat", type text}, {"Abbreviation", type text}, {"Points", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Abbreviation"})
 				in
-				    #"Changed Type"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

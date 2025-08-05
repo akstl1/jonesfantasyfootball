@@ -1,14 +1,6 @@
 table TeamsTable
 	lineageTag: fe9fd550-8518-4fbf-8b4d-710dd1b4fa6a
 
-	column 'Manager Name'
-		dataType: string
-		lineageTag: a82ee3b8-459a-4973-9f1a-5c8bef25decc
-		summarizeBy: none
-		sourceColumn: Manager Name
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Fantasy Name'
 		dataType: string
 		lineageTag: 82da9a19-a522-4ada-9ccc-82072b71a48b
@@ -49,9 +41,10 @@ table TeamsTable
 				let
 				    Source = Excel.Workbook(File.Contents("C:\Users\allan\Documents\DS_Projects\Fantasy Football 24\fantasyTeams_df.xlsx"), null, true),
 				    TeamsTable_Table = Source{[Item="TeamsTable",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(TeamsTable_Table,{{"Manager Name", type text}, {"Fantasy Name", type text}, {"Division", type text}, {"Image", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(TeamsTable_Table,{{"Manager Name", type text}, {"Fantasy Name", type text}, {"Division", type text}, {"Image", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Manager Name"})
 				in
-				    #"Changed Type"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
