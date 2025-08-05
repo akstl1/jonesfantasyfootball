@@ -523,6 +523,20 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "87d6e078d788b4f63083",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Image"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

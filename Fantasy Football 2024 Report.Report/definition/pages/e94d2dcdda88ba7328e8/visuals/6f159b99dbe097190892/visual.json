@@ -108,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'CNC vs. MM'"
+                                "Value": "'OU vs. THAr'"
                               }
                             }
                           ]
@@ -382,6 +382,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "553685deafb885964129",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

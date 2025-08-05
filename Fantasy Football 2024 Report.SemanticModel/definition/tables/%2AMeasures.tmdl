@@ -4,7 +4,7 @@ table *Measures
 	measure 'Away Points' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Away")
 			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[FantasyTeam]=_team2,PlayerPointsStats[Week]=_wk)
 			return _result
@@ -24,7 +24,7 @@ table *Measures
 	measure 'Home Points' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Home")
 			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[FantasyTeam]=_team2,PlayerPointsStats[Week]=_wk)
 			return _result
@@ -187,7 +187,7 @@ table *Measures
 
 	measure 'League Ranking Up/Down' = ```
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _week2 = if(_week=1,_week,_week-1)
 			
 			var _team = max('Standings'[Team])
@@ -210,7 +210,7 @@ table *Measures
 
 	measure Record =
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
@@ -223,7 +223,7 @@ table *Measures
 
 	measure PF =
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
 			var _pf = CALCULATE(sum('MatchupsTable'[Actual Points]),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[Team]))
 			
@@ -235,7 +235,7 @@ table *Measures
 
 	measure PA =
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
 			var _opponent = calculate(max(MatchupsTable[Opponent]),MatchupsTable[Week]=_week, MatchupsTable[Team]=_team)
 			// SELECTEDVALUE('MatchupsTable'[Opponent])
@@ -249,7 +249,7 @@ table *Measures
 
 	measure Win% =
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
@@ -262,7 +262,7 @@ table *Measures
 
 	measure Streak =
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _team = SELECTEDVALUE('TeamsTable'[Fantasy Name])
 			var _result = CALCULATE(max(MatchupsTable[Result]),MatchupsTable[Week]=_week,MatchupsTable[Team]=_team)
 			var _resultAbbr = LEFT(_result,1)
@@ -281,7 +281,7 @@ table *Measures
 
 	measure 'League Ranking Up/Down ABS' = ```
 			
-			var _week = selectedvalue(Weeks[Week])
+			var _week = [Week]
 			var _week2 = if(_week=1,_week,_week-1)
 			
 			var _team = max('Standings'[Team])
@@ -304,7 +304,7 @@ table *Measures
 
 	measure 'Away Record' =
 			
-			var _week = selectedvalue(Weeks[Week])-1
+			var _week = [Week]-1
 			var _team = [Home Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
@@ -337,7 +337,7 @@ table *Measures
 
 	measure 'home Record' =
 			
-			var _week = selectedvalue(Weeks[Week])-1
+			var _week = [Week]-1
 			var _team = [Away Name]
 			var _wins = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Win", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
 			var _losses = CALCULATE(COUNTROWS('MatchupsTable'),'MatchupsTable'[Week]<=_week,'MatchupsTable'[Result]="Loss", 'MatchupsTable'[Team]=_team,ALLEXCEPT('MatchupsTable','MatchupsTable'[Week],'MatchupsTable'[result],'MatchupsTable'[Team]))
@@ -357,7 +357,7 @@ table *Measures
 	measure 'Projected Points' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(MatchupsTable[Projected Points]),MatchupsTable[Week]=_wk)
 			return _result
 		displayFolder: Box Scores
@@ -379,7 +379,7 @@ table *Measures
 	measure 'Offensive TDs' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"TD Pass","TD Reception","TD Rush"})
 			return _result
 		displayFolder: Box Scores
@@ -390,7 +390,7 @@ table *Measures
 	measure 'Offensive FGs' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, CONTAINSSTRING(PlayerPointsStats[Attribute],"FG Made"))
 			return _result
 		formatString: 0
@@ -400,7 +400,7 @@ table *Measures
 	measure 'Offensive Fumbles' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"Receiving Fumble","Rushing Fumble","Passer Fumble", "Interceptions Thrown"})
 			return _result
 		formatString: 0
@@ -410,7 +410,7 @@ table *Measures
 	measure 'Offensive Yards' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute] IN {"Receiving Yards","Rushing Yards","Passer Yards"})
 			return _result
 		formatString: 0
@@ -420,7 +420,7 @@ table *Measures
 	measure 'Defensive TDs' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]<>"TD Pass", PlayerPointsStats[Attribute]<>"TD Reception", PlayerPointsStats[Attribute]<>"TD Rush" ,CONTAINSSTRING(PlayerPointsStats[Attribute],"TD"))
 			return _result
 		formatString: 0
@@ -430,7 +430,7 @@ table *Measures
 	measure 'Defensive Interceptions' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]="Each Interception")
 			return _result
 		formatString: 0
@@ -440,7 +440,7 @@ table *Measures
 	measure 'Defensive Fumbles' =
 			
 			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _result = CALCULATE(sum(PlayerPointsStats[Value]),PlayerPointsStats[Week]=_wk, PlayerPointsStats[Attribute]="Each Fumble Recovered")
 			return _result
 		formatString: 0
@@ -460,7 +460,7 @@ table *Measures
 
 	measure 'narrative expected or unexpected result' =
 			
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
@@ -475,7 +475,7 @@ table *Measures
 
 	measure 'narrative actual result' =
 			
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
@@ -491,7 +491,7 @@ table *Measures
 
 	measure 'narrative projected result' =
 			
-			var _wk = SELECTEDVALUE(Weeks[Week])
+			var _wk = [Week]
 			var _team = [Home Name]
 			var _projected = CALCULATE(max(MatchupsTable[projected_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
 			var _actual = CALCULATE(max(MatchupsTable[actual_variance]),MatchupsTable[Week]=_wk, MatchupsTable[Team]=_team)
@@ -627,12 +627,13 @@ table *Measures
 			
 			var _home = [Home Name]
 			var _away = [Away Name]
+			var _week = [Week]
 			
-			var _homeWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			var _homeWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]<=_week && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
 			
-			var _awayWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			var _awayWins = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=_week && MatchupsTable[Result]="Win",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
 			
-			var _ties = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=SELECTEDVALUE(Weeks[Week]) && MatchupsTable[Result]="Tie",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
+			var _ties = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_away,MatchupsTable[Opponent]=_home), MatchupsTable[Week]<=_week && MatchupsTable[Result]="Tie",ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent],MatchupsTable[Result]))
 			
 			var _homeNum = if(_homeWins,_homeWins,0)
 			var _awayNum = if(_awayWins,_awayWins,0)
@@ -650,11 +651,11 @@ table *Measures
 			
 			var _home = [Home Name]
 			var _away = [Away Name]
-			// var _games = CALCULATE(COUNTROWS(MatchupsTable),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))
+			var _week = [Week]
 			
-			var _isplayoff = if(CALCULATE(max(MatchupsTable[matchup_type]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="WINNERS_BRACKET",1,0)
+			var _isplayoff = if(CALCULATE(max(MatchupsTable[matchup_type]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away) && MatchupsTable[Week]=_week,ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="WINNERS_BRACKET",1,0)
 			
-			var _winner = if(CALCULATE(max(MatchupsTable[Result]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]=SELECTEDVALUE(Weeks[Week]),ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="Win",_home,_away)
+			var _winner = if(CALCULATE(max(MatchupsTable[Result]),AND(MatchupsTable[Team]=_home,MatchupsTable[Opponent]=_away), MatchupsTable[Week]=_week,ALLEXCEPT(MatchupsTable,MatchupsTable[Week],MatchupsTable[Team],MatchupsTable[Opponent]))="Win",_home,_away)
 			
 			var _round = SWITCH(TRUE(),
 			                    SELECTEDVALUE(Weeks[Week])=15," 1st ",
@@ -677,7 +678,7 @@ table *Measures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure SelectedTeam = SELECTEDVALUE(MatchupsTable[Team])
-		displayFolder: Season Team Summary
+		displayFolder: .General
 		lineageTag: 1bcd75af-adca-4353-97ad-067e27a1eeb4
 
 	measure 'Close games' =
@@ -776,7 +777,7 @@ table *Measures
 
 	measure 'Top Performer 1' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=1)
@@ -786,7 +787,7 @@ table *Measures
 
 	measure 'Top Performer 2' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=2)
@@ -796,7 +797,7 @@ table *Measures
 
 	measure 'Top Performer 3' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _player = CALCULATE(max(TopPerformers[Name Abbrev]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=3)
@@ -806,7 +807,7 @@ table *Measures
 
 	measure 'Top Performer 1 Points' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=1)
@@ -816,7 +817,7 @@ table *Measures
 
 	measure 'Top Performer 2 Points' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=2)
@@ -826,7 +827,7 @@ table *Measures
 
 	measure 'Top Performer 3 Points' =
 			
-			var _week = SELECTEDVALUE(Weeks[Week])
+			var _week = [Week]
 			var _team = SWITCH(TRUE(),
 			                    SELECTEDVALUE(MatchupsTable[Home_Or_Away])="Home",[Home Name],[Away Name])
 			var _points = CALCULATE(max(TopPerformers[Actual]),TopPerformers[FantasyTeam]=_team,TopPerformers[Week]=_week,TopPerformers[Rank]=3)
@@ -1134,6 +1135,11 @@ table *Measures
 		lineageTag: 2f8b8cbd-92fe-4975-a279-83aefca381a9
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Week = SELECTEDVALUE(Weeks[Week])
+		formatString: 0
+		displayFolder: .General
+		lineageTag: 43072598-3838-4706-9bb5-b851d4c9baf7
 
 	column *Measures
 		dataType: string
