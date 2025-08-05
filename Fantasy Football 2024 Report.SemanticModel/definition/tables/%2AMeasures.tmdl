@@ -1,25 +1,6 @@
 table *Measures
 	lineageTag: c5bdf72e-8ae1-460d-931d-1c51e532acd9
 
-	measure Team1 =
-			
-			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
-			var _number = 1
-			var _result = CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
-			return _result
-		displayFolder: Scoreboard
-		lineageTag: 67ccd857-4617-4c81-a534-91bc8509ebf4
-
-	measure Team2 =
-			
-			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _matchup = SELECTEDVALUE(MatchupsTable[Matchup Header])
-			var _number = 2
-			return CALCULATE(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Matchup Header]=_matchup,MatchupsTable[Number]=_number)
-		displayFolder: Scoreboard
-		lineageTag: 4330831d-2e92-402d-a6bc-3defde965dbd
-
 	measure 'Away Points' =
 			
 			var _id = min(MatchupsTable[ID])
@@ -106,15 +87,6 @@ table *Measures
 		displayFolder: Draft
 		lineageTag: a0eb1c3e-4dc2-4f3a-ac5b-44d892ab05bf
 
-	measure DraftPlayerPosition =
-			
-			var _team = SELECTEDVALUE(TeamsTable[Fantasy Name])
-			var _round = SELECTEDVALUE(Draft[Round])
-			var _player = calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
-			return calculate(max(PlayerPointsStats[Position]),PlayerPointsStats[Week]=1,PlayerPointsStats[Player Name]=_player)
-		displayFolder: Draft
-		lineageTag: 4d3f3707-5b60-4302-9f69-a27fbc9807a0
-
 	measure DraftName2 =
 			
 			var _team = SELECTEDVALUE(Draft[Team])
@@ -168,21 +140,6 @@ table *Measures
 		formatString: 0
 		displayFolder: Draft
 		lineageTag: 54ead8fd-7ec2-45f5-acf2-d8bd14e61f7c
-
-	measure DraftPick = SELECTEDVALUE(Draft[Pick])
-		formatString: 0
-		displayFolder: Draft
-		lineageTag: 44836456-32c6-43e0-80f8-98145649f31e
-
-	measure DraftPlayerName = ```
-			
-			var _team = [DraftTeam]
-			var _round = [DraftRound]
-			return calculate(max(Draft[Player]),Draft[Team]=_team,Draft[Round]=_round)
-			
-			```
-		displayFolder: Draft
-		lineageTag: f9472f4c-c095-4229-883b-8c6860f007c5
 
 	measure DraftRoundText = "Round: "&[DraftRound]
 		displayFolder: Draft
@@ -263,11 +220,6 @@ table *Measures
 			return _result
 		displayFolder: Box Scores
 		lineageTag: 712cd4b9-e785-494b-8b7f-d2afb33305fc
-
-	measure week = SELECTEDVALUE(Weeks[Week])
-		formatString: 0
-		displayFolder: Scoreboard
-		lineageTag: 74a1cba1-46fb-4428-8aa4-a0df323d25f0
 
 	measure PF =
 			
@@ -395,18 +347,6 @@ table *Measures
 			return _result
 		displayFolder: Box Scores
 		lineageTag: ba6c9ad5-2d87-4afc-b266-60db1ffecac9
-
-	measure 'Tornado Points' =
-			
-			var _id = min(MatchupsTable[ID])
-			var _wk = SELECTEDVALUE(Weeks[Week])
-			var _team2 = calculate(max(MatchupsTable[Team]),MatchupsTable[Week]=_wk,MatchupsTable[Home_Or_Away]="Home")
-			var _result = CALCULATE(sum(PlayerPointsStats[TotalPoints]),PlayerPointsStats[Week]=_wk)
-			return _result
-		displayFolder: Box Scores
-		lineageTag: 847dc8a5-d4f0-465b-99de-0dd9091df5b6
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Tornado Team 2 points' = -[Away Points]
 		displayFolder: Box Scores
@@ -820,11 +760,6 @@ table *Measures
 		displayFolder: Power Ranking Chart
 		lineageTag: 0ebbf1df-fecb-4d72-83e6-af4e5858532b
 
-	measure 'Power Ranking Start Dummy' = CALCULATE(max('Power Rankings'[Rank]),'Power Rankings'[Week]=1)
-		formatString: 0
-		displayFolder: Power Ranking Chart
-		lineageTag: 789fb892-b274-42af-ad5e-894e4091b44e
-
 	measure 'Power Ranking End' =
 			
 			var _wk = CALCULATE(max(PlayerPointsStats[Week]),ALL(PlayerPointsStats))
@@ -833,16 +768,6 @@ table *Measures
 		formatString: 0
 		displayFolder: Power Ranking Chart
 		lineageTag: 432ad601-fa3c-466d-92b8-412d8f14a125
-
-	measure 'Positive Arrow' = if([Power Ranking End]>[Power Ranking Start],[Power Ranking End])
-		formatString: 0
-		displayFolder: Power Ranking Chart
-		lineageTag: 055b9bc0-bc33-452b-8dda-96def325ac65
-
-	measure 'Negative Arrow' = if([Power Ranking End]<[Power Ranking Start],[Power Ranking End])
-		formatString: 0
-		displayFolder: Power Ranking Chart
-		lineageTag: ad9eb144-e084-404a-8b42-d0decfcbd4d8
 
 	measure 'Power Ranking Color Indicator' = [Power Ranking End] - [Power Ranking Start]
 		formatString: 0

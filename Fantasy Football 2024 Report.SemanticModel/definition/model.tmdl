@@ -15,7 +15,7 @@ annotation PBI_QueryOrder = ["MatchupsTable","PlayersTable","PlayerPointsStats",
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.145.1262.0 (25.07)+10bdeda5ab0db954b2cf824e7a117ad7cee97f88
+annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
 
 annotation PBI_ProTooling = ["DevMode"]
 
