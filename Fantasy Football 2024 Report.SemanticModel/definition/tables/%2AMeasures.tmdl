@@ -1141,24 +1141,20 @@ table *Measures
 		displayFolder: .General
 		lineageTag: 43072598-3838-4706-9bb5-b851d4c9baf7
 
-	column *Measures
-		dataType: string
-		isHidden
-		lineageTag: f1102372-ef72-48d0-b927-5b70c90d236d
-		summarizeBy: none
-		sourceColumn: *Measures
+	measure 'Playoff Home' = [Home Name] & " " & [Home Points]
+		lineageTag: 29b5f2ce-1e5f-43c6-b081-fc3acec84df5
 
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
+	measure 'Playoff Away' = [Away Name] & " " & [Away Points]
+		lineageTag: e1c6104a-7c6b-4498-bc81-5492048dd1ea
 
 	partition *Measures = m
 		mode: import
 		source =
 				let
-				    Source = ""
+				    Source = "",
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"*Measures"})
 				in
-				    Source
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

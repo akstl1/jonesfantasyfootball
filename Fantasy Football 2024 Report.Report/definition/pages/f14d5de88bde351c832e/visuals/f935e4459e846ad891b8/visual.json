@@ -7,7 +7,7 @@
     "z": 19000,
     "height": 82.388059701492537,
     "width": 1225.0746268656717,
-    "tabOrder": 16000
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -380,20 +380,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6b15144124b64916301c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Acronym"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

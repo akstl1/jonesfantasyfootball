@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 257.14285714285717,
     "width": 454.8768472906404,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -31,9 +31,6 @@
               "displayName": "Result"
             }
           ]
-        },
-        "Size": {
-          "projections": []
         },
         "X": {
           "projections": [
@@ -798,51 +795,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "706c34522d046360d093",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Legend"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ab07ff16db6a6bda04c0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "projected_variance"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0e9b79a355179afd9267",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "actual_variance"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

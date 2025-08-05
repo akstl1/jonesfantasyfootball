@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 260,
     "width": 334,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",
@@ -756,37 +756,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a3c235d616ceabd91269",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Weeks"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "29f29ac961a55d452610",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Point Performance Summary"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

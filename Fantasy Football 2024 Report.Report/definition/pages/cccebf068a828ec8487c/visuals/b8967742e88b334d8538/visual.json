@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 317.4384236453202,
     "width": 609.16256157635473,
-    "tabOrder": 14000
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "tableEx",
@@ -777,132 +777,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "ec1480bd26c810aadd20",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Standings"
-              }
-            },
-            "Property": "League_Rank"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "86ab9a70551e18da1129",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3999300636aa544b7902",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "League Ranking Up/Down ABS"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fad5bb4a0cd9295a3b68",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Record"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b25762e30e53ea6ae308",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Streak"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b4c73482d217e104a08a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Win%"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4411aa8412a33458653b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "PF"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "728578f5c33e441709ee",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "PA"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4dcd34131829a9a9da68",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Net Pts"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

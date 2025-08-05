@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 279,
     "width": 377,
-    "tabOrder": 28000
+    "tabOrder": 27000
   },
   "visual": {
     "visualType": "barChart",
@@ -445,48 +445,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d1a00913e30cb0560b6e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PointsMap"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9d71ab427988373e71d3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Tornado Team 2 points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "765354410af3d5e012ce",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Points"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

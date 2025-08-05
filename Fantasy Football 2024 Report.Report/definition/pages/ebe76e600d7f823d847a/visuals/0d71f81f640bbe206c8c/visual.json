@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 421.87723907332219,
     "width": 1213.0499164079292,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "changeChart63B1E8C33CBE4BC6913014096224EE2C",
@@ -366,51 +366,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a372a2810ce8a6a5bd8a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking Start"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "98cef0caa402c2e44f12",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking End"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3177e38853bd0d4e30eb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 24000,
     "height": 135,
     "width": 389,
-    "tabOrder": 21000
+    "tabOrder": 20000
   },
   "visual": {
     "visualType": "tableEx",
@@ -492,34 +492,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "74f4b744189ad5bb7839",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Player Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f4876e7aefce368b7617",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Team City"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -7,7 +7,7 @@
     "z": 15000,
     "height": 259.80295566502463,
     "width": 454.8768472906404,
-    "tabOrder": 14000
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "tableEx",
@@ -484,67 +484,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "2f7f45ef7b905df22611",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4e1f20ec27d623418e70",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Opponent"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b0b3a077367998d3cb81",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "MatchupsTable"
-                  }
-                },
-                "Property": "actual_variance"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "88cd8726645a98d067f0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Result"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
