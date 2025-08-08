@@ -40,7 +40,7 @@ def weeklyStats(curr_week = curr_week):
     playerStatsSingleWeek(current_wk=curr_week)
     return None
 
-weeklyStats(15)
+# weeklyStats()
 
 ###############################
 ###############################
