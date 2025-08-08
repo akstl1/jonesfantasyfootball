@@ -108,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'OU vs. THAr'"
+                                "Value": "'MM vs. Bye'"
                               }
                             }
                           ]
@@ -382,6 +382,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "8865abf90143cd7c4130",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

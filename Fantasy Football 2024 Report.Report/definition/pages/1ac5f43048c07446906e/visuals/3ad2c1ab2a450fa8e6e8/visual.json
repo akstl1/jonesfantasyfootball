@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "3ad2c1ab2a450fa8e6e8",
   "position": {
-    "x": 554.32835820895468,
-    "y": 222.09919707992256,
+    "x": 554.32835820895525,
+    "y": 225.67164179104478,
     "z": 15000,
     "height": 61.7910447761194,
     "width": 193.43283582089552,
@@ -754,7 +754,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "15L"
+                          "Value": "17L"
                         }
                       }
                     ]
@@ -767,7 +767,7 @@
         "howCreated": "User"
       },
       {
-        "name": "3f0211d1d1a349458993",
+        "name": "0593563e63bb7d979983",
         "field": {
           "Measure": {
             "Expression": {

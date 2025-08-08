@@ -732,6 +732,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "5d46b5708cb58c915481",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Name"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

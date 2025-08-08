@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "952fe9eef959cfb5d93e",
+  "name": "fd9d459d28805bde8462",
   "position": {
-    "x": 184.220730797912,
-    "y": 154.63087248322148,
-    "z": 18000,
-    "height": 121.22296793437734,
-    "width": 734.97390007457125,
-    "tabOrder": 18000
+    "x": 1011.044776119403,
+    "y": 425.37313432835822,
+    "z": 39000,
+    "height": 57.3134328358209,
+    "width": 216.71641791044775,
+    "tabOrder": 39000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,16 +23,45 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Playoff Home"
+                  "Property": "Home Points"
                 }
               },
-              "queryRef": "*Measures.Playoff Home",
-              "nativeQueryRef": "Playoff Home"
+              "queryRef": "*Measures.Home Points",
+              "nativeQueryRef": "Home Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Home Name"
+                }
+              },
+              "queryRef": "*Measures.Home Name",
+              "nativeQueryRef": "Home Name"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "*Measures"
+                  }
+                },
+                "Property": "Home Points"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -119,13 +148,62 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "45D"
+                  "Value": "15D"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Points"
+          }
+        },
+        {
+          "properties": {
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
           }
         }
       ],
@@ -155,6 +233,25 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
           }
         }
       ],
@@ -220,6 +317,50 @@
             "id": "default"
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            },
+            "leftMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "rightMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -256,7 +397,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -276,7 +417,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -291,6 +432,40 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -331,8 +506,7 @@
             "Property": "Home Points"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "695a4f32cb1a4cd07cf8",
@@ -532,7 +706,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "1L"
+                          "Value": "4L"
                         }
                       }
                     ]
@@ -587,7 +761,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "16L"
+                          "Value": "15L"
                         }
                       }
                     ]
@@ -598,6 +772,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "29741d064b1c08c0a72a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Name"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

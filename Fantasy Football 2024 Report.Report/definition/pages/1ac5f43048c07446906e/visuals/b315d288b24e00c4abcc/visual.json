@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "b16114100ef7906c79e3",
+  "name": "b315d288b24e00c4abcc",
   "position": {
-    "x": 65.861297539149888,
-    "y": 608.97837434750193,
-    "z": 15000,
-    "height": 89.724086502609993,
-    "width": 272.0357941834452,
-    "tabOrder": 15000
+    "x": 1011.044776119403,
+    "y": 232.83582089552237,
+    "z": 38000,
+    "height": 61.7910447761194,
+    "width": 216.71641791044775,
+    "tabOrder": 38000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -26,8 +26,22 @@
                   "Property": "Away Points"
                 }
               },
-              "queryRef": "*Measures.Scoreboard Team1 Points",
-              "nativeQueryRef": "Scoreboard Team1 Points"
+              "queryRef": "*Measures.Away Points",
+              "nativeQueryRef": "Away Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Away Name"
+                }
+              },
+              "queryRef": "*Measures.Away Name",
+              "nativeQueryRef": "Away Name"
             }
           ]
         }
@@ -90,13 +104,6 @@
                 }
               }
             },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'top'"
-                }
-              }
-            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -110,50 +117,17 @@
                   "Value": "60L"
                 }
               }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "transparency": {
+            },
+            "verticalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            },
-            "imageUrl": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Away Image"
-                }
-              }
-            },
-            "size": {
-              "expr": {
-                "Literal": {
-                  "Value": "60L"
+                  "Value": "'top'"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
+            "id": "default"
           }
         }
       ],
@@ -174,29 +148,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Away Text Color"
-                    }
-                  }
+                  "Value": "15D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
+            "id": "default"
           }
         },
         {
@@ -204,13 +162,69 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "45D"
+                  "Value": "15D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
                 }
               }
             }
           },
           "selector": {
-            "id": "default"
+            "metadata": "*Measures.Home Points"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Away Points"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Away Name"
           }
         }
       ],
@@ -220,48 +234,13 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Away Name"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Away Text Color"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
           }
         }
       ],
@@ -307,23 +286,6 @@
           }
         }
       ],
-      "referenceLabel": [
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "*Measures.Scoreboard Team1 Points",
-            "id": "field-758c8ea4-0312-c992-04ec-cbcb6e1af5e1",
-            "order": 0
-          }
-        }
-      ],
       "accentBar": [
         {
           "properties": {
@@ -356,101 +318,21 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 3,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "*Measures"
-                                    }
-                                  },
-                                  "Property": "Points Variance"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#1CB215'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "*Measures"
-                                    }
-                                  },
-                                  "Property": "Points Variance"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#CA1D1D'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "25D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
-          }
         }
       ],
-      "spacing": [
+      "padding": [
         {
           "properties": {
-            "verticalSpacing": {
+            "paddingSelection": {
               "expr": {
                 "Literal": {
-                  "Value": "5L"
+                  "Value": "'Narrow'"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
+            "id": "default"
           }
         }
       ]
@@ -459,6 +341,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'sdfs'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -466,10 +355,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "true"
                 }
               }
             }
@@ -482,7 +371,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -495,7 +391,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -503,6 +399,47 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -515,7 +452,39 @@
   "filterConfig": {
     "filters": [
       {
+        "name": "4e65499881cd600b323d",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f072f8dd5f4f86e5200c",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Points"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
         "name": "695a4f32cb1a4cd07cf8",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -531,6 +500,7 @@
       },
       {
         "name": "679b1a413ade73a8d9ef",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -653,6 +623,7 @@
       },
       {
         "name": "23f02d19db8b79a957fd",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -668,6 +639,7 @@
       },
       {
         "name": "bb60c9607d9eb75e8175",
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -708,7 +680,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "2L"
+                          "Value": "3L"
                         }
                       }
                     ]
@@ -721,7 +693,8 @@
         "howCreated": "User"
       },
       {
-        "name": "75bae09d864931fe9b4e",
+        "name": "87d90ae8685cda09befc",
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -774,6 +747,7 @@
         },
         "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

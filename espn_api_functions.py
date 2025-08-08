@@ -307,7 +307,7 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
             rbNum = 1
             beNum = 1
             for player in range(17):
-                if box_score[matchup].away_team==0:
+                if box_score[matchup].away_team==0 and i =='away':
                     pass
                 else:
                     empty=0
@@ -862,7 +862,7 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                 rbNum = 1
                 beNum = 1
                 for player in range(17):
-                    if box_score[matchup].away_team==0:
+                    if box_score[matchup].away_team==0 and i =='away':
                         pass
                     else:
                         empty=0

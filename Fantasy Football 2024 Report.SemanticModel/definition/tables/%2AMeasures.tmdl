@@ -1147,14 +1147,21 @@ table *Measures
 	measure 'Playoff Away' = [Away Name] & " " & [Away Points]
 		lineageTag: e1c6104a-7c6b-4498-bc81-5492048dd1ea
 
+	column *Measures
+		dataType: string
+		lineageTag: 876a4729-d2b3-4031-bcfa-9416fd23c840
+		summarizeBy: none
+		sourceColumn: *Measures
+
+		annotation SummarizationSetBy = Automatic
+
 	partition *Measures = m
 		mode: import
 		source =
 				let
-				    Source = "",
-				    #"Removed Columns" = Table.RemoveColumns(Source,{"*Measures"})
+				    Source = ""
 				in
-				    #"Removed Columns"
+				    Source
 
 	annotation PBI_NavigationStepName = Navigation
 

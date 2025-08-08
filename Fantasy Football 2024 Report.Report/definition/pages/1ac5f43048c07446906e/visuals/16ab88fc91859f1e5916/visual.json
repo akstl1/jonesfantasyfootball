@@ -745,20 +745,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "b159a04328feb268fe7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Name"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

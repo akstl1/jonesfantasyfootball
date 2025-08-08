@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "4f8e1a4a6d8a77dc68cb",
+  "name": "c2d715a7d1017edb8ebc",
   "position": {
-    "x": 363.58208955223881,
-    "y": 520.29850746268653,
-    "z": 16000,
-    "height": 86.865671641791039,
-    "width": 272.23880597014926,
-    "tabOrder": 16000
+    "x": 1011.044776119403,
+    "y": 98.507462686567166,
+    "z": 37000,
+    "height": 59.1044776119403,
+    "width": 216.71641791044775,
+    "tabOrder": 37000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,25 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Away Points"
+                  "Property": "Home Points"
                 }
               },
-              "queryRef": "*Measures.Scoreboard Team1 Points",
-              "nativeQueryRef": "Scoreboard Team1 Points"
+              "queryRef": "*Measures.Home Points",
+              "nativeQueryRef": "Home Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Home Name"
+                }
+              },
+              "queryRef": "*Measures.Home Name",
+              "nativeQueryRef": "Home Name"
             }
           ]
         }
@@ -42,7 +56,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Away Points"
+                "Property": "Home Points"
               }
             },
             "direction": "Descending"
@@ -90,13 +104,6 @@
                 }
               }
             },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'top'"
-                }
-              }
-            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -110,50 +117,17 @@
                   "Value": "60L"
                 }
               }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "transparency": {
+            },
+            "verticalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            },
-            "imageUrl": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Away Image"
-                }
-              }
-            },
-            "size": {
-              "expr": {
-                "Literal": {
-                  "Value": "60L"
+                  "Value": "'top'"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
+            "id": "default"
           }
         }
       ],
@@ -174,43 +148,62 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Away Text Color"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "45D"
+                  "Value": "15D"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Points"
+          }
+        },
+        {
+          "properties": {
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
           }
         }
       ],
@@ -220,48 +213,13 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Away Name"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Away Text Color"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
           }
         }
       ],
@@ -275,6 +233,25 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
           }
         }
       ],
@@ -304,23 +281,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "referenceLabel": [
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "*Measures.Scoreboard Team1 Points",
-            "id": "field-758c8ea4-0312-c992-04ec-cbcb6e1af5e1",
-            "order": 0
           }
         }
       ],
@@ -356,101 +316,49 @@
           "selector": {
             "id": "default"
           }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
         },
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 3,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "*Measures"
-                                    }
-                                  },
-                                  "Property": "Points Variance"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#1CB215'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "*Measures"
-                                    }
-                                  },
-                                  "Property": "Points Variance"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#CA1D1D'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
                 }
               }
             },
-            "transparency": {
+            "rightMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
+                  "Value": "0L"
+                }
+              }
+            },
+            "leftMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team1 Points"
+            "metadata": "*Measures.Home Name"
           }
         }
       ]
@@ -459,6 +367,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'sdfs'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -466,10 +381,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "true"
                 }
               }
             }
@@ -482,7 +397,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -495,7 +417,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -503,6 +425,47 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -515,7 +478,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "41c912ac11157aeefec6",
+        "name": "4e65499881cd600b323d",
         "ordinal": 0,
         "field": {
           "Measure": {
@@ -527,10 +490,11 @@
             "Property": "Away Points"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
-        "name": "ba45f7f46f8eb01133ee",
+        "name": "f072f8dd5f4f86e5200c",
         "ordinal": 1,
         "field": {
           "Measure": {
@@ -542,8 +506,7 @@
             "Property": "Home Points"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "695a4f32cb1a4cd07cf8",
@@ -743,7 +706,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "1L"
+                          "Value": "3L"
                         }
                       }
                     ]
@@ -756,7 +719,7 @@
         "howCreated": "User"
       },
       {
-        "name": "e5e7761321124b8353f0",
+        "name": "87d90ae8685cda09befc",
         "ordinal": 6,
         "field": {
           "Column": {
@@ -798,7 +761,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "16L"
+                          "Value": "15L"
                         }
                       }
                     ]

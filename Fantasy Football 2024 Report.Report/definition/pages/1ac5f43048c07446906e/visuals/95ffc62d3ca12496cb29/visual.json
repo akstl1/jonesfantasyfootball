@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "85d0e4f4f181a9ba880b",
+  "name": "95ffc62d3ca12496cb29",
   "position": {
-    "x": 65.861297539149888,
-    "y": 430.48471290082028,
-    "z": 8000,
-    "height": 89.724086502609993,
-    "width": 272.0357941834452,
-    "tabOrder": 8000
+    "x": 587.46268656716416,
+    "y": 465.67164179104475,
+    "z": 43000,
+    "height": 48.35820895522388,
+    "width": 193.43283582089552,
+    "tabOrder": 43000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,25 @@
                       "Entity": "*Measures"
                     }
                   },
-                  "Property": "Home Points"
+                  "Property": "Away Points"
                 }
               },
-              "queryRef": "*Measures.Scoreboard Team2 Points",
-              "nativeQueryRef": "Scoreboard Team2 Points"
+              "queryRef": "*Measures.Away Points",
+              "nativeQueryRef": "Away Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "*Measures"
+                    }
+                  },
+                  "Property": "Away Name"
+                }
+              },
+              "queryRef": "*Measures.Away Name",
+              "nativeQueryRef": "Away Name"
             }
           ]
         }
@@ -42,7 +56,7 @@
                     "Entity": "*Measures"
                   }
                 },
-                "Property": "Home Points"
+                "Property": "Away Points"
               }
             },
             "direction": "Descending"
@@ -90,13 +104,6 @@
                 }
               }
             },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'top'"
-                }
-              }
-            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -110,39 +117,6 @@
                   "Value": "60L"
                 }
               }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "imageUrl": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Home Image"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "size": {
-              "expr": {
-                "Literal": {
-                  "Value": "60L"
-                }
-              }
             },
             "verticalAlignment": {
               "expr": {
@@ -153,7 +127,7 @@
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team2 Points"
+            "id": "default"
           }
         }
       ],
@@ -174,29 +148,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Home Text Color"
-                    }
-                  }
+                  "Value": "12D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team2 Points"
+            "id": "default"
           }
         },
         {
@@ -204,13 +162,62 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "45D"
+                  "Value": "15D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
                 }
               }
             }
           },
           "selector": {
-            "id": "default"
+            "metadata": "*Measures.Home Points"
+          }
+        },
+        {
+          "properties": {
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Away Points"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Away Name"
           }
         }
       ],
@@ -220,55 +227,13 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "*Measures"
-                    }
-                  },
-                  "Property": "Home Name"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "*Measures"
-                        }
-                      },
-                      "Property": "Home Text Color"
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team2 Points"
           }
         }
       ],
@@ -282,6 +247,25 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Home Name"
           }
         }
       ],
@@ -346,149 +330,49 @@
           "selector": {
             "id": "default"
           }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
         },
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "*Measures"
-                                        }
-                                      },
-                                      "Property": "Points Variance"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "*Measures"
-                                        }
-                                      },
-                                      "Property": "Points Variance"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "500D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#1CB215'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "*Measures"
-                                        }
-                                      },
-                                      "Property": "Points Variance"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "-500D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "*Measures"
-                                        }
-                                      },
-                                      "Property": "Points Variance"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#CA1D1D'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
                 }
               }
             },
-            "transparency": {
+            "leftMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
+                  "Value": "0L"
+                }
+              }
+            },
+            "rightMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "*Measures.Scoreboard Team2 Points"
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "*Measures.Scoreboard Team2 Points"
+            "metadata": "*Measures.Home Name"
           }
         }
       ]
@@ -497,6 +381,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'sdfs'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -504,10 +395,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "true"
                 }
               }
             }
@@ -520,7 +411,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -533,7 +431,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -541,6 +439,47 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -553,7 +492,39 @@
   "filterConfig": {
     "filters": [
       {
+        "name": "4e65499881cd600b323d",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f072f8dd5f4f86e5200c",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Points"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
         "name": "695a4f32cb1a4cd07cf8",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -569,6 +540,7 @@
       },
       {
         "name": "679b1a413ade73a8d9ef",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -691,6 +663,7 @@
       },
       {
         "name": "23f02d19db8b79a957fd",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -706,6 +679,7 @@
       },
       {
         "name": "bb60c9607d9eb75e8175",
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -746,7 +720,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "2L"
+                          "Value": "1L"
                         }
                       }
                     ]
@@ -759,7 +733,8 @@
         "howCreated": "User"
       },
       {
-        "name": "75bae09d864931fe9b4e",
+        "name": "87d90ae8685cda09befc",
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -800,7 +775,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "15L"
+                          "Value": "17L"
                         }
                       }
                     ]
@@ -812,6 +787,7 @@
         },
         "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

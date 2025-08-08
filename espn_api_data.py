@@ -34,13 +34,13 @@ def startup():
 ###############################
 
 def weeklyStats(curr_week = curr_week):
-    powerRankingsSingleWeek(current_wk=curr_week)
-    matchupsSingleWeek(current_wk=curr_week)
-    powerRankingsSingleWeek(current_wk=curr_week)
+    # powerRankingsSingleWeek(current_wk=curr_week)
+    # matchupsSingleWeek(current_wk=curr_week)
+    # powerRankingsSingleWeek(current_wk=curr_week)
     playerStatsSingleWeek(current_wk=curr_week)
     return None
 
-# weeklyStats()
+weeklyStats(15)
 
 ###############################
 ###############################
