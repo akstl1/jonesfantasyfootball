@@ -911,30 +911,42 @@ table *Measures
 		lineageTag: 104cf399-a297-43e7-a399-5e3614804159
 
 	measure 'Expected Wins' = ```
-			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Win") 
+			
+			var _result =  CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Win") 
+			return SWITCH(TRUE(),
+			                _result=0, "No Expected Wins",
+			                _result & " Expected Wins, with an average margin of victory of " & [Unexpected Win Margin] & " pts")
 			```
-		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: f8bd58d6-decf-4639-b5c4-90f7edb1a019
 
 	measure 'Expected Losses' = ```
-			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Loss") 
+			
+			var _result =  CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Loss") 
+			return SWITCH(TRUE(),
+			                _result=0, "No Expected Losses",
+			                _result & " Expected Losses, with an average loss margin of " & [Expected Loss Margin] & " pts")
 			```
-		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: 2c740487-5075-441c-ab55-3f30aaaf7717
 
 	measure 'Unexpected Wins' = ```
-			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Win") 
+			
+			var _result =   CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Win") 
+			return SWITCH(TRUE(),
+			                _result=0, "No Unexpected Wins",
+			                _result & " Unexpected Wins, with an average margin of victory of " & [Unexpected Win Margin] & " pts")
 			```
-		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: 6395451d-0941-4d13-8d81-33a8cb5ee936
 
 	measure 'Unexpected Losses' = ```
-			CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Loss") 
+			
+			var _result =  CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Unexpected Loss") 
+			return SWITCH(TRUE(),
+			                _result=0, "No Unexpected Losses",
+			                _result & " Unexpected Losses, with an average loss margin of " & [Unexpected Loss Margin] & " pts")
 			```
-		formatString: 0
 		displayFolder: Season Team Summary
 		lineageTag: 80478f54-9fe8-4326-886e-42701cc5078c
 
@@ -1064,77 +1076,33 @@ table *Measures
 			
 			var _numberOver = CALCULATE(COUNTROWS(SpiderChart),SpiderChart[FantasyTeam]=_team,SpiderChart[Condensed Rank]>=5)
 			var _numberUnder = CALCULATE(COUNTROWS(SpiderChart),SpiderChart[FantasyTeam]=_team,SpiderChart[Condensed Rank]<=2)
-			var _numberMid = CALCULATE(COUNTROWS(SpiderChart),SpiderChart[FantasyTeam]=_team,SpiderChart[Condensed Rank]>2,SpiderChart[Condensed Rank]<5)
 			
 			var _partialOver = if(_rushing>4,"rushing, ",BLANK()) & if(_receiving>4,"receiving, ",BLANK()) & if(_passing>4,"passing, ",BLANK()) & if(_kicking>4,"kicking, ",BLANK()) & if(_d>4,"defense, ",BLANK())
 			var _partialUnder = if(_rushing<3,"rushing, ",BLANK()) & if(_receiving<3,"receiving, ",BLANK()) & if(_passing<3,"passing, ",BLANK()) & if(_kicking<3,"kicking, ",BLANK()) & if(_d<3,"defense, ",BLANK())
-			var _partialMid = if(_rushing=3||_rushing=4,"rushing, ",BLANK()) & if(_receiving=3||_receiving=4,"receiving, ",BLANK()) & if(_passing=3||_passing=4,"passing, ",BLANK()) & if(_kicking=3||_kicking=4,"kicking, ",BLANK()) & if(_d=3||_d=4,"defense, ",BLANK())
 			
 			var _partialOverCount = if(_rushing>4,1) + if(_receiving>4,1) + if(_passing>4,1) + if(_kicking>4,1) + if(_d>4,1)
 			var _partialOverText = SWITCH(TRUE(),
-			                            _partialOverCount=1, SUBSTITUTE(_partialOver,", "," "),
-			                            _partialOverCount=2, SUBSTITUTE(SUBSTITUTE(_partialOver,", "," and ",1),",",""),
-			                            SUBSTITUTE(SUBSTITUTE(_partialOver,", "," ",_partialOverCount),", ",", and ",_partialOverCount-1)
+			                            _partialOverCount=1, SUBSTITUTE(_partialOver,", ",""),
+			                            _partialOverCount=2, SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(_partialOver,", "," and ",1),",","")," ","",3),
+			                            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(_partialOver,", "," ",_partialOverCount),", ",", and ",_partialOverCount-1)," ","",_partialOverCount+1)
 			)
 			
 			var _partialUnderCount = if(_rushing<3,1) + if(_receiving<3,1) + if(_passing<3,1) + if(_kicking<3,1) + if(_d<3,1)
 			var _partialUnderText = SWITCH(TRUE(),
 			                            _partialUnderCount=1, SUBSTITUTE(_partialUnder,", "," "),
-			                            _partialUnderCount=2, SUBSTITUTE(SUBSTITUTE(_partialUnder,", "," and ",1),",",""),
+			                            _partialUnderCount=2, SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(_partialUnder,", "," and ",1),",","")," ","",3),
 			                            SUBSTITUTE(SUBSTITUTE(_partialUnder,", "," ",_partialUnderCount),", ",", and ",_partialUnderCount-1)
 			)
 			
-			var _partialMidCount = if(_rushing=3||_rushing=4,1) + if(_receiving=3||_receiving=4,1) + if(_passing=3||_passing=4,1) + if(_kicking=3||_kicking=4,1) + if(_d=3||_d=4,1)
-			var _partialMidText = SWITCH(TRUE(),
-			                            _partialMidCount=1, SUBSTITUTE(_partialMid,", "," "),
-			                            _partialMidCount=2, SUBSTITUTE(SUBSTITUTE(_partialMid,", "," and ",1),",",""),
-			                            SUBSTITUTE(SUBSTITUTE(_partialMid,", "," ",_partialMidCount),", ",", and ",_partialMidCount-1)
-			)
-			
 			return SWITCH(TRUE(),
-			                _numberOver=5," above average in all five areas",
-			                _numberUnder=5," below average in all five areas",
-			                _partialOverCount>1 && _partialUnderCount>1 && _partialMidCount>1
+			                _numberOver=5,"above average in all five areas.",
+			                _numberUnder=5,"below average in all five areas.",
+			                _partialOverCount>0 && _partialUnderCount>0,"performed above average in " & _partialOverText & ". They also performed below average in " & _partialUnderText & "and may want to shore up players in these areas of the roster.",
+			                _partialUnderCount>0,"performed above average in no categories. They also performed below average in " & _partialUnderText & "and may want to shore up players in these areas of the roster.",
+			                "performed above average in " & _partialOverText &" and underperformed in no categories."
 			)
-			
-			// var _rushing = CALCULATE([Home Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Rushing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
-			
-			// var _receiving = CALCULATE([Home Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Receiving",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
-			
-			// var _passing = CALCULATE([Home Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Passing",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
-			
-			// var _kicking = CALCULATE([Home Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="Kicking",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
-			
-			// var _d = CALCULATE([Home Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE"))) - CALCULATE([Away Points],PointsMap[Category]="D/ST",NOT(CONTAINSSTRING(PlayerPointsStats[Lineup Slot],"BE")))
-			
-			// var _differential = round(if(_rushing>0,_rushing,0) + if(_receiving>0,_receiving,0) + if(_passing>0,_passing,0) + if(_kicking>0,_kicking,0) + if(_d>0,_d,0),2)
-			
-			// var _allcategories = SWITCH(TRUE(),
-			//                             _rushing>=0 && _receiving>=0 && _passing>=0 && _kicking>=0 && _d>=0, " led in all major point categories by a total of " & CONVERT(_differential,STRING) & " points",
-			//                              _differential=0, "None",
-			//                              BLANK()
-			// )
-			
-			// var _partialcategories = if(_rushing>0,"rushing, ",BLANK()) & if(_receiving>0,"receiving, ",BLANK()) & if(_passing>0,"passing, ",BLANK()) & if(_kicking>0,"kicking, ",BLANK()) & if(_d>0,"defense, ",BLANK())
-			
-			// var _partialCount = if(_rushing>0,1) + if(_receiving>0,1) + if(_passing>0,1) + if(_kicking>0,1) + if(_d>0,1)
-			
-			// var _partialnew = SWITCH(TRUE(),
-			//                             _partialCount=1, SUBSTITUTE(_partialcategories,", "," "),
-			//                             _partialCount=2, SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," and ",1),",",""),
-			//                             SUBSTITUTE(SUBSTITUTE(_partialcategories,", "," ",_partialCount),", ",", and ",_partialCount-1)
-			// )
-			// return SWITCH(TRUE(),
-			//                 [Home Name]="BYE","This was a bye week matchup, so no points were scored.",
-			//                 [Away Name]="BYE",BLANK(),
-			//                 _allcategories<>"None" && NOT(ISBLANK(_allcategories)), [Home Name] & _allcategories,
-			//                 _allcategories="None",BLANK(),
-			//                 [Home Name] & " led in " & _partialnew & "by " & CONVERT(_differential,STRING) & " points"
-			// )
 		displayFolder: Season Team Summary
 		lineageTag: 2f8b8cbd-92fe-4975-a279-83aefca381a9
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Week = SELECTEDVALUE(Weeks[Week])
 		formatString: 0

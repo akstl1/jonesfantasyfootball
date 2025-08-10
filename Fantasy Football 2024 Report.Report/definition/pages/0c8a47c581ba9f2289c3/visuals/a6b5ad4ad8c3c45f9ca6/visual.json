@@ -223,7 +223,7 @@
                     }
                   },
                   {
-                    "value": " performed above average in X and Y, average in X and Y. The team has performed below average in Z and may want to consider shoring up players in these categories."
+                    "value": " "
                   },
                   {
                     "value": {
@@ -403,21 +403,7 @@
                     }
                   },
                   {
-                    "value": " Expected Losses, with an average loss margin of "
-                  },
-                  {
-                    "value": {
-                      "propertyIdentifier": {
-                        "objectName": "values",
-                        "propertyName": "expr"
-                      },
-                      "selector": {
-                        "id": "Value 19"
-                      }
-                    }
-                  },
-                  {
-                    "value": " pts"
+                    "value": " "
                   }
                 ],
                 "listType": "bullet"
@@ -436,30 +422,10 @@
                     }
                   },
                   {
-                    "value": " Unexpected Wins, "
+                    "value": " "
                   },
                   {
-                    "value": "with an average margin of victory of ",
-                    "textStyle": {
-                      "fontFamily": "inherit"
-                    }
-                  },
-                  {
-                    "value": {
-                      "propertyIdentifier": {
-                        "objectName": "values",
-                        "propertyName": "expr"
-                      },
-                      "selector": {
-                        "id": "Value 20"
-                      }
-                    },
-                    "textStyle": {
-                      "fontFamily": "inherit"
-                    }
-                  },
-                  {
-                    "value": " pts",
+                    "value": "pts",
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
@@ -479,40 +445,9 @@
                         "id": "Value 17"
                       }
                     }
-                  },
-                  {
-                    "value": " Unexpected Losses, with an average loss margin of "
-                  },
-                  {
-                    "value": {
-                      "propertyIdentifier": {
-                        "objectName": "values",
-                        "propertyName": "expr"
-                      },
-                      "selector": {
-                        "id": "Value 21"
-                      }
-                    }
-                  },
-                  {
-                    "value": " pts"
                   }
                 ],
                 "listType": "bullet"
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "fix null values issue for breakdowns"
-                  }
-                ]
               }
             ]
           }
