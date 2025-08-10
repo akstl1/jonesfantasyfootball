@@ -1085,6 +1085,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "502e2ef60be0253c89e4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "DraftName"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

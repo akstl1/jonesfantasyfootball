@@ -3,7 +3,7 @@
   "name": "6413d2cba964851b508e",
   "position": {
     "x": 788.05970149253733,
-    "y": 483.58208955223881,
+    "y": 487.16417910447763,
     "z": 42000,
     "height": 58.208955223880594,
     "width": 216.71641791044775,
@@ -772,6 +772,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "ef58c9c9c980220dac48",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Name"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

@@ -142,6 +142,7 @@ def standingsSingleWeek(current_wk=curr_week, players=12):
     # print(standings_df)
     standings_df.to_excel('standingsWk'+str(current_wk)+'.xlsx', sheet_name='Sheet1', index=False)
 
+# standingsSingleWeek()
 ##### matchup data
 
 def matchupsSingleWeek(current_wk=curr_week,players=12):
