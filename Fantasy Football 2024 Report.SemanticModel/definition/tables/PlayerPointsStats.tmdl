@@ -95,6 +95,22 @@ table PlayerPointsStats
 
 		annotation SummarizationSetBy = Automatic
 
+	column Category
+		dataType: string
+		lineageTag: 7c675aaf-21d9-4c60-a6ef-516b041c19e8
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Condensed Attribute'
+		dataType: string
+		lineageTag: f1184209-c3df-4016-95f8-b10154a24a22
+		summarizeBy: none
+		sourceColumn: Condensed Attribute
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PlayerPointsStats = m
 		mode: import
 		queryGroup: Main
@@ -105,14 +121,16 @@ table PlayerPointsStats
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Week", Int64.Type}, {"FantasyTeam", type text}, {"Player Name", type text}, {"PlayerID", Int64.Type}, {"Headshot_url", type text}, {"Status", type text}, {"NFL_Team", type text}, {"Opponent", type text}, {"Position", type text}, {"PositionRank", type text}, {"PlayerKey", type text}, {"Bye", Int64.Type}, {"Projected", type number}, {"Actual", type number}, {"Attribute", type text}, {"Value", Int64.Type}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Attribute"}, PointsMap, {"Stat"}, "PointsMap", JoinKind.LeftOuter),
-				    #"Expanded PointsMap" = Table.ExpandTableColumn(#"Merged Queries", "PointsMap", {"Points"}, {"Points"}),
+				    #"Expanded PointsMap" = Table.ExpandTableColumn(#"Merged Queries", "PointsMap", {"Category", "Points"}, {"Category", "Points"}),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Expanded PointsMap",{{"Points", "PointsPerItem"}}),
 				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "TotalPoints", each [Value]*[PointsPerItem]),
 				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom1",{{"TotalPoints", type number}}),
 				    #"Rounded Off" = Table.TransformColumns(#"Changed Type3",{{"TotalPoints", each Number.Round(_, 2), type number}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Rounded Off",{"Opponent", "NFL_Team", "Home", "Status", "PositionRank", "Projected", "PlayerID", "Bye", "PointsPerItem"})
+				    #"Removed Columns" = Table.RemoveColumns(#"Rounded Off",{"Opponent", "NFL_Team", "Home", "Status", "PositionRank", "Projected", "PlayerID", "Bye", "PointsPerItem"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Condensed Attribute", each if [Attribute] = "Passing Yards" then "YDS" else if [Attribute] = "TD Pass" then "TD" else if [Attribute] = "Interceptions Thrown" then "INT" else if [Attribute] = "Receiving Targets" then "TAR" else if [Attribute] = "Each Reception" then "REC" else if [Attribute] = "Rushing Attempts" then "YDS" else if [Attribute] = "Rushing Yards" then "YDS" else if [Attribute] = "TD Rush" then "TD" else if [Category] = "Kicking" then [Attribute] else if [Category] = "D/ST" then [Attribute] else if [Attribute] = "TD Reception" then "TD" else null),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Condensed Attribute", type text}})
 				in
-				    #"Removed Columns"
+				    #"Changed Type1"
 
 	annotation PBI_NavigationStepName = Navigation
 

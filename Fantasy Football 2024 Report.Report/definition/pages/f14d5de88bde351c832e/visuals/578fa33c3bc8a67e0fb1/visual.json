@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 98.507462686567166,
     "width": 295,
-    "tabOrder": 26000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -1085,20 +1085,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "502e2ef60be0253c89e4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "DraftName"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

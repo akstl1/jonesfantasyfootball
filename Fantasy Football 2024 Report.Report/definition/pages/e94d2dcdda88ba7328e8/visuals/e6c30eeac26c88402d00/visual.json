@@ -7,7 +7,7 @@
     "z": 15000,
     "height": 66,
     "width": 281,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -930,6 +930,20 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "8cded4809010682bd3d2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Name"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

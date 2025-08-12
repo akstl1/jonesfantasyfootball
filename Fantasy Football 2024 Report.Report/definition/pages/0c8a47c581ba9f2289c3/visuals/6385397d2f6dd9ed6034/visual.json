@@ -7,7 +7,7 @@
     "z": 13000,
     "height": 257,
     "width": 334,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -519,25 +519,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "96f07868236c1d0008d0",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "SpiderChart"
-                  }
-                },
-                "Property": "Condensed Rank"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
