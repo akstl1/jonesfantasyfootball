@@ -382,20 +382,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e42fa713c74b1a9b005a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Matchup Header Abbrev"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

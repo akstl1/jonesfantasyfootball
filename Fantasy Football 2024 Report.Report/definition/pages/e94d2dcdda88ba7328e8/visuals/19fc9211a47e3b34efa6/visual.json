@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 57.448818897637793,
-    "width": 1280,
+    "height": 52.315270935960591,
+    "width": 1280.3940886699509,
     "tabOrder": 28000
   },
   "visual": {
@@ -21,7 +21,7 @@
                   {
                     "value": "Weekly Matchup Details",
                     "textStyle": {
-                      "fontSize": "24pt"
+                      "fontSize": "18pt"
                     }
                   }
                 ],

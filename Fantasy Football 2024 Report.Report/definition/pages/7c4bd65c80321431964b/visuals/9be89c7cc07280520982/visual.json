@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "3affb934dcabd9007a0d",
+  "name": "9be89c7cc07280520982",
   "position": {
     "x": 0,
-    "y": 77.910447761194021,
-    "z": 6000,
-    "height": 62.6865671641791,
+    "y": 0,
+    "z": 17000,
+    "height": 58.208955223880594,
     "width": 54.626865671641788,
-    "tabOrder": 2000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "ResourcePackageItem": {
                   "PackageName": "RegisteredResources",
                   "PackageType": 1,
-                  "ItemName": "counting24713142949536238.png"
+                  "ItemName": "home6626404798662393.png"
                 }
               }
             }
@@ -35,7 +35,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -46,43 +46,17 @@
                 }
               }
             },
-            "navigationSection": {
-              "expr": {
-                "Literal": {
-                  "Value": "'f14d5de88bde351c832e'"
-                }
-              }
-            },
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'View Draft Details'"
+                  "Value": "''"
                 }
               }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {
-            "altText": {
+            },
+            "showDefaultTooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'View Draft Details'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

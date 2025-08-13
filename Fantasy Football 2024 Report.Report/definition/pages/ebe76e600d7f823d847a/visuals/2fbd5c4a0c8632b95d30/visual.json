@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "2fbd5c4a0c8632b95d30",
   "position": {
-    "x": 54.591651542649728,
+    "x": 0,
     "y": 0,
     "z": 0,
-    "height": 58.076225045372048,
-    "width": 1225.4083484573503,
+    "height": 42.089552238805972,
+    "width": 1279.7014925373135,
     "tabOrder": 6000
   },
   "visual": {
@@ -21,7 +21,7 @@
                   {
                     "value": "JCG Fantasy Football League",
                     "textStyle": {
-                      "fontSize": "24pt"
+                      "fontSize": "18pt"
                     }
                   }
                 ],
@@ -74,9 +74,33 @@
               "solid": {
                 "color": {
                   "expr": {
+                    "Literal": {
+                      "Value": "'#A0D1FF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.6
+                      "ColorId": 0,
+                      "Percent": -0.5
                     }
                   }
                 }
