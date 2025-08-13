@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "6f159b99dbe097190892",
+  "name": "f4fd2756387343208e80",
   "position": {
     "x": 62.955665024630541,
     "y": 52.315270935960591,
@@ -108,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'SH vs. CNC'"
+                                "Value": "'MRD vs. JST'"
                               }
                             }
                           ]
@@ -382,20 +382,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e42fa713c74b1a9b005a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Matchup Header Abbrev"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

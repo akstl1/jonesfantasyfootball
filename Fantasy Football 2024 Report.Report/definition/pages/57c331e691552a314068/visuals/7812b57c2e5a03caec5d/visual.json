@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "6f159b99dbe097190892",
+  "name": "7812b57c2e5a03caec5d",
   "position": {
-    "x": 62.955665024630541,
-    "y": 52.315270935960591,
-    "z": 1000,
-    "height": 56.748768472906406,
-    "width": 415.86206896551727,
-    "tabOrder": 25000
+    "x": 478.95693153554129,
+    "y": 51.876947244403716,
+    "z": 10000,
+    "height": 56,
+    "width": 797.45725880350824,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "MatchupsTable"
+                      "Entity": "Weeks"
                     }
                   },
-                  "Property": "Matchup Header Abbrev"
+                  "Property": "Week"
                 }
               },
-              "queryRef": "MatchupsTable.Matchup Header Abbrev",
-              "nativeQueryRef": "Matchup Header Abbrev",
+              "queryRef": "Weeks.Week",
+              "nativeQueryRef": "Week",
               "active": true
             }
           ]
@@ -57,13 +57,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -83,8 +76,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "m",
-                    "Entity": "MatchupsTable",
+                    "Name": "w",
+                    "Entity": "Weeks",
                     "Type": 0
                   }
                 ],
@@ -97,10 +90,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "m"
+                                  "Source": "w"
                                 }
                               },
-                              "Property": "Matchup Header Abbrev"
+                              "Property": "Week"
                             }
                           }
                         ],
@@ -108,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'SH vs. CNC'"
+                                "Value": "15L"
                               }
                             }
                           ]
@@ -151,6 +144,13 @@
                   "Value": "0D"
                 }
               }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
             }
           }
         }
@@ -166,13 +166,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
             }
           }
         }
@@ -180,56 +173,10 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'team slicer'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {
-            "keepLayerOrder": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'week slicer'"
                 }
               }
             }
@@ -239,17 +186,24 @@
       "padding": [
         {
           "properties": {
-            "left": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "5D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }
@@ -262,15 +216,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "60adf58a1b7a0a127014",
+        "name": "9b3807245c3d8a8b1079",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "PlayersTable"
+                "Entity": "Weeks"
               }
             },
-            "Property": "Lineup Slot"
+            "Property": "Week"
           }
         },
         "type": "Categorical",
@@ -278,8 +232,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "p",
-              "Entity": "PlayersTable",
+              "Name": "w",
+              "Entity": "Weeks",
               "Type": 0
             }
           ],
@@ -294,10 +248,10 @@
                           "Column": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "p"
+                                "Source": "w"
                               }
                             },
-                            "Property": "Lineup Slot"
+                            "Property": "Week"
                           }
                         }
                       ],
@@ -305,56 +259,7 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'BE1'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE2'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE3'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE4'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE5'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE6'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE7'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'BE8'"
+                              "Value": "null"
                             }
                           }
                         ]
@@ -366,7 +271,6 @@
             }
           ]
         },
-        "howCreated": "User",
         "objects": {
           "general": [
             {
@@ -382,20 +286,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e42fa713c74b1a9b005a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Matchup Header Abbrev"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

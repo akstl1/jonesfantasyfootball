@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "8d3775e7a94003ae09a4",
+  "name": "9890765777c4cb204a1c",
   "position": {
-    "x": 662.36453201970448,
-    "y": 336.05911330049264,
-    "z": 31000,
-    "height": 298.81773399014776,
-    "width": 613.5960591133005,
-    "tabOrder": 30000
+    "x": 89.556650246305423,
+    "y": 196.84729064039408,
+    "z": 32000,
+    "height": 242.06896551724139,
+    "width": 492.11822660098522,
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -49,21 +49,6 @@
         },
         "Rows": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "MatchupsTable"
-                    }
-                  },
-                  "Property": "Team"
-                }
-              },
-              "queryRef": "MatchupsTable.Team",
-              "nativeQueryRef": "Team",
-              "active": true
-            },
             {
               "field": {
                 "Column": {
@@ -144,24 +129,6 @@
           "Rows"
         ],
         "levels": [
-          {
-            "queryRefs": [
-              "MatchupsTable.Team"
-            ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "MatchupsTable"
-                    }
-                  },
-                  "Property": "Team"
-                }
-              }
-            ],
-            "isPinned": true
-          },
           {
             "queryRefs": [
               "PlayersTable.Player Name"
@@ -258,7 +225,7 @@
             "levelSubtotalEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -327,6 +294,20 @@
                   "Value": "'Left'"
                 }
               }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
             }
           }
         }
@@ -345,6 +326,26 @@
               "expr": {
                 "Literal": {
                   "Value": "'Center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }
@@ -453,8 +454,63 @@
         }
       },
       {
-        "name": "ada2666329c256a6316b",
+        "name": "3f8de0b5608d90ddee42",
         "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Home_Or_Away"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "MatchupsTable",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Home_Or_Away"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Away'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "ada2666329c256a6316b",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -469,7 +525,7 @@
       },
       {
         "name": "ebe21404b2c16d2795b1",
-        "ordinal": 3,
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -592,7 +648,7 @@
       },
       {
         "name": "084fbe8ec83369137e50",
-        "ordinal": 4,
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -674,7 +730,7 @@
       },
       {
         "name": "eed7b9238ca29ec8a258",
-        "ordinal": 5,
+        "ordinal": 6,
         "field": {
           "Aggregation": {
             "Expression": {
@@ -694,7 +750,7 @@
       },
       {
         "name": "02ef54f97d1970715951",
-        "ordinal": 6,
+        "ordinal": 7,
         "field": {
           "Column": {
             "Expression": {
@@ -705,11 +761,12 @@
             "Property": "Team"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "a6cfd1e8025204bc3a56",
-        "ordinal": 7,
+        "ordinal": 8,
         "field": {
           "Column": {
             "Expression": {
