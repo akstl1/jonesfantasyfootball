@@ -202,6 +202,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Blank'"
+                }
+              }
             }
           }
         }

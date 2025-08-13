@@ -189,6 +189,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Team Perf Button'"
+                }
+              }
             }
           }
         }

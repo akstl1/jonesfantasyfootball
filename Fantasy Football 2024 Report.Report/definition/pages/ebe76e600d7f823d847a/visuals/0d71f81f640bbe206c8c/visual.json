@@ -318,7 +318,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Power Rankings: Week 1 vs Current'"
+                  "Value": "'Power Rankings Chart'"
                 }
               }
             },
