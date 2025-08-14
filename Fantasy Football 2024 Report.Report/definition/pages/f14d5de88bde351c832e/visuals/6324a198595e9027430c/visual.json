@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "02bff9807a73985aeaab",
+  "name": "6324a198595e9027430c",
   "position": {
-    "x": 361.79104477611941,
+    "x": 473.73134328358208,
     "y": 42.089552238805972,
-    "z": 7000,
-    "height": 27.761194029850746,
-    "width": 180.8955223880597,
-    "tabOrder": 7000
+    "z": 30000,
+    "height": 35.820895522388057,
+    "width": 157.61194029850745,
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "actionButton",
@@ -129,7 +129,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard + Standings'"
+                  "Value": "'Matchup Details'"
                 }
               }
             },
@@ -193,7 +193,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard Button'"
+                  "Value": "'Matchup Detail Button'"
                 }
               }
             }

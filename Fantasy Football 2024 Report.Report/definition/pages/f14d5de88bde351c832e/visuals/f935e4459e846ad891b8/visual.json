@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "f935e4459e846ad891b8",
   "position": {
-    "x": 54.626865671641788,
-    "y": 68.059701492537314,
-    "z": 19000,
-    "height": 82.388059701492537,
-    "width": 1225.0746268656717,
+    "x": 1165.0746268656717,
+    "y": 42.089552238805972,
+    "z": 18000,
+    "height": 35.820895522388057,
+    "width": 114.6268656716418,
     "tabOrder": 14000
   },
   "visual": {
-    "visualType": "advancedSlicerVisual",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
@@ -27,74 +27,14 @@
                 }
               },
               "queryRef": "TeamsTable.Acronym",
-              "nativeQueryRef": "Acronym"
+              "nativeQueryRef": "Acronym",
+              "active": true
             }
           ]
         }
       }
     },
     "objects": {
-      "image": [
-        {
-          "properties": {
-            "image": {
-              "expr": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "TeamsTable"
-                        }
-                      },
-                      "Property": "Image"
-                    }
-                  },
-                  "Function": 3
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "ignorePadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "imageFit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "4L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
@@ -128,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AAT'"
+                                "Value": "'AP'"
                               }
                             }
                           ]
@@ -138,82 +78,29 @@
                   }
                 ]
               }
-            }
-          }
-        }
-      ],
-      "value": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
             },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'middle'"
-                }
-              }
-            },
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "paddingSelection": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Narrow'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
       "data": [
         {
-          "properties": {}
-        }
-      ],
-      "layout": [
-        {
           "properties": {
-            "rowCount": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
-                }
-              }
-            },
-            "columnCount": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -233,40 +120,48 @@
           }
         }
       ],
-      "shapeCustomRectangle": [
+      "header": [
         {
           "properties": {
-            "tileShape": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'rectangleRoundedByPixel'"
+                  "Value": "false"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
-      "outline": [
+      "items": [
         {
           "properties": {
-            "lineColor": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "background": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
+                      "ColorId": 0,
+                      "Percent": -0.2
                     }
                   }
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ]
@@ -291,7 +186,32 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "5D"
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
                 }
               }
             }

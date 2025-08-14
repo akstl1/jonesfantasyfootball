@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "0d71f81f640bbe206c8c",
   "position": {
-    "x": 26.865671641791042,
-    "y": 294.62686567164178,
-    "z": 10000,
-    "height": 421.79104477611941,
+    "x": 34.029850746268657,
+    "y": 307.16417910447763,
+    "z": 4000,
+    "height": 404.77611940298505,
     "width": 1212.5373134328358,
-    "tabOrder": 7000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "changeChart63B1E8C33CBE4BC6913014096224EE2C",
@@ -366,51 +366,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6559b86456e053e3ebd0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking Start"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "164070597694308c98c4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking End"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7d3d29583328a410ba79",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

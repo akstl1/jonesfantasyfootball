@@ -3,11 +3,11 @@
   "name": "5b167b3deeca06d11ce5",
   "position": {
     "x": 553.43283582089555,
-    "y": 69.850746268656721,
+    "y": 78.701492537329628,
     "z": 3000,
     "height": 228.35820895522389,
     "width": 173.73134328358208,
-    "tabOrder": 10000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -1038,20 +1038,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "45baeb40379494288176",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "DraftName"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "02bff9807a73985aeaab",
+  "name": "6946f6872ab0608bbe62",
   "position": {
-    "x": 361.79104477611941,
+    "x": 946.56716417910445,
     "y": 42.089552238805972,
-    "z": 7000,
-    "height": 27.761194029850746,
-    "width": 180.8955223880597,
-    "tabOrder": 7000
+    "z": 35000,
+    "height": 35.820895522388057,
+    "width": 218.50746268656715,
+    "tabOrder": 35000
   },
   "visual": {
     "visualType": "actionButton",
@@ -18,7 +18,34 @@
             "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'blank'"
+                  "Value": "'custom'"
+                }
+              }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'filter-icon-25207.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "filter-icon-252073408887634473864.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
                 }
               }
             }
@@ -73,8 +100,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#C0DDF9'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -99,8 +127,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0.4
+                      "ColorId": 0,
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -118,7 +146,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -129,7 +157,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard + Standings'"
+                  "Value": "'Playoff Bracket'"
                 }
               }
             },
@@ -193,7 +221,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard Button'"
+                  "Value": "'Playoff Button'"
                 }
               }
             }

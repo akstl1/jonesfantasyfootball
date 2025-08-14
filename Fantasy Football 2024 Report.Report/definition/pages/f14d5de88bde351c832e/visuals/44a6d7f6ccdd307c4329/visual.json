@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "05232b972a49f549e190",
+  "name": "44a6d7f6ccdd307c4329",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 0,
-    "height": 57.5,
-    "width": 1280,
-    "tabOrder": 23000
+    "z": 26000,
+    "height": 42.089552238805972,
+    "width": 1279.7014925373135,
+    "tabOrder": 27000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,7 +21,7 @@
                   {
                     "value": "Draft Summary",
                     "textStyle": {
-                      "fontSize": "24pt"
+                      "fontSize": "18pt"
                     }
                   }
                 ],
@@ -46,7 +46,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Jones Colored Glasses Draft'"
+                  "Value": "'Header'"
                 }
               }
             },
@@ -74,9 +74,33 @@
               "solid": {
                 "color": {
                   "expr": {
+                    "Literal": {
+                      "Value": "'#A0D1FF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.6
+                      "ColorId": 0,
+                      "Percent": -0.5
                     }
                   }
                 }

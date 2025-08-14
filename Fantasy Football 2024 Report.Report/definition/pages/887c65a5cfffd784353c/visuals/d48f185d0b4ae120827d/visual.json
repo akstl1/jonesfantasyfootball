@@ -960,56 +960,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0b4c8ec0ed3567db05c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Draft"
-              }
-            },
-            "Property": "Team"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "790e4525a0e6c02d5e01",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Draft"
-              }
-            },
-            "Property": "Round"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "62b8415d2ec75c082c01",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Draft"
-                  }
-                },
-                "Property": "Name Abbrev"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

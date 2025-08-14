@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "02bff9807a73985aeaab",
+  "name": "e7d721a63c2d08654488",
   "position": {
-    "x": 361.79104477611941,
+    "x": 157.61194029850745,
     "y": 42.089552238805972,
-    "z": 7000,
-    "height": 27.761194029850746,
-    "width": 180.8955223880597,
-    "tabOrder": 7000
+    "z": 27000,
+    "height": 35.820895522388057,
+    "width": 157.61194029850745,
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "actionButton",
@@ -129,7 +129,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard + Standings'"
+                  "Value": "'Draft'"
                 }
               }
             },
@@ -183,63 +183,10 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard Button'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'Draft Button'"
                 }
               }
             }
