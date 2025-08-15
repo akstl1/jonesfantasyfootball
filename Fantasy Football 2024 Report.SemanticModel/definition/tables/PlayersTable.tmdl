@@ -66,6 +66,14 @@ table PlayersTable
 
 		annotation SummarizationSetBy = Automatic
 
+	column SlotDescription
+		dataType: string
+		lineageTag: 9ec7041e-056c-488b-b0a0-0bf6d03e3df5
+		summarizeBy: none
+		sourceColumn: SlotDescription
+
+		annotation SummarizationSetBy = Automatic
+
 	partition PlayersTable = m
 		mode: import
 		queryGroup: Main
@@ -76,9 +84,10 @@ table PlayersTable
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Week", Int64.Type}, {"FantasyTeam", type text}, {"NFL_Team", type text}, {"Player Name", type text}, {"Status", type text}, {"Lineup Slot", type text}, {"PlayerKey", type text}, {"MatchupKey", type text}, {"Home", type text}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"FantasyTeam", "Fantasy Name"}, {"NFL_Team", "Team City"}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Home"})
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Home"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "SlotDescription", each if Text.Contains([Lineup Slot],"BE") then "Bench" else if [Lineup Slot]="K" then "Kicker" else if [Lineup Slot]="D/ST" then "D/ST" else "Active Roster")
 				in
-				    #"Removed Columns"
+				    #"Added Custom"
 
 	annotation PBI_NavigationStepName = Navigation
 

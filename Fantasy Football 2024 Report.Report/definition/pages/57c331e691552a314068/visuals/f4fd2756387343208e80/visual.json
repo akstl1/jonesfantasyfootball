@@ -108,7 +108,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'MRD vs. JST'"
+                                "Value": "'AAT vs. MRD'"
                               }
                             }
                           ]
@@ -382,6 +382,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "e340874cc9590d92641a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a6b5ad4ad8c3c45f9ca6",
   "position": {
-    "x": 916,
-    "y": 148,
+    "x": 829.95073891625611,
+    "y": 148.07881773399015,
     "z": 4000,
-    "height": 562,
-    "width": 359,
+    "height": 562.167487684729,
+    "width": 443.3497536945813,
     "tabOrder": 14000
   },
   "visual": {
@@ -359,32 +359,6 @@
                     "textStyle": {
                       "fontFamily": "inherit"
                     }
-                  },
-                  {
-                    "value": " Expected Wins, with an average margin of victory of ",
-                    "textStyle": {
-                      "fontFamily": "inherit"
-                    }
-                  },
-                  {
-                    "value": {
-                      "propertyIdentifier": {
-                        "objectName": "values",
-                        "propertyName": "expr"
-                      },
-                      "selector": {
-                        "id": "Value 18"
-                      }
-                    },
-                    "textStyle": {
-                      "fontFamily": "inherit"
-                    }
-                  },
-                  {
-                    "value": " pts",
-                    "textStyle": {
-                      "fontFamily": "inherit"
-                    }
                   }
                 ],
                 "listType": "bullet"
@@ -419,15 +393,6 @@
                       "selector": {
                         "id": "Value 16"
                       }
-                    }
-                  },
-                  {
-                    "value": " "
-                  },
-                  {
-                    "value": "pts",
-                    "textStyle": {
-                      "fontFamily": "inherit"
                     }
                   }
                 ],

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "47614805b298d762e909",
   "position": {
-    "x": 557,
-    "y": 443,
+    "x": 472.61083743842363,
+    "y": 443.3497536945813,
     "z": 12000,
-    "height": 260,
-    "width": 334,
+    "height": 259.80295566502463,
+    "width": 334.28571428571428,
     "tabOrder": 7000
   },
   "visual": {
@@ -756,5 +756,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "07f292c257ea166ea02c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Weeks"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "313734dd68952a140a0d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Point Performance Summary"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

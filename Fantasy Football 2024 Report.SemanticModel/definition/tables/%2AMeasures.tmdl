@@ -915,7 +915,7 @@ table *Measures
 			var _result =  CALCULATE(COUNTROWS(MatchupsTable),MatchupsTable[Legend]="Expected Win") 
 			return SWITCH(TRUE(),
 			                _result=0, "No Expected Wins",
-			                _result & " Expected Wins, with an average margin of victory of " & [Unexpected Win Margin] & " pts")
+			                _result & " Expected Wins, with an average margin of victory of " & [Expected Win Margin] & " pts")
 			```
 		displayFolder: Season Team Summary
 		lineageTag: f8bd58d6-decf-4639-b5c4-90f7edb1a019

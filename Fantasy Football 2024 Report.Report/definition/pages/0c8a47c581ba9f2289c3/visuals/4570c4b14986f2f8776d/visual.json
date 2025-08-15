@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AP'"
+                                "Value": "'Apex Predators'"
                               }
                             }
                           ]
@@ -259,11 +259,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Fantasy Name1",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

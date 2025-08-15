@@ -1,41 +1,48 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "e313c2066cfa9e0ceb6a",
+  "name": "a290c418d58948431eb3",
   "position": {
-    "x": 0,
-    "y": 327.76119402985074,
-    "z": 7000,
-    "height": 64.4776119402985,
-    "width": 54.626865671641788,
-    "tabOrder": 4000
+    "x": 1238.5074626865671,
+    "y": 0,
+    "z": 9010,
+    "height": 40.298507462686565,
+    "width": 41.194029850746269
   },
   "visual": {
-    "visualType": "image",
+    "visualType": "actionButton",
     "objects": {
-      "general": [
+      "icon": [
         {
           "properties": {
-            "imageUrl": {
+            "shapeType": {
               "expr": {
-                "ResourcePackageItem": {
-                  "PackageName": "RegisteredResources",
-                  "PackageType": 1,
-                  "ItemName": "nfl020090485307173722.png"
+                "Literal": {
+                  "Value": "'back'"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
     },
     "visualContainerObjects": {
-      "title": [
+      "visualLink": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'teams button'"
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Back'"
                 }
               }
             }

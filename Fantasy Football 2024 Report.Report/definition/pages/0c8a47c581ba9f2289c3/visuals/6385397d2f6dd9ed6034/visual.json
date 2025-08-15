@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "6385397d2f6dd9ed6034",
   "position": {
-    "x": 557,
+    "x": 472.61083743842363,
     "y": 180,
     "z": 13000,
-    "height": 257,
-    "width": 334,
+    "height": 257.14285714285717,
+    "width": 334.28571428571428,
     "tabOrder": 8000
   },
   "visual": {
@@ -330,7 +330,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Points Category Ranking'"
+                  "Value": "'Point Category Ranking'"
                 }
               }
             },
@@ -519,6 +519,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "2c962dd9b010d5dd6ce7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SpiderChart"
+                  }
+                },
+                "Property": "Condensed Rank"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

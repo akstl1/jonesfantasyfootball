@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fbc11ca4cfae02023255",
   "position": {
-    "x": 70.049261083743843,
+    "x": 15.161518115323478,
     "y": 443.3497536945813,
     "z": 15000,
     "height": 259.80295566502463,
-    "width": 454.8768472906404,
+    "width": 418.52216748768473,
     "tabOrder": 12000
   },
   "visual": {
@@ -130,7 +130,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "115.73248129792857D"
+                  "Value": "86.40027976060351D"
                 }
               }
             }
@@ -484,6 +484,67 @@
             }
           ]
         }
+      },
+      {
+        "name": "5167f213a612d8210e0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "89a2e1139e78900682d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Opponent"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "87ad6cbc20a875697908",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MatchupsTable"
+                  }
+                },
+                "Property": "actual_variance"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4db0d40a5e2c8165c034",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Result"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

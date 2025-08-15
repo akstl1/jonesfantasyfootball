@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "4d3f4582c53e30cece9c",
+  "name": "4a0986240800edaa5893",
   "position": {
-    "x": 53.731343283582085,
+    "x": 0,
     "y": 0,
-    "z": 2000,
-    "height": 57.3134328358209,
-    "width": 1225.9701492537313,
-    "tabOrder": 43000
+    "z": 43001,
+    "height": 42.985074626865668,
+    "width": 1280.5970149253731,
+    "tabOrder": 42001
   },
   "visual": {
     "visualType": "textbox",
@@ -21,7 +21,7 @@
                   {
                     "value": "Playoff Bracket",
                     "textStyle": {
-                      "fontSize": "24pt"
+                      "fontSize": "18pt"
                     }
                   }
                 ],
@@ -46,7 +46,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'blue header'"
+                  "Value": "'Header'"
                 }
               }
             },
@@ -74,9 +74,33 @@
               "solid": {
                 "color": {
                   "expr": {
+                    "Literal": {
+                      "Value": "'#A0D1FF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.6
+                      "ColorId": 0,
+                      "Percent": -0.5
                     }
                   }
                 }

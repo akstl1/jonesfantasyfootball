@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d48f185d0b4ae120827d",
   "position": {
-    "x": 53.731343283582085,
-    "y": 101.19402985074626,
+    "x": 4.4776119402985071,
+    "y": 113.73134328358209,
     "z": 0,
-    "height": 617.91044776119406,
-    "width": 1226.8656716417911,
+    "height": 505.07462686567163,
+    "width": 1270.7462686567164,
     "tabOrder": 7000
   },
   "visual": {
@@ -120,7 +120,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "108.63883847549909D"
+                  "Value": "129.29962508645255D"
                 }
               }
             }
@@ -157,7 +157,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "90.08583047941352D"
+                  "Value": "82.92786343894498D"
                 }
               }
             }
@@ -231,7 +231,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "107.12341197822141D"
+                  "Value": "91.92792732130093D"
                 }
               }
             }
@@ -305,7 +305,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "90.80036120701146D"
+                  "Value": "103.36572383373682D"
                 }
               }
             }
@@ -342,7 +342,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "95.02359788202138D"
+                  "Value": "126.36778386706058D"
                 }
               }
             }
@@ -379,7 +379,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "77.1542826181078D"
+                  "Value": "81.62829520340732D"
                 }
               }
             }
@@ -416,7 +416,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "76.50815248779372D"
+                  "Value": "87.33595051043523D"
                 }
               }
             }
@@ -453,7 +453,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "87.61107304351322D"
+                  "Value": "101.02056645989977D"
                 }
               }
             }
@@ -490,7 +490,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "112.29490022172949D"
+                  "Value": "127.48064783054448D"
                 }
               }
             }
@@ -514,6 +514,57 @@
                     "Right": {
                       "Literal": {
                         "Value": "'A''s Astounding Team'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "47.89552231863024D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Draft.Round"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.41790998159185D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Draft"
+                          }
+                        },
+                        "Property": "Team"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Magic M'"
                       }
                     }
                   }
@@ -556,7 +607,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             },
@@ -863,7 +914,27 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
                 }
               }
             }
