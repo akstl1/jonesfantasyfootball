@@ -687,7 +687,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Home name and record'"
+                  "Value": "'Home name'"
                 }
               }
             }
@@ -930,6 +930,20 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "0fd483730414a203a75e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Name"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

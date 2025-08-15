@@ -229,6 +229,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "d38b7c712c3225a3b8c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Scoreboard Away Points and arrow"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

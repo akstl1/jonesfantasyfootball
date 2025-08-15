@@ -723,7 +723,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "'matchup3'"
                 }
               }
             }
@@ -943,6 +943,34 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "7e3c6695543a5c9b934d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "55f933c27d6086c5cb32",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Points"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

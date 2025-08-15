@@ -183,7 +183,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Inactive Players In Roster (Missed Opportunities)'"
+                  "Value": "'Inactive Players In Roster Away'"
                 }
               }
             },
@@ -536,6 +536,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "f6bbd45f0ba22c7bd983",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Player Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38a1271dae02963a5961",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Team City"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

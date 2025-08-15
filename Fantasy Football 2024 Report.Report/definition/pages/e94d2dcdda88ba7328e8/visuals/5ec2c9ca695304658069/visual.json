@@ -234,7 +234,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Offensive Stats'"
+                  "Value": "'Offensive Stats Away'"
                 }
               }
             },
@@ -543,6 +543,62 @@
             }
           ]
         }
+      },
+      {
+        "name": "616e938d61db63053b35",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Offensive TDs"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1d27a66f0c23e00106a1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Offensive FGs"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aa29afe5790a70ce4266",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Offensive Fumbles"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "efb418c7178dea692249",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Offensive Yards"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

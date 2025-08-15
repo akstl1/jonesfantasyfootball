@@ -405,7 +405,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "'Away Wk 16 Left'"
                 }
               }
             },
@@ -807,6 +807,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "7ffe9237920943240e05",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Name"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

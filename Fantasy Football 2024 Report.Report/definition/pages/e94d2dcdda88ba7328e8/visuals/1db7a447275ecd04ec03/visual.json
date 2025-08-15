@@ -218,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Defensive Stats'"
+                  "Value": "'Defensive Stats Home'"
                 }
               }
             },
@@ -515,6 +515,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "af963028e6a43d5e005d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Defensive TDs"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "54adbaf4b1b3bca1e8a2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Defensive Interceptions"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5eee4dcf9e3c4ca1803e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Defensive Fumbles"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

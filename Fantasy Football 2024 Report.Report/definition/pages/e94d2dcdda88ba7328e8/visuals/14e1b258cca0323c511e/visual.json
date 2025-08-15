@@ -219,7 +219,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Actual v Projected Points'"
+                  "Value": "'Actual v Projected Points Home'"
                 }
               }
             },
@@ -516,6 +516,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "e26ccb0454d2b6194653",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Projected Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fa987cbe65d38c4e0d00",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9768048033378e18c7c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home plusOrMinus Text"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

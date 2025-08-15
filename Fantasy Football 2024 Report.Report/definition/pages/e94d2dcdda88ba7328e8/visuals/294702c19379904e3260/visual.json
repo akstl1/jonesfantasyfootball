@@ -418,7 +418,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Away name and record'"
+                  "Value": "'Away name'"
                 }
               }
             },
@@ -682,6 +682,20 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "346103824270718553d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Name"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

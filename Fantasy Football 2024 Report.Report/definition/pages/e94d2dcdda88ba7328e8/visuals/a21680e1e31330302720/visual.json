@@ -176,6 +176,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Week Slicer'"
+                }
+              }
             }
           }
         }

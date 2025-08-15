@@ -219,7 +219,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Actual v Projected Points'"
+                  "Value": "'Actual v Projected Points Away'"
                 }
               }
             },
@@ -528,6 +528,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "409632e61bd007471d4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Projected Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d4042ee02d1da0c0aa30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5f8c51217c776cde7b10",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away plusOrMinus Text"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

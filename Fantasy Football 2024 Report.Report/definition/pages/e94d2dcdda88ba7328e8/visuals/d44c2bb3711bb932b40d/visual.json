@@ -279,7 +279,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top Performers'"
+                  "Value": "'Top Performers Away'"
                 }
               }
             },
@@ -466,6 +466,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "da233c08e06967c60b50",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee2a280e9ede440440ca",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a72a706583194262d901",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 3"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

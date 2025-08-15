@@ -221,7 +221,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Button'"
+                  "Value": "'Filter'"
                 }
               }
             }

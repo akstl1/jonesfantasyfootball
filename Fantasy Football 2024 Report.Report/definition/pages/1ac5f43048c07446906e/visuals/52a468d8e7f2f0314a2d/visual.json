@@ -330,7 +330,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'sdfs'"
+                  "Value": "'Bye Left'"
                 }
               }
             },
@@ -732,6 +732,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "e9c80b4fe46003574cb1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Away Name"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

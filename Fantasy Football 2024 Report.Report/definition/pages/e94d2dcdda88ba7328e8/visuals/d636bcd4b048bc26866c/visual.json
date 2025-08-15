@@ -279,7 +279,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top Performers'"
+                  "Value": "'Top Performers Home'"
                 }
               }
             },
@@ -454,6 +454,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "918208329431d7400078",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d1df2b5122077637ad0b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc0d3cc943a60e800445",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Top Performer 3"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
