@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "dde8e7352bd002076cee",
+  "name": "1e8f1e820becce59ab1b",
   "position": {
-    "x": 0,
-    "y": 42.089552238805972,
-    "z": 28000,
-    "height": 35.820895522388057,
-    "width": 158,
-    "tabOrder": 29000
+    "x": 631.33004926108379,
+    "y": 42.5615763546798,
+    "z": 15006,
+    "height": 36.354679802955665,
+    "width": 157.83251231527095,
+    "tabOrder": 15006
   },
   "visual": {
     "visualType": "actionButton",
@@ -18,58 +18,13 @@
             "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'home.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "home35980579180237127.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+                  "Value": "'blank'"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
           }
         }
       ],
@@ -156,6 +111,45 @@
             "id": "hover"
           }
         }
+      ],
+      "text": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Team Performance'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -186,7 +180,27 @@
           }
         }
       ],
-      "visualHeader": [
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Team Perf Button'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
         {
           "properties": {
             "show": {
@@ -195,17 +209,37 @@
                   "Value": "false"
                 }
               }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
       ],
-      "title": [
+      "border": [
         {
           "properties": {
-            "text": {
+            "width": {
               "expr": {
                 "Literal": {
-                  "Value": "'Home Button'"
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -300,6 +300,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "56431700514998007639",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Acronym"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

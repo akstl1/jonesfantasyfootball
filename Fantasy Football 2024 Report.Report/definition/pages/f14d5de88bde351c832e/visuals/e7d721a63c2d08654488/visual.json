@@ -74,7 +74,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0DDF9'"
+                      "Value": "'#82AFD9'"
                     }
                   }
                 }
@@ -98,9 +98,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0.4
+                    "Literal": {
+                      "Value": "'#82AFD9'"
                     }
                   }
                 }

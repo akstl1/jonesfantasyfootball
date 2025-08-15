@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "6f159b99dbe097190892",
   "position": {
-    "x": 62.955665024630541,
-    "y": 52.315270935960591,
+    "x": 1038.3251231527095,
+    "y": 42.5615763546798,
     "z": 1000,
-    "height": 56.748768472906406,
-    "width": 415.86206896551727,
+    "height": 36.354679802955665,
+    "width": 126.79802955665025,
     "tabOrder": 25000
   },
   "visual": {
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -57,13 +57,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -71,13 +64,6 @@
       "general": [
         {
           "properties": {
-            "orientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -108,7 +94,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'SH vs. CNC'"
+                                "Value": "'CNC vs. AP'"
                               }
                             }
                           ]
@@ -117,6 +103,18 @@
                     }
                   }
                 ]
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
               }
             }
           }
@@ -141,11 +139,23 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             },
-            "padding": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -163,7 +173,19 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
                 }
               }
             },
@@ -180,27 +202,21 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
                   "Value": "'team slicer'"
                 }
               }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {
-            "keepLayerOrder": {
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -223,30 +239,17 @@
           }
         }
       ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "padding": [
         {
           "properties": {
-            "left": {
+            "top": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
                 }
               }
             },
-            "right": {
+            "bottom": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -382,6 +385,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "b35ee64685698154a702",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "d48f185d0b4ae120827d",
   "position": {
-    "x": 53.804633389061379,
-    "y": 67.255791736326728,
+    "x": 53.731343283582085,
+    "y": 101.19402985074626,
     "z": 0,
-    "height": 651.76976355385716,
-    "width": 1226.5010747551946,
+    "height": 617.91044776119406,
+    "width": 1226.8656716417911,
     "tabOrder": 7000
   },
   "visual": {
@@ -960,5 +960,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d1426c004ae7bd2c1611",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Draft"
+              }
+            },
+            "Property": "Team"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7348c13d29179ade0b9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Draft"
+              }
+            },
+            "Property": "Round"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c5187ec84d280e8074b3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Draft"
+                  }
+                },
+                "Property": "Name Abbrev"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
