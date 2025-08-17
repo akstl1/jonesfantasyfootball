@@ -15,6 +15,9 @@ from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassi
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 curr_week=league.current_week
 
+matchup = league.box_scores(3)[1].home_lineup[11].points_breakdown
+print(matchup)
+
 ###############################
 ###############################
 ### Run after draft is done ###
@@ -314,7 +317,9 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
                             '1pt Safety':[],
                             'Defense Fumbles Lost':[],
                             'Actual':[],
-                            'Fumble Recovered for TD':[]
+                            'Fumble Recovered for TD':[],
+                            'PA':[],
+                            'YA':[]
                             })
     box_score = league.box_scores(current_wk)
     player_wk=current_wk
@@ -462,7 +467,10 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
                         'junk',
                         'junk', #1pt safety
                         'junk' #'defensiveFumbles'/,
-                        ,'fumbleRecoveredForTD'
+                        ,'fumbleRecoveredForTD',
+                        'defensivePointsAllowed',
+                        'defensiveYardsAllowed'
+
                         ]
                     if (not(bye) and status!='bye' and empty==0) or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
                         for item in stats:
@@ -541,7 +549,9 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
                                 '1pt Safety':temp[51],
                                 'Defense Fumbles Lost':temp[52],
                                 'Actual':[plyr.points],
-                                'Fumble Recovered for TD':temp[53]
+                                'Fumble Recovered for TD':temp[53],
+                                'PA':temp[54],
+                                'YA':temp[55]
                                 })
 
                         player_df = pd.concat([player_df,player_row_home],ignore_index=True)
@@ -618,7 +628,9 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
                                 '1pt Safety':0,
                                 'Defense Fumbles Lost':0,
                                 'Actual':0,
-                                'Fumble Recovered for TD':0
+                                'Fumble Recovered for TD':0,
+                                'PA':0,
+                                'YA':0
                                 })
 
                         player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
@@ -869,7 +881,9 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                             '1pt Safety':[],
                             'Defense Fumbles Lost':[],
                             'Actual':[],
-                            'Fumble Recovered for TD':[]
+                            'Fumble Recovered for TD':[],
+                            'PA':[],
+                            'YA':[]
                             })
         box_score = league.box_scores(wk)
         player_wk=wk
@@ -1023,7 +1037,9 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                         'junk',
                         'junk', #1pt safety
                         'junk' #'defensiveFumbles'/,
-                        ,'fumbleRecoveredForTD'
+                        ,'fumbleRecoveredForTD',
+                        'defensivePointsAllowed',
+                        'defensiveYardsAllowed'
                         ]
                         if (not(bye) and status!='bye' and empty==0): ## or (player_id==8439 and player_wk!=12) or (player_id==3116593 and player_wk!=7) or (player_id==3051392 and player_wk!=7) or (player_id==2980453 and player_wk!=12) or (player_id==3051926 and player_wk!=5)  or (player_id==2577327 and player_wk!=10) or (player_id==11122 and player_wk!=11) or (player_id==4241457 and player_wk!=9)  or (player_id==4360569 and player_wk!=9 and player_wk<=13)  or (player_id==4361579 and player_wk!=14) or (player_id==3912547 and player_wk!=6) or (player_id==2977187 and player_wk!=6) or (player_id==3051876 and player_wk!=12) or (player_id==3126486 and player_wk!=9):
                             for item in stats:
@@ -1110,7 +1126,9 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                                 '1pt Safety':temp[51],
                                 'Defense Fumbles Lost':temp[52],
                                 'Actual':[plyr.points],
-                                'Fumble Recovered for TD':temp[53]
+                                'Fumble Recovered for TD':temp[53],
+                                'PA':temp[54],
+                                'YA':temp[55]
                                 })
 
                             player_df = pd.concat([player_df,player_row_home],ignore_index=True)
@@ -1189,7 +1207,9 @@ def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
                                 '1pt Safety':0,
                                 'Defense Fumbles Lost':0,
                                 'Actual':0,
-                                'Fumble Recovered for TD':0
+                                'Fumble Recovered for TD':0,
+                                'PA':0,
+                                'YA':0
                                 })
 
                             player_df = pd.concat([player_df,player_row_bye],ignore_index=True)
