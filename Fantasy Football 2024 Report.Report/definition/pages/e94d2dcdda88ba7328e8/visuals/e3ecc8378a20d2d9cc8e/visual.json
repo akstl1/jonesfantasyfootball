@@ -144,7 +144,7 @@
             "levelSubtotalEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -1203,13 +1203,6 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'1pt Safety'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
                           "Value": "'2pt Return'"
                         }
                       }
@@ -1232,6 +1225,13 @@
                       {
                         "Literal": {
                           "Value": "'INT'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'PA'"
                         }
                       }
                     ],
@@ -1267,13 +1267,6 @@
                       {
                         "Literal": {
                           "Value": "'Blocked Punt, PAT or FG'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'PA'"
                         }
                       }
                     ]

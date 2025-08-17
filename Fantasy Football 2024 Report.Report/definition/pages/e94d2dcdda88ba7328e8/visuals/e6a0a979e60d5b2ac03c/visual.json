@@ -3,7 +3,7 @@
   "name": "e6a0a979e60d5b2ac03c",
   "position": {
     "x": 661.47783251231533,
-    "y": 514.28571428571433,
+    "y": 524.92610837438428,
     "z": 33000,
     "height": 98.423645320197039,
     "width": 547.09359605911334,
@@ -144,7 +144,7 @@
             "levelSubtotalEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
