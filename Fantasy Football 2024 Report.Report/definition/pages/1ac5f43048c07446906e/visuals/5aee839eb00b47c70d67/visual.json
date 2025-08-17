@@ -4,10 +4,10 @@
   "position": {
     "x": 762.67765649365242,
     "y": 183.58208955223881,
-    "z": 41000,
+    "z": 34000,
     "height": 41.194029850746269,
     "width": 214.02985074626866,
-    "tabOrder": 40000
+    "tabOrder": 34000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -786,20 +786,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "e1c1ec848d7234acb9c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away Name"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

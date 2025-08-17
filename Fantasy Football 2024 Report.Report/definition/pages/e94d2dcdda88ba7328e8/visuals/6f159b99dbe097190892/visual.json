@@ -4,10 +4,10 @@
   "position": {
     "x": 1038.3251231527095,
     "y": 42.5615763546798,
-    "z": 1000,
+    "z": 0,
     "height": 36.354679802955665,
     "width": 126.79802955665025,
-    "tabOrder": 25000
+    "tabOrder": 19000
   },
   "visual": {
     "visualType": "slicer",
@@ -94,7 +94,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'CNC vs. AP'"
+                                "Value": "'JG vs. BT'"
                               }
                             }
                           ]
@@ -385,20 +385,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "b35ee64685698154a702",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MatchupsTable"
-              }
-            },
-            "Property": "Matchup Header Abbrev"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -17809,786 +17809,9 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    },
-			    "player_points_stat.condensed_attribute": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "PlayerPointsStats",
-			          "ConceptualProperty": "Condensed Attribute"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "condensed attribute": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "attribute": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "condensed trait": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "condensed aspect": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "condensed element": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "condensed property": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "trait": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "aspect": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "element": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "property": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "condensed quality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "condensed characteristic": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "players_table_has_unique_player1": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayersTable"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        },
-			        "unique_player": {
-			          "Target": {
-			            "Entity": "unique_player"
-			          },
-			          "Nouns": [
-			            {
-			              "Player": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "unique_player"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_unique_players"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "unique_player"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "unique_players_have_players_tables"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "unique_player"
-			            },
-			            "Verbs": [
-			              {
-			                "Play": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "unique_players_Play_players_tables"
-			        }
-			      ]
-			    },
-			    "draft_round_measure_draft_round_text": {
-			      "Binding": {
-			        "ConceptualEntity": "Draft"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "draft": {
-			          "Target": {
-			            "Entity": "draft"
-			          }
-			        },
-			        "measure.draft_round_text": {
-			          "Target": {
-			            "Entity": "measure.draft_round_text"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Prepositions": [
-			              {
-			                "round": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "measure.draft_round_text"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "drafts_are_round_draft_round_text"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Object": {
-			              "Role": "measure.draft_round_text"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "drafts_have_draft_round_text"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Verbs": [
-			              {
-			                "draft": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "PrepositionalPhrases": [
-			              {
-			                "Prepositions": [
-			                  {
-			                    "round": {
-			                      "State": "Generated"
-			                    }
-			                  }
-			                ],
-			                "Object": {
-			                  "Role": "measure.draft_round_text"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.95,
-			          "ID": "drafts_draft_round_draft_round_text"
-			        }
-			      ]
-			    },
-			    "draft_round_measure_draft_round_pick": {
-			      "Binding": {
-			        "ConceptualEntity": "Draft"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "draft": {
-			          "Target": {
-			            "Entity": "draft"
-			          }
-			        },
-			        "measure.draft_round_pick": {
-			          "Target": {
-			            "Entity": "measure.draft_round_pick"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Prepositions": [
-			              {
-			                "round": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "measure.draft_round_pick"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "drafts_are_round_draft_round_pick"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Object": {
-			              "Role": "measure.draft_round_pick"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "drafts_have_draft_round_pick"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Verbs": [
-			              {
-			                "draft": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "PrepositionalPhrases": [
-			              {
-			                "Prepositions": [
-			                  {
-			                    "round": {
-			                      "State": "Generated"
-			                    }
-			                  }
-			                ],
-			                "Object": {
-			                  "Role": "measure.draft_round_pick"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.95,
-			          "ID": "drafts_draft_round_draft_round_pick"
-			        }
-			      ]
-			    },
-			    "spider_chart_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "SpiderChart"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "spider_chart": {
-			          "Target": {
-			            "Entity": "spider_chart"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "spider_chart"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "spider_charts_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "spider_chart"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_spider_charts"
-			        }
-			      ]
-			    },
-			    "top_performer_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "TopPerformers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "top_performer": {
-			          "Target": {
-			            "Entity": "top_performer"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "top_performer"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "top_performers_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "top_performer"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_top_performers"
-			        }
-			      ]
-			    },
-			    "standing_has_week": {
-			      "Binding": {
-			        "ConceptualEntity": "Standings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "standing": {
-			          "Target": {
-			            "Entity": "standing"
-			          }
-			        },
-			        "week": {
-			          "Target": {
-			            "Entity": "week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "standing"
-			            },
-			            "Object": {
-			              "Role": "week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "standing_have_weeks"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "week"
-			            },
-			            "Object": {
-			              "Role": "standing"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "weeks_have_standing"
-			        }
-			      ]
-			    },
-			    "standing_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "Standings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "standing": {
-			          "Target": {
-			            "Entity": "standing"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "standing"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "standing_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "standing"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_standing"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_week": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "week": {
-			          "Target": {
-			            "Entity": "week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_weeks"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "week"
-			            },
-			            "Object": {
-			              "Role": "power_ranking"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "weeks_have_power_ranking"
-			        }
-			      ]
-			    },
-			    "power_ranking_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "Power Rankings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "power_ranking": {
-			          "Target": {
-			            "Entity": "power_ranking"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "power_ranking"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "power_ranking_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "power_ranking"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_power_ranking"
-			        }
-			      ]
-			    },
-			    "draft_has_teams_table": {
-			      "Binding": {
-			        "ConceptualEntity": "Draft"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "draft": {
-			          "Target": {
-			            "Entity": "draft"
-			          }
-			        },
-			        "teams_table": {
-			          "Target": {
-			            "Entity": "teams_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "draft"
-			            },
-			            "Object": {
-			              "Role": "teams_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "drafts_have_teams_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "teams_table"
-			            },
-			            "Object": {
-			              "Role": "draft"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "teams_tables_have_drafts"
-			        }
-			      ]
-			    },
-			    "player_points_stat_has_points_map": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayerPointsStats"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "player_points_stat": {
-			          "Target": {
-			            "Entity": "player_points_stat"
-			          }
-			        },
-			        "points_map": {
-			          "Target": {
-			            "Entity": "points_map"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "player_points_stat"
-			            },
-			            "Object": {
-			              "Role": "points_map"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "player_points_stats_have_points_maps"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "points_map"
-			            },
-			            "Object": {
-			              "Role": "player_points_stat"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "points_maps_have_player_points_stats"
-			        }
-			      ]
-			    },
-			    "player_points_stat_has_players_table": {
-			      "Binding": {
-			        "ConceptualEntity": "PlayerPointsStats"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "player_points_stat": {
-			          "Target": {
-			            "Entity": "player_points_stat"
-			          }
-			        },
-			        "players_table": {
-			          "Target": {
-			            "Entity": "players_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "player_points_stat"
-			            },
-			            "Object": {
-			              "Role": "players_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "player_points_stats_have_players_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "players_table"
-			            },
-			            "Object": {
-			              "Role": "player_points_stat"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "players_tables_have_player_points_stats"
-			        }
-			      ]
-			    },
 			    "players_table_has_matchups_table": {
 			      "Binding": {
 			        "ConceptualEntity": "PlayersTable"
@@ -23407,6 +22630,90 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "draft_has_measure_draft_round_text": {
+			      "Binding": {
+			        "ConceptualEntity": "Draft"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "draft": {
+			          "Target": {
+			            "Entity": "draft"
+			          }
+			        },
+			        "measure.draft_round_text": {
+			          "Target": {
+			            "Entity": "measure.draft_round_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Object": {
+			              "Role": "measure.draft_round_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "drafts_have_draft_round_text"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Verbs": [
+			              {
+			                "draft": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "round": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.draft_round_text"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "drafts_draft_round_draft_round_text"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Prepositions": [
+			              {
+			                "round": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "measure.draft_round_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "drafts_are_round_draft_round_text"
+			        }
+			      ]
+			    },
 			    "draft_has_measure_draft_round": {
 			      "Binding": {
 			        "ConceptualEntity": "Draft"
@@ -23437,6 +22744,90 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "drafts_have_draft_round"
+			        }
+			      ]
+			    },
+			    "draft_has_measure_draft_round_pick": {
+			      "Binding": {
+			        "ConceptualEntity": "Draft"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "draft": {
+			          "Target": {
+			            "Entity": "draft"
+			          }
+			        },
+			        "measure.draft_round_pick": {
+			          "Target": {
+			            "Entity": "measure.draft_round_pick"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Object": {
+			              "Role": "measure.draft_round_pick"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "drafts_have_draft_round_pick"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Verbs": [
+			              {
+			                "draft": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "round": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.draft_round_pick"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "drafts_draft_round_draft_round_pick"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Prepositions": [
+			              {
+			                "round": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "measure.draft_round_pick"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "drafts_are_round_draft_round_pick"
 			        }
 			      ]
 			    },
@@ -24801,6 +24192,493 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "top_performers_perform"
+			        }
+			      ]
+			    },
+			    "unique_player_Play_players_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayersTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unique_player": {
+			          "Target": {
+			            "Entity": "unique_player"
+			          },
+			          "Nouns": [
+			            {
+			              "Player": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        },
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "unique_player"
+			            },
+			            "Verbs": [
+			              {
+			                "Play": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "unique_players_Play_players_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "unique_player"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_unique_players"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unique_player"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unique_players_have_players_tables"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_players_table": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "players_table": {
+			          "Target": {
+			            "Entity": "players_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "players_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_players_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "players_table"
+			            },
+			            "Object": {
+			              "Role": "player_points_stat"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "players_tables_have_player_points_stats"
+			        }
+			      ]
+			    },
+			    "player_points_stat_has_points_map": {
+			      "Binding": {
+			        "ConceptualEntity": "PlayerPointsStats"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "player_points_stat": {
+			          "Target": {
+			            "Entity": "player_points_stat"
+			          }
+			        },
+			        "points_map": {
+			          "Target": {
+			            "Entity": "points_map"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "player_points_stat"
+			            },
+			            "Object": {
+			              "Role": "points_map"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "player_points_stats_have_points_maps"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "points_map"
+			            },
+			            "Object": {
+			              "Role": "player_points_stat"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "points_maps_have_player_points_stats"
+			        }
+			      ]
+			    },
+			    "draft_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Draft"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "draft": {
+			          "Target": {
+			            "Entity": "draft"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "draft"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "drafts_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "draft"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_drafts"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "power_ranking"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_power_ranking"
+			        }
+			      ]
+			    },
+			    "power_ranking_has_week": {
+			      "Binding": {
+			        "ConceptualEntity": "Power Rankings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "power_ranking": {
+			          "Target": {
+			            "Entity": "power_ranking"
+			          }
+			        },
+			        "week": {
+			          "Target": {
+			            "Entity": "week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "power_ranking"
+			            },
+			            "Object": {
+			              "Role": "week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "power_ranking_have_weeks"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "week"
+			            },
+			            "Object": {
+			              "Role": "power_ranking"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "weeks_have_power_ranking"
+			        }
+			      ]
+			    },
+			    "standing_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Standings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "standing": {
+			          "Target": {
+			            "Entity": "standing"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "standing"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "standing_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "standing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_standing"
+			        }
+			      ]
+			    },
+			    "standing_has_week": {
+			      "Binding": {
+			        "ConceptualEntity": "Standings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "standing": {
+			          "Target": {
+			            "Entity": "standing"
+			          }
+			        },
+			        "week": {
+			          "Target": {
+			            "Entity": "week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "standing"
+			            },
+			            "Object": {
+			              "Role": "week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "standing_have_weeks"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "week"
+			            },
+			            "Object": {
+			              "Role": "standing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "weeks_have_standing"
+			        }
+			      ]
+			    },
+			    "top_performer_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "TopPerformers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "top_performer": {
+			          "Target": {
+			            "Entity": "top_performer"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "top_performer"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "top_performers_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "top_performer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_top_performers"
+			        }
+			      ]
+			    },
+			    "spider_chart_has_teams_table": {
+			      "Binding": {
+			        "ConceptualEntity": "SpiderChart"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "spider_chart": {
+			          "Target": {
+			            "Entity": "spider_chart"
+			          }
+			        },
+			        "teams_table": {
+			          "Target": {
+			            "Entity": "teams_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "spider_chart"
+			            },
+			            "Object": {
+			              "Role": "teams_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "spider_charts_have_teams_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "teams_table"
+			            },
+			            "Object": {
+			              "Role": "spider_chart"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "teams_tables_have_spider_charts"
 			        }
 			      ]
 			    }

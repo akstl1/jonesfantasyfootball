@@ -3,11 +3,11 @@
   "name": "1db7a447275ecd04ec03",
   "position": {
     "x": 837.93103448275861,
-    "y": 372.78064205935578,
-    "z": 22000,
+    "y": 354.84587104755184,
+    "z": 13000,
     "height": 89,
     "width": 389,
-    "tabOrder": 17000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -218,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Defensive Stats Home'"
+                  "Value": "'Defensive Stats'"
                 }
               }
             },
@@ -515,48 +515,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "af963028e6a43d5e005d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive TDs"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "54adbaf4b1b3bca1e8a2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive Interceptions"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5eee4dcf9e3c4ca1803e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Defensive Fumbles"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

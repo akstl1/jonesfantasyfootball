@@ -3,11 +3,11 @@
   "name": "14e1b258cca0323c511e",
   "position": {
     "x": 837.93103448275861,
-    "y": 183.28064205935598,
-    "z": 14000,
+    "y": 165.34587104755198,
+    "z": 6000,
     "height": 89,
     "width": 389,
-    "tabOrder": 9000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -219,7 +219,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Actual v Projected Points Home'"
+                  "Value": "'Actual v Projected Points'"
                 }
               }
             },
@@ -516,48 +516,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "e26ccb0454d2b6194653",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Projected Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fa987cbe65d38c4e0d00",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9768048033378e18c7c0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home plusOrMinus Text"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

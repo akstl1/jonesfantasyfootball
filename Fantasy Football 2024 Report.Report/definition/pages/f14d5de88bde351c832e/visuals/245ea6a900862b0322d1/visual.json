@@ -7,7 +7,7 @@
     "z": 19000,
     "height": 99.402985074626869,
     "width": 596.41791044776119,
-    "tabOrder": 15000
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -633,93 +633,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "24cfef5005cec6408e2d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "QB#"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ead100ce5002868b7d09",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "RB#"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c21ce360bce1005009aa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "WR#"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d2345fa11a71d786cb5d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "TE#"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b2b3652820dd02430944",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "K#"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f1ffc030238b830359c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "D#"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

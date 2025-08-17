@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "e6c30eeac26c88402d00",
   "position": {
-    "x": 854.93103448275861,
-    "y": 102.28064205935597,
-    "z": 15000,
-    "height": 66,
-    "width": 281,
-    "tabOrder": 10000
+    "x": 854.77832512315274,
+    "y": 92.330049261079267,
+    "z": 7000,
+    "height": 55.862068965517238,
+    "width": 281.08374384236453,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -173,7 +173,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "21D"
+                  "Value": "19D"
                 }
               }
             },
@@ -206,7 +206,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "21D"
+                  "Value": "19D"
                 }
               }
             },
@@ -262,7 +262,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "11D"
                 }
               }
             },
@@ -671,6 +671,22 @@
             "id": "default"
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Narrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -753,6 +769,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }
@@ -930,20 +953,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "0fd483730414a203a75e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Name"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

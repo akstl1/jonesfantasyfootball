@@ -4,10 +4,10 @@
   "position": {
     "x": 6.2068965517241379,
     "y": 86.009852216748769,
-    "z": 14000,
+    "z": 7000,
     "height": 55.862068965517238,
     "width": 1268.8669950738915,
-    "tabOrder": 11000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -310,93 +310,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4adecfb7972894c0ee41",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Season Record"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f81dc642c5c4a3d00128",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Season Win %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "79ea96ce1019cd66bbad",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Streak"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "82e967c60b23accd080b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final League Standing"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "46f5597e9487c0834841",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Division Standing"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ad3e96c42682a019ae91",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Final Power Ranking"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

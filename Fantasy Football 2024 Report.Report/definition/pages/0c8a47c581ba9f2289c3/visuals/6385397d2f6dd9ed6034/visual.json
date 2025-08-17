@@ -4,10 +4,10 @@
   "position": {
     "x": 472.61083743842363,
     "y": 180,
-    "z": 13000,
+    "z": 6000,
     "height": 257.14285714285717,
     "width": 334.28571428571428,
-    "tabOrder": 8000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -519,25 +519,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "2c962dd9b010d5dd6ce7",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "SpiderChart"
-                  }
-                },
-                "Property": "Condensed Rank"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -105,7 +105,7 @@ table PlayerPointsStats
 
 	column 'Condensed Attribute'
 		dataType: string
-		lineageTag: f1184209-c3df-4016-95f8-b10154a24a22
+		lineageTag: ed000a54-0bf3-44e4-8997-6241bcdf9a7f
 		summarizeBy: none
 		sourceColumn: Condensed Attribute
 
@@ -127,10 +127,13 @@ table PlayerPointsStats
 				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom1",{{"TotalPoints", type number}}),
 				    #"Rounded Off" = Table.TransformColumns(#"Changed Type3",{{"TotalPoints", each Number.Round(_, 2), type number}}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Rounded Off",{"Opponent", "NFL_Team", "Home", "Status", "PositionRank", "Projected", "PlayerID", "Bye", "PointsPerItem"}),
-				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Condensed Attribute", each if [Attribute] = "Passing Yards" then "YDS" else if [Attribute] = "TD Pass" then "TD" else if [Attribute] = "Interceptions Thrown" then "INT" else if [Attribute] = "Receiving Targets" then "TAR" else if [Attribute] = "Each Reception" then "REC" else if [Attribute] = "Rushing Attempts" then "YDS" else if [Attribute] = "Rushing Yards" then "YDS" else if [Attribute] = "TD Rush" then "TD" else if [Category] = "Kicking" then [Attribute] else if [Category] = "D/ST" then [Attribute] else if [Attribute] = "TD Reception" then "TD" else null),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Condensed Attribute", type text}})
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Condensed Attribute", each if [Attribute] = "Passing Yards" then "YDS" else if [Attribute] = "TD Pass" then "TD" else if [Attribute] = "Interceptions Thrown" then "INT" else if [Attribute] = "Receiving Targets" then "TAR" else if [Attribute] = "Each Reception" then "REC" else if [Attribute] = "Rushing Attempts" then "YDS" else if [Attribute] = "Rushing Yards" then "YDS" else if [Attribute] = "TD Rush" then "TD" else if [Category] = "Kicking" then [Attribute] else if [Category] = "D/ST" then [Attribute] else if [Attribute] = "TD Reception" then "TD" else if [Attribute]="PA" then "PA" else if [Attribute]="YA" then "YA" else "Other"),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom", "Condensed Attribute2", each if [Condensed Attribute] = "Each PAT Made" then "PATs Made" else if [Condensed Attribute] = "PAT Attempt" then "PAT Attempts" else if [Condensed Attribute] = "FG Made (0-39 yards)" then "1-39" else if [Condensed Attribute] = "FG Made (40-49 yards)" then "40-49" else if [Condensed Attribute] = "FG Made (50-59 yards)" then "50-59" else if [Condensed Attribute] = "FG Made (60+ yards)" then "60+" else if [Condensed Attribute] = "Field Goal Attempted" then "FG Attempts" else if [Condensed Attribute] = "Each Sack" then "Sack" else if Text.Contains([Condensed Attribute], "TD") then "TD" else if Text.Contains([Condensed Attribute], "Block") then "Block" else if [Condensed Attribute] = "Each Interception" then "INT" else if [Condensed Attribute] = "Each Fumble Recovered" then "FR" else if [Condensed Attribute] = "Each Safety" then "Safety" else if [Condensed Attribute] = null then null else [Condensed Attribute]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom2",{{"Condensed Attribute2", type text}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Changed Type1",{"Condensed Attribute"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Condensed Attribute2", "Condensed Attribute"}})
 				in
-				    #"Changed Type1"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

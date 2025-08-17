@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "0e2ddcbe07442cd28355",
   "position": {
-    "x": 427.93103448275866,
-    "y": 102.28064205935597,
-    "z": 20000,
-    "height": 66,
-    "width": 149,
-    "tabOrder": 15000
+    "x": 428.27586206896552,
+    "y": 93.216748768468435,
+    "z": 11000,
+    "height": 54.975369458128078,
+    "width": 148.9655172413793,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "card",
@@ -229,20 +229,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d38b7c712c3225a3b8c7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Scoreboard Away Points and arrow"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

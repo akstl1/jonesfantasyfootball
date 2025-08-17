@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "5738809586e4163a1b77",
+  "name": "351a8f53985c386d16e1",
   "position": {
-    "x": 1135.9310344827586,
-    "y": 102.28064205935597,
-    "z": 17000,
-    "height": 65,
-    "width": 73,
-    "tabOrder": 12000
+    "x": 1135.8620689655172,
+    "y": 93.216748768468435,
+    "z": 31000,
+    "height": 54.975369458128078,
+    "width": 72.709359605911331,
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -195,6 +195,17 @@
                   "Value": "'left'"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#e6e6e6'"
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -256,6 +267,13 @@
                   "Value": "2L"
                 }
               }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'middle'"
+                }
+              }
             }
           }
         }
@@ -291,6 +309,45 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "shapeCustomRectangle": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangle'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "topMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(TeamsTable.Image)"
           }
         }
       ]
@@ -337,9 +394,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#E6E6E6'"
                     }
                   }
                 }

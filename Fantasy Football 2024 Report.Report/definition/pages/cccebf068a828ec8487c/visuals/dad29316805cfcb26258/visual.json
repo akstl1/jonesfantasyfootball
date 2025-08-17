@@ -4,10 +4,10 @@
   "position": {
     "x": 48.133225498125142,
     "y": 130.20989962636637,
-    "z": 3000,
+    "z": 1000,
     "height": 86.896551724137936,
     "width": 559.50738916256159,
-    "tabOrder": 14000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -987,34 +987,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "e3121d291a9100e0eadc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3e91cadc05cad3901600",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Points"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

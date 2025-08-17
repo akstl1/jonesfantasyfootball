@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "260a05b422a0cc69d0ca",
   "position": {
-    "x": 55.968997566932131,
-    "y": 561.75282428216,
-    "z": 28000,
-    "height": 135.12135096216781,
-    "width": 388.47388401623249,
-    "tabOrder": 23000
+    "x": 55.862068965517238,
+    "y": 543.54679802955661,
+    "z": 19000,
+    "height": 135.66502463054186,
+    "width": 388.37438423645318,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "tableEx",
@@ -183,7 +183,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Inactive Players In Roster Away'"
+                  "Value": "'Inactive Players In Roster'"
                 }
               }
             },
@@ -536,34 +536,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "f6bbd45f0ba22c7bd983",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Player Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "38a1271dae02963a5961",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Team City"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

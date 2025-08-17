@@ -4,10 +4,10 @@
   "position": {
     "x": 624.48790530108079,
     "y": 130.20989962636637,
-    "z": 1000,
+    "z": 0,
     "height": 317.4384236453202,
     "width": 609.16256157635473,
-    "tabOrder": 12000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -262,6 +262,20 @@
           },
           "selector": {
             "metadata": "*Measures.Net Pts"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Streak"
           }
         }
       ],

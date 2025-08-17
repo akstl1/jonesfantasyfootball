@@ -3,11 +3,11 @@
   "name": "d44c2bb3711bb932b40d",
   "position": {
     "x": 55.968997566932131,
-    "y": 467.65045486207862,
-    "z": 30000,
+    "y": 449.71568385027467,
+    "z": 21000,
     "height": 89.276606885718024,
     "width": 389.68032464982326,
-    "tabOrder": 27000
+    "tabOrder": 21000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -279,7 +279,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top Performers Away'"
+                  "Value": "'Top Performers'"
                 }
               }
             },
@@ -466,48 +466,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "da233c08e06967c60b50",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 1"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ee2a280e9ede440440ca",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a72a706583194262d901",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Top Performer 3"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

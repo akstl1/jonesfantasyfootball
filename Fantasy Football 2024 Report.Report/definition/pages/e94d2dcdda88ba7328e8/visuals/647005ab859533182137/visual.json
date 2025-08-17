@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "647005ab859533182137",
   "position": {
-    "x": 74.128078817734163,
-    "y": 102.43827752733627,
-    "z": 18000,
-    "height": 64.729064039408868,
+    "x": 74.482758620689651,
+    "y": 93.216748768468435,
+    "z": 9000,
+    "height": 54.975369458128078,
     "width": 72.709359605911331,
-    "tabOrder": 13000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -244,6 +244,29 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "topMargin": {
+              "expr": {
+                "Literal": {
+                  "Value": "8L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "*Measures.Scoreboard Team1 Image"
           }
         }
       ]

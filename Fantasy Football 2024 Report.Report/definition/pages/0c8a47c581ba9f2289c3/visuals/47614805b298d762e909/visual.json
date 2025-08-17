@@ -4,10 +4,10 @@
   "position": {
     "x": 472.61083743842363,
     "y": 443.3497536945813,
-    "z": 12000,
+    "z": 5000,
     "height": 259.80295566502463,
     "width": 334.28571428571428,
-    "tabOrder": 7000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -756,37 +756,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "07f292c257ea166ea02c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Weeks"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "313734dd68952a140a0d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Point Performance Summary"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
