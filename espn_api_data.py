@@ -15,8 +15,8 @@ from espn_api_functions import curr_week, hundredyardgame, threehundredyardpassi
 league = League(league_id=os.getenv("LEAGUE_ID"), year=int(os.getenv("YEAR")), espn_s2=os.getenv("S2"),swid=os.getenv("SWID"))
 curr_week=league.current_week
 
-matchup = league.box_scores(3)[1].home_lineup[11].points_breakdown
-print(matchup)
+# matchup = league.box_scores(3)[1].home_lineup[11].points_breakdown
+# print(matchup)
 
 ###############################
 ###############################
@@ -37,13 +37,13 @@ def startup():
 ###############################
 
 def weeklyStats(curr_week = curr_week):
-    powerRankingsSingleWeek(current_wk=curr_week)
-    matchupsSingleWeek(current_wk=curr_week)
-    powerRankingsSingleWeek(current_wk=curr_week)
+    # powerRankingsSingleWeek(current_wk=curr_week)
+    # matchupsSingleWeek(current_wk=curr_week)
+    # powerRankingsSingleWeek(current_wk=curr_week)
     playerStatsSingleWeek(current_wk=curr_week)
     return None
 
-# weeklyStats()
+weeklyStats(1)
 
 ###############################
 ###############################
