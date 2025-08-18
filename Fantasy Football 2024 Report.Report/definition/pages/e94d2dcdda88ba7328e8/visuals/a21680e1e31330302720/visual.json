@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a21680e1e31330302720",
   "position": {
-    "x": 1165.1231527093596,
+    "x": 1172.2167487684728,
     "y": 42.5615763546798,
     "z": 30000,
     "height": 36.354679802955665,
-    "width": 115.27093596059113,
+    "width": 108.17733990147784,
     "tabOrder": 30000
   },
   "visual": {
@@ -38,18 +38,6 @@
       "general": [
         {
           "properties": {
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -89,6 +77,18 @@
                     }
                   }
                 ]
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
               }
             }
           }
@@ -143,13 +143,6 @@
                 }
               }
             },
-            "outlineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
             "background": {
               "solid": {
                 "color": {
@@ -161,6 +154,13 @@
                   }
                 }
               }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -170,6 +170,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Week Slicer'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -177,10 +184,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Week Slicer'"
+                  "Value": "true"
                 }
               }
             }
@@ -210,6 +217,13 @@
       "background": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -221,15 +235,30 @@
                   }
                 }
               }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Week1",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },
@@ -300,54 +329,6 @@
                   "expr": {
                     "Literal": {
                       "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "72b428b664a0a8c9959c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Weeks"
-              }
-            },
-            "Property": "Week"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "w",
-              "Entity": "Weeks",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 3,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "w"
-                        }
-                      },
-                      "Property": "Week"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "15L"
                     }
                   }
                 }

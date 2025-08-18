@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "e3ecc8378a20d2d9cc8e",
+  "name": "59346cf882c0e2089367",
   "position": {
-    "x": 18.620689655172413,
-    "y": 626.99701521512293,
-    "z": 34000,
-    "height": 86.009852216748769,
+    "x": 665.9113300492611,
+    "y": 624.23645320197045,
+    "z": 41003,
+    "height": 95,
     "width": 595.86206896551721,
-    "tabOrder": 34000
+    "tabOrder": 41003
   },
   "visual": {
     "visualType": "pivotTable",
@@ -34,22 +34,6 @@
         },
         "Rows": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PlayersTable"
-                    }
-                  },
-                  "Property": "SlotDescription"
-                }
-              },
-              "queryRef": "PlayersTable.SlotDescription",
-              "nativeQueryRef": " ",
-              "active": true,
-              "displayName": " "
-            },
             {
               "field": {
                 "Column": {
@@ -101,15 +85,20 @@
         "levels": [
           {
             "queryRefs": [
-              "PlayersTable.SlotDescription"
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
               "PlayersTable.Player Name"
             ],
-            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PlayersTable"
+                    }
+                  },
+                  "Property": "Player Name"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
@@ -176,20 +165,6 @@
           },
           "selector": {
             "metadata": "PlayersTable.Player Name"
-          }
-        },
-        {
-          "properties": {
-            "levelSubtotalEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "PlayersTable.SlotDescription"
           }
         }
       ],
@@ -992,7 +967,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -1139,7 +1114,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Away'"
+                          "Value": "'Home'"
                         }
                       }
                     ]
@@ -1399,7 +1374,7 @@
         "howCreated": "User"
       },
       {
-        "name": "b0fdae0d9e42d9a17988",
+        "name": "83ab1b54bb8c9a662aa9",
         "field": {
           "Column": {
             "Expression": {
@@ -1410,7 +1385,8 @@
             "Property": "SlotDescription"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"

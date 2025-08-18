@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "e6a0a979e60d5b2ac03c",
+  "name": "0f000e90712200a93083",
   "position": {
-    "x": 661.47783251231533,
-    "y": 524.92610837438428,
-    "z": 33000,
-    "height": 98.423645320197039,
-    "width": 547.09359605911334,
-    "tabOrder": 33000
+    "x": 665.9113300492611,
+    "y": 526.69950738916259,
+    "z": 41002,
+    "height": 95.763546798029552,
+    "width": 595.86206896551721,
+    "tabOrder": 41002
   },
   "visual": {
     "visualType": "pivotTable",
@@ -988,7 +988,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "11D"
                 }
               }
             }
@@ -1009,6 +1009,18 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -1110,7 +1122,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Away'"
+                          "Value": "'Home'"
                         }
                       }
                     ]

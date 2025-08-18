@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "e3ecc8378a20d2d9cc8e",
+  "name": "1c21c7e10b8c30d99a0a",
   "position": {
     "x": 18.620689655172413,
-    "y": 626.99701521512293,
-    "z": 34000,
-    "height": 86.009852216748769,
+    "y": 535.56650246305423,
+    "z": 41004,
+    "height": 82.463054187192114,
     "width": 595.86206896551721,
-    "tabOrder": 34000
+    "tabOrder": 41004
   },
   "visual": {
     "visualType": "pivotTable",
@@ -103,6 +103,18 @@
             "queryRefs": [
               "PlayersTable.SlotDescription"
             ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PlayersTable"
+                    }
+                  },
+                  "Property": "SlotDescription"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -110,6 +122,18 @@
               "PlayersTable.Player Name"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PlayersTable"
+                    }
+                  },
+                  "Property": "Player Name"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
@@ -302,7 +326,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "92.98310450922679D"
+                  "Value": "95.64406213123344D"
                 }
               }
             }
@@ -999,7 +1023,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'D/ST'"
+                  "Value": "'Kickers'"
                 }
               }
             },
@@ -1091,7 +1115,15 @@
         "objects": {
           "general": [
             {
-              "properties": {}
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
             }
           ]
         }
@@ -1223,84 +1255,250 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "p"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "p"
+                              }
+                            },
+                            "Property": "Condensed Attribute"
                           }
-                        },
-                        "Property": "Condensed Attribute"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'0 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'100-199 total yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'14-17 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'1-6 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'1pt Safety'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'200-299 yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'28-34 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'2pt Return'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'350-399 yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'35-45 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'400-449 yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'450-499 yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'46+ points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'500-549 yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'550+ yards allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'7-13 points allowed'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Block'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Defense Fumbles Lost'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'FR'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'INT'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Other'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'PA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'REC'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Sack'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Safety'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'TAR'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'TD'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'YA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'YDS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Less than 100 total yards allowed'"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'TD'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'INT'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'FR'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Sack'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Safety'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Block'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'PA'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'YA'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Blocked Punt, PAT or FG'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
                 }
               }
             }
@@ -1357,12 +1555,28 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "83ab1b54bb8c9a662aa9",
+        "ordinal": 9,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "SlotDescription"
+          }
+        },
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
             {
               "Name": "p",
-              "Entity": "PlayerPointsStats",
+              "Entity": "PlayersTable",
               "Type": 0
             }
           ],
@@ -1378,7 +1592,7 @@
                             "Source": "p"
                           }
                         },
-                        "Property": "Position"
+                        "Property": "SlotDescription"
                       }
                     }
                   ],
@@ -1386,7 +1600,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'D/ST'"
+                          "Value": "'Kicker'"
                         }
                       }
                     ]
@@ -1395,22 +1609,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "b0fdae0d9e42d9a17988",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "SlotDescription"
-          }
-        },
-        "type": "Categorical"
+        }
       }
     ],
     "filterSortOrder": "Custom"
