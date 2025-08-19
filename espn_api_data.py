@@ -95,7 +95,7 @@ def multiWeekStats(curr_week = curr_week):
 ##### draft data
 
 
-def draft(players=12,rounds=17):
+# def draft(players=12,rounds=17):
     draft_df = pd.DataFrame({'Team':[],'Player':[],'Round':[],'Pick':[]})
 
     for i in range(players*rounds):
@@ -112,7 +112,7 @@ def draft(players=12,rounds=17):
 
 ##### power rankings data
 
-def powerRankingsSingleWeek(current_wk=curr_week,players=12):
+# def powerRankingsSingleWeek(current_wk=curr_week,players=12):
     power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
     rankings = league.power_rankings(week=current_wk)
     for rank in range(players):
@@ -125,7 +125,7 @@ def powerRankingsSingleWeek(current_wk=curr_week,players=12):
 
 ##### standings data
 
-def standingsSingleWeek(current_wk=curr_week, players=12):
+# def standingsSingleWeek(current_wk=curr_week, players=12):
     standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
     standings = league.standings_weekly(current_wk)
     travis = 1
@@ -148,7 +148,7 @@ def standingsSingleWeek(current_wk=curr_week, players=12):
 # standingsSingleWeek()
 ##### matchup data
 
-def matchupsSingleWeek(current_wk=curr_week,players=12):
+# def matchupsSingleWeek(current_wk=curr_week,players=12):
     matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
                             'Week':[],
@@ -246,7 +246,7 @@ def matchupsSingleWeek(current_wk=curr_week,players=12):
         # print(matchups_df)
 
 
-def playerStatsSingleWeek(current_wk=curr_week,players=12):
+# def playerStatsSingleWeek(current_wk=curr_week,players=12):
     player_df = pd.DataFrame({  
                             'Week':[],
                             'FantasyTeam':[],
@@ -666,7 +666,7 @@ def playerStatsSingleWeek(current_wk=curr_week,players=12):
 
 ##### power rankings data
 
-def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
+# def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
     for wk in range(start_wk,current_wk+1):
         power_ranking_df = pd.DataFrame({'Team':[],'Week':[],'Rank':[]})
         rankings = league.power_rankings(week=wk)
@@ -681,7 +681,7 @@ def powerRankingsMultiWeek(current_wk=curr_week,start_wk=1,players=12):
 
 ##### standings data
 
-def standingsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
+# def standingsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         standings_df = pd.DataFrame({'Team':[],'Week':[],'League_Rank':[],'Division_Rank':[]})
         standings = league.standings_weekly(wk)
@@ -706,7 +706,7 @@ def standingsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
 
 ##### matchup data
 
-def matchupsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
+# def matchupsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         matchups_df = pd.DataFrame({'Team':[],
                             'Opponent':[],
@@ -809,7 +809,7 @@ def matchupsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
 
 ##### player stats data
 
-def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
+# def playerStatsMultiWeek(start_wk=1,current_wk=curr_week,players=12):
     for wk in range(start_wk,current_wk+1):
         player_df = pd.DataFrame({  
                             'Week':[],
