@@ -77,8 +77,9 @@
                 }
               },
               "queryRef": "PlayersTable.Player Name",
-              "nativeQueryRef": "Player Name",
-              "active": true
+              "nativeQueryRef": "Player",
+              "active": true,
+              "displayName": "Player"
             },
             {
               "field": {
@@ -480,6 +481,65 @@
                     "Right": {
                       "Literal": {
                         "Value": "'REC'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "44.73400081179813D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Category"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Rushing'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'TD'"
                       }
                     }
                   }
@@ -1058,5 +1118,6 @@
       }
     ],
     "filterSortOrder": "Custom"
-  }
+  },
+  "isHidden": true
 }

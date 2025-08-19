@@ -4,10 +4,10 @@
   "position": {
     "x": 1150.0492610837439,
     "y": 0,
-    "z": 38000,
+    "z": 37000,
     "height": 42.5615763546798,
     "width": 44.334975369458128,
-    "tabOrder": 38000
+    "tabOrder": 37000
   },
   "visual": {
     "visualType": "image",
@@ -72,6 +72,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "isHidden": true,
   "howCreated": "InsertVisualButton"
 }

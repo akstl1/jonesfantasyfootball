@@ -3,11 +3,11 @@
   "name": "e3ecc8378a20d2d9cc8e",
   "position": {
     "x": 18.620689655172413,
-    "y": 626.99701521512293,
-    "z": 34000,
+    "y": 626.89655172413791,
+    "z": 33000,
     "height": 86.009852216748769,
     "width": 595.86206896551721,
-    "tabOrder": 34000
+    "tabOrder": 33000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -42,12 +42,12 @@
                       "Entity": "PlayersTable"
                     }
                   },
-                  "Property": "SlotDescription"
+                  "Property": "Position"
                 }
               },
-              "queryRef": "PlayersTable.SlotDescription",
+              "queryRef": "PlayersTable.Position",
               "nativeQueryRef": " ",
-              "active": true,
+              "active": false,
               "displayName": " "
             },
             {
@@ -93,29 +93,6 @@
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "PlayersTable.SlotDescription"
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "PlayersTable.Player Name"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "subTotals": [
         {
@@ -189,7 +166,7 @@
             }
           },
           "selector": {
-            "metadata": "PlayersTable.SlotDescription"
+            "metadata": "PlayersTable.Position"
           }
         }
       ],
@@ -302,7 +279,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "92.98310450922679D"
+                  "Value": "94.76908773012849D"
                 }
               }
             }
@@ -982,6 +959,265 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40.18720064943851D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'TD'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "33.43349606604858D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'INT'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "48.82230540189197D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'FR'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.92122154928938D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Safety'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "46.9802837540798D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Block'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "37.41384087839008D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'PA'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.03439644704219D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "PlayerPointsStats"
+                          }
+                        },
+                        "Property": "Condensed Attribute"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'YA'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -1397,22 +1633,9 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "b0fdae0d9e42d9a17988",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "SlotDescription"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
-  }
+  },
+  "isHidden": true
 }

@@ -263,7 +263,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "0559c043590600dc53ca",
+                  "name": "e788641607ca73e70952",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -278,7 +278,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2a7760196d81dc40c997",
+                  "name": "5a004387981a3e0e96ab",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -467,7 +467,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b86d28d0a302d5aea5b9",
+                  "name": "a666ae0088d4c475166d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -482,7 +482,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "7295caa54d0e308d901b",
+                  "name": "066a62429acb42a62e59",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -497,7 +497,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e994ce28704900515dd2",
+                  "name": "ad576cd027817008c850",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -707,7 +707,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "6c8878180680e9ab9d9a",
+                  "name": "20c465932a154c93c5e9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -722,7 +722,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "888fe8113e118acb838d",
+                  "name": "e6708c1396d894667685",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -737,7 +737,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3d1a1c5850797d410479",
+                  "name": "b8214db253e54a95a0ec",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -994,7 +994,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "64ae43d7dceed5900040",
+                  "name": "7799d9cfdb49e028407e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1009,7 +1009,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "9dc3a96b008c060c0d47",
+                  "name": "ad257fe4153937e50b5e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1189,7 +1189,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "338d187f760b7d7b77e1",
+                  "name": "f5653fa0d80c04b360a4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1381,7 +1381,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "6c457bad45eeb86049dc",
+                  "name": "47548e4190d570175ebe",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1396,7 +1396,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "10769e75e0d70ad0807c",
+                  "name": "e1180bd29720811ad402",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1411,7 +1411,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "01bf350922ad87712226",
+                  "name": "1d132480b1415844de78",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1426,7 +1426,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "29bb92c978c00e654890",
+                  "name": "252da0b306b5bd6d68a7",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1639,7 +1639,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "af3bc32b9ac14e01a50e",
+                  "name": "3dd19435b2870e78529c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1654,7 +1654,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "438a8fc57397a76c80cb",
+                  "name": "1f4139d273a4c33647a0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1669,7 +1669,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "8ae996d103c332c79a1a",
+                  "name": "536c36df2bb0155e0d30",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1684,7 +1684,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1dc775d1c78c1be7692c",
+                  "name": "0bc1b0e0e0a97843d962",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1879,7 +1879,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "7004e1480c20942c25c4",
+                  "name": "02b50dc69d603027aba4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2017,7 +2017,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "f9d018bd917e49b015dd",
+                  "name": "7e8aea175904cb1dc1ec",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -2070,7 +2070,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'AAT vs. AP'"
+                                            "Value": "'BT vs. OU'"
                                           }
                                         }
                                       ]
@@ -2214,7 +2214,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "267cddc2043020ceca02",
+                  "name": "99bebdbf070a0b667227",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -2442,7 +2442,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "25658ea0e84d11ca79b6",
+                  "name": "628de560648909da4224",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2580,7 +2580,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "456a6e3da770ee263b87",
+                  "name": "10fd6d88b74ebb1259bd",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2665,7 +2665,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "ab551fd07d909d500c80",
+                  "name": "9d31627f3810b453d718",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2680,7 +2680,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "8a6467200d634997c45e",
+                  "name": "7e6c54960ed5188040ea",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2695,7 +2695,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "70bd6fff9d04452863b9",
+                  "name": "809ce30dd4ba9649a015",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2777,7 +2777,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "75318610c72e7a5bc208",
+                  "name": "1101db4977c6888d2804",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2792,7 +2792,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "148ab9f760a8dde7e110",
+                  "name": "ce27112b211028dac1a9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2807,7 +2807,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "da94bc9e6607cb122254",
+                  "name": "152540fe10ebc850a665",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2993,7 +2993,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "23d22a70000b4ed0bb10",
+                  "name": "da7dcd057dbba04aed6b",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3185,7 +3185,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "5fef6c9485739cc2d4a0",
+                  "name": "9a3f65964167026c50c2",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3200,7 +3200,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "030be1d9e48e5600c735",
+                  "name": "68226c459105055da60a",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3215,7 +3215,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "349af0365880ac6e3c95",
+                  "name": "d10535b36934c9e61663",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3419,7 +3419,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "3d89d8c4852b69e52b70",
+                  "name": "71a22ce241c5aa846899",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3434,7 +3434,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "cb0f467db68d558c81e8",
+                  "name": "cd67fba612a91228d1c7",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3449,7 +3449,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "df17639a2aceeceb1e04",
+                  "name": "1fd81be6e127589d807c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3599,7 +3599,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "96dfbbe3909417a20ed0",
+                  "name": "43067f2801dce0063109",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -3614,7 +3614,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3ebbe36471105d6dbe02",
+                  "name": "82fa87f29c0159570597",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3629,7 +3629,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "2e5cf2893091e172da4e",
+                  "name": "75c31630c4edb8de8035",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3838,7 +3838,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "137e786882867ee76573",
+                  "name": "61809f5508502c85060a",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -4717,7 +4717,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "b0fdae0d9e42d9a17988",
+                  "name": "45d4ca46ba377ca9b80a",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -4726,7 +4726,7 @@
                           "Entity": "PlayersTable"
                         }
                       },
-                      "Property": "SlotDescription"
+                      "Property": "Position"
                     }
                   },
                   "howCreated": 0
@@ -4757,7 +4757,7 @@
                           "Entity": "PlayersTable"
                         }
                       },
-                      "Property": "SlotDescription"
+                      "Property": "Position"
                     }
                   },
                   {
@@ -4780,7 +4780,19 @@
                   "levels": [
                     {
                       "queryRefs": [
-                        "PlayersTable.SlotDescription"
+                        "PlayersTable.Position"
+                      ],
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "PlayersTable"
+                              }
+                            },
+                            "Property": "Position"
+                          }
+                        }
                       ],
                       "isPinned": true
                     },
@@ -5843,6 +5855,21 @@
                     }
                   },
                   "howCreated": 1
+                },
+                {
+                  "name": "ceccba11670285b1c76a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PlayersTable"
+                        }
+                      },
+                      "Property": "Position"
+                    }
+                  },
+                  "howCreated": 0
                 }
               ]
             },
@@ -5870,6 +5897,16 @@
                           "Entity": "PlayersTable"
                         }
                       },
+                      "Property": "Position"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PlayersTable"
+                        }
+                      },
                       "Property": "Player Name"
                     }
                   }
@@ -5883,8 +5920,27 @@
                   "levels": [
                     {
                       "queryRefs": [
+                        "PlayersTable.Position"
+                      ],
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "PlayersTable"
+                              }
+                            },
+                            "Property": "Position"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
                         "PlayersTable.Player Name"
                       ],
+                      "isCollapsed": true,
                       "identityKeys": [
                         {
                           "Column": {
@@ -6224,7 +6280,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "83ab1b54bb8c9a662aa9",
+                  "name": "aef27f942c69719b610b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -6233,10 +6289,10 @@
                           "Entity": "PlayersTable"
                         }
                       },
-                      "Property": "SlotDescription"
+                      "Property": "Position"
                     }
                   },
-                  "howCreated": 1
+                  "howCreated": 0
                 }
               ]
             },
@@ -6264,6 +6320,16 @@
                           "Entity": "PlayersTable"
                         }
                       },
+                      "Property": "Position"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PlayersTable"
+                        }
+                      },
                       "Property": "Player Name"
                     }
                   }
@@ -6277,8 +6343,27 @@
                   "levels": [
                     {
                       "queryRefs": [
+                        "PlayersTable.Position"
+                      ],
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "PlayersTable"
+                              }
+                            },
+                            "Property": "Position"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
                         "PlayersTable.Player Name"
                       ],
+                      "isCollapsed": true,
                       "identityKeys": [
                         {
                           "Column": {
@@ -6781,6 +6866,21 @@
                       "Property": "SlotDescription"
                     }
                   },
+                  "howCreated": 1
+                },
+                {
+                  "name": "32e997201b24b993eece",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "PlayersTable"
+                        }
+                      },
+                      "Property": "Position"
+                    }
+                  },
                   "howCreated": 0
                 }
               ]
@@ -6809,7 +6909,7 @@
                           "Entity": "PlayersTable"
                         }
                       },
-                      "Property": "SlotDescription"
+                      "Property": "Position"
                     }
                   },
                   {
@@ -6832,7 +6932,7 @@
                   "levels": [
                     {
                       "queryRefs": [
-                        "PlayersTable.SlotDescription"
+                        "PlayersTable.Position"
                       ],
                       "identityKeys": [
                         {
@@ -6842,7 +6942,7 @@
                                 "Entity": "PlayersTable"
                               }
                             },
-                            "Property": "SlotDescription"
+                            "Property": "Position"
                           }
                         }
                       ],
