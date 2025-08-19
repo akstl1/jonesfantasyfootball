@@ -365,51 +365,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1fa1d3bb744816dd3cb2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking Start"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "72ec5c5141cb8cb744d4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Power Ranking End"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1b0ac0e9be1234274504",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
