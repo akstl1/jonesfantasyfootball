@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "ae66bba98dc10427ba41",
+  "name": "5e77d755c54d58cb664b",
   "position": {
-    "x": 946.56716417910445,
-    "y": 42.089552238805972,
-    "z": 7000,
-    "height": 35.820895522388057,
-    "width": 333.13432835820896,
-    "tabOrder": 7000
+    "x": 942.5615763546798,
+    "y": 41.674876847290641,
+    "z": 9002,
+    "height": 35.467980295566505,
+    "width": 337.83251231527095,
+    "tabOrder": 9002
   },
   "visual": {
     "visualType": "actionButton",
@@ -18,34 +18,7 @@
             "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'filter-icon-25207.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "filter-icon-252073408887634473864.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
+                  "Value": "'blank'"
                 }
               }
             }
@@ -100,9 +73,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#C0DDF9'"
                     }
                   }
                 }
@@ -126,9 +98,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#C0DDF9'"
                     }
                   }
                 }
@@ -157,7 +128,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Bracket'"
+                  "Value": "''"
                 }
               }
             },
@@ -177,6 +148,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "hover"
+          }
         }
       ]
     },
@@ -187,7 +172,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -221,7 +206,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Button'"
+                  "Value": "'Blank'"
                 }
               }
             }

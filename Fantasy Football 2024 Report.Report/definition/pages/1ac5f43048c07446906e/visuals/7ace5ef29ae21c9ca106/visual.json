@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "3036c371d13d8505c4e5",
+  "name": "7ace5ef29ae21c9ca106",
   "position": {
     "x": 946.56716417910445,
     "y": 42.985074626865668,
-    "z": 43000,
-    "height": 36,
+    "z": 44002,
+    "height": 35.820895522388057,
     "width": 333.13432835820896,
-    "tabOrder": 43000
+    "tabOrder": 44002
   },
   "visual": {
     "visualType": "actionButton",
@@ -18,34 +18,7 @@
             "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'filter-icon-25207.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "filter-icon-252073408887634473864.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
+                  "Value": "'blank'"
                 }
               }
             }
@@ -100,9 +73,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#C0DDF9'"
                     }
                   }
                 }
@@ -126,9 +98,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#C0DDF9'"
                     }
                   }
                 }
@@ -157,7 +128,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Bracket'"
+                  "Value": "''"
                 }
               }
             },
@@ -177,6 +148,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "hover"
+          }
         }
       ]
     },
@@ -187,7 +172,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -221,7 +206,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filter'"
+                  "Value": "'Blank'"
                 }
               }
             }
