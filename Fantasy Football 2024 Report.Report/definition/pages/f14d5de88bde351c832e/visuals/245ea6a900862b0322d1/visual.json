@@ -633,5 +633,93 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "863ca71841c6653cd76e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "QB#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "639a40e0259e59e4105d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "RB#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17e4816dac30500005e0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "WR#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb3740b5eb2807709aa5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "TE#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db1f1ac71dc89507886b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "K#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "42b82e96971917043089",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "D#"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
