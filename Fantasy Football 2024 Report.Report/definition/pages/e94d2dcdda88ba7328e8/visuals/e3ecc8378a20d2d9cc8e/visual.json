@@ -4,10 +4,10 @@
   "position": {
     "x": 18.620689655172413,
     "y": 626.89655172413791,
-    "z": 33000,
+    "z": 26000,
     "height": 86.009852216748769,
     "width": 595.86206896551721,
-    "tabOrder": 33000
+    "tabOrder": 26000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -47,7 +47,7 @@
               },
               "queryRef": "PlayersTable.Position",
               "nativeQueryRef": " ",
-              "active": true,
+              "active": false,
               "displayName": " "
             },
             {
@@ -93,41 +93,6 @@
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "PlayersTable.Position"
-            ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "PlayersTable"
-                    }
-                  },
-                  "Property": "Position"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "PlayersTable.Player Name"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "subTotals": [
         {
@@ -314,7 +279,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "94.76908773012849D"
+                  "Value": "112.54693657706628D"
                 }
               }
             }
@@ -1671,5 +1636,6 @@
       }
     ],
     "filterSortOrder": "Custom"
-  }
+  },
+  "isHidden": true
 }

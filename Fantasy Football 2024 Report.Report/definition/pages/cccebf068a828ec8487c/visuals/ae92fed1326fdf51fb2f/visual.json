@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "ae92fed1326fdf51fb2f",
   "position": {
-    "x": 963.20711712374089,
-    "y": 465.38231341946977,
+    "x": 962.95566502463055,
+    "y": 420.82521189695717,
     "z": 8000,
-    "height": 207.48768472906403,
+    "height": 227.88177339901478,
     "width": 270.44334975369458,
     "tabOrder": 3000
   },
@@ -291,6 +291,34 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "36824713808ed158c297",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Fantasy Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "639e2f5a572a309b3108",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Standings"
+              }
+            },
+            "Property": "Division_Rank"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

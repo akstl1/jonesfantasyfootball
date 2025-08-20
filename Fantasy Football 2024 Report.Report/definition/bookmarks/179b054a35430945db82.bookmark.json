@@ -3,7 +3,9 @@
   "displayName": "Matchup Box Score",
   "name": "179b054a35430945db82",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [
+      "1c21c7e10b8c30d99a0a"
+    ]
   },
   "explorationState": {
     "version": "1.3",
@@ -263,7 +265,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e788641607ca73e70952",
+                  "name": "b05ac1d0258260890225",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -278,7 +280,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "5a004387981a3e0e96ab",
+                  "name": "316d303cbe768e8bd247",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -467,7 +469,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "a666ae0088d4c475166d",
+                  "name": "52cd2cbec0809eadb56a",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -482,7 +484,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "066a62429acb42a62e59",
+                  "name": "9648cc8f81503e0659b0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -497,7 +499,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ad576cd027817008c850",
+                  "name": "ecb1fb72209ac0e16bd4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -534,12 +536,6 @@
               "display": {
                 "mode": "hidden"
               }
-            }
-          },
-          "1acf0cc0cdca9e48aa1e": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
             }
           },
           "1db7a447275ecd04ec03": {
@@ -707,7 +703,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "20c465932a154c93c5e9",
+                  "name": "766a3446067524906d32",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -722,7 +718,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e6708c1396d894667685",
+                  "name": "5f3cecf0c0098caa7e7a",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -737,7 +733,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b8214db253e54a95a0ec",
+                  "name": "47810fd9535c20336dc3",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -994,7 +990,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "7799d9cfdb49e028407e",
+                  "name": "77c7776f501d1eb37d88",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1009,7 +1005,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ad257fe4153937e50b5e",
+                  "name": "e630f55e555b33d0ca29",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1189,7 +1185,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "f5653fa0d80c04b360a4",
+                  "name": "44a0b9d72949054168c0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1381,7 +1377,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "47548e4190d570175ebe",
+                  "name": "c68a907f6c46a0cb44a4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1396,7 +1392,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e1180bd29720811ad402",
+                  "name": "1d4bd58800191383180d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1411,7 +1407,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1d132480b1415844de78",
+                  "name": "54639b384dc67897e036",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1426,7 +1422,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "252da0b306b5bd6d68a7",
+                  "name": "95c95682b1b03d036755",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1639,7 +1635,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "3dd19435b2870e78529c",
+                  "name": "3c96fe5c34e4350dc376",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1654,7 +1650,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1f4139d273a4c33647a0",
+                  "name": "569bf6a0d3de44407c4d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1669,7 +1665,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "536c36df2bb0155e0d30",
+                  "name": "044ef53ede8a32500e36",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1684,7 +1680,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "0bc1b0e0e0a97843d962",
+                  "name": "432eef919b80ad6ec7b2",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1879,7 +1875,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "02b50dc69d603027aba4",
+                  "name": "51742010e387066e58bd",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1897,12 +1893,6 @@
             },
             "singleVisual": {
               "visualType": "cardVisual",
-              "objects": {}
-            }
-          },
-          "6769b526a346e9918458": {
-            "singleVisual": {
-              "visualType": "actionButton",
               "objects": {}
             }
           },
@@ -2017,7 +2007,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "7e8aea175904cb1dc1ec",
+                  "name": "122390bc7408db3e4008",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -2128,27 +2118,9 @@
               }
             }
           },
-          "73c5ea261d682cdd2d84": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "76b60ab1b195d24ba9e5": {
             "singleVisual": {
               "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "9aac78ea028a8bc0c11a": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "a1b9bf0076602b266418": {
-            "singleVisual": {
-              "visualType": "actionButton",
               "objects": {}
             }
           },
@@ -2214,7 +2186,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "99bebdbf070a0b667227",
+                  "name": "421ec4d259d800677a8a",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -2323,12 +2295,6 @@
                   }
                 ]
               }
-            }
-          },
-          "a87a7ff0edb675bbd1c3": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
             }
           },
           "0e2ddcbe07442cd28355": {
@@ -2442,7 +2408,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "628de560648909da4224",
+                  "name": "90bf1c28d6705dcb3c04",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2580,7 +2546,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "10fd6d88b74ebb1259bd",
+                  "name": "e101da0600319a8da300",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2598,12 +2564,6 @@
             },
             "singleVisual": {
               "visualType": "card",
-              "objects": {}
-            }
-          },
-          "c48e9f7a1c44bc0a19dc": {
-            "singleVisual": {
-              "visualType": "textbox",
               "objects": {}
             }
           },
@@ -2665,7 +2625,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "9d31627f3810b453d718",
+                  "name": "b5cf434062b74b5dd526",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2680,7 +2640,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "7e6c54960ed5188040ea",
+                  "name": "fc1ecbcf6685d001eaa2",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2695,7 +2655,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "809ce30dd4ba9649a015",
+                  "name": "67ac31cfe3eb1469020e",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2777,7 +2737,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "1101db4977c6888d2804",
+                  "name": "7179a1d10ea000cab74a",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2792,7 +2752,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ce27112b211028dac1a9",
+                  "name": "7cf94bb9bacd500dac00",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2807,7 +2767,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "152540fe10ebc850a665",
+                  "name": "6a8ee7e57890ec0903e3",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2993,7 +2953,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "da7dcd057dbba04aed6b",
+                  "name": "da98f4c93c13676927a0",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3185,7 +3145,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "9a3f65964167026c50c2",
+                  "name": "1de8ce70d279ae180003",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3200,7 +3160,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "68226c459105055da60a",
+                  "name": "6077361654426718954d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3215,7 +3175,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "d10535b36934c9e61663",
+                  "name": "cfb947fa678b1900b88c",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3419,7 +3379,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "71a22ce241c5aa846899",
+                  "name": "2ca1ae2acb65b3405024",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3434,7 +3394,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "cd67fba612a91228d1c7",
+                  "name": "40a537ee360ae61ee203",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3449,7 +3409,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1fd81be6e127589d807c",
+                  "name": "42138a60503c21b79140",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3599,7 +3559,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "43067f2801dce0063109",
+                  "name": "1b243fe7ba212d29601c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -3614,7 +3574,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "82fa87f29c0159570597",
+                  "name": "53861c901552135ec501",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3629,7 +3589,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "75c31630c4edb8de8035",
+                  "name": "46c19e1695500ea31c57",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -3838,7 +3798,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "61809f5508502c85060a",
+                  "name": "3599a9ab8dad819cc3a8",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -4717,7 +4677,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "45d4ca46ba377ca9b80a",
+                  "name": "d17b55f50830b063518c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -5181,7 +5141,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "83ab1b54bb8c9a662aa9",
+                  "name": "4dd2de186ddad3094536",
                   "type": "Categorical",
                   "filter": {
                     "Version": 2,
@@ -5857,7 +5817,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "ceccba11670285b1c76a",
+                  "name": "afcaafbe160c1070d4c5",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -6280,7 +6240,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "aef27f942c69719b610b",
+                  "name": "c267aa09233ec21eace0",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -6869,7 +6829,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "32e997201b24b993eece",
+                  "name": "53bcdc70210c060836a8",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -6973,6 +6933,48 @@
                   }
                 }
               ]
+            }
+          },
+          "81188b683042a67052d8": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "360a6d3f156e9588cc83": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "1b2538675450520b120e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "625ef8ab035373702cca": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "f07a8a8728c55d0d7004": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "23ae7b170c5dde53113b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "504b3e6598362dbc8535": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
             }
           }
         }

@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "6f159b99dbe097190892",
   "position": {
-    "x": 1045.4187192118227,
-    "y": 42.5615763546798,
+    "x": 1153.5960591133005,
+    "y": 0,
     "z": 0,
     "height": 36.354679802955665,
     "width": 126.79802955665025,
@@ -94,7 +94,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BT vs. OU'"
+                                "Value": "'AAT vs. AP'"
                               }
                             }
                           ]
@@ -385,6 +385,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "3f4493d1c00643d533e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MatchupsTable"
+              }
+            },
+            "Property": "Matchup Header Abbrev"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

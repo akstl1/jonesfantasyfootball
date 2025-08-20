@@ -530,12 +530,6 @@
               ]
             }
           },
-          "1acf0cc0cdca9e48aa1e": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "1db7a447275ecd04ec03": {
             "filters": {
               "byExpr": [
@@ -1879,12 +1873,6 @@
               "objects": {}
             }
           },
-          "6769b526a346e9918458": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "6f159b99dbe097190892": {
             "filters": {
               "byExpr": [
@@ -2107,27 +2095,9 @@
               }
             }
           },
-          "73c5ea261d682cdd2d84": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "76b60ab1b195d24ba9e5": {
             "singleVisual": {
               "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "9aac78ea028a8bc0c11a": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "a1b9bf0076602b266418": {
-            "singleVisual": {
-              "visualType": "actionButton",
               "objects": {}
             }
           },
@@ -2302,12 +2272,6 @@
                   }
                 ]
               }
-            }
-          },
-          "a87a7ff0edb675bbd1c3": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
             }
           },
           "0e2ddcbe07442cd28355": {
@@ -2577,12 +2541,6 @@
             },
             "singleVisual": {
               "visualType": "card",
-              "objects": {}
-            }
-          },
-          "c48e9f7a1c44bc0a19dc": {
-            "singleVisual": {
-              "visualType": "textbox",
               "objects": {}
             }
           },

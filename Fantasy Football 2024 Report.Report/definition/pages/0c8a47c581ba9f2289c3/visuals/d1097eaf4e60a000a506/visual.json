@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "d1097eaf4e60a000a506",
+  "position": {
+    "x": 0,
+    "y": 692.2388059701492,
+    "z": 22001,
+    "height": 27.761194029850746,
+    "width": 1279.7014925373135,
+    "tabOrder": 16008
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Allan Khariton | "
+                  },
+                  {
+                    "value": "LinkedIn",
+                    "textStyle": {},
+                    "url": "https://www.linkedin.com/in/allan-khariton/"
+                  },
+                  {
+                    "value": " | "
+                  },
+                  {
+                    "value": "Portfolio",
+                    "textStyle": {},
+                    "url": "https://akstl1.github.io/"
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
