@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "02bff9807a73985aeaab",
+  "name": "f0be90c50da32417c8e5",
   "position": {
-    "x": 361.79104477611941,
-    "y": 42.089552238805972,
-    "z": 7000,
-    "height": 35,
-    "width": 180.8955223880597,
-    "tabOrder": 6000
+    "x": 716.45320197044339,
+    "y": 0,
+    "z": 9,
+    "height": 35.467980295566505,
+    "width": 154.28571428571428,
+    "tabOrder": 8
   },
   "visual": {
     "visualType": "actionButton",
@@ -74,7 +74,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0DDF9'"
+                      "Value": "'#A0D1FF'"
                     }
                   }
                 }
@@ -129,7 +129,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard + Standings'"
+                  "Value": "'Team Performance'"
                 }
               }
             },
@@ -173,7 +173,7 @@
             "navigationSection": {
               "expr": {
                 "Literal": {
-                  "Value": "'cccebf068a828ec8487c'"
+                  "Value": "'0c8a47c581ba9f2289c3'"
                 }
               }
             }
@@ -193,7 +193,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Scoreboard Button'"
+                  "Value": "'Team Perf Button'"
                 }
               }
             }

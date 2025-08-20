@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "7aeb093c16dca020e0ab",
+  "name": "279c3341666639329783",
   "position": {
-    "x": 904.47761194029852,
-    "y": 42.089552238805972,
-    "z": 10000,
-    "height": 35,
-    "width": 180.8955223880597,
-    "tabOrder": 9000
+    "x": 1023,
+    "y": 0,
+    "z": 11,
+    "height": 35.467980295566505,
+    "width": 257,
+    "tabOrder": 10
   },
   "visual": {
     "visualType": "actionButton",
@@ -74,7 +74,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0DDF9'"
+                      "Value": "'#A0D1FF'"
                     }
                   }
                 }
@@ -98,9 +98,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0.4
+                    "Literal": {
+                      "Value": "'#A0D1FF'"
                     }
                   }
                 }
@@ -118,7 +117,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -129,7 +128,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Bracket'"
+                  "Value": "''"
                 }
               }
             },
@@ -149,6 +148,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "hover"
+          }
         }
       ]
     },
@@ -159,7 +172,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -173,7 +186,7 @@
             "navigationSection": {
               "expr": {
                 "Literal": {
-                  "Value": "'1ac5f43048c07446906e'"
+                  "Value": "''"
                 }
               }
             }
@@ -193,7 +206,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Playoff Button'"
+                  "Value": "'Blank'"
                 }
               }
             }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "34dd5e037604a75a60ee",
+  "name": "c071be3b369cdd58d940",
   "position": {
-    "x": 726.82891034822342,
-    "y": 102.34821070470474,
-    "z": 1000,
-    "height": 198.80597014925374,
-    "width": 147.76119402985074,
-    "tabOrder": 1000
+    "x": 399.27946403601317,
+    "y": 77.765089787596551,
+    "z": 2,
+    "height": 199.50738916256157,
+    "width": 154.28571428571428,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "cardVisual",
@@ -57,7 +57,7 @@
             "imageUrl": {
               "expr": {
                 "Literal": {
-                  "Value": "'https://g.espncdn.com/lm-static/ffl/images/playoff_bracket/trophy_third.svg'"
+                  "Value": "'https://g.espncdn.com/lm-static/ffl/images/playoff_bracket/trophy_second.svg'"
                 }
               }
             },
@@ -617,7 +617,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Third Place'"
+                  "Value": "'Second Place'"
                 }
               }
             },
@@ -939,7 +939,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sith Happens'"
+                  "Value": "'Magic M'"
                 }
               }
             },

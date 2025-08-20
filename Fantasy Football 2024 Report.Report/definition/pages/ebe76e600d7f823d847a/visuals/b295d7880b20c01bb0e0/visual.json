@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "19cffac0d1e77cb77ca0",
+  "name": "b295d7880b20c01bb0e0",
   "position": {
-    "x": 723.58208955223881,
-    "y": 42.089552238805972,
-    "z": 9000,
-    "height": 35,
-    "width": 180.8955223880597,
-    "tabOrder": 8000
+    "x": 255.36945812807883,
+    "y": 0,
+    "z": 5,
+    "height": 35.467980295566505,
+    "width": 155,
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "actionButton",
@@ -74,7 +74,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0DDF9'"
+                      "Value": "'#A0D1FF'"
                     }
                   }
                 }
@@ -129,7 +129,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Team Performance'"
+                  "Value": "'Draft'"
                 }
               }
             },
@@ -173,7 +173,7 @@
             "navigationSection": {
               "expr": {
                 "Literal": {
-                  "Value": "'0c8a47c581ba9f2289c3'"
+                  "Value": "'f14d5de88bde351c832e'"
                 }
               }
             }
@@ -183,63 +183,10 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Team Perf Button'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'Draft Button'"
                 }
               }
             }

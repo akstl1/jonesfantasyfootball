@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "2fbd5c4a0c8632b95d30",
+  "name": "4fcfcdc6ca1724abb942",
   "position": {
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 42.089552238805972,
-    "width": 1279.7014925373135,
-    "tabOrder": 11000
+    "height": 35.467980295566505,
+    "width": 197.73399014778326,
+    "tabOrder": 11
   },
   "visual": {
     "visualType": "textbox",
@@ -19,9 +19,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "JCG Fantasy Football League",
+                    "value": "JCG Fantasy Football",
                     "textStyle": {
-                      "fontSize": "18pt"
+                      "fontSize": "14pt"
                     }
                   }
                 ],

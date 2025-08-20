@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "b518a495860e258d04b2",
+  "name": "2728314bdb5286826157",
   "position": {
-    "x": 1085.3731343283582,
-    "y": 42.089552238805972,
-    "z": 11000,
-    "height": 35,
-    "width": 194.32835820895522,
-    "tabOrder": 10000
+    "x": 409.65517241379308,
+    "y": 0,
+    "z": 7,
+    "height": 35.467980295566505,
+    "width": 154.28571428571428,
+    "tabOrder": 6
   },
   "visual": {
     "visualType": "actionButton",
@@ -74,7 +74,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C0DDF9'"
+                      "Value": "'#A0D1FF'"
                     }
                   }
                 }
@@ -98,8 +98,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#C0DDF9'"
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.4
                     }
                   }
                 }
@@ -117,7 +118,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -128,7 +129,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "'Scoreboard + Standings'"
                 }
               }
             },
@@ -148,20 +149,6 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "hover"
-          }
         }
       ]
     },
@@ -172,7 +159,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -186,7 +173,7 @@
             "navigationSection": {
               "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "'cccebf068a828ec8487c'"
                 }
               }
             }
@@ -206,7 +193,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Blank'"
+                  "Value": "'Scoreboard Button'"
                 }
               }
             }

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "0d71f81f640bbe206c8c",
+  "name": "45680527ce11a0c55993",
   "position": {
-    "x": 33.694581990014413,
-    "y": 312.004927122599,
-    "z": 4000,
-    "height": 372.53731343283579,
-    "width": 1212.5373134328358
+    "x": 9.7536945812807883,
+    "y": 312.11822660098522,
+    "z": 4,
+    "height": 372.41379310344826,
+    "width": 623.3497536945813
   },
   "visual": {
     "visualType": "changeChart63B1E8C33CBE4BC6913014096224EE2C",
@@ -317,7 +317,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Power Rankings Chart'"
+                  "Value": "'Power Rankings'"
                 }
               }
             },
@@ -325,6 +325,29 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#052EBE'"
+                    }
+                  }
                 }
               }
             }
@@ -357,6 +380,19 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }
