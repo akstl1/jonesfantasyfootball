@@ -41,6 +41,7 @@ def weeklyStats(curr_week = curr_week):
     matchupsSingleWeek(current_wk=curr_week)
     powerRankingsSingleWeek(current_wk=curr_week)
     playerStatsSingleWeek(current_wk=curr_week)
+    standingsSingleWeek(current_wk=curr_week)
     return None
 
 # weeklyStats(1)
@@ -56,6 +57,7 @@ def multiWeekStats(curr_week = curr_week):
     matchupsMultiWeek(current_wk=curr_week)
     powerRankingsMultiWeek(current_wk=curr_week)
     playerStatsMultiWeek(current_wk=curr_week)
+    standingsMultiWeek(current_wk=curr_week)
     return None
 
 # multiWeekStats()
