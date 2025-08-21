@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 16000,
+    "z": 10000,
     "height": 35.467980295566505,
     "width": 197.73399014778326,
-    "tabOrder": 16007
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,7 +21,7 @@
                   {
                     "value": "Team Performance",
                     "textStyle": {
-                      "fontSize": "12pt"
+                      "fontSize": "14pt"
                     }
                   }
                 ],

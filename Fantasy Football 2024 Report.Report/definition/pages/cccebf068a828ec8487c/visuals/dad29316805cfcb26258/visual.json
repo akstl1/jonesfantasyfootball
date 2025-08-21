@@ -987,34 +987,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "2089e7ac999b13060653",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Away Points"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2a6810ffc23a297b46d2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Home Points"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

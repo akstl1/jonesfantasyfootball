@@ -1254,20 +1254,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "86c9e883b930a58020d7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Position"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

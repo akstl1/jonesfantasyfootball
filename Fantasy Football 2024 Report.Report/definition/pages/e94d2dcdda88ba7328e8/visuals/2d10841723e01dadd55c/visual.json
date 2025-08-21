@@ -786,20 +786,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "4dd2de186ddad3094536",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "SlotDescription"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

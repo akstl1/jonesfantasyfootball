@@ -291,34 +291,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "36824713808ed158c297",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TeamsTable"
-              }
-            },
-            "Property": "Fantasy Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "639e2f5a572a309b3108",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Standings"
-              }
-            },
-            "Property": "Division_Rank"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
