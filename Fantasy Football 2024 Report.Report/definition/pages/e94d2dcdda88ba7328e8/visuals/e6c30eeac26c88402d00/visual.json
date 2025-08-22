@@ -953,6 +953,20 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "0aef14b426d30b642549",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Name"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
