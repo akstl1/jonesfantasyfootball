@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "0031221bc9d3be279401",
+  "position": {
+    "x": 18.620689655172413,
+    "y": 39.901477832512313,
+    "z": 3000,
+    "height": 673.00492610837432,
+    "width": 1243.152709359606,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Box Score",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

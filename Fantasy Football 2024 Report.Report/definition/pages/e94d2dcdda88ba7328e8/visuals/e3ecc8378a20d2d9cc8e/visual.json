@@ -2,9 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "e3ecc8378a20d2d9cc8e",
   "position": {
-    "x": 18.620689655172413,
-    "y": 626.89655172413791,
-    "z": 26000,
+    "x": 0,
+    "y": 586.99507389162568,
+    "z": 2000,
     "height": 86.009852216748769,
     "width": 595.86206896551721,
     "tabOrder": 26000
@@ -47,7 +47,7 @@
               },
               "queryRef": "PlayersTable.Position",
               "nativeQueryRef": " ",
-              "active": false,
+              "active": true,
               "displayName": " "
             },
             {
@@ -72,27 +72,57 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PlayerPointsStats"
-                        }
-                      },
-                      "Property": "Value"
+                    "SourceRef": {
+                      "Entity": "*Measures"
                     }
                   },
-                  "Function": 0
+                  "Property": "Box Values"
                 }
               },
-              "queryRef": "Sum(PlayerPointsStats.Value)",
-              "nativeQueryRef": "Sum of Value"
+              "queryRef": "*Measures.Box Values",
+              "nativeQueryRef": "Box Values"
             }
           ]
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "PlayersTable.Position"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PlayersTable"
+                    }
+                  },
+                  "Property": "Position"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "PlayersTable.Player Name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "subTotals": [
         {
@@ -107,7 +137,7 @@
             "rowSubtotals": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -133,6 +163,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "levelSubtotalLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FPTS'"
                 }
               }
             }
@@ -180,29 +217,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "columnFormatting": [
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(PlayerPointsStats.Value)"
           }
         }
       ],
@@ -270,6 +284,68 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "PlayerPointsStats"
+                                        }
+                                      },
+                                      "Property": "Lineup Slot"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'D/ST'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#76D276'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "*Measures.Box Values"
           }
         }
       ],
@@ -1291,6 +1367,7 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "0031221bc9d3be279401",
   "filterConfig": {
     "filters": [
       {
@@ -1561,7 +1638,8 @@
             "Function": 0
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "02ef54f97d1970715951",
@@ -1633,9 +1711,36 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "51bd7ba738d5ad06e701",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Box Values"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "19754eaad2199a7897b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PlayersTable"
+              }
+            },
+            "Property": "Position"
+          }
+        },
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
-  },
-  "isHidden": true
+  }
 }

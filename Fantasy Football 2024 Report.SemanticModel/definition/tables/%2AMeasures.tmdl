@@ -1115,6 +1115,41 @@ table *Measures
 	measure 'Playoff Away' = [Away Name] & " " & [Away Points]
 		lineageTag: e1c6104a-7c6b-4498-bc81-5492048dd1ea
 
+	measure 'Box Values' =
+			
+			var _val = format(sum(PlayerPointsStats[Value]),"###,###0")
+			var _selectedCategory = SELECTEDVALUE(PlayerPointsStats[Category])
+			var _atribute = SWITCH(TRUE(),
+			                        _selectedCategory="D/ST","Each Sack",
+			                        _selectedCategory="Kicking","Each PAT Made",
+			                        "Each Reception"
+			)
+			
+			return SWITCH(TRUE(),
+			        ISINSCOPE(PlayersTable[Player Name]) && ISINSCOPE(PlayerPointsStats[Condensed Attribute]),_val,
+			        NOT(ISINSCOPE(PlayersTable[Player Name])) && ISINSCOPE(PlayerPointsStats[Condensed Attribute]),_val,
+			        NOT(ISINSCOPE(PlayersTable[Player Name])) && NOT(ISINSCOPE(PlayerPointsStats[Condensed Attribute])) && (_selectedCategory="Kicking" || _selectedCategory="D/ST"),CALCULATE(sum(PlayerPointsStats[Actual]),PlayerPointsStats[Attribute]=_atribute),
+			        // NOT(ISINSCOPE(PlayersTable[Player Name])) && NOT(ISINSCOPE(PlayerPointsStats[Condensed Attribute])) && _selectedCategory="D/ST",CALCULATE(sum(PlayerPointsStats[Actual]),PlayerPointsStats[Attribute]=_atribute),
+			        ISINSCOPE(PlayerPointsStats[Category]) && ISINSCOPE(PlayersTable[Player Name]),_val,
+			        ISINSCOPE(PlayerPointsStats[Category]) && NOT(ISINSCOPE(PlayersTable[Player Name])),_val,
+			        NOT(ISINSCOPE(PlayersTable[Player Name])) && NOT(ISINSCOPE(PlayerPointsStats[Category])),CALCULATE(sum(PlayerPointsStats[Actual]),PlayerPointsStats[Attribute]="Each Reception"),
+			        round(max(PlayerPointsStats[Actual]),1)
+			)
+		displayFolder: Box Scores
+		lineageTag: 0079cb3e-4580-495a-9e80-7ce00195efb9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Measure = 22.1
+		lineageTag: 7eba34bc-388a-48dd-b6dd-a01619b02d91
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Measure 2' = 22.1
+		lineageTag: 6d024595-cabf-4ff0-b4fd-31fe6a3540af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column *Measures
 		dataType: string
 		lineageTag: 876a4729-d2b3-4031-bcfa-9416fd23c840

@@ -2,9 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "956edb250502644d3027",
   "position": {
-    "x": 18.620689655172413,
-    "y": 160.50511828899809,
-    "z": 25000,
+    "x": 0,
+    "y": 120.60364045648578,
+    "z": 0,
     "height": 367.09359605911328,
     "width": 595.86206896551721,
     "tabOrder": 25000
@@ -102,22 +102,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "PlayerPointsStats"
-                        }
-                      },
-                      "Property": "Value"
+                    "SourceRef": {
+                      "Entity": "*Measures"
                     }
                   },
-                  "Function": 0
+                  "Property": "Box Values"
                 }
               },
-              "queryRef": "Sum(PlayerPointsStats.Value)",
-              "nativeQueryRef": "Sum of Value"
+              "queryRef": "*Measures.Box Values",
+              "nativeQueryRef": "Box Values"
             }
           ]
         }
@@ -224,6 +219,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "rowSubtotalsLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total'"
+                }
+              }
+            },
+            "columnSubtotalsLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FPTS'"
+                }
+              }
             }
           }
         },
@@ -296,6 +305,20 @@
           "selector": {
             "metadata": "PlayersTable.SlotDescription"
           }
+        },
+        {
+          "properties": {
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Column"
+          }
         }
       ],
       "general": [
@@ -308,29 +331,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "columnFormatting": [
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(PlayerPointsStats.Value)"
           }
         }
       ],
@@ -494,7 +494,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "44.73400081179813D"
+                  "Value": "58.08263539782868D"
                 }
               }
             }
@@ -666,6 +666,7 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "0031221bc9d3be279401",
   "filterConfig": {
     "filters": [
       {
@@ -958,7 +959,8 @@
             "Function": 0
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "02ef54f97d1970715951",
@@ -1115,9 +1117,22 @@
             }
           ]
         }
+      },
+      {
+        "name": "1b95da1f79db6a148490",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Box Values"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"
-  },
-  "isHidden": true
+  }
 }

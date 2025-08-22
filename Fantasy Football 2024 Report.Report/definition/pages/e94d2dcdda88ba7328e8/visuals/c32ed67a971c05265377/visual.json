@@ -4,10 +4,10 @@
   "position": {
     "x": 710.2463054187192,
     "y": 90.443349753694577,
-    "z": 10000,
+    "z": 7000,
     "height": 54.975369458128078,
     "width": 149.85221674876848,
-    "tabOrder": 8000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -106,6 +106,7 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "3646ff75414c54d66784",
   "filterConfig": {
     "filters": [
       {
