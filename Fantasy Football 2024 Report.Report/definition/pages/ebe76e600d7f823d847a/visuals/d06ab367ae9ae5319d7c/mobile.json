@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 217,
+    "y": 120,
+    "z": 1000,
+    "height": 161,
+    "width": 107,
+    "tabOrder": 13000
+  },
+  "objects": {
+    "image": [
+      {
+        "properties": {
+          "size": {
+            "expr": {
+              "Literal": {
+                "Value": "85L"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "*Measures.DraftName"
+        }
+      }
+    ],
+    "value": [],
+    "label": [],
+    "fillCustom": [],
+    "outline": [],
+    "layout": [],
+    "accentBar": [],
+    "padding": [],
+    "referenceLabelTitle": [],
+    "referenceLabelLayout": [],
+    "referenceLabelValue": [],
+    "divider": [],
+    "referenceLabelDetail": [],
+    "spacing": []
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'3rd Place'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "18D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [],
+    "border": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "spacing": [],
+    "subTitle": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "divider": [],
+    "padding": []
+  }
+}

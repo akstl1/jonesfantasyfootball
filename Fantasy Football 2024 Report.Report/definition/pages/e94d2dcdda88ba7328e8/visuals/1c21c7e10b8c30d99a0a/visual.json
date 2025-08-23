@@ -1681,34 +1681,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "662a96ff5e75b3135db0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Box Values"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1781884270e91b64e6a5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PlayersTable"
-              }
-            },
-            "Property": "Position"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

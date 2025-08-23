@@ -1117,20 +1117,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "1b95da1f79db6a148490",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "*Measures"
-              }
-            },
-            "Property": "Box Values"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 939,
+    "z": 12000,
+    "height": 28,
+    "width": 324,
+    "tabOrder": 10000
+  },
+  "objects": {
+    "general": [
+      {
+        "properties": {
+          "paragraphs": [
+            {
+              "textRuns": [
+                {
+                  "value": "Allan Khariton | "
+                },
+                {
+                  "value": "LinkedIn",
+                  "textStyle": {},
+                  "url": "https://www.linkedin.com/in/allan-khariton/"
+                },
+                {
+                  "value": " | "
+                },
+                {
+                  "value": "Portfolio",
+                  "textStyle": {},
+                  "url": "https://akstl1.github.io/"
+                }
+              ],
+              "horizontalTextAlignment": "center"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
