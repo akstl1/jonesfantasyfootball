@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "f935e4459e846ad891b8",
   "position": {
-    "x": 1166.0098522167489,
+    "x": 1067.5862068965516,
     "y": 0,
-    "z": 18000,
+    "z": 19000,
     "height": 36.354679802955665,
-    "width": 114.38423645320196,
+    "width": 211.92118226600985,
     "tabOrder": 11000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "TeamsTable"
                     }
                   },
-                  "Property": "Acronym"
+                  "Property": "Fantasy Name"
                 }
               },
-              "queryRef": "TeamsTable.Acronym",
-              "nativeQueryRef": "Acronym",
+              "queryRef": "TeamsTable.Fantasy Name",
+              "nativeQueryRef": "Fantasy Name",
               "active": true
             }
           ]
@@ -38,6 +38,18 @@
       "general": [
         {
           "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -60,7 +72,7 @@
                                   "Source": "t"
                                 }
                               },
-                              "Property": "Acronym"
+                              "Property": "Fantasy Name"
                             }
                           }
                         ],
@@ -68,7 +80,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'AAT'"
+                                "Value": "'A''s Astounding Team'"
                               }
                             }
                           ]
@@ -77,18 +89,6 @@
                     }
                   }
                 ]
-              }
-            },
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
               }
             }
           }
@@ -291,7 +291,6 @@
             }
           ]
         },
-        "howCreated": "User",
         "objects": {
           "general": [
             {

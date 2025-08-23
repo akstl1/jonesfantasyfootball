@@ -337,6 +337,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "cdff7498d79078e109ed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Weeks"
+              }
+            },
+            "Property": "Week"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
