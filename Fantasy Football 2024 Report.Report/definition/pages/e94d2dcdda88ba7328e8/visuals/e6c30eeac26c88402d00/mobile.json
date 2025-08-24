@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 63,
+    "y": 263,
+    "z": 14000,
+    "height": 56,
+    "width": 186,
+    "tabOrder": 1000
+  },
+  "objects": {
+    "image": [],
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      },
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "13D"
+              }
+            }
+          },
+          "horizontalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'left'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "*Measures.Scoreboard Team2 Name"
+        }
+      }
+    ],
+    "label": [],
+    "fillCustom": [],
+    "outline": [],
+    "layout": [],
+    "accentBar": [],
+    "referenceLabel": [],
+    "referenceLabelLayout": [],
+    "referenceLabelTitle": [],
+    "divider": [],
+    "referenceLabelDetail": [],
+    "referenceLabelValue": [],
+    "spacing": [],
+    "padding": []
+  }
+}

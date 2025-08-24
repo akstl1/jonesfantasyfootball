@@ -805,6 +805,132 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "ac2d500d2c7e8a4dbb54",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Standings"
+              }
+            },
+            "Property": "League_Rank"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3347618f56adba2e5e55",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TeamsTable"
+              }
+            },
+            "Property": "Fantasy Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "163f0b88269224b00087",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "League Ranking Up/Down ABS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8b74b485702ded81e002",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Record"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "936297faadc4378a0c71",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Streak"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e621e2d67966a87b4877",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Win%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b8e315f967bbd640b466",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "PF"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0bdb4fea609030a72dcb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "PA"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dba655cc2d5868a00170",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Net Pts"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

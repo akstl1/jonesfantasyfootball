@@ -12,5 +12,6 @@
   "visualGroup": {
     "displayName": "Box Score",
     "groupMode": "ScaleMode"
-  }
+  },
+  "isHidden": true
 }

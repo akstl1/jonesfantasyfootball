@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 10,
+    "y": 264,
+    "z": 34000,
+    "height": 55,
+    "width": 47,
+    "tabOrder": 6000
+  },
+  "objects": {
+    "image": [
+      {
+        "properties": {
+          "size": {
+            "expr": {
+              "Literal": {
+                "Value": "36L"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      }
+    ],
+    "value": [],
+    "label": [],
+    "fillCustom": [],
+    "outline": [],
+    "layout": [],
+    "accentBar": [],
+    "shapeCustomRectangle": [],
+    "padding": [
+      {
+        "properties": {
+          "leftMargin": {
+            "expr": {
+              "Literal": {
+                "Value": "0L"
+              }
+            }
+          },
+          "rightMargin": {
+            "expr": {
+              "Literal": {
+                "Value": "10L"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Min(TeamsTable.Image)"
+        }
+      }
+    ]
+  }
+}

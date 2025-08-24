@@ -274,7 +274,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tornado'"
+                  "Value": "'Point Category Breakdown'"
                 }
               }
             },
@@ -446,8 +446,49 @@
             }
           ]
         }
+      },
+      {
+        "name": "b5c4e8cade00a7dc3cd4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PointsMap"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4c90a389be05e6007ac2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Tornado Team 2 points"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bfa2c0aca77776e8e6ae",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "*Measures"
+              }
+            },
+            "Property": "Home Points"
+          }
+        },
+        "type": "Advanced"
       }
     ]
-  },
-  "isHidden": true
+  }
 }

@@ -1,0 +1,213 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 552,
+    "z": 38000,
+    "height": 249,
+    "width": 324,
+    "tabOrder": 35000
+  },
+  "objects": {
+    "values": [],
+    "general": [
+      {
+        "properties": {
+          "paragraphs": [
+            {
+              "textRuns": [
+                {
+                  "value": "This was an ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": " for ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 2"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": ", who ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 3"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": " after being projected to ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 4"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": ".",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 5"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": "This is the ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 6"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": "game in the season series between these teams, and ",
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                },
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 7"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "textRuns": [
+                {
+                  "value": {
+                    "propertyIdentifier": {
+                      "objectName": "values",
+                      "propertyName": "expr"
+                    },
+                    "selector": {
+                      "id": "Value 8"
+                    }
+                  },
+                  "textStyle": {
+                    "fontSize": "9pt"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
