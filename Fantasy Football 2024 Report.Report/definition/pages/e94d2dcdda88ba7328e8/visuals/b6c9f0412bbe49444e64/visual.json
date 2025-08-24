@@ -12,5 +12,6 @@
   "visualGroup": {
     "displayName": "Overview",
     "groupMode": "ScaleMode"
-  }
+  },
+  "isHidden": true
 }

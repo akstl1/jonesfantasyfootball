@@ -1,11 +1,51 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
   "position": {
-    "x": 37,
-    "y": 671,
-    "z": 8000,
+    "x": 0,
+    "y": 668,
+    "z": 6000,
     "height": 86,
-    "width": 276,
-    "tabOrder": 7000
+    "width": 324,
+    "tabOrder": 12000
+  },
+  "objects": {
+    "image": [],
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "15D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "*Measures.Scoreboard Team2 Points"
+        }
+      },
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "15D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "*Measures.Scoreboard Team1 Points"
+        }
+      }
+    ],
+    "label": [],
+    "fillCustom": [],
+    "outline": [],
+    "layout": [],
+    "referenceLabel": [],
+    "accentBar": [],
+    "spacing": []
   }
 }
