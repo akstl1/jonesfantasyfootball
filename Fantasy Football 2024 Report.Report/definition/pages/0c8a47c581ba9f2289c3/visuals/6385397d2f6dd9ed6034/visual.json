@@ -366,6 +366,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
             }
           }
         }
@@ -518,6 +525,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "1fbfaaf3d5a987c43059",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SpiderChart"
+                  }
+                },
+                "Property": "Condensed Rank"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

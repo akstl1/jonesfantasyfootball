@@ -2,27 +2,26 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
   "position": {
     "x": 0,
-    "y": 156,
-    "z": 1000,
-    "height": 87,
+    "y": 154,
+    "z": 8000,
+    "height": 136,
     "width": 324,
     "tabOrder": 3000
   },
   "objects": {
-    "image": [],
     "value": [
       {
         "properties": {
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "45D"
+                "Value": "14D"
               }
             }
           }
         },
         "selector": {
-          "id": "default"
+          "metadata": "*Measures.Final League Standing"
         }
       },
       {
@@ -30,27 +29,47 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "15D"
+                "Value": "14D"
               }
             }
           }
         },
         "selector": {
-          "metadata": "*Measures.Scoreboard Team2 Points"
+          "metadata": "*Measures.Final Division Standing"
         }
-      },
+      }
+    ],
+    "layout": [
       {
         "properties": {
-          "fontSize": {
+          "maxTiles": {
             "expr": {
               "Literal": {
-                "Value": "15D"
+                "Value": "3L"
+              }
+            }
+          },
+          "orientation": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "rowCount": {
+            "expr": {
+              "Literal": {
+                "Value": "2L"
+              }
+            }
+          },
+          "columnCount": {
+            "expr": {
+              "Literal": {
+                "Value": "3L"
               }
             }
           }
-        },
-        "selector": {
-          "metadata": "*Measures.Scoreboard Team1 Points"
         }
       }
     ],
@@ -60,20 +79,13 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "8D"
-              }
-            }
-          },
-          "textWrap": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
+                "Value": "9D"
               }
             }
           }
         },
         "selector": {
-          "metadata": "*Measures.Scoreboard Team1 Points"
+          "metadata": "*Measures.Final Division Standing"
         }
       },
       {
@@ -81,20 +93,13 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "8D"
-              }
-            }
-          },
-          "textWrap": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
+                "Value": "9D"
               }
             }
           }
         },
         "selector": {
-          "metadata": "*Measures.Scoreboard Team2 Points"
+          "metadata": "*Measures.Final Power Ranking"
         }
       },
       {
@@ -102,21 +107,18 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "12D"
+                "Value": "9D"
               }
             }
           }
         },
         "selector": {
-          "id": "default"
+          "metadata": "*Measures.Final League Standing"
         }
       }
     ],
-    "fillCustom": [],
-    "outline": [],
-    "layout": [],
-    "referenceLabel": [],
-    "accentBar": [],
-    "spacing": []
+    "spacing": [],
+    "shapeCustomRectangle": [],
+    "padding": []
   }
 }
